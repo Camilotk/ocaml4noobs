@@ -1,7 +1,7 @@
 # PHP4Noobs
 
 <h1 align="center">
-  <img src="./images/ocaml.png" alt="ocaml" width="240">
+  <img src="./images/colour-logo.png" alt="ocaml" width="240">
 </h1>
 
 <p align="center">Tutorial de OCaml para iniciantes na Linguagem.</p>
