@@ -195,7 +195,7 @@ $ dune exec ./main.exe
 
 E vamos ter `42` impresso na tela.
 
-### Lingugens Concisas vs Verboasas
+### Lingugens Concisas vs Verbosas
 
 Sem dúvidas quando estamos falando de código a métrica mais importante que devemos levar em conta é: "Ele funciona?". E a boa notícia é que poderiamos fazer exatamente o mesmo em Java e isso funcionaria, basta que fizessemos isso:
 
