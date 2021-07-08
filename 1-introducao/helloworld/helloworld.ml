@@ -1,0 +1,1 @@
+let hello () = Printf.printf "Hello, %s!" "World"
