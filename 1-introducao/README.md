@@ -159,9 +159,9 @@ Um ambiente de programação produtivo permite diretamente a expressividade da s
 
 Vamos agora criar um arquivo chamado `main.ml` na nossa pasta `helloworld` e definir o seguinte código:
 ```OCaml
-let double_num x = x * 2          // 1
+let double_num x = x * 2      // 1
 let double_sum = [6;7;8]      // 2
-  |> List.map double_num          // 3
+  |> List.map double_num      // 3
   |> List.fold_left (+) 0;;   // 4
 
 Printf.printf "%d" double_sum // 5
