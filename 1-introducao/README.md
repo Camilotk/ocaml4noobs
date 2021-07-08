@@ -195,7 +195,7 @@ $ dune exec ./main.exe
 
 E vamos ter `42` impresso na tela.
 
-### Diferenças com linguagens Imperativas
+### Lingugens Concisas vs Verboasas
 
 Sem dúvidas quando estamos falando de código a métrica mais importante que devemos levar em conta é: "Ele funciona?". E a boa notícia é que poderiamos fazer exatamente o mesmo em Java e isso funcionaria, basta que fizessemos isso:
 
@@ -237,4 +237,5 @@ A grande diferença entre esse código em Java para nosso programa em OCaml é q
 
 Isso significa que o foco quando programamos em Java é "o que queremos fazer?" e descrevemos cada comando do passo a passo que nos leva ao resultado esperado. Enquanto em OCaml colocamos todo nosso foco no que esperamos que seja o resultado ao invés do exato passo a passo de como isso deve ser feito. 
 
-É possivel obter um estilo de escrita muito mais declarativo em Java e também é possivel escrever OCaml muito mais imperativamente, mas esse exemplo demonstra de forma exagerada a forma canônica que cada linguagem foi projetada para ser pensado a solução dos problemas que resolvem. 
+É possivel obter um estilo de escrita muito mais declarativo em Java e também é possivel escrever OCaml muito mais imperativamente, mas esse exemplo demonstra de forma exagerada a forma canônica que cada linguagem foi projetada para ser pensado a solução dos problemas que resolvem.
+
