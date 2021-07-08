@@ -1,4 +1,4 @@
-# PHP4Noobs
+# OCaml4Noobs
 
 <h1 align="center">
   <img src="./images/colour-logo.png" alt="ocaml" width="240">
