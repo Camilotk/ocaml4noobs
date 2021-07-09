@@ -4,6 +4,33 @@
 
 [OCaml](https://OCaml.org/) é uma linguagem de programação multiparadigma, que tem suporte de primeira classe para os paradigmas funcional, imperativo e orientado a objetos. É uma linguagem que é descendente e traz fortes semelhanças com ML (Metalanguage) da qual herda (assim como outras linguagens descendentes de ML) ser estaticamente e fortemente tipada.
 
+OCaml permite dois tipos de compilação, para bytecode que é executado por uma máquina virtual (zinc) ou para código de máquina nativo para um grande número de plataformas. Ela não é uma linguagem puramente funcional, permitindo a existência de valores mutáveis bem como de efeitos colaterais (side-effects), tipicamente existentes apenas em linguagens imperativas. Esta característica distingue-a de outras linguagens puramente funcionais, como por exemplo Haskell.
+
+Seu principal diferencial que tem trazido notoriedade e popularidade para a linguagem é o seu compilador que é capaz de gerar código nativo com excelente desempenho em tempo de execução e uma biblioteca padrão muito bem construída e extensível.
+
+## História do OCaml
+
+OCaml oficialmente nasceu em 1996, quando os cientistas [Didier Rémy](http://cristal.inria.fr/~remy/) e [Jérôme Vouillon](https://www.irif.fr/~vouillon/) da computação do [Instituto Nacional de Pesquisa em Informática e Automação (INRIA)](https://www.inria.fr/en) na França decidiram adicionar Orientação a Objetos à linguagem Caml que também havia sido criada no INRIA em 1987 por [Gérard Huet](http://cristal.inria.fr/~huet/). O nome da linguagem Caml também tem um significado importante para entendermos sobre a  história de OCaml e suas particularidades, Caml é uma abreviação de *Categorical Abstract Machine Languge* que combina as implementações de uma [Máquina Abstrata Categórica](https://pt.xcv.wiki/wiki/Categorical_abstract_machine) implementada em uma linguagem derivada de [ML](https://pt.wikipedia.org/wiki/ML_(linguagem_de_programa%C3%A7%C3%A3o)).
+
+A introdução de Objetos em OCaml possibilitou muitos avanços, Orientação Objetos ainda era um paradigma muito recente (C++ havia sido criada apenas dez anos antes) isso foi importante para pesquisas de sistemas de objetos em linguagens funcionais estaticamente tipadas e com inferência de tipos, além de permitir melhor interop com linguagens OOP como C++ e Java e trazer novas funcionalidades e mudanças de sintaxe em relação a Caml.
+
+No ano de 2000, OCaml recebeu muitas atualizações com novas funcioanlidades vindas dos estudos do Cientista da Computação [Jacques Garrigue](https://www.math.nagoya-u.ac.jp/~garrigue/) entre elas *optional arguments*, *polymorphic variants*, *variance annotations* e *polymorphic methods*. Desde o ínicio dos anos 2000 OCaml tem atraído popularidade e crescido no número de Universidades que adotam a linguagem para lecionar em diversas matérias, entre elas Harvard, Princeton, Brown, Columbia, Cornell, Universidade da Califórina, Universidade de Ilinois, UPenn, Universidade da Beira Interior (Portugal), Universidade de Rennes (França) e Universidade Paris-Diderot (França).
+
+OCaml também influenciou muitas outras linguagens como Rust e Scala, mas em especial F# que surgiu como "OCaml para .NET" criado em 2005 pelo grupo de pesquisadores liderado por [Don Syme](https://en.wikipedia.org/wiki/Don_Syme) da [Microsoft Research](https://www.microsoft.com/en-us/research/) com interesse de construir uma linguagem funcional para .NET e com sucessivas falhas em implementar Haskell.NET com compatibiidade a C# decidiu investir em OCaml por sua compatibilidade com código Orientado a Objetos e imperativo. Inicialmente ambos compiladores eram 100% intercambiáveis, mas a partir de F# 2.0 e em todas as versões posteriores a compatibilidade com OCaml foi sendo reduzida para a introdução de novas funcionalidades à linguagem, sendo que ainda hoje (2020) ainda é possível compilar programas simples de uma linguagem no compilador da outra sem prejuízos ou problemas.
+
+Outro ponto importante para OCaml aconteceu em 2016 quando Jodan Walke, criador da biblioteca React e na época Engenheiro no Facebook criou a extensão de sintaxe ReasonML para OCaml (que não vamos tratar nesse 4noobs, mas caso tenha curiosidade a comunidade ReasonBR tem uma [lista de materiais](https://github.com/rescriptbr/comece-aqui) a respeito). ReasonML permite escrever OCaml com uma sintaxe muito próxima do que normalmente programadores JavaScript (e de supersets como TypeScript) e transpilar essa sintaxe para OCaml onde pode ser usada para gerar binários nativos ou transpilar para JavaScript utilizando o transpilador BuckleScript onde pode ser usada para constuir aplicações front-end e interagir com o ecossistema JS. Em 2020 o time de desenvolvimento do BuckleScript decidiu criar a linguagem [ReScript](https://rescript-lang.org/blog/bucklescript-is-rebranding) e o projeto BuckleScript recebeu um fork chamado [Melange](https://github.com/melange-re) feito por [Antonio Monteiro](https://github.com/anmonteiro) na qual é a forma atual de fazer a transpilação de OCaml ou ReasonML para JavaScript e que se mantêm em desenvolvimento e aperfeiçoamento.
+
+Resumo e Linha do Tempo:
+- **1973**: [Robin Milner](https://en.wikipedia.org/wiki/Robin_Milner) criou a linguagem de programação [ML](https://en.wikipedia.org/wiki/ML_(programming_language)) que trouxe programação funcional com tipagem estática e inferência de tipos.
+- **1980**: surge Smalltalk criada por Alan Kay e torna-se público os conceitos de Orientação a Objetos.
+- **1987**: É criada a linguagem Caml.
+- **1996**: OCaml extende Caml adicionando OOP a Caml.
+- **2000**: OCaml recebe sua maior atualização até hoje.
+- **2005**: Outra linguagem F# nasce projetada a partir de OCaml, mas com todos os ajustes e mudanças necessárias para que ela adapte-se bem a plataforma .NET
+- **2014**: A empresa de negociação de ativos e derivativos [Jane Street](https://www.janestreet.com/) adota OCaml como linguagem principal, se tornando o maior use case de OCaml e passando a contribuir com a linguagem e com [bibliotecas open source](https://github.com/janestreet) para OCaml.
+- **2016**: É criada a sintaxe e extensão [ReasonML](https://github.com/reasonml/reason) por [Jordan Walke](https://twitter.com/jordwalke) para OCaml que oferece uma sintaxe próxima de JavaScript e permite transpilar sua sintaxe ReasonML para OCaml no qual é possível gerar binários nativos e JavaScript através do compilador BuckleScript.
+- **2020**: Surge a linguagem de programação [ReScript](https://rescript-lang.org/blog/bucklescript-is-rebranding) a partir dos criadores do compilador BuckleScript decidirem criar uma sintaxe própria e unificada para Reason cortando a compatibilidade com OCaml e retirando funcionalidades como o sistema de objetos e o projeto BuckleScript passa por um fork feito e mantido por [Antonio Monteiro](https://github.com/anmonteiro) tornando-se [Melange](https://github.com/melange-re).
+
 ## Instalação
 
 Certo, agora você sabe o que é OCaml, então agora vamos para a instalação da linguagem e suas ferramentas básicas para que possamos compilar e executar nossos programas.
@@ -237,7 +264,7 @@ A grande diferença entre esse código em Java para nosso programa em OCaml é q
 
 Isso significa que o foco quando programamos em Java é "o que queremos fazer?" e descrevemos cada comando do passo a passo que nos leva ao resultado esperado. Enquanto em OCaml colocamos todo nosso foco no que esperamos que seja o resultado ao invés do exato passo a passo de como isso deve ser feito. 
 
-É possivel obter um estilo de escrita muito mais concisa e funcional em Java e também é possivel escrever OCaml muito mais imperativa e verbosa, mas esse exemplo demonstra de forma exagerada a forma canônica que cada linguagem foi projetada para ser pensado a solução dos problemas que resolvem.
+É possivel obter um estilo de escrita muito mais concisa e funcional em Java e também é possivel escrever OCaml de forma completamente imperativa e mais verbosa (a linguagem tem suporte a programação imperativa e OOP), mas esse exemplo demonstra de forma exagerada a forma canônica que cada linguagem foi projetada para ser pensado a solução dos problemas que resolvem apenas como exemplo.
 
 ### Menos Erros Acidentais
 
@@ -321,7 +348,10 @@ void quickSort(int * array, int low, int high) {
  ```
 Com isso podemos ver que em C++ (ou qualquer outra linguagem imperativa como Java ou C#) o que é descrito é o procedimento passo-a-passo e não a definição do algoritmo. Pode ser que por você estar mais acostumado a ler código imperativo que a solução em C++ pareça ser mais clara, mas pense o quão mais complexo é entender todo o número maior de instruções e passos que estão no código em C++ e a recompensa que é poder escrever códigos mais concisos e claros usando OCaml.
 
+
+
 ## Referências
 - [Install OCaml](https://OCaml.org/docs/install.html)
 - [How to install opam](https://opam.OCaml.org/doc/Install.html)
-- 
+- [Caml Language History](https://caml.inria.fr/about/history.en.html)
+- [OCaml - Wikipédia](https://pt.wikipedia.org/wiki/OCaml)
