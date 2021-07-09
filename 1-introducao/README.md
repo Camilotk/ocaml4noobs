@@ -301,68 +301,62 @@ using std::vector;
 using std::cout;
 using std::endl;
 
-
 class Quicksort {
- private:
-    vector<int>& elements;
-    int size;
+  private:
+    vector < int > & elements;
+  int size;
 
-    int partition (const int start, const int end)
-    {
-        int i = start;
+  int partition(const int start,
+    const int end) {
+    int i = start;
 
-        for (int j = start; j < end; j++) {
-            if (elements[j] <= elements[end]) {
-                swap(i++, j);
-            }
-        }
-        swap(i, end);
-
-        return i;
+    for (int j = start; j < end; j++) {
+      if (elements[j] <= elements[end]) {
+        swap(i++, j);
+      }
     }
+    swap(i, end);
 
-    void swap (const int i, const int j)
-    {
-        int k = elements[i];
-        elements[i] = elements[j];
-        elements[j] = k;
+    return i;
+  }
+
+  void swap(const int i,
+    const int j) {
+    int k = elements[i];
+    elements[i] = elements[j];
+    elements[j] = k;
+  }
+
+  void quicksort(const int start,
+    const int end) {
+    snapshot();
+
+    if (start >= end) return;
+
+    int pivot = partition(start, end);
+
+    quicksort(start, pivot - 1);
+    quicksort(pivot + 1, end);
+  }
+
+  void snapshot() {
+    cout << "[";
+    for (auto i = elements.begin(); i < elements.end() - 1; i++) {
+      cout << * i << ", ";
     }
+    cout << elements.back() << "]" << endl;
+  }
 
-    void quicksort (const int start, const int end)
-    {
-        snapshot();
+  public:
+    explicit Quicksort(vector < int > & elements): elements(elements),
+    size(elements.size()) {}
 
-        if (start >= end) return;
+  void Sort() {
+    if (size <= 1) return;
 
-        int pivot = partition(start, end);
-
-        quicksort(start, pivot - 1);
-        quicksort(pivot + 1, end);
-    }
-
-    void snapshot ()
-    {
-        cout << "[";
-        for(auto i = elements.begin(); i < elements.end() - 1; i++) {
-            cout << *i << ", ";
-        }
-        cout << elements.back() << "]" << endl;
-    }
-
- public:
-    explicit Quicksort (vector<int>& elements)
-    :elements(elements),
-     size(elements.size())
-    {
-    }
-
-    void Sort ()
-    {
-        if(size <= 1) return;
-
-        quicksort(0, size - 1);
-        snapshot();
-    }
+    quicksort(0, size - 1);
+    snapshot();
+  }
 };
  ```
 Com isso podemos ver que em C++ (ou qualquer outra linguagem imperativa como Java ou C#) o que é descrito é o procedimento passo-a-passo e não a definição do algoritmo. Pode ser que por você estar mais acostumado a ler código imperativo que a solução em C++ pareça ser mais clara, mas pense o quão mais complexo é entender todo o número maior de instruções e passos que estão no código em C++ e a recompensa que é poder escrever códigos mais concisos e claros usando OCaml.
