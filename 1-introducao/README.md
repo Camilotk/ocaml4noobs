@@ -2,13 +2,13 @@
 
 ## O que é OCaml?
 
-OCaml é uma linguagem de programação multiparadigma, que tem suporte de primeira classe para os paradigmas funcional, imperativo e orientado a objetos. É uma linguagem que é descendente e traz fortes semelhanças com ML (Metalanguage) da qual herda (assim como outras linguagens descendentes de ML) ser estaticamente e fortemente tipada.
+[OCaml](https://OCaml.org/) é uma linguagem de programação multiparadigma, que tem suporte de primeira classe para os paradigmas funcional, imperativo e orientado a objetos. É uma linguagem que é descendente e traz fortes semelhanças com ML (Metalanguage) da qual herda (assim como outras linguagens descendentes de ML) ser estaticamente e fortemente tipada.
 
 ## Instalação
 
 Certo, agora você sabe o que é OCaml, então agora vamos para a instalação da linguagem e suas ferramentas básicas para que possamos compilar e executar nossos programas.
 
-> Importante notar que apesar existir suporte de OCaml para Windows é aconselhável que utilize o Windows Subsistem for Linux (WSL) para programar em OCaml.
+> Importante notar que apesar existir suporte de OCaml para Windows é aconselhável que utilize o [Windows Subsistem for Linux (WSL)](https://docs.microsoft.com/pt-br/windows/wsl/install-win10) para programar em OCaml.
 
 
 1. Abra seu terminal da sua distro preferida, nesse caso vamos utilizar o package manager dnf como exemplo já que os testes foram feitos através dele, mas caso esteja no Ubuntu / Debian use o apt, caso OpenSUSE zypper, Arch / Manjaro pacman... para instalar o OCaml Package Manager (OPAM).
@@ -33,7 +33,7 @@ $ eval $(opam env)
 4. Vamos testar a instalação e ver qual versão está instalada na máquina.
 
 ```terminal
-$ ocaml -version
+$ OCaml -version
 ```
 
 - Caso desejamos instalar outra versão de OCaml como a 4.11.1 usando o OPAM basta: `opam switch create 4.11.1` e logo após carregar o novo ambiente com `eval $(opam env)`
@@ -48,7 +48,7 @@ $ sudo dnf install rlwrap
 6. Crie um alias para o rlwrap no seu ~/.bashrc ou ~/.zshrc
 
 ```terminal
-$ echo "alias ocaml=\"rlwrap ocaml\"" >> ~/.bashrc
+$ echo "alias OCaml=\"rlwrap OCaml\"" >> ~/.bashrc
 ```
 
 ## Instalando o Dune
@@ -98,7 +98,7 @@ E que respectivamente são:
 - **helloworld.ml**: O arquivo onde vamos escrever nosso código OCaml.
 
 Se abrirmos nosso arquivo `helloworld.ml` temos o seguinte código que já foi criado para nós no init:
-```ocaml
+```OCaml
 let () = print_endline "Hello, World!"
 ```
 
@@ -116,7 +116,7 @@ $ dune exec ./helloworld.exe
 E devemos ter uma mensagem `Hello World!` na tela.
 
 Agora vamos alterar nosso script para imprimir texto formatado.
-```ocaml
+```OCaml
 let () = Printf.printf "Hello, %s!" "World"
 ```
 
@@ -239,3 +239,135 @@ Isso significa que o foco quando programamos em Java é "o que queremos fazer?" 
 
 É possivel obter um estilo de escrita muito mais concisa e funcional em Java e também é possivel escrever OCaml muito mais imperativa e verbosa, mas esse exemplo demonstra de forma exagerada a forma canônica que cada linguagem foi projetada para ser pensado a solução dos problemas que resolvem.
 
+### Menos Erros Acidentais
+
+No ensaio ["No Silver Bullet" (Não existe bala de prata), Fred Brooks](http://worrydream.com/refs/Brooks-NoSilverBullet.pdf) faz uma distinção entre complexidade acidental e complexidade essencial. 
+
+- **Complexidade Acidental** é a complecidade que é infligida em nós mesmos pelas ferramentas que decidimos usar.
+- **Complexidade Essencial** é a complexidade relacionada ao problema que estamos tentando resolver. 
+
+Complexidade Acidental é o problema que pode e deve ser cortado pela raíz, por exemplo, quanto menos ponteiros de memória, manegamento de recursos de memória ou qualquer outra coisa que não seja relacionada com o problema que estamos resolvendo deve ser cortada e evitada. OCaml ajuda a minimizar esse tipo de problema da complexidade acidental para que possamos focar na Complexidade Essencial que é o desafio que precisamos verdadeiramente resolver.
+
+Aqui temos um exemplo do algoritmo Quicksort em OCaml:
+<!--
+```OCaml 
+let rec quicksort list =
+  match list with
+    | [] -> []
+    | x :: xs ->
+              let smaller, bigger = List.partition ((>) x) xs in
+                  (quicksort smaller) @ (x :: (quicksort bigger));;
+```
+
+```OCaml 
+let rec quicksort = function
+    | [] -> []
+    | x :: xs ->
+              let smaller = List.filter ((>) x) xs in
+              let bigger = List.filter ((<) x) xs in
+                quicksort smaller @ [x] @ quicksort bigger;;
+```
+-->
+
+```OCaml 
+let rec quicksort = function
+    | [] -> []                                               // 1
+    | x :: xs ->
+              let smaller = List.filter ((>) x) xs in        // 2
+              let bigger = List.filter ((<) x) xs in         // 2
+                quicksort smaller @ [x] @ quicksort bigger;; // 3
+```
+
+Observe o quanto o algoritmo em OCaml é próximo da definição original do algoritmo de quicksort caso tentássemos explicá-lo. Obviamente existe sintaxe que não é familiar para um usuário que não é familiar a linguagens funcionais. Vejamos:
+
+1. Aqui podemos notar que o Quicksort se divide em duas possibilidades, dois casos:
+ - A possibilidade de receber uma lista vazia, que no caso é verificado pelo pattern match, caso seja uma lista vazia o retorno é uma lista vazia.
+ -  Todos os outros casos.
+2. Quando a função recebe um valor ela divide o restante dos valores em dois grupos:
+ - Dos items menores que x
+ - Dos items maiores que x
+3. Então o grupo menor é ordenado recursivamente, o maior também é ordenado recursivamente e ambos são concatenados com o item x no meio -> [menores. x. maiores]
+
+Na primeira linha temos a palavra <u>rec</u> que é uma abreviação para 'recursive' (recursivo) que informa o compilador que essa função pode ter que chamar a si mesma, isso é um exemplo de complexidade acidental que ainda se mantêm em OCaml uma vez que não tem motivo lógico ou matemático para que esse comando esteja ali uma vez em que logicamente e matematicamente todas as funções devem ser capazes de chamarem a si mesmas, porém por razoẽs externas ao problema que estamos resolvendo precisamos informar ao compilador de OCaml que essa função pode ter que chamar a si mesmma.
+
+Um contraste com o mesmo algortimo, mas agora em C++:
+```C++
+#include <iostream>
+#include <vector>
+#include <stdlib.h>
+
+
+using std::vector;
+using std::cout;
+using std::endl;
+
+
+class Quicksort {
+ private:
+    vector<int>& elements;
+    int size;
+
+    int partition (const int start, const int end)
+    {
+        int i = start;
+
+        for (int j = start; j < end; j++) {
+            if (elements[j] <= elements[end]) {
+                swap(i++, j);
+            }
+        }
+        swap(i, end);
+
+        return i;
+    }
+
+    void swap (const int i, const int j)
+    {
+        int k = elements[i];
+        elements[i] = elements[j];
+        elements[j] = k;
+    }
+
+    void quicksort (const int start, const int end)
+    {
+        snapshot();
+
+        if (start >= end) return;
+
+        int pivot = partition(start, end);
+
+        quicksort(start, pivot - 1);
+        quicksort(pivot + 1, end);
+    }
+
+    void snapshot ()
+    {
+        cout << "[";
+        for(auto i = elements.begin(); i < elements.end() - 1; i++) {
+            cout << *i << ", ";
+        }
+        cout << elements.back() << "]" << endl;
+    }
+
+ public:
+    explicit Quicksort (vector<int>& elements)
+    :elements(elements),
+     size(elements.size())
+    {
+    }
+
+    void Sort ()
+    {
+        if(size <= 1) return;
+
+        quicksort(0, size - 1);
+        snapshot();
+    }
+};
+ ```
+Com isso podemos ver que em C++ (ou qualquer outra linguagem imperativa como Java ou C#) o que é descrito é o procedimento passo-a-passo e não a definição do algoritmo. Pode ser que por você estar mais acostumado a ler código imperativo que a solução em C++ pareça ser mais clara, mas pense o quão mais complexo é entender todo o número maior de instruções e passos que estão no código em C++ e a recompensa que é poder escrever códigos mais concisos e claros usando OCaml.
+
+## Referências
+- [Install OCaml](https://OCaml.org/docs/install.html)
+- [How to install opam](https://opam.OCaml.org/doc/Install.html)
+- 
