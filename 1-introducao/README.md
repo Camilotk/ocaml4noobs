@@ -294,11 +294,6 @@ Um contraste com o mesmo algortimo, mas agora em C++:
 ```C++
 #include <iostream>
 
-void printArray(int * array, int n) {
-  for (int i = 0; i < n; ++i)
-    std::cout << array[i] << std::endl;
-}
-
 void quickSort(int * array, int low, int high) {
   int i = low;
   int j = high;
