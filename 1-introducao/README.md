@@ -35,7 +35,7 @@ Resumo e Linha do Tempo:
 
 Certo, agora você sabe o que é OCaml, então agora vamos para a instalação da linguagem e suas ferramentas básicas para que possamos compilar e executar nossos programas.
 
-> Importante notar que apesar existir suporte de OCaml para Windows é aconselhável que utilize o [Windows Subsistem for Linux (WSL)](https://docs.microsoft.com/pt-br/windows/wsl/install-win10) para programar em OCaml.
+> Importante notar que apesar existir suporte de OCaml para Windows é aconselhável que utilize o [Windows Subsistem for Linux (WSL)](https://github.com/SaLandini/wsl4noobs) para programar em OCaml.
 
 
 1. Abra seu terminal da sua distro preferida, nesse caso vamos utilizar o package manager dnf como exemplo já que os testes foram feitos através dele, mas caso esteja no Ubuntu / Debian use o apt, caso OpenSUSE zypper, Arch / Manjaro pacman... para instalar o OCaml Package Manager (OPAM).
@@ -92,7 +92,7 @@ E agora vamos para nosso primeiro exemplo.
 
 ## Hello World
 
-Assim como Dennis Ritchie e Brian Kernighan popularizaram em "The C Programming Language", o primeiro programa escrito em uma nova linguagem de programação deve ser o que imprime a mensagem "Hello World" na tela, ou um grande azar vai te perseguir enquanto você usar a linguagem te fazendo sofrer com muitos erros. Como estamos falando de Dennis e Brian que são magos da Computação, vamos evitar lidar com magias ancentrais e começar pela implementação desse programa.
+Assim como diz a [lenda da maldição do programador](https://www.urbandictionary.com/define.php?term=The%20Programmer%27s%20Curse) o primeiro programa escrito em uma nova linguagem de programação deve ser o que imprime a mensagem "Hello World" na tela, ou um grande azar vai te perseguir enquanto você usar a linguagem te fazendo sofrer com muitos erros. Como estamos falando de maldições ancestrais, vamos começar pela implementação desse programa.
 
 Para isso vamos precisar:
 - De um editor de texto minimamente descente (nada de Notepad no Windows)
