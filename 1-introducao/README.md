@@ -1,5 +1,23 @@
 # Capítulo 1 - Introdução
 
+## Índice
+
+## Parte 1 - Introdução
+- [O que é OCaml?](https://github.com/Camilotk/ocaml4noobs/tree/master/1-introducao#o-que-%C3%A9-ocaml)
+- [História do OCaml](https://github.com/Camilotk/ocaml4noobs/tree/master/1-introducao#hist%C3%B3ria-do-ocaml)
+- [Instalação](https://github.com/Camilotk/ocaml4noobs/tree/master/1-introducao#instala%C3%A7%C3%A3o)
+- [Instalando o Dune](https://github.com/Camilotk/ocaml4noobs/tree/master/1-introducao#instalando-o-dune)
+- [Hello World](https://github.com/Camilotk/ocaml4noobs/tree/master/1-introducao#hello-world)
+- [Porque OCaml?](https://github.com/Camilotk/ocaml4noobs/tree/master/1-introducao#porque-ocaml)
+	- [Concisa e Declarativa](https://github.com/Camilotk/ocaml4noobs/tree/master/1-introducao#concisa-e-declarativa)
+  - [Lingugens Concisas vs Verbosas](https://github.com/Camilotk/ocaml4noobs/tree/master/1-introducao#lingugens-concisas-vs-verbosas)
+	- [Menos Erros Acidentais](https://github.com/Camilotk/ocaml4noobs/tree/master/1-introducao#menos-erros-acidentais)
+- [Particularidades de OCaml](https://github.com/Camilotk/ocaml4noobs/tree/master/1-introducao#particularidades-de-ocaml)
+	- [Inferência de Tipos](https://github.com/Camilotk/ocaml4noobs/tree/master/1-introducao#infer%C3%AAncia-de-tipos)
+	- [Imutabilidade](https://github.com/Camilotk/ocaml4noobs/tree/master/1-introducao#imutabilidade)
+	- [Dados e Operações](https://github.com/Camilotk/ocaml4noobs/tree/master/1-introducao#dados-e-opera%C3%A7%C3%B5es)
+- [Materiais em Inglês para aprender OCaml](https://github.com/Camilotk/ocaml4noobs/tree/master/1-introducao#materiais-em-ingl%C3%AAs-para-aprender-ocaml)
+
 ## O que é OCaml?
 
 [OCaml](https://OCaml.org/) é uma linguagem de programação multiparadigma, que tem suporte de primeira classe para os paradigmas funcional, imperativo e orientado a objetos. É uma linguagem que é descendente e traz fortes semelhanças com ML (Metalanguage) da qual herda (assim como outras linguagens descendentes de ML) ser estaticamente e fortemente tipada.
@@ -422,6 +440,13 @@ Brevemente:
 
 Separando dados e funções dessa forma nós garantimos que nossas dependências são exatamente aquelas das quais precisamos.
 
+## Materiais em Inglês para aprender OCaml
+- [Real World OCaml](https://dev.realworldocaml.org/toc.html)
+- [Functional Programming in OCaml](https://www.cs.cornell.edu/courses/cs3110/2019sp/textbook/)
+- [99 Problems](https://ocaml.org/learn/tutorials/99problems.html)
+- [OCaml Manual](https://ocaml.org/manual/)
+- [janestreet/learn-ocaml-workshop](https://github.com/janestreet/learn-ocaml-workshop)
+
 #### E por enquanto, é só nos vemos no próximo Capítulo! 😉
 
 ## Referências
@@ -430,10 +455,3 @@ Separando dados e funções dessa forma nós garantimos que nossas dependências
 - [Dune Quickstart](https://dune.readthedocs.io/en/stable/quick-start.html)
 - [Caml Language History](https://caml.inria.fr/about/history.en.html)
 - [OCaml - Wikipédia](https://pt.wikipedia.org/wiki/OCaml)
-
-## Materiais em Inglês para aprender OCaml
-- [Real World OCaml](https://dev.realworldocaml.org/toc.html)
-- [Functional Programming in OCaml](https://www.cs.cornell.edu/courses/cs3110/2019sp/textbook/)
-- [99 Problems](https://ocaml.org/learn/tutorials/99problems.html)
-- [OCaml Manual](https://ocaml.org/manual/)
-- [janestreet/learn-ocaml-workshop](https://github.com/janestreet/learn-ocaml-workshop)
