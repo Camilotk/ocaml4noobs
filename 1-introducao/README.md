@@ -293,70 +293,36 @@ Na primeira linha temos a palavra <u>rec</u> que é uma abreviação para 'recur
 Um contraste com o mesmo algortimo, mas agora em C++:
 ```C++
 #include <iostream>
-#include <vector>
-#include <stdlib.h>
 
-using std::vector;
-using std::cout;
-using std::endl;
+void printArray(int * array, int n) {
+  for (int i = 0; i < n; ++i)
+    std::cout << array[i] << std::endl;
+}
 
-class Quicksort {
-  private:
-    vector < int > & elements;
-  int size;
+void quickSort(int * array, int low, int high) {
+  int i = low;
+  int j = high;
+  int pivot = array[(i + j) / 2];
+  int temp;
 
-  int partition(const int start,
-    const int end) {
-    int i = start;
-
-    for (int j = start; j < end; j++) {
-      if (elements[j] <= elements[end]) {
-        swap(i++, j);
-      }
+  while (i <= j) {
+    while (array[i] < pivot)
+      i++;
+    while (array[j] > pivot)
+      j--;
+    if (i <= j) {
+      temp = array[i];
+      array[i] = array[j];
+      array[j] = temp;
+      i++;
+      j--;
     }
-    swap(i, end);
-
-    return i;
   }
-
-  void swap(const int i,
-    const int j) {
-    int k = elements[i];
-    elements[i] = elements[j];
-    elements[j] = k;
-  }
-
-  void quicksort(const int start,
-    const int end) {
-    snapshot();
-
-    if (start >= end) return;
-
-    int pivot = partition(start, end);
-
-    quicksort(start, pivot - 1);
-    quicksort(pivot + 1, end);
-  }
-
-  void snapshot() {
-    cout << "[";
-    for (auto i = elements.begin(); i < elements.end() - 1; i++) {
-      cout << * i << ", ";
-    }
-    cout << elements.back() << "]" << endl;
-  }
-
-  public:
-    explicit Quicksort(vector < int > & elements): elements(elements),
-    size(elements.size()) {}
-
-  void Sort() {
-    if (size <= 1) return;
-
-    quicksort(0, size - 1);
-    snapshot();
-  }
-};
+  if (j > low)
+    quickSort(array, low, j);
+  if (i < high)
+    quickSort(array, i, high);
+}
  ```
 Com isso podemos ver que em C++ (ou qualquer outra linguagem imperativa como Java ou C#) o que é descrito é o procedimento passo-a-passo e não a definição do algoritmo. Pode ser que por você estar mais acostumado a ler código imperativo que a solução em C++ pareça ser mais clara, mas pense o quão mais complexo é entender todo o número maior de instruções e passos que estão no código em C++ e a recompensa que é poder escrever códigos mais concisos e claros usando OCaml.
 
