@@ -297,7 +297,7 @@ No ensaio ["No Silver Bullet" (Não existe bala de prata), Fred Brooks](http://w
 - **Complexidade Acidental** é a complecidade que é infligida em nós mesmos pelas ferramentas que decidimos usar.
 - **Complexidade Essencial** é a complexidade relacionada ao problema que estamos tentando resolver. 
 
-Complexidade Acidental é o problema que pode e deve ser cortado pela raíz, por exemplo, quanto menos ponteiros de memória, manegamento de recursos de memória ou qualquer outra coisa que não seja relacionada com o problema que estamos resolvendo deve ser cortada e evitada. OCaml ajuda a minimizar esse tipo de problema da complexidade acidental para que possamos focar na Complexidade Essencial que é o desafio que precisamos verdadeiramente resolver.
+Complexidade Acidental é o problema que pode e deve ser cortado pela raíz, por exemplo, quanto menos ponteiros de memória, manegamento de recursos de memória ou qualquer outra coisa que não seja relacionada com o problema que estamos resolvendo podermos evitar, melhor. OCaml ajuda a minimizar esse tipo de problema da complexidade acidental para que possamos focar na Complexidade Essencial que é o desafio que precisamos verdadeiramente resolver.
 
 Aqui temos um exemplo do algoritmo Quicksort em OCaml:
 <!--
