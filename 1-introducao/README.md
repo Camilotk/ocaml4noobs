@@ -29,9 +29,9 @@ Seu principal diferencial que tem trazido notoriedade e popularidade para a ling
 
 ## História do OCaml
 
-OCaml oficialmente nasceu em 1996, quando os cientistas da computação [Didier Rémy](http://cristal.inria.fr/~remy/) e [Jérôme Vouillon](https://www.irif.fr/~vouillon/) do [Instituto Nacional de Pesquisa em Informática e Automação (INRIA)](https://www.inria.fr/en) na França decidiram adicionar Orientação a Objetos à linguagem Caml que também havia sido criada no INRIA em 1987 por [Gérard Huet](http://cristal.inria.fr/~huet/). O nome da linguagem Caml também tem um significado importante para entendermos sobre a história de OCaml e suas particularidades, Caml é uma abreviação de *Categorical Abstract Machine Languge* que combina as implementações de uma [Máquina Abstrata Categórica](https://pt.xcv.wiki/wiki/Categorical_abstract_machine) implementada em uma linguagem derivada de [ML](https://pt.wikipedia.org/wiki/ML_(linguagem_de_programa%C3%A7%C3%A3o)).
+OCaml oficialmente nasceu em 1996, quando os cientistas da computação [Didier Rémy](http://cristal.inria.fr/~remy/) e [Jérôme Vouillon](https://www.irif.fr/~vouillon/) do [Instituto Nacional de Pesquisa em Informática e Automação (INRIA)](https://www.inria.fr/en) na França decidiram adicionar Orientação a Objetos à linguagem Caml que também havia sido criada no INRIA em 1987 por [Gérard Huet](http://cristal.inria.fr/~huet/). O nome da linguagem Caml também tem um significado importante para entendermos sobre a história de OCaml e suas particularidades, Caml é uma abreviação de *Categorical Abstract Machine Language* que combina as implementações de uma [Máquina Abstrata Categórica](https://pt.xcv.wiki/wiki/Categorical_abstract_machine) implementada em uma linguagem derivada de [ML](https://pt.wikipedia.org/wiki/ML_(linguagem_de_programa%C3%A7%C3%A3o)).
 
-A introdução de Objetos em OCaml possibilitou muitos avanços, Orientação Objetos ainda era um paradigma muito recente (C++ havia sido criada apenas dez anos antes) isso foi importante para pesquisas de sistemas de objetos em linguagens funcionais estaticamente tipadas e com inferência de tipos, além de permitir melhor interop com linguagens OOP como C++ e Java e trazer novas funcionalidades e mudanças de sintaxe em relação a Caml.
+A introdução de Objetos em OCaml possibilitou muitos avanços, Orientação a Objetos ainda era um paradigma muito recente (C++ havia sido criada apenas dez anos antes) isso foi importante para pesquisas de sistemas de objetos em linguagens funcionais estaticamente tipadas e com inferência de tipos, além de permitir melhor interoperabilidade com linguagens OOP como C++ e Java e trazer novas funcionalidades e mudanças de sintaxe em relação a Caml.
 
 No ano de 2000, OCaml recebeu muitas atualizações com novas funcioanlidades vindas dos estudos do Cientista da Computação [Jacques Garrigue](https://www.math.nagoya-u.ac.jp/~garrigue/) entre elas *optional arguments*, *polymorphic variants*, *variance annotations* e *polymorphic methods*. Desde o ínicio dos anos 2000 OCaml tem atraído popularidade e crescido no número de Universidades que adotam a linguagem para lecionar em diversas matérias, entre elas Harvard, Princeton, Brown, Columbia, Cornell, Universidade da Califórina, Universidade de Ilinois, UPenn, Universidade da Beira Interior (Portugal), Universidade de Rennes (França) e Universidade Paris-Diderot (França).
 
@@ -117,7 +117,7 @@ E agora vamos para nosso primeiro exemplo.
 Assim como diz a [lenda da maldição do programador](https://www.urbandictionary.com/define.php?term=The%20Programmer%27s%20Curse) o primeiro programa escrito em uma nova linguagem de programação deve ser o que imprime a mensagem "Hello World" na tela, ou um grande azar vai te perseguir enquanto você usar a linguagem te fazendo sofrer com muitos erros. Como estamos falando de maldições ancestrais, vamos começar pela implementação desse programa.
 
 Para isso vamos precisar:
-- De um editor de texto minimamente descente (nada de Notepad no Windows)
+- De um editor de texto minimamente decente (nada de Notepad no Windows)
 - Um terminal
 
 Vamos começar criando nosso projeto, para isso vamos criar uma nova pasta com o nome do projeto e entrar nela:
@@ -339,7 +339,7 @@ Observe o quanto o algoritmo em OCaml é próximo da definição original do alg
  - Dos items maiores que x
 3. Então o grupo menor é ordenado recursivamente, o maior também é ordenado recursivamente e ambos são concatenados com o item x (o primeiro item da lista ou head, retirado através de patter match em x :: xs, que seria o mesmo que head :: tail) no meio -> [menores. x. maiores]
 
-Na primeira linha temos a palavra <u>rec</u> que é uma abreviação para 'recursive' (recursivo) que informa o compilador que essa função pode ter que chamar a si mesma, isso é um exemplo de complexidade acidental que ainda se mantêm em OCaml uma vez que não tem motivo lógico ou matemático para que esse comando esteja ali uma vez em que logicamente e matematicamente todas as funções devem ser capazes de chamarem a si mesmas, porém por razoẽs externas ao problema que estamos resolvendo precisamos informar ao compilador de OCaml que essa função pode ter que chamar a si mesmma.
+Na primeira linha temos a palavra <u>rec</u> que é uma abreviação para 'recursive' (recursivo) que informa o compilador que essa função pode ter que chamar a si mesma, isso é um exemplo de complexidade acidental que ainda se mantêm em OCaml uma vez que não tem motivo lógico ou matemático para que esse comando esteja ali uma vez em que logicamente e matematicamente todas as funções devem ser capazes de chamarem a si mesmas, porém por razoẽs externas ao problema que estamos resolvendo precisamos informar ao compilador de OCaml que essa função pode ter que chamar a si mesma.
 
 Um contraste com o mesmo algortimo, mas agora em C++:
 ```C++
@@ -407,7 +407,7 @@ numbers.add(4);
 ```
 A versão idiomática em linguagens imperativas como Java é diferente: o valor de numbers pode ser modificado a qualquer hora. 
 
-Isso é uma mudança fundamental ao siginificado do operador de igualdade, em OCaml o operador de igualdade tem um significado próximo do operador matemático de igualdade que é que o identificador numbers contêm um conjunto de números 3,2,1 e já em Java o operador de igualdade significa que um número arbitrário de números é dado, com os valores temporários 1,2,3. 
+Isso é uma mudança fundamental ao significado do operador de igualdade, em OCaml o operador de igualdade tem um significado próximo do operador matemático de igualdade que é que o identificador numbers contêm um conjunto de números 3,2,1 e já em Java o operador de igualdade significa que um número arbitrário de números é dado, com os valores temporários 1,2,3. 
 
 Em Java numbers não é a lista 1,2,3 é apenas um identificador que aponta para esses valores momentaneamente e é esse acoplamento temporal de um indentificador ao seu(s) valor(es) que faz com que esse tipo de código seja perigoso, já que em Java não basta saber que esse identificador numbers é atrelado a esses valores, é necessário também saber todas as alterações feitas nesse valor para conseguir saber seu valor no atual momento. No modelo de OCaml o identificador numbers não pode ser alterado, então é seguro assumir a qualquer momento que o valor de numbers é 3,2,1.
 
