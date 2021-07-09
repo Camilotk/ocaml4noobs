@@ -8,7 +8,7 @@
 
 Certo, agora você sabe o que é OCaml, então agora vamos para a instalação da linguagem e suas ferramentas básicas para que possamos compilar e executar nossos programas.
 
-> Importante notar que apesar existir suporte de OCaml para Windows é aconselhável que utilize o [Windows Subsistem for Linux (WSL)](https://docs.microsoft.com/pt-br/windows/wsl/install-win10) para programar em OCaml.
+> Importante notar que apesar existir suporte de OCaml para Windows é aconselhável que utilize o [Windows Subsistem for Linux (WSL)](https://github.com/SaLandini/wsl4noobs) para programar em OCaml.
 
 
 1. Abra seu terminal da sua distro preferida, nesse caso vamos utilizar o package manager dnf como exemplo já que os testes foram feitos através dele, mas caso esteja no Ubuntu / Debian use o apt, caso OpenSUSE zypper, Arch / Manjaro pacman... para instalar o OCaml Package Manager (OPAM).
