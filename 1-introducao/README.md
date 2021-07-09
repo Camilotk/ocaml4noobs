@@ -65,7 +65,7 @@ E agora vamos para nosso primeiro exemplo.
 
 ## Hello World
 
-Assim como Dennis Ritchie e Brian Kernighan popularizaram em "The C Programming Language", o primeiro programa escrito em uma nova linguagem de programação deve ser o que imprime a mensagem "Hello World" na tela, ou um grande azar vai te perseguir enquanto você usar a linguagem te fazendo sofrer com muitos erros. Como estamos falando de Dennis e Brian que são magos da Computação, vamos evitar lidar com magias ancentrais e começar pela implementação desse programa.
+Assim como [Dennis Ritchie](https://pt.wikipedia.org/wiki/Dennis_Ritchie) e [Brian Kernighan](https://pt.wikipedia.org/wiki/Brian_Kernighan) popularizaram em "The C Programming Language", o primeiro programa escrito em uma nova linguagem de programação deve ser o que imprime a mensagem "Hello World" na tela, ou um grande azar vai te perseguir enquanto você usar a linguagem te fazendo sofrer com muitos erros. Como estamos falando de Dennis e Brian que são os Magos da Computação, vamos evitar lidar com magias ancentrais e começar pela implementação desse programa.
 
 Para isso vamos precisar:
 - De um editor de texto minimamente descente (nada de Notepad no Windows)
