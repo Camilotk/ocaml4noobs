@@ -427,13 +427,13 @@ Separando dados e funções dessa forma nós garantimos que nossas dependências
 ## Referências
 - [Install OCaml](https://OCaml.org/docs/install.html)
 - [How to install opam](https://opam.OCaml.org/doc/Install.html)
+- [Dune Quickstart](https://dune.readthedocs.io/en/stable/quick-start.html)
 - [Caml Language History](https://caml.inria.fr/about/history.en.html)
 - [OCaml - Wikipédia](https://pt.wikipedia.org/wiki/OCaml)
-- [Dune Quickstart](https://dune.readthedocs.io/en/stable/quick-start.html)
 
 ## Materiais em Inglês para aprender OCaml
 - [Real World OCaml](https://dev.realworldocaml.org/toc.html)
-- [OCaml Manual](https://ocaml.org/manual/)
-- [janestreet/learn-ocaml-workshop](https://github.com/janestreet/learn-ocaml-workshop)
 - [Functional Programming in OCaml](https://www.cs.cornell.edu/courses/cs3110/2019sp/textbook/)
 - [99 Problems](https://ocaml.org/learn/tutorials/99problems.html)
+- [OCaml Manual](https://ocaml.org/manual/)
+- [janestreet/learn-ocaml-workshop](https://github.com/janestreet/learn-ocaml-workshop)
