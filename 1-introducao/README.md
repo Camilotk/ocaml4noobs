@@ -378,7 +378,7 @@ Com isso podemos ver que em C++ (ou qualquer outra linguagem imperativa como Jav
 
 ### Inferência de Tipos
 
-Sendo OCaml derivado de ML, a linguagem usa o Sistema de Tipos [Hindley-Milner]https://en.wikipedia.org/wiki/Hindley%E2%80%93Milner_type_system() que permite uma inferência de tipos excelente em que 99% do tempo você não precisa dizer ao compilador o tipo das variáveis ou dos dados e que acrescenta outras particularidades que vamos ver mais a frente. 
+Sendo OCaml derivado de ML, a linguagem usa o Sistema de Tipos [Hindley-Milner](https://en.wikipedia.org/wiki/Hindley%E2%80%93Milner_type_system) que permite uma inferência de tipos excelente em que 99% do tempo você não precisa dizer ao compilador o tipo das variáveis ou dos dados e que acrescenta outras particularidades que vamos ver mais a frente. 
 
 > Inferência de tipos é a propriedade de um Sistema de Tipos que permite ao compilador deduzir - inferir - o tipo de uma variável a partir de seu valor ou expressão. Isso significa que o programador fica livre da obrigação de estar sempre especificando o tipo da variável.
 
