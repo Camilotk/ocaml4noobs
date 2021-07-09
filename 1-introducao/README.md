@@ -355,3 +355,9 @@ Com isso podemos ver que em C++ (ou qualquer outra linguagem imperativa como Jav
 - [How to install opam](https://opam.OCaml.org/doc/Install.html)
 - [Caml Language History](https://caml.inria.fr/about/history.en.html)
 - [OCaml - Wikipédia](https://pt.wikipedia.org/wiki/OCaml)
+
+## Materiais em Inglês para aprender OCaml
+- [Real World OCaml](https://dev.realworldocaml.org/toc.html)
+- [OCaml Manual](https://ocaml.org/manual/)
+- [janestreet/learn-ocaml-workshop](https://github.com/janestreet/learn-ocaml-workshop)
+- [Functional Programming in OCaml](https://www.cs.cornell.edu/courses/cs3110/2019sp/textbook/)
