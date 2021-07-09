@@ -296,7 +296,6 @@ Um contraste com o mesmo algortimo, mas agora em C++:
 #include <vector>
 #include <stdlib.h>
 
-
 using std::vector;
 using std::cout;
 using std::endl;
