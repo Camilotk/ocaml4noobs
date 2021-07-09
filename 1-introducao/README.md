@@ -386,13 +386,13 @@ Como vimos no nosso exemplo anterior:
 ```ocaml
 let double_num x = x * 2 
 ```
-Não precisamos informar que x é um parâmtro do tipo inteiro e nem que a função double_num retorna um inteiro, porém se executarmos essa função no repl vamos ter a assinatura desse método inferida como `val double_num : int -> int = <fun>` nos mostrando que o compilador sabe exatamente disso tudo e é capaz de fazer o trabalho de especificar o tipo das nossas variáveis e do retorno da nossa função para nós.
+Não precisamos informar que x é um parâmetro do tipo inteiro e nem que a função double_num retorna um inteiro, porém se executarmos essa função no repl vamos ter a assinatura desse método inferida como `val double_num : int -> int = <fun>` nos mostrando que o compilador sabe exatamente disso tudo e é capaz de fazer o trabalho de especificar o tipo das nossas variáveis e do retorno da nossa função para nós.
 
 Mas como isso é possível? Que tipo de bruxaria é essa? Bem, na verdade o operador `*` é uma função que aceita dois parâmetros inteiros e retorna um inteiro, logo o compilador sabe que x sendo um dos parâmetros de  `*` é um valor de tipo inteiro e que double_num retorna o reultado de `*` que é um inteiro e por tanto tem o mesmo tipo de retorno. Interessante, não?
 
 ### Imutabilidade
 
-OCaml favorece que os dados sejam imutáveis. Imutabilidade significa que valores uma vez criados não podem ser alterados e que identificadores uma vez atrimbuidos não podem ser mudados. Por isso, quando precisamos mudar um valor, é necessário criar um novo valor baseado no valor anterior. 
+OCaml favorece que os dados sejam imutáveis. Imutabilidade significa que valores uma vez criados não podem ser alterados e que identificadores uma vez atribuidos não podem ser mudados. Por isso, quando precisamos mudar um valor, é necessário criar um novo valor baseado no valor anterior. 
 
 Como no nosso código abaixo, a lista numbers com os valores [3..1] é diferente de moreNumbers que tem os valores de [4..1] atualizados. Note que a lista origninal não é alterada, pois valores imutáveis nunca são mudados. Imutabilidade tem um grande número de efeitos colaterais positivos, incluindo execução asíncrona segura e maior facilidade de entender a lógica de funções.
 
@@ -405,7 +405,7 @@ let moreNumbers = 4 :: numbers
 var numbers = new ArrayList<int> {1,2,3};
 numbers.add(4);
 ```
-A versão idiomática em linguagens imperativas como Java é diferente o valor de numbers pode ser modificado a qualquer hora. 
+A versão idiomática em linguagens imperativas como Java é diferente: o valor de numbers pode ser modificado a qualquer hora. 
 
 Isso é uma mudança fundamental ao siginificado do operador de igualdade, em OCaml o operador de igualdade tem um significado próximo do operador matemático de igualdade que é que o identificador numbers contêm um conjunto de números 3,2,1 e já em Java o operador de igualdade significa que um número arbitrário de números é dado, com os valores temporários 1,2,3. 
 
