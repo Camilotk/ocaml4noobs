@@ -38,7 +38,7 @@ OCaml também influenciou muitas outras linguagens como Rust e Scala, mas em esp
 
 Outro ponto importante para OCaml aconteceu em 2016 quando Jodan Walke, criador da biblioteca React e na época Engenheiro no Facebook criou a extensão de sintaxe ReasonML para OCaml (que não vamos tratar nesse 4noobs, mas caso tenha curiosidade a comunidade ReasonBR tem uma [lista de materiais](https://github.com/rescriptbr/comece-aqui) a respeito). ReasonML permite escrever OCaml com uma sintaxe muito próxima do que normalmente programadores JavaScript (e de supersets como TypeScript) e transpilar essa sintaxe para OCaml onde pode ser usada para gerar binários nativos ou transpilar para JavaScript utilizando o transpilador BuckleScript onde pode ser usada para constuir aplicações front-end e interagir com o ecossistema JS. Em 2020 o time de desenvolvimento do BuckleScript decidiu criar a linguagem [ReScript](https://rescript-lang.org/blog/bucklescript-is-rebranding) e o projeto BuckleScript recebeu um fork chamado [Melange](https://github.com/melange-re) feito por [Antonio Monteiro](https://github.com/anmonteiro) na qual é a forma atual de fazer a transpilação de OCaml ou ReasonML para JavaScript e que se mantêm em desenvolvimento e aperfeiçoamento.
 
-Resumo e Linha do Tempo:
+##### Resumo e Linha do Tempo:
 - **1973**: [Robin Milner](https://en.wikipedia.org/wiki/Robin_Milner) criou a linguagem de programação [ML](https://en.wikipedia.org/wiki/ML_(programming_language)) que trouxe programação funcional com tipagem estática e inferência de tipos.
 - **1980**: surge Smalltalk criada por Alan Kay e torna-se público os conceitos de Orientação a Objetos.
 - **1987**: É criada a linguagem Caml.
