@@ -337,7 +337,7 @@ Observe o quanto o algoritmo em OCaml é próximo da definição original do alg
 2. Quando a função recebe um valor ela divide o restante dos valores em dois grupos:
  - Dos items menores que x
  - Dos items maiores que x
-3. Então o grupo menor é ordenado recursivamente, o maior também é ordenado recursivamente e ambos são concatenados com o item x no meio -> [menores. x. maiores]
+3. Então o grupo menor é ordenado recursivamente, o maior também é ordenado recursivamente e ambos são concatenados com o item x (o primeiro item da lista ou head, retirado através de patter match em x :: xs, que seria o mesmo que head :: tail) no meio -> [menores. x. maiores]
 
 Na primeira linha temos a palavra <u>rec</u> que é uma abreviação para 'recursive' (recursivo) que informa o compilador que essa função pode ter que chamar a si mesma, isso é um exemplo de complexidade acidental que ainda se mantêm em OCaml uma vez que não tem motivo lógico ou matemático para que esse comando esteja ali uma vez em que logicamente e matematicamente todas as funções devem ser capazes de chamarem a si mesmas, porém por razoẽs externas ao problema que estamos resolvendo precisamos informar ao compilador de OCaml que essa função pode ter que chamar a si mesmma.
 
