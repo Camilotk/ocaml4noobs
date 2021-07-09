@@ -23,7 +23,7 @@
 - [Hello World](https://github.com/Camilotk/ocaml4noobs/tree/master/1-introducao#hello-world)
 - [Porque OCaml?](https://github.com/Camilotk/ocaml4noobs/tree/master/1-introducao#porque-ocaml)
 	- [Concisa e Declarativa](https://github.com/Camilotk/ocaml4noobs/tree/master/1-introducao#concisa-e-declarativa)
-  - [Lingugens Concisas vs Verbosas](https://github.com/Camilotk/ocaml4noobs/tree/master/1-introducao#lingugens-concisas-vs-verbosas)
+  	- [Lingugens Concisas vs Verbosas](https://github.com/Camilotk/ocaml4noobs/tree/master/1-introducao#lingugens-concisas-vs-verbosas)
 	- [Menos Erros Acidentais](https://github.com/Camilotk/ocaml4noobs/tree/master/1-introducao#menos-erros-acidentais)
 - [Particularidades de OCaml](https://github.com/Camilotk/ocaml4noobs/tree/master/1-introducao#particularidades-de-ocaml)
 	- [Inferência de Tipos](https://github.com/Camilotk/ocaml4noobs/tree/master/1-introducao#infer%C3%AAncia-de-tipos)
