@@ -1,4 +1,7 @@
 # OCaml4Noobs
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 <h1 align="center">
   <img src="./images/colour-logo.png" alt="ocaml" width="240">
@@ -30,3 +33,23 @@
 	- [Imutabilidade](https://github.com/Camilotk/ocaml4noobs/tree/master/1-introducao#imutabilidade)
 	- [Dados e Operações](https://github.com/Camilotk/ocaml4noobs/tree/master/1-introducao#dados-e-opera%C3%A7%C3%B5es)
 - [Materiais em Inglês para aprender OCaml](https://github.com/Camilotk/ocaml4noobs/tree/master/1-introducao#materiais-em-ingl%C3%AAs-para-aprender-ocaml)
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/Camilotk"><img src="https://avatars.githubusercontent.com/u/30880723?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Camilo Cunha de Azevedo</b></sub></a><br /><a href="#content-Camilotk" title="Content">🖋</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
