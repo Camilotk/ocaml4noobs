@@ -1,8 +1,6 @@
 # Capítulo 1 - Introdução
 
 ## Índice
-
-## Parte 1 - Introdução
 - [O que é OCaml?](https://github.com/Camilotk/ocaml4noobs/tree/master/1-introducao#o-que-%C3%A9-ocaml)
 - [História do OCaml](https://github.com/Camilotk/ocaml4noobs/tree/master/1-introducao#hist%C3%B3ria-do-ocaml)
   - [Resumo e Linha do Tempo](https://github.com/Camilotk/ocaml4noobs/tree/master/1-introducao#resumo-e-linha-do-tempo)
