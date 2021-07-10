@@ -34,9 +34,9 @@
 	- [Dados e Operações](https://github.com/Camilotk/ocaml4noobs/tree/master/1-introducao#dados-e-opera%C3%A7%C3%B5es)
 - [Materiais em Inglês para aprender OCaml](https://github.com/Camilotk/ocaml4noobs/tree/master/1-introducao#materiais-em-ingl%C3%AAs-para-aprender-ocaml)
 
-## Contributors ✨
+## Contribuidores ✨
 
-Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+Nosso agradecimento a todas essas pessoas ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
@@ -53,4 +53,4 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+Esse projeto segue a especificação do [all-contributors](https://github.com/all-contributors/all-contributors). Contribuições de todos os tipos são bem-vindas!
