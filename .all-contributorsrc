@@ -21,6 +21,15 @@
         "maintenance",
         "mentoring"
       ]
+    },
+    {
+      "login": "eduardocanellas",
+      "name": "Eduardo Canellas de Oliveira",
+      "avatar_url": "https://avatars.githubusercontent.com/u/34381457?v=4",
+      "profile": "https://github.com/eduardocanellas",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "contributorsPerLine": 7

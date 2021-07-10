@@ -1,6 +1,6 @@
 # OCaml4Noobs
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 <h1 align="center">
@@ -44,6 +44,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <table>
   <tr>
     <td align="center"><a href="https://github.com/Camilotk"><img src="https://avatars.githubusercontent.com/u/30880723?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Camilo Cunha de Azevedo</b></sub></a><br /><a href="#content-Camilotk" title="Content">🖋</a> <a href="https://github.com/Camilotk/OCaml4Noobs/commits?author=Camilotk" title="Code">💻</a> <a href="#maintenance-Camilotk" title="Maintenance">🚧</a> <a href="#mentoring-Camilotk" title="Mentoring">🧑‍🏫</a></td>
+    <td align="center"><a href="https://github.com/eduardocanellas"><img src="https://avatars.githubusercontent.com/u/34381457?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Eduardo Canellas de Oliveira</b></sub></a><br /><a href="#content-eduardocanellas" title="Content">🖋</a></td>
   </tr>
 </table>
 
