@@ -11,7 +11,8 @@ O Visual Studio Code é uma editor de texto extensível através de inúmeras ex
     2. Procure a extensão `Portuguese (Brazil) Language Pack for Visual Studio Code` e clique em `install`.
     ![Imagem mostrando como encontrar e instalar a extensão para traduzir a IDE](https://github.com/Camilotk/ocaml4noobs/blob/intermezzo-1/1I%20-%20ferramentas/imagens/passo2.png)
     3. Após a instalação será necessário reiniciar o VS Code, apenas feche e abra novamente ou clique em `restart` na caixa de diálogo que aparece.
-![Imagem mostrando como reiniciar a IDE após a instalação da tradução](https://github.com/Camilotk/ocaml4noobs/blob/intermezzo-1/1I%20-%20ferramentas/imagens/passo3.png)
+    ![Imagem mostrando como reiniciar a IDE após a instalação da tradução](https://github.com/Camilotk/ocaml4noobs/blob/intermezzo-1/1I%20-%20ferramentas/imagens/passo3.png)
+
 ## Extensões
 
 Certo agora temos o Visual Studio instalado e configurado, vamos começar a instalar as extensões e ferramentas para desenvolvimento em OCaml.
@@ -20,9 +21,36 @@ Certo agora temos o Visual Studio instalado e configurado, vamos começar a inst
 ```terminal
 $ opam install ocaml-lsp-server
 ```
-2. Agora vamos instalar a extensão `OCaml Platform` da [OCaml Labs](https://ocamllabs.io/)
+2. Agora vamos instalar a extensão `OCaml Platform` da [OCaml Labs](https://ocamllabs.io/) repetindo o passo-a-passo acima ou através do atalho CRTL+P e cole `ext install ocamllabs.ocaml-platform`.
 
+3. Vamos reiniciar novamente nosso VS Code.
 
+#### Pronto!
 
-3. Vamos reiniciar nosso VS Code.
+## Atalhos Úteis
 
+### Navegação
+
+| Atalho       | Comando                                           | OBS                                                                |
+|--------------|---------------------------------------------------|--------------------------------------------------------------------|
+| CTRL+SHIFT+e | Abre/Oculta o menu de arquivos                    |                                                                    |
+| CTRL+b       | Oculta/Abre o explorer de arquivos (menu lateral) | Pode ser necessario usar o comando acima para ter foco no explorer |
+| CTRL+SHIFT+f | Abre o menu de pesquisa no projeto                |                                                                    |
+| CTRL+SHIFT+g | Abre o menu do Git                                |                                                                    |
+| CTRL+SHIFT+d | Abre o menu de depuraçao/debugging                |                                                                    |
+| CTRL+SHIFT+x | Abre o menu de extensoes                          |                                                                    |
+
+### Edição
+
+| Atalho                 | Comando                                                   |
+|------------------------|-----------------------------------------------------------|
+| CTRL+SHIFT+(ALT)¹+DOWN | Duplica a linha atual                                     |
+| CTRL+SHIFT+k           | Deleta linha atual                                        |
+| CTRL+g                 | Vai para linha : n                                        |
+| CTRL+ENTER             | Move o cursor para uma nova linha abaixo                  |
+| CTRL+SHIFT+O           | Navega por objetos (search por nomes e assinaturas)       |
+| CTRL+SHIFT+`           | Abre/Oculta o terminal integrado                          |
+| CTRL+SHIFT+direçao     | Seleciona palavra por palavra ao inves de letra por letra |
+| CTRL+HOME              | Vai para o inicio do arquivo                              |
+| CTRL+END               | Vai para o final do arquivo                               |
+(*Você pode conferir todos os atalhos usando CTRL+K CTRL+S em sequência*)
