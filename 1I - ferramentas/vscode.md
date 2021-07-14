@@ -26,6 +26,7 @@ $ opam install ocaml-lsp-server
 3. Vamos reiniciar novamente nosso VS Code.
 
 #### Pronto!
+Agora é só abrir seu projeto `hello world` que criamos no último capítulo e ao editar `main.ml` deve perceber que agora dispõe de checagem de erros e autocomplete para OCaml.
 
 ## Atalhos Úteis
 
