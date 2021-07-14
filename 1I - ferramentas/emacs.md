@@ -1,5 +1,4 @@
-# IDE: Spacemacs
-
+# IDE: Emacs
 O Emacs para alguns é o melhor editor de texto extensível devido a sua poderosa linguagem de extensão EMACS Lisp e seu grande número de aplicações internas e integradas. Caso deseje se aventurar pelo mundo do Emacs recomendamos que começe através da pré-configuração Spacemacs, que automaticamente nos ajuda a confirgurar nosso ambiente de trabalho sem termos que fazer muitas configurações manuais.
 
 ## Instalação
