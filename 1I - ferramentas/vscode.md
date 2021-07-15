@@ -11,6 +11,7 @@ O Visual Studio Code é uma editor de texto extensível através de inúmeras ex
     2. Procure a extensão `Portuguese (Brazil) Language Pack for Visual Studio Code` e clique em `install`.
     ![Imagem mostrando como encontrar e instalar a extensão para traduzir a IDE](https://github.com/Camilotk/ocaml4noobs/blob/intermezzo-1/1I%20-%20ferramentas/imagens/passo2.png)
     3. Após a instalação será necessário reiniciar o VS Code, apenas feche e abra novamente ou clique em `restart` na caixa de diálogo que aparece.
+    
     ![Imagem mostrando como reiniciar a IDE após a instalação da tradução](https://github.com/Camilotk/ocaml4noobs/blob/intermezzo-1/1I%20-%20ferramentas/imagens/passo3.png)
 
 ## Extensões
