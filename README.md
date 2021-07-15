@@ -32,6 +32,11 @@
 	- [Dados e Operações](https://github.com/Camilotk/ocaml4noobs/tree/master/1-introducao#dados-e-opera%C3%A7%C3%B5es)
 - [Materiais em Inglês para aprender OCaml](https://github.com/Camilotk/ocaml4noobs/tree/master/1-introducao#materiais-em-ingl%C3%AAs-para-aprender-ocaml)
 
+## Intermezzo 1: Ferramentas
+- [VS Code](https://github.com/Camilotk/ocaml4noobs/blob/master/1I%20-%20ferramentas/vscode.md)
+- [Emacs](https://github.com/Camilotk/ocaml4noobs/blob/master/1I%20-%20ferramentas/emacs.md)
+- [VIM](https://github.com/Camilotk/ocaml4noobs/blob/master/1I%20-%20ferramentas/vim.md)
+
 <p align="center">Made with 🐫</p>
 
 ## Contribuidores ✨
