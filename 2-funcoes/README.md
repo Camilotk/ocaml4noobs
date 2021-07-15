@@ -44,5 +44,29 @@ Ou em OCaml:
 ```ocaml
 let f x = 2 * x
 ```
+
 > **Obs**: Na matemática é comum representarmos em equações simples o nome das funções como y(x) ou f(x), mas podemos também nomea-las como linear(x),  onde linear (x) = 2 * x.
 > O mesmo acontece em OCaml onde é mais fácil trabalharmos como **let linear x = 2 * x**.
+
+
+As definições de função em OCaml começam com a palavra reservada **let**, seguida pelo identificador (nome da função), a lista de argumentos (que no caso acima é apenas um, mas poderiam ser múltiplos) e aqui acaba o lado esquerdo da equação, então temos o sinal de igual e o lado direito da equação que é a função em si que no exemplo acima apenas dobra o valor que é passado.
+
+Se observarmos o gráfico gerado pela nossa função vamos lembrar da definição de que uma entrada sempre produz uma mesma saída. De forma visual isso significa que desenhamos uma linha no gráfico, onde cada valor recebe um ponto específico de saída. OCaml não requer que sejamos rigorosos com a definição matemática (como em outras linguagens por ex. Haskell), mas espera que façamos isso sempre que possível porque isso irá nos ajudar a criar programas simples, corretos e funcionais.
+
+### Funções Quadráticas
+
+Existem outro tipo de função, não-linear, denominadas de funções quadráticas.
+
+Na Matemática:
+```
+f(x) = x^2
+```
+
+ou em F#:
+```F#
+let f x = x ** 2
+```
+
+E que produz o gráfico:
+
+![gráfico da função f de x igual a x elevado a 2](https://github.com/Camilotk/ocaml4noobs/blob/capitulo-2/2-funcoes/imagens/quadratico.png)
