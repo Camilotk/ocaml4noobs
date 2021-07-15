@@ -62,8 +62,8 @@ Na Matemática:
 f(x) = x^2
 ```
 
-ou em F#:
-```F#
+ou em OCaml:
+```OCaml
 let f x = x ** 2
 ```
 
