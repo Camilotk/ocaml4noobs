@@ -11,9 +11,6 @@
   <a href="https://opensource.org/licenses/MIT">
     <img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License MIT">
   </a>
-  <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-    [![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
-  <!-- ALL-CONTRIBUTORS-BADGE:END -->
 </p>
 
 ## ROADMAP
@@ -39,6 +36,8 @@
 - [VS Code](https://github.com/Camilotk/ocaml4noobs/blob/master/1I%20-%20ferramentas/vscode.md)
 - [Emacs](https://github.com/Camilotk/ocaml4noobs/blob/master/1I%20-%20ferramentas/emacs.md)
 - [VIM](https://github.com/Camilotk/ocaml4noobs/blob/master/1I%20-%20ferramentas/vim.md)
+
+<p align="center">Made with 🐫</p>
 
 ## Contribuidores ✨
 
