@@ -195,3 +195,44 @@ E retorna um valor:
 - Uma lista de tipo 'b
 
 Assim é possível que já saibamos que provavelmente a função map receba uma lista de valores do tipo 'a, aplique a função em que transforma o tipo 'a em 'b e então retorne uma lista do tipo 'b. Isso tudo apenas lendo a assinatura da função.
+
+## Curying 
+
+Para trabalhar efetivamente com as funções e sintaxe de F# é necessário que você compreenda dois conceitos relacionados, **curying** e **aplicação parcial de funções** (partial function application). Olhe para a definição da nossa função distancia novamente:
+```ocaml
+let distancia x y = x - y |> abs;;
+(* val distancia : int -> int -> int = <fun> *)
+```
+Olhando para a assinatura da função é possível percebermos que não existe nenhuma diferença entre os argumentos e o retorno da função. Todos os três são representados como tipos com flechas entre eles e isso tem uma lógica, podemos pensar distancia como uma função de dois inteiros para um terceiro inteiro **ou** podemos pensar como uma aplicação de função de um inteiro para uma segunda função que recebe um inteiro e retorna um inteiro, assim:
+```ocaml
+ x:int -> (y:int -> int)
+```
+Efetivamente quando temos uma função com múltiplos argumentos podemos passar todos os argumentos de uma vez só ou podemos passar um de cada vez. Com curying isso não faz diferença, aplicando algumas, mas não todas as partes de uma função é chamado de aplicação parcial de funções.
+
+Por ex:
+```ocaml
+(* temos uma função que recebe dois argumentos x e y *)
+let distancia x y = x - y |> abs;;
+(* val distancia : int -> int -> int = <fun> *)
+
+(* porem podemos "prender" um de seus argumentos em apenas um valor *)
+let distanciaDe5 = distancia 5;;
+(* val distanciaDe5 : int -> int = <fun> *)
+
+(* perceba que a assinatura ficou de inteiro para inteiro, isso acontece porque o
+   primeiro valor já foi aplicado *)
+
+(* e agora podemos chamar essa função passando o segundo argumento de distancia *)
+distanciaDe5 1;;
+(* - : int = 4 *)
+```
+Podemos também demonstrar isso explicitamente quando chamamos uma função com múltiplos parâmetros:
+```ocaml
+(distancia 5) 6;;
+(* - : int = 1 *)
+```
+Nesse caso o primeiro parênteses retorna uma função com o primeiro parâmetro aplicado, então essa função recebe o segundo valor. Podemos dizer que isso é exatamente equivalente a chamada sem parênteses, ou seja:
+```ocaml
+((distancia 5) 6) = (distancia 5 6);;
+(* - : bool = true *)
+```
