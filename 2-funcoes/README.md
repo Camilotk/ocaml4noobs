@@ -14,7 +14,7 @@ Em OCaml e em outras linguagens de programação funcional, funções são a for
     - [Funções com múltiplos argumentos](https://github.com/Camilotk/ocaml4noobs/tree/master/2-funcoes#fun%C3%A7%C3%B5es-com-m%C3%BAltiplos-argumentos)
 - [Tipos de função](https://github.com/Camilotk/ocaml4noobs/tree/master/2-funcoes#tipos-de-fun%C3%A7%C3%A3o)
     - [Função de alta ordem](https://github.com/Camilotk/ocaml4noobs/tree/master/2-funcoes#fun%C3%A7%C3%B5es-de-alta-ordem)
-- [Curying](https://github.com/Camilotk/ocaml4noobs/tree/master/2-funcoes#curying)
+- [Currying](https://github.com/Camilotk/ocaml4noobs/tree/master/2-funcoes#currying)
 - [Função em prefixo e em infixo](https://github.com/Camilotk/ocaml4noobs/tree/master/2-funcoes#fun%C3%A7%C3%A3o-em-prefixo-e-em-infixo)
     - [Defininfo funções em infixo](https://github.com/Camilotk/ocaml4noobs/tree/master/2-funcoes#definindo-fun%C3%A7%C3%B5es-em-infixo)
 - [Funções lambda](https://github.com/Camilotk/ocaml4noobs/tree/master/2-funcoes#fun%C3%A7%C3%B5es-lambda)
@@ -216,9 +216,9 @@ E retorna um valor:
 
 Assim é possível que já saibamos que provavelmente a função map receba uma lista de valores do tipo 'a, aplique a função em que transforma o tipo 'a em 'b e então retorne uma lista do tipo 'b. Isso tudo apenas lendo a assinatura da função.
 
-## Curying 
+## Currying 
 
-Para trabalhar efetivamente com as funções e sintaxe de OCaml é necessário que você compreenda dois conceitos relacionados, **curying** e **aplicação parcial de funções** (partial function application). Olhe para a definição da nossa função distancia novamente:
+Para trabalhar efetivamente com as funções e sintaxe de OCaml é necessário que você compreenda dois conceitos relacionados, **currying** e **aplicação parcial de funções** (partial function application). Olhe para a definição da nossa função distancia novamente:
 ```ocaml
 let distancia x y = x - y |> abs;;
 (* val distancia : int -> int -> int = <fun> *)
@@ -227,7 +227,7 @@ Olhando para a assinatura da função é possível percebermos que não existe n
 ```ocaml
  x:int -> (y:int -> int)
 ```
-Efetivamente quando temos uma função com múltiplos argumentos podemos passar todos os argumentos de uma vez só ou podemos passar um de cada vez. Com curying isso não faz diferença, aplicando algumas, mas não todas as partes de uma função é chamado de aplicação parcial de funções.
+Efetivamente quando temos uma função com múltiplos argumentos podemos passar todos os argumentos de uma vez só ou podemos passar um de cada vez. Com currying isso não faz diferença, aplicando algumas, mas não todas as partes de uma função é chamado de aplicação parcial de funções.
 
 Por ex:
 ```ocaml
@@ -498,3 +498,13 @@ let vezes2EntaoMenos1 = vezes2 >> menos1;;
 vezes2EntaoMenos1 9;;
 (* - : int = 17 *)
 ```
+## Materiais Complementares
+- [Função](https://pt.wikipedia.org/wiki/Fun%C3%A7%C3%A3o_(matem%C3%A1tica)
+- [Função Linear](https://pt.khanacademy.org/math/algebra-home/alg-linear-eq-func)
+- [Função Quadrática](https://pt.khanacademy.org/math/algebra/quadratics)
+- [Função Trigonométrica](https://pt.khanacademy.org/math/algebra-home/alg-trig-functions)
+- [Funções de primeira classe](https://pt.wikipedia.org/wiki/Fun%C3%A7%C3%A3o_de_primeira_classe)
+- [Currying e Aplicação Parcial](https://imasters.com.br/back-end/vamos-falar-sobre-currying-e-aplicacao-parcial)
+- [Notação polonesa inversa](https://pt.wikipedia.org/wiki/Nota%C3%A7%C3%A3o_polonesa_inversa)
+- [Recursividade](https://pt.wikipedia.org/wiki/Recursividade)
+- [Função composta](https://pt.wikipedia.org/wiki/Composi%C3%A7%C3%A3o_de_fun%C3%A7%C3%B5es)
