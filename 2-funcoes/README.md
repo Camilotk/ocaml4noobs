@@ -70,3 +70,27 @@ let f x = x ** 2
 E que produz o gráfico:
 
 ![gráfico da função f de x igual a x elevado a 2](https://github.com/Camilotk/ocaml4noobs/blob/capitulo-2/2-funcoes/imagens/quadratico.png)
+
+A função que declaramos aqui usa a exponenciação (\*\*) isso significa que estamos fazendo x ser elevado a 2. Essa função também atende o requisito de sempre produzir a mesma saída dada o mesma entrada.
+
+### Funções Trigonométricas
+
+Uma última forma de função que vamos dar uma olhada são as funções trigonométricas. Para nosso exemplo vamos utilizar a função Seno (sin), mas nós não precisamos declarar a função sin porque F# já traz ela definida. 
+
+Na Matemática:
+```
+sin(x)
+```
+
+ou em OCaml:
+```ocaml
+sin x
+(* Ex: sin 9. => float = 0.412118485241756594 *)
+```
+
+E que produz o gráfico:
+
+![gráfico da função seno](https://github.com/Camilotk/ocaml4noobs/blob/capitulo-2/2-funcoes/imagens/trigonometrica.png)
+
+Como podemos observar é um gráfico um tanto quanto bonito.
+
