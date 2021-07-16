@@ -499,7 +499,7 @@ vezes2EntaoMenos1 9;;
 (* - : int = 17 *)
 ```
 ## Materiais Complementares
-- [Função](https://pt.wikipedia.org/wiki/Fun%C3%A7%C3%A3o_(matem%C3%A1tica)
+- [Função](https://pt.wikipedia.org/wiki/Fun%C3%A7%C3%A3o_(matem%C3%A1tica))
 - [Função Linear](https://pt.khanacademy.org/math/algebra-home/alg-linear-eq-func)
 - [Função Quadrática](https://pt.khanacademy.org/math/algebra/quadratics)
 - [Função Trigonométrica](https://pt.khanacademy.org/math/algebra-home/alg-trig-functions)
