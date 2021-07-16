@@ -452,7 +452,7 @@ Separando dados e funções dessa forma nós garantimos que nossas dependências
 - [OCaml Manual](https://ocaml.org/manual/)
 - [janestreet/learn-ocaml-workshop](https://github.com/janestreet/learn-ocaml-workshop)
 
-#### E por enquanto, é só nos vemos no próximo Capítulo! 😉
+#### E por enquanto, é só nos vemos no [próximo Capítulo](https://github.com/Camilotk/ocaml4noobs/blob/master/2-funcoes/README.md)! 😉
 
 ## Referências
 - [Install OCaml](https://OCaml.org/docs/install.html)
