@@ -38,6 +38,25 @@
 - [Emacs](https://github.com/Camilotk/ocaml4noobs/blob/master/1I%20-%20ferramentas/emacs.md)
 - [VIM](https://github.com/Camilotk/ocaml4noobs/blob/master/1I%20-%20ferramentas/vim.md)
 
+#### Parte 2 - Funç
+- [O que é uma função](https://github.com/Camilotk/ocaml4noobs/tree/master/2-funcoes#o-que-%C3%A9-uma-fun%C3%A7%C3%A3o)
+    - [Definição](https://github.com/Camilotk/ocaml4noobs/tree/master/2-funcoes#defini%C3%A7%C3%A3o)
+    - [Funções Lineares](https://github.com/Camilotk/ocaml4noobs/tree/master/2-funcoes#fun%C3%A7%C3%B5es-lineares)
+    - [Funções Quadráticas](https://github.com/Camilotk/ocaml4noobs/tree/master/2-funcoes#fun%C3%A7%C3%B5es-quadr%C3%A1ticas)
+    - [Funções Trigonométricas](https://github.com/Camilotk/ocaml4noobs/tree/master/2-funcoes#fun%C3%A7%C3%B5es-trigonom%C3%A9tricas)
+- [Aplicando Funções](https://github.com/Camilotk/ocaml4noobs/tree/master/2-funcoes#aplica%C3%A7%C3%A3o-de-fun%C3%A7%C3%B5es)
+    - [Funções com um argumento](https://github.com/Camilotk/ocaml4noobs/tree/master/2-funcoes#fun%C3%A7%C3%B5es-com-um-argumento)
+    - [Funções com múltiplos argumentos](https://github.com/Camilotk/ocaml4noobs/tree/master/2-funcoes#fun%C3%A7%C3%B5es-com-m%C3%BAltiplos-argumentos)
+- [Tipos de função](https://github.com/Camilotk/ocaml4noobs/tree/master/2-funcoes#tipos-de-fun%C3%A7%C3%A3o)
+    - [Função de alta ordem](https://github.com/Camilotk/ocaml4noobs/tree/master/2-funcoes#fun%C3%A7%C3%B5es-de-alta-ordem)
+- [Currying](https://github.com/Camilotk/ocaml4noobs/tree/master/2-funcoes#currying)
+- [Função em prefixo e em infixo](https://github.com/Camilotk/ocaml4noobs/tree/master/2-funcoes#fun%C3%A7%C3%A3o-em-prefixo-e-em-infixo)
+    - [Defininfo funções em infixo](https://github.com/Camilotk/ocaml4noobs/tree/master/2-funcoes#definindo-fun%C3%A7%C3%B5es-em-infixo)
+- [Funções lambda](https://github.com/Camilotk/ocaml4noobs/tree/master/2-funcoes#fun%C3%A7%C3%B5es-lambda)
+- [Recursão](https://github.com/Camilotk/ocaml4noobs/tree/master/2-funcoes#recurs%C3%A3o)
+- [Canalização](https://github.com/Camilotk/ocaml4noobs/tree/master/2-funcoes#piping--canaliza%C3%A7%C3%A3o)
+- [Composição de funções](https://github.com/Camilotk/ocaml4noobs/tree/master/2-funcoes#composi%C3%A7%C3%A3o-de-fun%C3%A7%C3%B5es)
+
 <p align="center">Made with 🐫</p>
 
 ## Contribuidores ✨
