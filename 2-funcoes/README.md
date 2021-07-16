@@ -94,3 +94,104 @@ E que produz o gráfico:
 
 Como podemos observar é um gráfico um tanto quanto bonito.
 
+## Aplicação de funções
+
+A aplicação de função é o ato de aplicar as operações contidas em uma função sobre os argumentos com o objetivo de receber sua saída (resultado). Isso é um conceito fundamental de OCaml, vamos dar uma olhada em como isso funciona com funções que recebem apenas um argumento e com funções que recebem múltiplos argumentos. 
+
+### Funções com um argumento
+
+Vamos considerar a seguinte função com apenas um argumento: 
+```ocaml
+(* REPL *)
+
+let square x = x * x;;
+(* val square : int -> int = <fun> *)
+
+square 3;;
+(* - : int = 9 *)
+```
+
+> REPL (Read-Print-Evaluate-Loop) é a ferramenta para auxiliar no desenvolvimento e testar código que OCaml e outras linguagens de programação nos oferecem. Vamos utilizá-lo na maioria dos nossos exemplos para testar rapidamente o que estamos aprendendo. Para iniciar a ferramenta basta abrir o terminal do seu sistema UNIX onde instalou OCaml e digitar o comando `ocaml`
+
+Como podemos perceber para usar a nossa nova função tudo o que foi necessário foi chamá-la e passar o valor de seu argumento após um espaço. O valor de seu argumento é avaliado e então é nos retornado o valor produzido pela saída da função, nesse caso passamos 3 que foi multiplicado por seu próprio valor e então obtemos 9. 
+
+Isso pode parecer óbvio, mas começa a se tornar mais complicado quando tentamos algo como:
+```ocaml
+square 3 + 1;; (* ? *)
+```
+Pois isso significa que 3 será passado a função, ou 3 + 1 ou 4? Confuso, não? Na verdade, nesse caso, devemos usar parentêses para expressar nossa intenção de forma mais explícita e assim o interpretador conseguir fazer a operação desejada:
+
+```ocaml
+(square 3) + 1;;
+(* - : int = 10 *)
+
+square (3 + 1);;
+(* - : int = 16 *)
+```
+
+Caso não seja usado parentêses a função será aplicada como no nosso primeiro exemplo:
+```ocaml
+square 3 + 1;;
+(* - : int = 10 *)
+```
+Isso porque square é uma função com assinatura x:int -> int ou seja recebe apenas um argumento e o primeiro valor ou seja 3 será passado como argumento formando [square 3] e então o inteiro retornado pela saída dessa função, nesse caso 9 será somado ao valor 1. As funções em OCaml funcionam dessa forma porque em OCaml as aplicações de função são **associativas à esquerda** (left associative), isso significa que os parentêses se agrupam a esquerda. 
+
+A maioria das linguagens populares requerem parênteses e nesses casos isso pode não parecer importante, mas para linguagens que tem parênteses implícitos é necessário entendermos sua associatividade.  
+
+### Funções com múltiplos argumentos
+
+Quando uma função recebe múltiplos argumentos eles são colocados separados por espaço na definição da função.
+```OCaml
+let distancia x y = x - y |> abs;;
+(* val distancia : int -> int -> int = <fun> *)
+```
+Como podemos perceber a função distancia recebe dois valores x e y e retorna a distância numérica entre eles. Após calcular a diferença, passamos seu resultado para a função **abs** que nos retorna o valor absoluto da mesma.
+```ocaml
+distancia 5 3;;
+(* - : int = 2 *)
+```
+Para chamar uma função com múltiplos argumentos apenas precisamos digitar seu nome seguido dos valores correspondentes ao seu número de argumentos separados por espaços. Quando tivermos situações mais complexas como:
+```ocaml
+distancia 5 2 + 1;;
+```
+Assim como em um caso de função que recebe apenas um argumento a avaliação acontece a partir da esquerda.
+1. Temos a chamada da função distancia x:int -> y:int -> int
+2. Como é uma função que recebe dois argumentos o compilador irá procurar os próximos dois valores inteiros e aplicalos a distancia
+3. O valor de retorno de ditancia após consumir os valores inteiros como parâmetros é substituido no lugar da função e seus parâmetros.
+4. Então a operação de soma entre o valor retornado e 1
+5. E então o resultado da operação é retornado como valor da expressão
+
+> **Obs**: Para entender melhor a aplicação de funções caso queira é interessante dar uma olhada no [Aligator Eggs](http://worrydream.com/#!/AlligatorEggs) que explica
+> um pouco mais sobre aplicação de funções e associação.
+
+## Tipos de função
+
+O exemplo abaixo é uma declaração de função típica de OCaml
+```ocaml
+let quadrado x = x * x;;
+```
+E normalmente temos o seguinte retorno
+```ocaml
+val quadrado : int -> int = <fun>
+```
+Essa é nossa **assinatura da função**. Quando começamos a ler uma assinatura de função o primeiro valor que nos importa é o tipo após a última flecha que é o tipo de retorno da função e então todos os valores anteriores a última flecha são os tipos dos parâmetros que a função recebe. Essa assinatura pode ser lida como *a função quadrado recebe um parâmetro do tipo inteiro e retorna um valor do tipo inteiro*.
+
+Funcões com múltiplos argumentos funcionam da mesma forma, por exemplo a função **distancia** acima tem uma assinatura em que recebe dois inteiros e retorna um valor inteiro. 
+
+### Funções de alta ordem
+
+Funções de alta ordem são funções que recebem uma outra função como parâmetro ou que retornam uma outra função como valor de retorno. Um exemplo de função de alta ordem é a função List.map porque o seu primeiro argumento é uma função, sua assinatura é:
+```ocaml
+List.map;;
+(* - : ('a -> 'b) -> 'a list -> 'b list = <fun> *)
+```
+E além disso List.map também é uma **função polimórfica** já que 'a e 'b são tipos não-definidos (unconstrained types) que podem ser substituídos por qualquer outro tipo concreto. Esse tipo de polimorfismo é chamado de **polimorfismo paramétrico** (parametric polymorphism), isso basicamente significa que a função map pode ser usada com valores inteiros, strings, árvores, outras listas, funções ou qualquer outro tipo customizado. É um bom costume se acostumar a entender e ler tipos e assinaturas de funções pois é uma forma simplificada de conseguir rapidamente entender a implementação de uma função.
+
+Somente de ler a assinatura da função map podemos saber que ela recebe dois parâmetros:
+1. Uma função que tem um argumento de tipo 'a e retorno do tipo 'b
+2. Uma lista de tipo 'a
+
+E retorna um valor:
+- Uma lista de tipo 'b
+
+Assim é possível que já saibamos que provavelmente a função map receba uma lista de valores do tipo 'a, aplique a função em que transforma o tipo 'a em 'b e então retorne uma lista do tipo 'b. Isso tudo apenas lendo a assinatura da função.
