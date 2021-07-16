@@ -75,7 +75,7 @@ A função que declaramos aqui usa a exponenciação (\*\*) isso significa que e
 
 ### Funções Trigonométricas
 
-Uma última forma de função que vamos dar uma olhada são as funções trigonométricas. Para nosso exemplo vamos utilizar a função Seno (sin), mas nós não precisamos declarar a função sin porque F# já traz ela definida. 
+Uma última forma de função que vamos dar uma olhada são as funções trigonométricas. Para nosso exemplo vamos utilizar a função Seno (sin), mas nós não precisamos declarar a função sin porque OCaml já traz ela definida. 
 
 Na Matemática:
 ```
@@ -198,7 +198,7 @@ Assim é possível que já saibamos que provavelmente a função map receba uma 
 
 ## Curying 
 
-Para trabalhar efetivamente com as funções e sintaxe de F# é necessário que você compreenda dois conceitos relacionados, **curying** e **aplicação parcial de funções** (partial function application). Olhe para a definição da nossa função distancia novamente:
+Para trabalhar efetivamente com as funções e sintaxe de OCaml é necessário que você compreenda dois conceitos relacionados, **curying** e **aplicação parcial de funções** (partial function application). Olhe para a definição da nossa função distancia novamente:
 ```ocaml
 let distancia x y = x - y |> abs;;
 (* val distancia : int -> int -> int = <fun> *)
@@ -235,4 +235,246 @@ Nesse caso o primeiro parênteses retorna uma função com o primeiro parâmetro
 ```ocaml
 ((distancia 5) 6) = (distancia 5 6);;
 (* - : bool = true *)
+```
+## Função em prefixo e em infixo
+
+Funções em prefixo (prefix functions) é a forma regular como trabalhamos com funções e estamos acostumados, quando prefixamos colocamos o nome da função seguido de seus parâmetros:
+```ocaml
+distancia 5 2;;
+(* - : int = 3 *)
+```
+Uma função em infixo (infix function) é também por vezes chamada de operador em OCaml, usa uma ordem diferente. Uma função com dois argumentos é um caso especial em que algumas vezes faz mais sentido que o nome da função esteja entre os argumentos. Um exemplo de função que utiliza esse tipo de notação é a função +, que nos permite escrever expressões como 1 + 3.
+```ocaml
+1 + 3;;
+(* - : int = 4 *)
+```
+Se quiser usar um operador na forma em prefixo basta colocá-lo entre parênteses:
+```ocaml
+(+);;
+(* - : int -> int -> int = <fun> *)
+
+(+) 1 3;;
+(* - : int = 4 *)
+```
+Observe que o resultado em utilizar o operador em infixo ou em prefixo é o mesmo e que é possível passá-lo como função o que é particularmente útil quando é necessário passar um operador como argumento para outra função ou caso necessitamos criar uma função parcial.
+```ocaml
+(* função que retorna o próximo n / adiciona 1 *)
+let adiciona1 = (+) 1;;
+(* val adiciona1 : int -> int = <fun> *)
+
+(* ex: *)
+adiciona1 2;;
+(* - : int = 3 *)
+
+adiciona1 5;;
+(* - : int = 6 *)
+```
+Os operadores ou funções em infixo são úteis porque tornam operações binárias (que possuem dois argumentos) mais legíveis, especialmente quando temos múltiplas aplicações de função.
+```ocaml
+1 + 2 + 3;;
+(* - : int = 6 *)
+```
+Como vimos na seção anterior pela propriedade de associação a esquerda das funções em OCaml isso é o mesmo que:
+```ocaml
+(1 + 2) + 3;;
+(* - : int = 6 *)
+```
+Uma vez em que primeiro é executada a primeira função soma e o resultado da mesma é aplicado como valor na segunda função soma. Isso pode parecer irrelevante já que a adição tem a propriedade da associatividade em que a ordem em que os elementos são somados não altera o resultado. Porém se considerarmos a divisão que não possui tal propriedade é importante estarmos atento a ordem em como as funções são aplicadas.
+```ocaml
+40 / 5 / 2;;
+(* - : int = 4 *)
+
+40 / (5 / 2);;
+(* - : int = 20 *)
+```
+Caso quisessemos realizar a mesma expressão de soma acima apenas utilizando a forma em prefixo seria mais ou menos assim:
+```OCaml
+((+) ((+) 1 2) 3);;
+(* - : int = 6 *)
+```
+Isso pode parecer familiar para quem vem de um contexto como LISP, mas em geral torna mais dificil de ler a expressão que estamos escrevendo, porém é possível escrever OCaml dessa forma sem qualquer prejuízo além da legibilidade.
+
+### Definindo funções em infixo
+
+Se quiséssemos definir nossa função distancia que vimos antes como infixo basta declararmos nossos parâmetros como símbolos, ou seja não podemos ter identificadores como nomes ou com carateres alfanuméricos, apenas símbolos e o nome deve ser declarado entre parênteses.
+```ocaml
+(* função distância em infixo usando |><| como operador
+   para identificar a função. *)
+let (|><|) x y = x - y |> abs;;
+(* val ( |><| ) : int -> int -> int = <fun> *)
+
+3 |><| 2;;
+(* - : int = 1 *)
+
+(* podemos também ter múltiplas aplicações de distância *)
+3 |><| 2 |><| 6;;
+(* - : int = 5 *)
+```
+Aqui é importante lembrar que a propriedade de associação a esquerda é válida. Primeiramente temos o resultado de (3 |><| 2) que vai nos ternar 1 e então esse valor é aplicado a função juntamente ao valor 6 e temos 5 como resultado.
+
+## Funções Lambda
+
+Nem todas as funções precisam ser reutilizadas futuramente, as vezes precisamos usar uma função uma única vez e por tanto, essa função não precisa de um identificador.  As funções declaradas sem um identificador são chamadas de **Funções Anônimas**, ou então **Funções Lambda**. É de preferência quando escrevemos uma função lambda que a mesma use a sintae mais concisa possível já que elas usualmente aparecem em uma única linha.
+
+Para declararmos uma função lambda iniciamos a expressão com a palavra reservada fun, seguido dos argumentos, uma flecha -> que separa os argumentos do corpo da função e a declaração da função, ex:
+```ocaml
+List.map (fun x -> x * x) [1;2;3];;
+(* - : int list = [1; 4; 9] *)
+```
+Lambdas com múltiplos argumentos funcionam da mesma forma:
+```ocaml
+(fun x y -> x - y |> abs) 20 35;;
+(* - : int = 15 *)
+```
+Caso seja necessário especificar os tipos dos parâmetros na função lambda é necessário colocar os parâmentros entre parênteses.
+```ocaml
+(fun (x:int) (y:int) -> x - y |> abs) 20 35;;
+(* - : int = 15 *)
+```
+
+## Recursão
+
+Uma função recursiva é uma função que contêm uma chamada a si mesma. Por exemplo, a função tamanho abaixo que retorna o temanho de uma lista é recursiva. Podemos observar primeiramente pela palavra **rec** que indica para o compilador do OCaml que essa função é recursiva e que é necessário que ele faça optimizações para esse caso e também podemos observar que na terceira linha a função chama a si mesma.
+```OCaml
+let rec tamanho = function
+    | [] -> 0
+    | x::xs -> 1 + tamanho xs;;
+(* val tamanho : 'a list -> int = <fun> *)
+```
+Quando estamos pensando em como programar uma função recursiva, normalmente pensamos primeiro em qual será o **caso de saída** ou o caso base, nesse caso como retiramos um item da lista a cada repetição nosso caso base é quando a lista estiver vazia, é importante notar que nesse caso, independente do tamanho da lista, sempre iremos chegar a uma lista vazia. Após termos um caso base, vamos para a fase de indução que é como vamos chegar ao caso base, nesse caso é retirando um item da lista a cada chamada.
+
+Outra coisa que podemos notar nessa função é que ela traz uma nova sintaxe, no caso ela está fazendo Pattern Matching nos argumentos da função, algo muito comum quando estamos trabalhando com funções recursivas. Observe que a função não possui nenhum parâmetro explicitamente, não precisamos de um identificador para cada argumento porque a única coisa que usamos é o próprio Pattern Matching. O que indica que essa função utiliza Pattern Matching é a palavra function. Quando chamamos essa função o argumento passado é comparado a lista de possíveis argumentos, nesse caso: uma lista vazia ([]) ou uma lista com n elementos (x:xs), essa é uma comparação exaustiva já que cobre todos os casos possíveis de entrada, ou seja a função recebe uma lista e essa lista apenas pode ser vazia ou possuir elementos, nenhum outro caso é possível.
+
+O primeiro caso, a lista vazia, nesse caso é o nosso caso base caso a função receba uma lista vazia o valor 0 é retornado. O outro caso é o nosso caso recursivo, onde a lista é diminuida, o argumento x::xs separa a lista atribuindo o primeiro elemento a x (esse elemento é chamado de 'cabeça' / head) e os seguintes em lista em xs (essa lista de elementos restantes é chamada de 'cauda' / tail) e então é retornado  1 somado ao valor retornado pela função tamanho recebendo a lista cauda / tail como argumento.
+
+```ocaml
+tamanho [1;2;5];;
+(* - : int = 3 *)
+
+(*
+Como acontece:
+
+tamanho [1;2;5]
+    | 1::[2;5] -> 1 + tamanho [2;5]
+ 
+tamanho [2;5]
+    | 2::[5] -> 1 + tamanho [5]
+ 
+tamanho [5]
+    | 5::[] -> 1 + tamanho []
+
+tamanho []
+    | [] -> 0
+
+tamanho [5]
+    | 5::[] -> 1 + 0
+
+tamanho [2;5]
+    | 2::[5] -> 1 + 1
+
+tamanho [1;2;5]
+    | 1::[2;5] -> 1 + 2
+
+// =>  val it : int = 3
+*)
+```
+Outro exemplo clássico de recursão que é utilizado para ilustrar o funcionamento de funções recursivas é o cálculo de fatorial:
+```ocaml
+(* fatorial n = n * (n-1) * (n-2)...(n-(n-1))
+   fatorial 3 = 3 * 2 * 1 = 6 *)
+let rec fatorial n =
+    if n < 2 then
+        1
+    else
+        n * fatorial (n - 1)
+(* val fatorial : int -> int = <fun> *)
+```
+## Piping / Canalização
+
+Digamos que desejamos calcular o seno de 7, vamos utilizar a função seno que vimos no começo passando 7 com um ponto como valor já que a função espera um valor do tipo float.
+```ocaml
+sin 7.;;
+(* - : float = 0.656986598718789061 *)
+```
+> Observe que OCaml faz diferença entre 7 (inteiro) e 7. (float)
+
+Agora digamos que queremos fazer isso, mas passando primeiro o valor e depois a função, isso é possível através do pipe operator (operador de canalização):
+```ocaml
+7. |> sin;;
+(* - : float = 0.656986598718789061 *)
+```
+Mas qual a utilidade disso? Existem algumas opções em que pode ser relevante usar essa sintaxe:
+- Simplificar chamadas de função
+- Fazer uma sequência de chamadas de função uma após a outra recebendo o valor de saída da anterior
+- Remover os parênteses de uma operação
+
+Além de conseguirmos canalizar a saída das nossas funções para a próxima, também podemos usar o backwards pipe operator (operador de canalização invertida) que basicamente passa o valor para a função declarada antes:
+```ocaml
+(* em OCaml 4.01 ou anterior esse operador era <|, mas nas posteriores foi mudado para @@ *)
+sin @@ 2. + 1.;;
+(* - : float = 0.141120008059867214 *)
+```
+Além disso modemos usar os pipe operators ao mesmo tempo, o que deixa a sintaxe de uma função com dois valores similar a uma função em infixo:
+```ocaml
+(* função min recebe 2 int e retorna o menor entre eles *)
+(min);;
+(* - : 'a -> 'a -> 'a = <fun> *)
+
+min 10 5;;
+(* - : int = 5 *)
+
+(* usando ambos pipe operators *)
+7 |> min @@ 2;;
+(* - : int = 2 *)
+```
+Para que seja possível canalizar uma saída de função ou valor é necessário que a função receba apenas um argumento.
+```ocaml
+3 7 |> min;;
+(* Error: This expression has type int
+          This is not a function; it cannot be applied. *)
+```
+
+## Composição de Funções
+
+Composição, apesar de similar a canalização em primeira vista é bem diferente. A composição é quando conectamos a saída de uma de nossas funções a entrada de outra e armazenamos isso em uma nova função. Por ex, digamos que temos uma função que recebe um argumento da função com tipo 'a e que retorna um valor de tipo 'b e que temos outra função que recebe o tipo 'b e retorna 'c, então podemos compor uma nova função que mapeia do tipo 'a para o tipo 'c conectando ambas as funções dentro da nova função.
+
+```ocaml
+(* funções de composição*)
+let (<<) f g x = f(g(x));;
+let (>>) f g x = g(f(x));;
+
+
+(* funções exemplo *)
+let menos x y = x - y |> abs;;
+(* val menos : int -> int -> int = <fun> *)
+
+let menos1 = menos 1;;
+(* val menos1 : int -> int = <fun> *)
+
+let vezes x y = x * y;;
+(* val vezes : int -> int -> int = <fun> *)
+
+let vezes2 = (vezes) 2;;
+(* val vezes2 : int -> int = <fun> *)
+
+
+(* funções aplicadas *)
+menos1 9;;                    
+(* - : int = 8 *)
+
+vezes2 8;;
+(* - : int = 16 *)
+
+(* redirecionamento *)
+let menos1EntaoVezes2 = vezes2 << menos1;;
+(* val menos1EntaoVezes2 : int -> int = <fun> *)
+
+menos1EntaoVezes2 9;;
+(* - : int = 16 *)
+
+let vezes2EntaoMenos1 = vezes2 >> menos1;;
+(* val vezes2EntaoMenos1 : int -> int = <fun> *)
+
+vezes2EntaoMenos1 9;;
+(* - : int = 17 *)
 ```
