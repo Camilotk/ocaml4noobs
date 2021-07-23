@@ -420,6 +420,53 @@ Coringa;;
 
 > Observe que `int * naipe` é a sintaxe para o tipo das tuplas como vimos acima, nesse caso como estamos trabalhando com definições definimos tuplas de valores dessa forma.
 
-## Pattern Matching 
+## Pattern Matching
+
+Pattern Matching é utilizado para identrificar e extrair informações de praticamente qualquer tipo complexo em OCaml, entre eles listas, records, tuples. Porém, quando falamos em Discriminated Unions ambos tem uma ligação especial, pois o fato de que o compilador já sabe de antemão todas as possibilidades permite que ele faça uma checagem exaustiva se não existe nenhum caso que foi esquecido.
+
+```ocaml
+let cor_do_naipe = function
+    | Copas -> "Vermelho";;
+
+(* Warning 8 [partial-match]: this pattern-matching is not exhaustive. Here is an example of a case that is not matched: (Espadas|Ouros|Paus) *)
+```
+
+Esse aconteceu porque esquecemos de tratar os casos em todas as possibilidades de naipes, o compilador não só nos avisa que cometemos um engano, como nos diz quais casos esquecemos.
+
+```ocaml
+let cor_do_naipe = function
+    | Espadas -> "Preto"
+    | Ouros -> "Vermelho"
+    | Paus -> "Preto"
+    | Copas -> "Vermelho";;
+(* val cor_do_naipe : naipe -> string = <fun> *)
+```
+
+Da mesma forma irá funcionar com nosso exemplo `carta`.
+```ocaml
+match Carta(12, Paus) with
+    | Carta(valor, naipe) -> Printf.sprintf "O valor é: %d" valor
+    | Coringa -> "🃏" ;;
+(* - : string = "O valor é: 12" *)
+```
+
+## Igualdade Estrutural
 
 
+
+## Generics
+
+Generics é uma feature que nos permite programar diminuindo a quantidade de casting e código redundante. Os tipos genéricos são declarados utilizando `'` na frente de seu rótulo, geralmente como `'a` ou `'b`. Os tipos genéricos também são conhecidos como **tipos polimórficos**.
+
+Por exemplo digamos que estamos criando um novo `record` que será um nó que contem um nome do tipo no tipo `string` e um valor do tipo genérico.
+```ocaml
+type 'a no = { nome: string; valor: 'a } ;;
+
+{ nome = "Inteiro"; valor = 1 };;
+(* - : int no = {nome = "Inteiro"; valor = 1} *)
+
+{ nome = "Char"; valor = 'a' } ;;
+(* - : char no = {nome = "Char"; valor = 'a'} *)
+```
+
+Note que Generics é diferente de `any` para quem vem de TypeScript ou PHP, `'a` é a representação de um tipo então se temos dois valores representados como `'a` ambos devem ser do mesmo tipo, pois ambos são do tipo `'a`. Podemos ter múltiplas representações `'a`, `'b`... mas cada uma delas individualmente é inferida a um tipo concreto ou seja todas as representações de `'b` por ex. tem o mesmo tipo.
