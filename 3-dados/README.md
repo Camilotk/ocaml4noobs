@@ -1,5 +1,5 @@
 # Dados
-Depois de funções, a coisa mais importante para se entender sobre OCaml (e outras linguagens similares) é dados. Nesse Capítulo vamos dar uma olhada nos tipos de dados e suas extensões em OCaml e entender como trabalhar com eles e definir nossos pŕoprios tipos.
+Depois de funções, a coisa mais importante para se entender sobre OCaml (e outras linguagens similares) é dados. Nesse Capítulo vamos dar uma olhada nos tipos de dados e suas extensões em OCaml e entender como trabalhar com eles e definir nossos próprios tipos.
 
 ## Tipos Pré-definidos
 A bilblioteca padrão de OCaml nos traz tipos pré-definidos (que também podem ser chamados de primitivos) em sua biblioteca padrão. Esses tipos são as formas mais básicas (ou se preferir atômicas) de representação de um dado, são as unidades que são usadas para compor novos valores e tipos.
@@ -25,13 +25,13 @@ Abaixo temos uma tabela dos tipos mais básicos dos tipos pré-definidos em OCam
 
 ## Int
 
-OCaml tem suporte a inteiros de tamanho fixo de bytes, sendo o tamanho em bits do valor inteiro dois bits menor do que o inteiro nativo na máquina (62 bits na maioria dos computadores modernos). A biblioteca padrão também possui modulos de inteiros com o tamanho fixado de inteiros para 32-bit e 64-bit que podem ser usados em qualquer máquina caso o programador tenha como alvo uma arquitetura específica, apesar dos inteiros nesses módulos terem um tamanho maior eles são úteis quando o programador precisa fazer comunicação com outras linguagens como C.
+OCaml tem suporte a inteiros de tamanho fixo de bytes, sendo o tamanho em bits do valor inteiro dois bits menor do que o inteiro nativo na máquina (62 bits na maioria dos computadores modernos). A biblioteca padrão também possui módulos de inteiros com o tamanho fixado de inteiros para 32-bit e 64-bit que podem ser usados em qualquer máquina caso o programador tenha como alvo uma arquitetura específica, apesar dos inteiros nesses módulos terem um tamanho maior eles são úteis quando o programador precisa fazer comunicação com outras linguagens como C.
 
 A escrita literal de inteiros acontece da mesma forma que a sua escrita usual.
 
 Ex: `1`, `2`, `-3`, `-34567`
 
-O caractere "Underline" _ pode ser usado como separador (e será ignorado) na escrita literal de numeros grandes.
+O caractere "Underline" _ pode ser usado como separador (e será ignorado) na escrita literal de números grandes.
 
 Ex: `19_474_489`, `545_690`
 
@@ -137,7 +137,7 @@ O tipo `bool` ou  booleano representa valores lógicos, especificamente escritos
 
 ## Unit
 
-Toda expressão em OCaml deve ser avaliada para um valor, nos casos em que a expressão não tenha nenhum resultado lógico possível precisa de um tipo que satisfaça essa situação onde temos a falta de um valor e para esse caso é utilizado o tipo `unit`. Utilizamos a exprtessão vazia `()` para escrever o tipo de forma literal, que pode ser usada para declarar uma função sem retorno, ou uma função sem parâmetros por ex.
+Toda expressão em OCaml deve ser avaliada para um valor, nos casos em que a expressão não tenha nenhum resultado lógico possível precisa de um tipo que satisfaça essa situação onde temos a falta de um valor e para esse caso é utilizado o tipo `unit`. Utilizamos a expressão vazia `()` para escrever o tipo de forma literal, que pode ser usada para declarar uma função sem retorno, ou uma função sem parâmetros por ex.
 
 ```ocaml
 Printf.printf "Hello World\n";;
