@@ -538,5 +538,5 @@ vezes2EntaoMenos1 9;;
 - [Recursividade](https://pt.wikipedia.org/wiki/Recursividade)
 - [Função composta](https://pt.wikipedia.org/wiki/Composi%C3%A7%C3%A3o_de_fun%C3%A7%C3%B5es)
 
-#### E por enquanto, é só nos vemos no próximo Capítulo! 😉
+#### E por enquanto, é só nos vemos no [próximo Capítulo](https://github.com/Camilotk/ocaml4noobs/tree/master/3-dados#dados)! 😉
 
