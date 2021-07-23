@@ -513,3 +513,13 @@ type 'a no = { nome: string; valor: 'a } ;;
 ```
 
 Note que Generics é diferente de `any` para quem vem de TypeScript ou PHP, `'a` é a representação de um tipo então se temos dois valores representados como `'a` ambos devem ser do mesmo tipo, pois ambos são do tipo `'a`. Podemos ter múltiplas representações `'a`, `'b`... mas cada uma delas individualmente é inferida a um tipo concreto ou seja todas as representações de `'b` por ex. tem o mesmo tipo.
+
+## Materiais Complementares e Referências
+- [Try OCaml](https://try.ocamlpro.com/)
+- [Conversão de base numérica](https://pt.wikipedia.org/wiki/Convers%C3%A3o_de_base_num%C3%A9rica)
+- [IEEE 754](https://standards.ieee.org/standard/754-2019.html)
+- [Unicode](https://pt.wikipedia.org/wiki/Unicode)
+- [Produto Cartesiano](https://mundoeducacao.uol.com.br/matematica/produto-cartesiano.htm)
+
+#### E por enquanto, é só nos vemos no próximo Capítulo! 😉
+
