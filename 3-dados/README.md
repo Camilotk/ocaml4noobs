@@ -67,6 +67,8 @@ Os números inteiros geralmente são escritos na base 10 como padrão, mas tamb�
 
 > Cada um dos valores nas bases 2, 8 e 16 começa com um `0` seguido do caractere que representa a flag da base que está sendo usada (`o` para octal, `b` para binário, `x` para hexadecimal) e eles podem ser usados em maiúscula também (`O`, `B` e `X`).
 
+<p align="right"><a href="https://github.com/Camilotk/ocaml4noobs/blob/master/3-dados/README.md#dados">🔝 Subir para o topo</a></p>
+
 ## Float
 
 Os valores de tipo `float`ou ponto flutuante em OCaml seguem o padrão definido no documento IEEE 754, possuem precisão de 64-bits. As operações com floats nunca causam exceções quando acontece estouro, divisão por zero, etc. Ao invés disso, caracteres pré-definidos no padrão IEEE são retornados indicando o que aconteceu de acordo com o retorno, por exemplo se tentarmos fazer a divisão `1. /. 0.` no nosso REPL teremos como retorno `infinity`, teremos `-infinity` se for `-1. /. 0.` e teremos `nan` (Not a Number / Não é um número) se for `0.0 /. 0.0`.
@@ -109,6 +111,8 @@ int_of_float 3.1415;;
 float_of_string "3.1415";;
 (* - : float = 3.1415 *)
 ```
+
+<p align="right"><a href="https://github.com/Camilotk/ocaml4noobs/blob/master/3-dados/README.md#dados">🔝 Subir para o topo</a></p>
 
 ## Char
 
@@ -157,6 +161,8 @@ String.concat "" ["ocaml"; "4"; "noobs"];;
 String.split_on_char '4' "ocaml4noobs";;
 (* - : string list = ["ocaml"; "noobs"] *)
 ```
+
+<p align="right"><a href="https://github.com/Camilotk/ocaml4noobs/blob/master/3-dados/README.md#dados">🔝 Subir para o topo</a></p>
 
 ## Bool
 
@@ -244,6 +250,8 @@ List.concat [[1;2];[3;4;5];[6];[]];;
 (* - : int list = [1; 2; 3; 4; 5; 6] *)
 ```
 
+<p align="right"><a href="https://github.com/Camilotk/ocaml4noobs/blob/master/3-dados/README.md#dados">🔝 Subir para o topo</a></p>
+
 ## Arrays
 
 O tipo `array` ou matriz em OCaml a principio se parece com `list`, mas esses tipos possuem características diferentes de performance e enquanto o tipo `list` é estruturalmente imútavel, array tem sua estrutura mutável. A sintaxe de matrizes é a mesma de listas, porém além dos colchetes temos também pipes delimitando os itens do array.
@@ -292,6 +300,7 @@ let (name, age, height) = ("Camilo", 26, 1.86);;
    val age : int = 26
    val height : float = 1.86 *)
 ```
+<p align="right"><a href="https://github.com/Camilotk/ocaml4noobs/blob/master/3-dados/README.md#dados">🔝 Subir para o topo</a></p>
 
 ## Records
 
@@ -334,6 +343,8 @@ let edu_rfs = {nome = "Eduardo"; idade=22};;
 edu_rfs.idade;;
 (* - : int = 22 *)
 ```
+
+<p align="right"><a href="https://github.com/Camilotk/ocaml4noobs/blob/master/3-dados/README.md#dados">🔝 Subir para o topo</a></p>
 
 ### Valores Mutáveis
 
@@ -398,6 +409,7 @@ let meu_carro = { modelo = "Gol"; ano = 2013; odometro = 198470 };;
 adiciona_quilometragem meu_carro;;
 (* - : carro = {modelo = "Gol"; ano = 2013; odometro = 198471} *)
 ```
+<p align="right"><a href="https://github.com/Camilotk/ocaml4noobs/blob/master/3-dados/README.md#dados">🔝 Subir para o topo</a></p>
 
 ## Discriminated Union
 
@@ -475,6 +487,7 @@ match Carta(12, Paus) with
     | Coringa -> "🃏" ;;
 (* - : string = "O valor é: 12" *)
 ```
+<p align="right"><a href="https://github.com/Camilotk/ocaml4noobs/blob/master/3-dados/README.md#dados">🔝 Subir para o topo</a></p>
 
 ## Igualdade Estrutural
 
@@ -513,6 +526,8 @@ type 'a no = { nome: string; valor: 'a } ;;
 ```
 
 Note que Generics é diferente de `any` para quem vem de TypeScript ou PHP, `'a` é a representação de um tipo então se temos dois valores representados como `'a` ambos devem ser do mesmo tipo, pois ambos são do tipo `'a`. Podemos ter múltiplas representações `'a`, `'b`... mas cada uma delas individualmente é inferida a um tipo concreto ou seja todas as representações de `'b` por ex. tem o mesmo tipo.
+
+<p align="right"><a href="https://github.com/Camilotk/ocaml4noobs/blob/master/3-dados/README.md#dados">🔝 Subir para o topo</a></p>
 
 ## Materiais Complementares e Referências
 - [Try OCaml](https://try.ocamlpro.com/)
