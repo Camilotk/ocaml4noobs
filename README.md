@@ -57,6 +57,31 @@
 - [Canalização](https://github.com/Camilotk/ocaml4noobs/tree/master/2-funcoes#piping--canaliza%C3%A7%C3%A3o)
 - [Composição de funções](https://github.com/Camilotk/ocaml4noobs/tree/master/2-funcoes#composi%C3%A7%C3%A3o-de-fun%C3%A7%C3%B5es)
 
+## Parte 3 - Dados
+- [Tipos Pré-definidos](https://github.com/Camilotk/ocaml4noobs/tree/master/3-dados#tipos-pr%C3%A9-definidos)
+ - [Tipos Básicos](https://github.com/Camilotk/ocaml4noobs/tree/master/3-dados#tipos-b%C3%A1sicos)
+ - [Int](https://github.com/Camilotk/ocaml4noobs/tree/master/3-dados#int)
+ - [Float](https://github.com/Camilotk/ocaml4noobs/tree/master/3-dados#float)
+ - [Conversão de Tipos Numéricos](https://github.com/Camilotk/ocaml4noobs/tree/master/3-dados#convers%C3%A3o-de-tipos-num%C3%A9ricos)
+ - [Char](https://github.com/Camilotk/ocaml4noobs/tree/master/3-dados#char)
+ - [String](https://github.com/Camilotk/ocaml4noobs/tree/master/3-dados#string)
+	 - [Acessando caracteres em uma String](https://github.com/Camilotk/ocaml4noobs/tree/master/3-dados#acessando-carateres-em-uma-string)
+	 - [Módulo String](https://github.com/Camilotk/ocaml4noobs/tree/master/3-dados#m%C3%B3dulo-string)
+ - [Bool](https://github.com/Camilotk/ocaml4noobs/tree/master/3-dados#bool)
+ 	- [Operadores Booleanos](https://github.com/Camilotk/ocaml4noobs/tree/master/3-dados#operadores-booleanos)
+- [Unit](https://github.com/Camilotk/ocaml4noobs/tree/master/3-dados#unit)
+- [List](https://github.com/Camilotk/ocaml4noobs/tree/master/3-dados#list)
+	- [Combinando listas](https://github.com/Camilotk/ocaml4noobs/tree/master/3-dados#combinando-listas)
+- [Arrays](https://github.com/Camilotk/ocaml4noobs/tree/master/3-dados#arrays)
+- [Tuplas](https://github.com/Camilotk/ocaml4noobs/tree/master/3-dados#tuplas)
+- [Records](https://github.com/Camilotk/ocaml4noobs/tree/master/3-dados#records)
+ - [Valores Mutáveis](https://github.com/Camilotk/ocaml4noobs/tree/master/3-dados#valores-mut%C3%A1veis)
+ - [Copiando e Alterando Valores](https://github.com/Camilotk/ocaml4noobs/tree/master/3-dados#copiando-e-alterando-valores)
+- [Discriminated Union](https://github.com/Camilotk/ocaml4noobs/tree/master/3-dados#discriminated-union)
+- [Pattern Matching](https://github.com/Camilotk/ocaml4noobs/tree/master/3-dados#pattern-matching)
+- [Igualdade Estrutural](https://github.com/Camilotk/ocaml4noobs/tree/master/3-dados#igualdade-estrutural)
+- [Generics](https://github.com/Camilotk/ocaml4noobs/tree/master/3-dados#generics)
+
 <p align="center">Made with 🐫</p>
 
 ## Contribuidores ✨
