@@ -372,3 +372,52 @@ let meu_carro = { modelo = "Gol"; ano = 2013; odometro = 198470 };;
 adiciona_quilometragem meu_carro;;
 (* - : carro = {modelo = "Gol"; ano = 2013; odometro = 198471} *)
 ```
+
+## Discriminated Union
+
+Programadores estão acostumados com tipos definindo a estrutura de algum dado, mas como seria se os tipos definissem um conjunto de escolhas? Uma Discriminated Union pode ter um determinado conjunto de casos e o valor de um tipo deve ser um desses casos que foram definidos. Por causa da representação de Discriminated Union é a soma de todos os casos ela também é conhecida como **Sum Types** correspondendo tipos como produtos em tuplas. 
+
+Digamos que quiséssemos um tipo que definisse os dias da semana, poderiamos criá-lo assim:
+```ocaml
+type dia = Segunda_Feira 
+         | Terca_Feira 
+         | Quarta_Feira 
+         | Quinta_Feira 
+         | Sexta_Feira 
+         | Sabado 
+         | Domingo;;
+```
+
+Isso é um conceito parecido com Enumerações para quem vem de outras linguagens. Um valor que seja do tipo `dia` tem que ter como valor uma das opções. 
+
+```ocaml
+let dia_de_descansar = Domingo;;
+(* val dia_de_descansar : dia = Domingo *)
+
+let dias_de_estudar = [Segunda_Feira; Terca_Feira; Quarta_Feira; Quinta_Feira; Sexta_Feira];;
+(* val dias_de_estudar : dia list =
+  [Segunda_Feira; Terca_Feira; Quarta_Feira; Quinta_Feira; Sexta_Feira] *)
+```
+
+Discriminated Unions podem ter dados adicionais aos valores em si, o tipo desse dado pode ser qualquer outro tipo desde int, float, tuple... até records e outras discriminated unions.
+
+```ocaml
+type naipe = Espadas
+           | Ouros
+           | Copas
+           | Paus ;;
+(* type naipe = Espadas | Ouros | Copas | Paus *)
+
+type carta = Coringa | Carta of int * naipe;;
+(* type carta = Carta of int * naipe *)
+
+Carta(1, Espadas);;
+(* - : carta = Carta (1, Espadas) *)
+
+Coringa;;
+(* - : carta = Coringa *)
+```
+
+## Pattern Matching 
+
+
