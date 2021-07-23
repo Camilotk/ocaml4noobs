@@ -278,3 +278,97 @@ type <nome do record> =
         ...
     }
 ```
+> Importante: todos os campos de um record devem começar com **letra minúscula**
+
+Aqui abaixo declaramos um record simples chamado `pessoa` como exemplo.
+```ocaml
+type pessoa = {
+    nome: string;
+    idade: int
+};;
+(* type pessoa = { nome : string; idade : int; } *)
+```
+Uma vez que declaramos o record de alguma determinada estrutura de valores e campos, podemos definir valores que terão o record que declaramos como tipo.
+```ocaml
+{ nome = "Camilo"; idade = 26 };;
+(* - : pessoa = { nome = "Camilo"; idade = 26 } *)
+```
+Observe que não precisamos dizer de qual record esse valor que digitamos no REPL pertence, pois o compilador consegue inferir a partir do número de campos e seus tipos a qual record esse valor pertence.
+
+> Caso os valores de record tenham os mesmos campos e os mesmos tipos é recomendável que estejam separados em **módulos** diferentes, que será o assunto do nosso próximo capítulo. Porém, caso queira apenas testar rapidamente tambpem é possível dar uma dica ao compilador quando temos records iguais em um mesmo espaço de qual utilizando acesso `{pessoa.nome = "Camilo"; idade = 26 }`, mas sempre dê preferência pela separação em módulos em projetos reais, isso vai evitar que alguém tente cortar seus dedos como punição.
+
+Quando queremos acessar um valor de um record podemos usar ponto seguido do nome do campo para retornar o valor do mesmo
+```ocaml
+{nome = "Camilo"; idade = 26}.idade;;
+(* - : int = 26 *)
+
+let edu_rfs = {nome = "Eduardo"; idade=22};;
+(* val edu_rfs : pessoa = {nome = "Eduardo"; idade = 22} *)
+
+edu_rfs.idade;;
+(* - : int = 22 *)
+```
+
+### Valores Mutáveis
+
+Os `records` são imutáveis por padrão porém você pode criar registros que podem ter campos mutáveis utilizando a palavra `mutable` para indicar que o campo precisa ser mutável.
+
+```ocaml
+type carro = {
+    modelo: string;
+    ano: int;
+    mutable odometro: int
+};;
+(* type carro = { modelo : string; ano : int; mutable odometro : int; } *)
+
+let meu_carro = { modelo = "Gol"; ano = 2013; odometro = 198470 };;
+(* val meu_carro : carro = {modelo = "Gol"; ano = 2013; odometro = 198470} *)
+
+meu_carro.odometro <- meu_carro.odometro + 1;;
+(* - : unit = () *)
+```
+
+### Copiando e Alterando Valores
+
+Digamos que temos um valor do nosso record `pessoa` que definimos anteriormente, porém a pessoa fez aniversário e agora precisamos fazer uma atualização da sua idade. Para isso é necessário usar a função `with` que vai nos retornar um novo record com os valores dos campos que especificarmos alterados.
+
+```ocaml
+type pessoa = {
+    nome: string;
+    idade: int
+};;
+(* type pessoa = { nome : string; idade : int; } *)
+
+
+let camilo = {nome = "Camilo"; idade = 25};;
+(* val camilo : pessoa = {nome = "Camilo"; idade = 25} *)
+
+{ camilo with idade = 26 };;
+(* - : pessoa = {nome = "Camilo"; idade = 26} *)
+```
+
+Isso também é útil quando queremos criar uma novo valor de determinado record apenas alterando um determinado valor.
+
+```ocaml
+let ana = { camilo with nome = "Ana" };;
+(* val ana : pessoa = {nome = "Ana"; idade = 25} *)
+```
+
+Ou quando queremos criar uma função que nos retorna um record com valores atualizados.
+```ocaml
+type carro = {
+    modelo: string;
+    ano: int;
+    odometro: int
+};;
+(* type carro = { modelo : string; ano : int; mutable odometro : int; } *)
+
+let adiciona_quilometragem (carro: carro) = { carro with odometro = carro.odometro + 1 };;
+(* val adiciona_quilometragem : carro -> carro = <fun> *)
+
+let meu_carro = { modelo = "Gol"; ano = 2013; odometro = 198470 };;
+(* val meu_carro : carro = {modelo = "Gol"; ano = 2013; odometro = 198470} *)
+
+adiciona_quilometragem meu_carro;;
+(* - : carro = {modelo = "Gol"; ano = 2013; odometro = 198471} *)
+```
