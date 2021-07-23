@@ -452,7 +452,24 @@ match Carta(12, Paus) with
 
 ## Igualdade Estrutural
 
+OCaml tem suporte a Programação Funcional e Orientada a Objetos, mas o que OCaml realmente estimula é a programação pensando primariamente que dados e a equalidade entre valores é algo muito importante.  Primitivos, Listas, Arrays, Tuplas, Records e Discriminated Unions tem **equalidade estrutural**, o que significa que esses dados são considerados como iguais caso seu valor seja o mesmo.
 
+> OCaml tem como operador de igualdade o sinal **=** que é o mesmo usado para atribuição, o contexto da operação é capaz de ser inferido dependendo da operação.
+
+Aqui temos duas cópias da mesma lista e elas são iguais pois possuem o mesmo número de elementos e os mesmos valores.
+
+```ocaml
+[1;2;3] = [1;2;3];;
+(* - : bool = true *)
+```
+
+O mesmo acontece com as tuplas.
+```ocaml
+(1, 'a') = (1, 'a');;
+(* - : bool = true *)
+```
+
+Objetos por outro lado usam **equalidade referencial**, o que significa que os Objetos são considerados como iguais caso contenham a referência para o mesmo Objeto. Isso significa que não é o suficiente que objetos tenham os mesmos valores.
 
 ## Generics
 
