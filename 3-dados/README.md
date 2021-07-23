@@ -45,6 +45,8 @@ Os números inteiros geralmente são escritos na base 10 como padrão, mas tamb�
 
 Os valores de tipo `float`ou ponto flutuante em OCaml seguem o padrão definido no documento IEEE 754, possuem precisão de 64-bits. As operações com floats nunca causam exceções quando acontece estouro, divisão por zero, etc. Ao invés disso, caracteres pré-definidos no padrão IEEE são retornados indicando o que aconteceu de acordo com o retorno, por exemplo se tentarmos fazer a divisão `1. /. 0.` no nosso REPL teremos como retorno `infinity`, teremos `-infinity` se for `-1. /. 0.` e teremos `nan` (Not a Number / Não é um número) se for `0.0 /. 0.0`.
 
+Ex: `2.`, `2.0`, `1.7653`
+
 > Observe que usamos `/.` ao invés de `/` para dividir números de ponto flutuante, isso acontece porque `/` é uma função que tem como parâmetro dois inteiros enquanto `/.` tem como parâmetro dois floats, o mesmo ocorre nas demais operações (`+.`, `-.`, `*.`).
 
 
@@ -265,3 +267,14 @@ let (name, age, height) = ("Camilo", 26, 1.86);;
    val height : float = 1.86 *)
 ```
 
+## Records
+
+Um tipo `record` representa uma coleção de valores que são armazenados como um, onde cada componente é identificado com um campo diferente de nome. A sintaxe básica para um record é a seguinte:
+```
+type <nome do record> =
+    {
+        <campo>: <tipo>;
+        <campo>: <tipo>;
+        ...
+    }
+```
