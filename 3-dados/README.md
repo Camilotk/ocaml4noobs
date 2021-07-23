@@ -45,7 +45,7 @@ Os números inteiros geralmente são escritos na base 10 como padrão, mas tamb�
 
 Os valores de tipo `float`ou ponto flutuante em OCaml seguem o padrão definido no documento IEEE 754, possuem precisão de 64-bits. As operações com floats nunca causam exceções quando acontece estouro, divisão por zero, etc. Ao invés disso, caracteres pré-definidos no padrão IEEE são retornados indicando o que aconteceu de acordo com o retorno, por exemplo se tentarmos fazer a divisão `1. /. 0.` no nosso REPL teremos como retorno `infinity`, teremos `-infinity` se for `-1. /. 0.` e teremos `nan` (Not a Number / Não é um número) se for `0.0 /. 0.0`.
 
-Observe que usamos `/.` ao invés de `/` para dividir números de ponto flutuante, isso acontece porque `/` é uma função que tem como parâmetro dois inteiros enquanto `/.` tem como parâmetro dois floats, o mesmo ocorre nas demais operações (`+.`, `-.`, `*.`).
+> Observe que usamos `/.` ao invés de `/` para dividir números de ponto flutuante, isso acontece porque `/` é uma função que tem como parâmetro dois inteiros enquanto `/.` tem como parâmetro dois floats, o mesmo ocorre nas demais operações (`+.`, `-.`, `*.`).
 
 
 ## Conversão de Tipos Numéricos
@@ -194,7 +194,7 @@ lista = lista_convencional;;
 (* - : bool = true *)
 ```
 
-###  Combbiando Listas
+###  Combinando Listas
 
 Para unir duas listas utilizamos a função `List.append` que é equivalente ao operador de `@` que irá receber duas listas e nos retornar uma nova com os elementos da primeira unidos com os elementos da segunda em uma nova lista.
 
