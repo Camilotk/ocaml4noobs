@@ -17,7 +17,7 @@ Abaixo temos uma tabela dos tipos mais básicos dos tipos pré-definidos em OCam
 | bool       | true ou false                           |
 | unit       | ()                                      |
 | 'a list    | [1; 2]                                  |
-| 'a array   | [| 1; 2 |]                              |
+| 'a array   | [\| 1; 2 \|]                            |
 | tuple      | ("Capítulos", 3)                        |
 | records    | { x = 5; y = 9 }                        |
 | union      | type Dia = Segunda_Feira \| Terca_Feira |
@@ -417,6 +417,8 @@ Carta(1, Espadas);;
 Coringa;;
 (* - : carta = Coringa *)
 ```
+
+> Observe que `int * naipe` é a sintaxe para o tipo das tuplas como vimos acima, nesse caso como estamos trabalhando com definições definimos tuplas de valores dessa forma.
 
 ## Pattern Matching 
 
