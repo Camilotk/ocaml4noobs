@@ -92,3 +92,5 @@ E agora podemos usar essa função quantas vezes quisermos uma vez que está car
 some_function 5 6;;
 (* - : int = 35 *)
 ```
+
+> Para cancelar o comando em execução no REPL use CTRL+C e para sair use CTRL+D.
