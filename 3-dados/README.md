@@ -1,6 +1,32 @@
 # Dados
 Depois de funções, a coisa mais importante para se entender sobre OCaml (e outras linguagens similares) é dados. Nesse Capítulo vamos dar uma olhada nos tipos de dados e suas extensões em OCaml e entender como trabalhar com eles e definir nossos próprios tipos.
 
+#### **Indíce**
+- [Tipos Pré-definidos](https://github.com/Camilotk/ocaml4noobs/tree/master/3-dados#tipos-pr%C3%A9-definidos)
+ - [Tipos Básicos](https://github.com/Camilotk/ocaml4noobs/tree/master/3-dados#tipos-b%C3%A1sicos)
+ - [Int](https://github.com/Camilotk/ocaml4noobs/tree/master/3-dados#int)
+ - [Float](https://github.com/Camilotk/ocaml4noobs/tree/master/3-dados#float)
+ - [Conversão de Tipos Numéricos](https://github.com/Camilotk/ocaml4noobs/tree/master/3-dados#convers%C3%A3o-de-tipos-num%C3%A9ricos)
+ - [Char](https://github.com/Camilotk/ocaml4noobs/tree/master/3-dados#char)
+ - [String](https://github.com/Camilotk/ocaml4noobs/tree/master/3-dados#string)
+	 - [Acessando caracteres em uma String](https://github.com/Camilotk/ocaml4noobs/tree/master/3-dados#acessando-carateres-em-uma-string)
+	 - [Módulo String](https://github.com/Camilotk/ocaml4noobs/tree/master/3-dados#m%C3%B3dulo-string)
+	- [Bool](https://github.com/Camilotk/ocaml4noobs/tree/master/3-dados#bool)
+  - [Operadores Booleanos](https://github.com/Camilotk/ocaml4noobs/tree/master/3-dados#operadores-booleanos)
+- [Unit](https://github.com/Camilotk/ocaml4noobs/tree/master/3-dados#unit)
+- [List](https://github.com/Camilotk/ocaml4noobs/tree/master/3-dados#list)
+	- [Combinando listas](https://github.com/Camilotk/ocaml4noobs/tree/master/3-dados#combinando-listas)
+- [Arrays](https://github.com/Camilotk/ocaml4noobs/tree/master/3-dados#arrays)
+- [Tuplas](https://github.com/Camilotk/ocaml4noobs/tree/master/3-dados#tuplas)
+- [Records](https://github.com/Camilotk/ocaml4noobs/tree/master/3-dados#records)
+ - [Valores Mutáveis](https://github.com/Camilotk/ocaml4noobs/tree/master/3-dados#valores-mut%C3%A1veis)
+ - [Copiando e Alterando Valores](https://github.com/Camilotk/ocaml4noobs/tree/master/3-dados#copiando-e-alterando-valores)
+- [Discriminated Union](https://github.com/Camilotk/ocaml4noobs/tree/master/3-dados#discriminated-union)
+- [Pattern Matching](https://github.com/Camilotk/ocaml4noobs/tree/master/3-dados#pattern-matching)
+- [Igualdade Estrutural](https://github.com/Camilotk/ocaml4noobs/tree/master/3-dados#igualdade-estrutural)
+- [Generics](https://github.com/Camilotk/ocaml4noobs/tree/master/3-dados#generics)
+
+
 ## Tipos Pré-definidos
 A bilblioteca padrão de OCaml nos traz tipos pré-definidos (que também podem ser chamados de primitivos) em sua biblioteca padrão. Esses tipos são as formas mais básicas (ou se preferir atômicas) de representação de um dado, são as unidades que são usadas para compor novos valores e tipos.
 
