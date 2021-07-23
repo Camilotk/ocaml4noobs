@@ -57,7 +57,7 @@
 - [Canalização](https://github.com/Camilotk/ocaml4noobs/tree/master/2-funcoes#piping--canaliza%C3%A7%C3%A3o)
 - [Composição de funções](https://github.com/Camilotk/ocaml4noobs/tree/master/2-funcoes#composi%C3%A7%C3%A3o-de-fun%C3%A7%C3%B5es)
 
-## Intermezzo 1 -  Scripts e REPL
+## Intermezzo 2 -  Scripts e REPL
 - [Scripts e REPL](https://github.com/Camilotk/ocaml4noobs/tree/master/2I%20-%20repl#scripts-e-repl)
 
 ## Parte 3 - Dados
