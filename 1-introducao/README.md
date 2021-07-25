@@ -94,7 +94,7 @@ $ sudo dnf install rlwrap
 6. Crie um alias para o rlwrap no seu ~/.bashrc ou ~/.zshrc
 
 ```terminal
-$ echo "alias OCaml=\"rlwrap OCaml\"" >> ~/.bashrc
+$ echo "alias ocaml=\"rlwrap ocaml\"" >> ~/.bashrc
 ```
 
 ## Instalando o Dune
