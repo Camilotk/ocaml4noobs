@@ -79,7 +79,7 @@ $ eval $(opam env)
 4. Vamos testar a instalação e ver qual versão está instalada na máquina.
 
 ```terminal
-$ OCaml -version
+$ ocaml -version
 ```
 
 - Caso desejamos instalar outra versão de OCaml como a 4.11.1 usando o OPAM basta: `opam switch create 4.11.1` e logo após carregar o novo ambiente com `eval $(opam env)`
