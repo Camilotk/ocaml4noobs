@@ -98,6 +98,7 @@ Nosso agradecimento a todas essas pessoas ([emoji key](https://allcontributors.o
   <tr>
     <td align="center"><a href="https://github.com/Camilotk"><img src="https://avatars.githubusercontent.com/u/30880723?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Camilo Cunha de Azevedo</b></sub></a><br /><a href="#content-Camilotk" title="Content">🖋</a> <a href="https://github.com/Camilotk/OCaml4Noobs/commits?author=Camilotk" title="Code">💻</a> <a href="#maintenance-Camilotk" title="Maintenance">🚧</a> <a href="#mentoring-Camilotk" title="Mentoring">🧑‍🏫</a></td>
     <td align="center"><a href="https://github.com/eduardocanellas"><img src="https://avatars.githubusercontent.com/u/34381457?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Eduardo Canellas de Oliveira</b></sub></a><br /><a href="#content-eduardocanellas" title="Content">🖋</a></td>
+    <td align="center"><a href="https://vitorsalmeida.vercel.app/"><img src="https://avatars.githubusercontent.com/u/70543018?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Vitor</b></sub></a><br /><a href="#content-vit0rr" title="Content">🖋</a></td>
   </tr>
 </table>
 
