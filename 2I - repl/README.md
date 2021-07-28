@@ -93,4 +93,4 @@ some_function 5 6;;
 (* - : int = 35 *)
 ```
 
-> Para cancelar o comando em execução no REPL use CTRL+C e para sair use CTRL+D.
+> Para cancelar o comando em execução no REPL use CTRL+C e para sair use CTRL+D ou o comando `exit 0 ;;.
