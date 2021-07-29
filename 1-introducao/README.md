@@ -9,7 +9,7 @@
 - [Hello World](https://github.com/Camilotk/ocaml4noobs/tree/master/1-introducao#hello-world)
 - [Porque OCaml?](https://github.com/Camilotk/ocaml4noobs/tree/master/1-introducao#porque-ocaml)
 	- [Concisa e Declarativa](https://github.com/Camilotk/ocaml4noobs/tree/master/1-introducao#concisa-e-declarativa)
-  	- [Lingugens Concisas vs Verbosas](https://github.com/Camilotk/ocaml4noobs/tree/master/1-introducao#lingugens-concisas-vs-verbosas)
+  	- [Linguagens Concisas vs Verbosas](https://github.com/Camilotk/ocaml4noobs/tree/master/1-introducao#lingugens-concisas-vs-verbosas)
 	- [Menos Erros Acidentais](https://github.com/Camilotk/ocaml4noobs/tree/master/1-introducao#menos-erros-acidentais)
 - [Particularidades de OCaml](https://github.com/Camilotk/ocaml4noobs/tree/master/1-introducao#particularidades-de-ocaml)
 	- [Inferência de Tipos](https://github.com/Camilotk/ocaml4noobs/tree/master/1-introducao#infer%C3%AAncia-de-tipos)
@@ -244,9 +244,9 @@ $ dune exec ./main.exe
 
 E vamos ter `42` impresso na tela.
 
-### Lingugens Concisas vs Verbosas
+### Linguagens Concisas vs Verbosas
 
-Sem dúvidas quando estamos falando de código a métrica mais importante que devemos levar em conta é: "Ele funciona?". E a boa notícia é que poderiamos fazer exatamente o mesmo em Java e isso funcionaria, basta que fizessemos isso:
+Sem dúvidas quando estamos falando de código a métrica mais importante que devemos levar em conta é: "Ele funciona?". E a boa notícia é que poderíamos fazer exatamente o mesmo em Java e isso funcionaria, basta que fizessemos isso:
 
 ```Java
 import java.util.List;
@@ -286,7 +286,7 @@ A grande diferença entre esse código em Java para nosso programa em OCaml é q
 
 Isso significa que o foco quando programamos em Java é "o que queremos fazer?" e descrevemos cada comando do passo a passo que nos leva ao resultado esperado. Enquanto em OCaml colocamos todo nosso foco no que esperamos que seja o resultado ao invés do exato passo a passo de como isso deve ser feito. 
 
-É possivel obter um estilo de escrita muito mais concisa e funcional em Java e também é possivel escrever OCaml de forma completamente imperativa e mais verbosa (a linguagem tem suporte a programação imperativa e OOP), mas esse exemplo demonstra de forma exagerada a forma canônica que cada linguagem foi projetada para ser pensado a solução dos problemas que resolvem apenas como exemplo.
+É possível obter um estilo de escrita muito mais concisa e funcional em Java e também é possível escrever OCaml de forma completamente imperativa e mais verbosa (a linguagem tem suporte a programação imperativa e OOP), mas esse exemplo demonstra de forma exagerada a forma canônica que cada linguagem foi projetada para ser pensado a solução dos problemas que resolvem apenas como exemplo.
 
 ### Menos Erros Acidentais
 
@@ -392,7 +392,7 @@ Mas como isso é possível? Que tipo de bruxaria é essa? Bem, na verdade o oper
 
 OCaml favorece que os dados sejam imutáveis. Imutabilidade significa que valores uma vez criados não podem ser alterados e que identificadores uma vez atribuidos não podem ser mudados. Por isso, quando precisamos mudar um valor, é necessário criar um novo valor baseado no valor anterior. 
 
-Como no nosso código abaixo, a lista numbers com os valores [3..1] é diferente de moreNumbers que tem os valores de [4..1] atualizados. Note que a lista origninal não é alterada, pois valores imutáveis nunca são mudados. Imutabilidade tem um grande número de efeitos colaterais positivos, incluindo execução asíncrona segura e maior facilidade de entender a lógica de funções.
+Como no nosso código abaixo, a lista numbers com os valores [3..1] é diferente de moreNumbers que tem os valores de [4..1] atualizados. Note que a lista origninal não é alterada, pois valores imutáveis nunca são mudados. Imutabilidade tem um grande número de efeitos colaterais positivos, incluindo execução assíncrona segura e maior facilidade de entender a lógica de funções.
 
 ```OCaml
 let numbers = [3;2;1]
