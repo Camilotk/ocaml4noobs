@@ -380,7 +380,7 @@ Uma função recursiva é uma função que contêm uma chamada a si mesma. Por e
 ```OCaml
 let rec tamanho = function
     | [] -> 0
-    | x::xs -> 1 + tamanho xs;;
+    | _::xs -> 1 + tamanho xs;;
 (* val tamanho : 'a list -> int = <fun> *)
 ```
 Quando estamos pensando em como programar uma função recursiva, normalmente pensamos primeiro em qual será o **caso de saída** ou o caso base, nesse caso como retiramos um item da lista a cada repetição nosso caso base é quando a lista estiver vazia, é importante notar que nesse caso, independente do tamanho da lista, sempre iremos chegar a uma lista vazia. Após termos um caso base, vamos para a fase de indução que é como vamos chegar ao caso base, nesse caso é retirando um item da lista a cada chamada.
