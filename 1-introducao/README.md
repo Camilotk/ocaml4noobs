@@ -292,10 +292,10 @@ Isso significa que o foco quando programamos em Java é "o que queremos fazer?" 
 
 No ensaio ["No Silver Bullet" (Não existe bala de prata), Fred Brooks](http://worrydream.com/refs/Brooks-NoSilverBullet.pdf) faz uma distinção entre complexidade acidental e complexidade essencial. 
 
-- **Complexidade Acidental** é a complecidade que é infligida em nós mesmos pelas ferramentas que decidimos usar.
+- **Complexidade Acidental** é a complexidade que é infligida em nós mesmos pelas ferramentas que decidimos usar.
 - **Complexidade Essencial** é a complexidade relacionada ao problema que estamos tentando resolver. 
 
-Complexidade Acidental é o problema que pode e deve ser cortado pela raíz, por exemplo, quanto menos ponteiros de memória, manegamento de recursos de memória ou qualquer outra coisa que não seja relacionada com o problema que estamos resolvendo pudermos evitar, melhor. OCaml ajuda a minimizar esse tipo de problema da complexidade acidental para que possamos focar na Complexidade Essencial que é o desafio que precisamos verdadeiramente resolver.
+Complexidade Acidental é o problema que pode e deve ser cortado pela raíz, por exemplo, quanto menos ponteiros de memória, manejamento de recursos de memória ou qualquer outra coisa que não seja relacionada com o problema que estamos resolvendo pudermos evitar, melhor. OCaml ajuda a minimizar esse tipo de problema da complexidade acidental para que possamos focar na Complexidade Essencial que é o desafio que precisamos verdadeiramente resolver.
 
 Aqui temos um exemplo do algoritmo Quicksort em OCaml:
 <!--
@@ -335,9 +335,9 @@ Observe o quanto o algoritmo em OCaml é próximo da definição original do alg
 2. Quando a função recebe um valor ela divide o restante dos valores em dois grupos:
  - Dos items menores que x
  - Dos items maiores que x
-3. Então o grupo menor é ordenado recursivamente, o maior também é ordenado recursivamente e ambos são concatenados com o item x (o primeiro item da lista ou head, retirado através de patter match em x :: xs, que seria o mesmo que head :: tail) no meio -> [menores. x. maiores]
+3. Então o grupo menor é ordenado recursivamente, o maior também é ordenado recursivamente e ambos são concatenados com o item x (o primeiro item da lista ou head, retirado através de pattern match em x :: xs, que seria o mesmo que head :: tail) no meio -> [menores. x. maiores]
 
-Na primeira linha temos a palavra <u>rec</u> que é uma abreviação para 'recursive' (recursivo) que informa o compilador que essa função pode ter que chamar a si mesma, isso é um exemplo de complexidade acidental que ainda se mantêm em OCaml uma vez que não tem motivo lógico ou matemático para que esse comando esteja ali uma vez em que logicamente e matematicamente todas as funções devem ser capazes de chamarem a si mesmas, porém por razoẽs externas ao problema que estamos resolvendo precisamos informar ao compilador de OCaml que essa função pode ter que chamar a si mesma.
+Na primeira linha temos a palavra <u>rec</u> que é uma abreviação para 'recursive' (recursivo) que informa o compilador que essa função pode ter que chamar a si mesma, isso é um exemplo de complexidade acidental que ainda se mantêm em OCaml uma vez que não tem motivo lógico ou matemático para que esse comando esteja ali uma vez em que logicamente e matematicamente todas as funções devem ser capazes de chamarem a si mesmas, porém por razões externas ao problema que estamos resolvendo precisamos informar ao compilador de OCaml que essa função pode ter que chamar a si mesma.
 
 Um contraste com o mesmo algortimo, mas agora em C++:
 ```C++
@@ -386,13 +386,13 @@ let double_num x = x * 2
 ```
 Não precisamos informar que x é um parâmetro do tipo inteiro e nem que a função double_num retorna um inteiro, porém se executarmos essa função no repl vamos ter a assinatura desse método inferida como `val double_num : int -> int = <fun>` nos mostrando que o compilador sabe exatamente disso tudo e é capaz de fazer o trabalho de especificar o tipo das nossas variáveis e do retorno da nossa função para nós.
 
-Mas como isso é possível? Que tipo de bruxaria é essa? Bem, na verdade o operador `*` é uma função que aceita dois parâmetros inteiros e retorna um inteiro, logo o compilador sabe que x sendo um dos parâmetros de  `*` é um valor de tipo inteiro e que double_num retorna o reultado de `*` que é um inteiro e por tanto tem o mesmo tipo de retorno. Interessante, não?
+Mas como isso é possível? Que tipo de bruxaria é essa? Bem, na verdade o operador `*` é uma função que aceita dois parâmetros inteiros e retorna um inteiro, logo o compilador sabe que x sendo um dos parâmetros de  `*` é um valor de tipo inteiro e que double_num retorna o resultado de `*` que é um inteiro e por tanto tem o mesmo tipo de retorno. Interessante, não?
 
 ### Imutabilidade
 
-OCaml favorece que os dados sejam imutáveis. Imutabilidade significa que valores uma vez criados não podem ser alterados e que identificadores uma vez atribuidos não podem ser mudados. Por isso, quando precisamos mudar um valor, é necessário criar um novo valor baseado no valor anterior. 
+OCaml favorece que os dados sejam imutáveis. Imutabilidade significa que valores uma vez criados não podem ser alterados e que identificadores uma vez atribuídos não podem ser mudados. Por isso, quando precisamos mudar um valor, é necessário criar um novo valor baseado no valor anterior. 
 
-Como no nosso código abaixo, a lista numbers com os valores [3..1] é diferente de moreNumbers que tem os valores de [4..1] atualizados. Note que a lista origninal não é alterada, pois valores imutáveis nunca são mudados. Imutabilidade tem um grande número de efeitos colaterais positivos, incluindo execução assíncrona segura e maior facilidade de entender a lógica de funções.
+Como no nosso código abaixo, a lista numbers com os valores [3..1] é diferente de moreNumbers que tem os valores de [4..1] atualizados. Note que a lista original não é alterada, pois valores imutáveis nunca são mudados. Imutabilidade tem um grande número de efeitos colaterais positivos, incluindo execução assíncrona segura e maior facilidade de entender a lógica de funções.
 
 ```OCaml
 let numbers = [3;2;1]
