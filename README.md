@@ -1,11 +1,23 @@
-# OCaml4Noobs
+<p align="center">
+  <a href="https://github.com/he4rt/4noobs" target="_blank">
+    <img src="./images/header-4noobs.svg">
+  </a>
+</p>
 
+<h2 align="center">OCaml4Noobs</h2>
 
 <h1 align="center">
   <img src="./images/colour-logo.png" alt="ocaml" width="240">
 </h1>
 
 <p align="center">Tutorial de OCaml para iniciantes na Linguagem.</p>
+
+<p align="center">
+    <a href="https://github.com/Camilotk/ocaml4noobs/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/Camilotk/ocaml4noobs/issues">Request Feature</a>
+  </p>
+</p>
 
 <p align="center">
   <a href="https://opensource.org/licenses/MIT">
@@ -85,7 +97,7 @@
 - [Igualdade Estrutural](https://github.com/Camilotk/ocaml4noobs/tree/master/3-dados#igualdade-estrutural)
 - [Generics](https://github.com/Camilotk/ocaml4noobs/tree/master/3-dados#generics)
 
-<p align="center">Made with 🐫</p>
+<p align="center">Made with 🐫💜</p>
 
 ## Contribuidores ✨
 
