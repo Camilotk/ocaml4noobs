@@ -380,14 +380,14 @@ Uma função recursiva é uma função que contêm uma chamada a si mesma. Por e
 ```OCaml
 let rec tamanho = function
     | [] -> 0
-    | x::xs -> 1 + tamanho xs;;
+    | _::xs -> 1 + tamanho xs;;
 (* val tamanho : 'a list -> int = <fun> *)
 ```
 Quando estamos pensando em como programar uma função recursiva, normalmente pensamos primeiro em qual será o **caso de saída** ou o caso base, nesse caso como retiramos um item da lista a cada repetição nosso caso base é quando a lista estiver vazia, é importante notar que nesse caso, independente do tamanho da lista, sempre iremos chegar a uma lista vazia. Após termos um caso base, vamos para a fase de indução que é como vamos chegar ao caso base, nesse caso é retirando um item da lista a cada chamada.
 
-Outra coisa que podemos notar nessa função é que ela traz uma nova sintaxe, no caso ela está fazendo Pattern Matching nos argumentos da função, algo muito comum quando estamos trabalhando com funções recursivas. Observe que a função não possui nenhum parâmetro explicitamente, não precisamos de um identificador para cada argumento porque a única coisa que usamos é o próprio Pattern Matching. O que indica que essa função utiliza Pattern Matching é a palavra function. Quando chamamos essa função o argumento passado é comparado a lista de possíveis argumentos, nesse caso: uma lista vazia ([]) ou uma lista com n elementos (x:xs), essa é uma comparação exaustiva já que cobre todos os casos possíveis de entrada, ou seja a função recebe uma lista e essa lista apenas pode ser vazia ou possuir elementos, nenhum outro caso é possível.
+Outra coisa que podemos notar nessa função é que ela traz uma nova sintaxe, no caso ela está fazendo Pattern Matching nos argumentos da função, algo muito comum quando estamos trabalhando com funções recursivas. Observe que a função não possui nenhum parâmetro explicitamente, não precisamos de um identificador para cada argumento porque a única coisa que usamos é o próprio Pattern Matching. O que indica que essa função utiliza Pattern Matching é a palavra function. Quando chamamos essa função o argumento passado é comparado a lista de possíveis argumentos, nesse caso: uma lista vazia ([]) ou uma lista com n elementos (_::xs) esse underscore é chamado de wildcard, que corresponde a todos os valores possíveis, essa é uma comparação exaustiva já que cobre todos os casos possíveis de entrada, ou seja a função recebe uma lista e essa lista apenas pode ser vazia ou possuir elementos, nenhum outro caso é possível.
 
-O primeiro caso, a lista vazia, nesse caso é o nosso caso base caso a função receba uma lista vazia o valor 0 é retornado. O outro caso é o nosso caso recursivo, onde a lista é diminuida, o argumento x::xs separa a lista atribuindo o primeiro elemento a x (esse elemento é chamado de 'cabeça' / head) e os seguintes em lista em xs (essa lista de elementos restantes é chamada de 'cauda' / tail) e então é retornado  1 somado ao valor retornado pela função tamanho recebendo a lista cauda / tail como argumento.
+O primeiro caso, a lista vazia, nesse caso é o nosso caso base caso a função receba uma lista vazia o valor 0 é retornado. O outro caso é o nosso caso recursivo, onde a lista é diminuida, o argumento _::xs separa a lista atribuindo o primeiro elemento a _ (esse elemento é chamado de 'cabeça' / head) e os seguintes em lista em xs (essa lista de elementos restantes é chamada de 'cauda' / tail) e então é retornado  1 somado ao valor retornado pela função tamanho recebendo a lista cauda / tail como argumento.
 
 ```ocaml
 tamanho [1;2;5];;
