@@ -67,6 +67,15 @@
         "content",
         "code"
       ]
+    },
+    {
+      "login": "m7he4rt",
+      "name": "Mateus Mendes ",
+      "avatar_url": "https://avatars.githubusercontent.com/u/44484286?v=4",
+      "profile": "https://heartdevs.com/",
+      "contributions": [
+        "design"
+      ]
     }
   ],
   "contributorsPerLine": 7
