@@ -113,7 +113,7 @@ Nosso agradecimento a todas essas pessoas ([emoji key](https://allcontributors.o
     <td align="center"><a href="https://vitorsalmeida.vercel.app/"><img src="https://avatars.githubusercontent.com/u/70543018?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Vitor</b></sub></a><br /><a href="#content-vit0rr" title="Content">🖋</a></td>
     <td align="center"><a href="https://github.com/bihellzin"><img src="https://avatars.githubusercontent.com/u/49006461?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Gabriel</b></sub></a><br /><a href="#content-bihellzin" title="Content">🖋</a></td>
     <td align="center"><a href="https://github.com/vinisioux"><img src="https://avatars.githubusercontent.com/u/36283335?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Vinicius Leonardo</b></sub></a><br /><a href="#content-vinisioux" title="Content">🖋</a></td>
-    <td align="center"><a href="https://github.com/nogw"><img src="https://avatars.githubusercontent.com/u/65539816?v=4?s=100" width="100px;" alt=""/><br /><sub><b>nogw</b></sub></a><br /><a href="#content-nogw" title="Content">🖋</a></td>
+    <td align="center"><a href="https://github.com/nogw"><img src="https://avatars.githubusercontent.com/u/65539816?v=4?s=100" width="100px;" alt=""/><br /><sub><b>nogw</b></sub></a><br /><a href="#content-nogw" title="Content">🖋</a> <a href="https://github.com/Camilotk/OCaml4Noobs/commits?author=nogw" title="Code">💻</a></td>
   </tr>
 </table>
 
