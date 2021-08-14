@@ -66,16 +66,20 @@ Onde c é a nossa constante, podemos dar como exemplo uma função que sempre re
 f(x) = 3
 ```
 
-Quando atribuimos valores em OCaml geralmente estamos mapeando uma função que retorna um valor, por exemplo quando declaramos que:
+O equivalente em OCaml seria:
 ```ocaml
 let f x = 3
 ```
 
-Estamos declarando uma função constante, sem argumentos, que sempre irá retornar 3 quando chamada. Isso é exatamente o mesmo que quando fazemos atribuição de valores, como por exemplo:
+Estamos declarando uma função constante, sem argumentos, que sempre irá retornar 3 quando chamada. Por tanto como x não é utilizado em nenhum momento e não faz qualquer sentido para nosso retorno podemos omiti-lo:
 ```ocaml
 let f _ = 3
+
+(* ou *)
+
+let f ()  = 3
 ```
-O que temos em ambos os casos é uma função que mapeia qualquer valor para o valor constante nesse caso 3. Mas qual a diferença? Sim, é diferente. 
+Isso é bem parecido com quando fazemos atribuição em OCaml, por exemplo `let f = 3`, e pode ser que o resultado de `let f = 3` e `let f _  = 3` sejam o mesmo, afinal ambas retornam a mesma constante. Mas qual a diferença? Sim, é diferente. 
 
 Enquando `let f = foo` é um binding estático onde sempre será retornado foo, `let f x = foo` irá sempre recalcular o valor após o `=` isso pode parecer igual agora, mas faz diferença caso o valor foo seja mutável. Nesses casos em que queremos escrever um valor como função e não como atribuição, onde o valor é recomputado a cada chamada e não temos atributos relevantes como x nesse caso a escrevemos em OCaml como `let f () = foo` ou `let f _ = foo` para que o parâmetro seja omitido, mas que a função f seja uma função constante que mapeia qualquer entrada para o valor atual de foo.
 
