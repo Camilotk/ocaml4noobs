@@ -82,7 +82,7 @@ Enquando `let f = foo` é um binding estático onde sempre será retornado foo, 
 Graficamente funções constantes produzem gráficos em linha reta, uma vez em que para todo valor de x o y será c:
 ![gráfico da função f de x igual a três](https://github.com/Camilotk/ocaml4noobs/blob/master/2-funcoes/imagens/constante.png)
 
-> Observe que nesse caso, diferente da matemática, tanto faz se f(x) = 2 ou f(x) = "2", ambas funções vão sempre retornar o mesmo valor, idependentemente de serem números, strings ou tipos complexos. 
+> Observe que nesse caso, diferente da matemática onde trabalhamos com elementos numéricos, tanto faz se f(x) = 2 ou f(x) = "2", ambas funções vão sempre retornar o mesmo valor, idependentemente de serem números, strings ou tipos complexos uma vez em que nossas funções também trabalham com outros tipos. 
 
 ### Funções Lineares
 
