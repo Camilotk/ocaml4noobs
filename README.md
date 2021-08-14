@@ -53,6 +53,7 @@
 ## Parte 2 - Funções
 - [O que é uma função](https://github.com/Camilotk/ocaml4noobs/tree/master/2-funcoes#o-que-%C3%A9-uma-fun%C3%A7%C3%A3o)
     - [Definição](https://github.com/Camilotk/ocaml4noobs/tree/master/2-funcoes#defini%C3%A7%C3%A3o)
+    - [Funções Constantes](https://github.com/Camilotk/ocaml4noobs/tree/master/2-funcoes#fun%C3%A7%C3%B5es-constantes)
     - [Funções Lineares](https://github.com/Camilotk/ocaml4noobs/tree/master/2-funcoes#fun%C3%A7%C3%B5es-lineares)
     - [Funções Quadráticas](https://github.com/Camilotk/ocaml4noobs/tree/master/2-funcoes#fun%C3%A7%C3%B5es-quadr%C3%A1ticas)
     - [Funções Trigonométricas](https://github.com/Camilotk/ocaml4noobs/tree/master/2-funcoes#fun%C3%A7%C3%B5es-trigonom%C3%A9tricas)
