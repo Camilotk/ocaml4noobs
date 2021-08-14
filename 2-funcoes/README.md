@@ -53,6 +53,31 @@ A última parte dessa definição é a mais importante, porque não é necessari
 
 <p align="right"><a href="https://github.com/Camilotk/ocaml4noobs/blob/master/2-funcoes/README.md#fun%C3%A7%C3%B5es">🔝 Subir para o topo</a></p>
 
+
+### Funções Constantes
+
+Uma função constante é uma função em que todas as saídas é sempre o mesmo valor, independente da entrada. Na matemática podemos definir que a função constante é dada como:
+```
+f(x) = c
+```
+Onde c é a nossa constante, podemos dar como exemplo uma função que sempre retorna 3, matematicamente essa função é escrita como:
+```
+f(x) = 3
+```
+
+Quando atribuimos valores em OCaml geralmente estamos mapeando uma função que retorna um valor, por exemplo quando declaramos que:
+```ocaml
+let f x = 3
+```
+Estamos declarando uma função constante, sem argumentos, que sempre irá retornar 3 quando chamada. Isso é exatamente o mesmo que quando fazemos atribuição de valores, como por exemplo:
+```ocaml
+let f = 3
+```
+O que temos em ambos os casos é uma função que mapeia qualquer valor para o valor constante nesse caso 3.
+
+
+Graficamente funções constantes produzem gráficos em linha reta, uma vez em que para todo valor de x o y será c:
+ 
 ### Funções Lineares
 
 Vamos comparar algumas funções matemáticas, digamos que temos a função linear:
