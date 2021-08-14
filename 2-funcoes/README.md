@@ -77,7 +77,7 @@ let f _ = 3
 ```
 O que temos em ambos os casos é uma função que mapeia qualquer valor para o valor constante nesse caso 3. Mas qual a diferença? Sim, é diferente. 
 
-Enquando `let f = foo` é um binding estático onde sempre será retornado foo, `let f x = foo` irá sempre recalcular o valor após o `=` isso pode parecer igual agora, mas faz diferença caso o valor foo seja mutável. Nesses casos em que queremos escrever um valor como função e não como atribuição, onde o valor é recomputado a cada chamada e não temos atributos relevantes como x nesse caso a escrevemos em OCaml como `let f () = foo` ou let f _ = foo` para que o parâmetro seja omitido, mas que a função f seja uma função constante que mapeia qualquer entrada para o valor atual de foo.
+Enquando `let f = foo` é um binding estático onde sempre será retornado foo, `let f x = foo` irá sempre recalcular o valor após o `=` isso pode parecer igual agora, mas faz diferença caso o valor foo seja mutável. Nesses casos em que queremos escrever um valor como função e não como atribuição, onde o valor é recomputado a cada chamada e não temos atributos relevantes como x nesse caso a escrevemos em OCaml como `let f () = foo` ou `let f _ = foo` para que o parâmetro seja omitido, mas que a função f seja uma função constante que mapeia qualquer entrada para o valor atual de foo.
 
 Graficamente funções constantes produzem gráficos em linha reta, uma vez em que para todo valor de x o y será c:
 ![gráfico da função f de x igual a três](https://github.com/Camilotk/ocaml4noobs/blob/master/2-funcoes/imagens/constante.png)
