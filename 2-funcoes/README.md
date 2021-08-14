@@ -6,6 +6,7 @@ Em OCaml e em outras linguagens de programação funcional, funções são a for
 #### **Indíce**
 - [O que é uma função](https://github.com/Camilotk/ocaml4noobs/tree/master/2-funcoes#o-que-%C3%A9-uma-fun%C3%A7%C3%A3o)
     - [Definição](https://github.com/Camilotk/ocaml4noobs/tree/master/2-funcoes#defini%C3%A7%C3%A3o)
+    - [Funções Constantes](https://github.com/Camilotk/ocaml4noobs/tree/master/2-funcoes#fun%C3%A7%C3%B5es-constantes)
     - [Funções Lineares](https://github.com/Camilotk/ocaml4noobs/tree/master/2-funcoes#fun%C3%A7%C3%B5es-lineares)
     - [Funções Quadráticas](https://github.com/Camilotk/ocaml4noobs/tree/master/2-funcoes#fun%C3%A7%C3%B5es-quadr%C3%A1ticas)
     - [Funções Trigonométricas](https://github.com/Camilotk/ocaml4noobs/tree/master/2-funcoes#fun%C3%A7%C3%B5es-trigonom%C3%A9tricas)
@@ -75,9 +76,9 @@ let f = 3
 ```
 O que temos em ambos os casos é uma função que mapeia qualquer valor para o valor constante nesse caso 3.
 
-
 Graficamente funções constantes produzem gráficos em linha reta, uma vez em que para todo valor de x o y será c:
- 
+![gráfico da função f de x igual a três](https://github.com/Camilotk/ocaml4noobs/blob/master/2-funcoes/imagens/constante.png)
+
 ### Funções Lineares
 
 Vamos comparar algumas funções matemáticas, digamos que temos a função linear:
