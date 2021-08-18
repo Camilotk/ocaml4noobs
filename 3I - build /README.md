@@ -12,6 +12,7 @@ Para instalar Dune vamos utilizar o nosso Gerenciador de Dependências que insta
 ```terminal
 $ opam install dune
 ```
+> Lembrando que j
 
 Agora vamos criar um projeto de exemplo, chamado 'Exemplo'. Para começar vamos criar uma nova pasta que irá conter o nosso projeto.
 
