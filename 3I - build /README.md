@@ -1,4 +1,4 @@
-# Sistema de Build - Dune
+# Dune
 
 <img src="https://dune.build/assets/imgs/dune_logo.png"/>
 
