@@ -153,4 +153,6 @@ $ dune exec ./exemplo.exe
 
 E pronto! Legal, não? O Dune nos ajudou a construir nosso projeto de forma mais estruturada e a organizar os módulos de nossa biblioteca, logo mais para frente vamos continuar aprendendo mais coisas sobre Dune.
 
+Caso deseje aprender mais stanzas pode usar a referência na [documentação](https://dune.readthedocs.io/en/stable/dune-files.html) que por enquanto infelizmente está apenas em inglês, mas que podemos ter uma futura tradução.
+
 
