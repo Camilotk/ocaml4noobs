@@ -120,6 +120,9 @@ Nosso agradecimento a todas essas pessoas ([emoji key](https://allcontributors.o
     <td align="center"><a href="https://github.com/nogw"><img src="https://avatars.githubusercontent.com/u/65539816?v=4?s=100" width="100px;" alt=""/><br /><sub><b>nogw</b></sub></a><br /><a href="#content-nogw" title="Content">🖋</a> <a href="https://github.com/Camilotk/OCaml4Noobs/commits?author=nogw" title="Code">💻</a></td>
     <td align="center"><a href="https://heartdevs.com/"><img src="https://avatars.githubusercontent.com/u/44484286?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Mateus Mendes </b></sub></a><br /><a href="#design-m7he4rt" title="Design">🎨</a></td>
   </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/caiomartins1"><img src="https://avatars.githubusercontent.com/u/45666995?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Caio Martins</b></sub></a><br /><a href="https://github.com/Camilotk/OCaml4Noobs/pulls?q=is%3Apr+reviewed-by%3Acaiomartins1" title="Reviewed Pull Requests">👀</a></td>
+  </tr>
 </table>
 
 <!-- markdownlint-restore -->
