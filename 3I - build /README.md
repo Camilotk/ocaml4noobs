@@ -5,6 +5,38 @@
 
 Quando trabalhamos em projetos simples em OCaml como trabalhamos até agora é muito simples de trabalhar com um ou dois arquivos, mas a medida que nossos projetos crescem cada vez torna-se mais e mais díficil manter um projeto, por muitos motivos, desde a complexidade da dependencia dos nossos arquivos até o gerenciamento do nosso processo de compilação. Para tornar essas coisas mais simples, temos uma ferramenta que utiliza uma série de regras de automação para tornar esses processos mais simples de manter para nós, em OCaml temos múltiplas opções de sistemas de build para escolher, mas sem dúvida o mais popular é o [Dune](https://dune.build/).
 
+## Como funcionam arquivos em OCaml
+
+Você talvez ainda não saiba, mas você pode chamar o código de um arquivo OCaml que esteja na mesma pasta em outro usando a palavra `open`, OCaml irá tratar o nome do arquivo como um módulo que será o assunto do nosso próximo capítulo, por enquanto pense nisso como um identificador. Então digamos que temos o arquivo **sum.ml** que contêm uma função de soma que desejamos usar no nosso arquivo **main.ml**, podemos "importar" ou como chamamos em OCaml "abrir" o código de Sum em main assim:
+
+**sum.ml**
+```ocaml
+let add x y = x + y
+```
+
+**main.ml**
+```ocaml
+open Sum
+
+let () = 
+    let result = add 2 3 in
+    print_endline (string_of_int result);
+```
+
+E se compilarmos esses arquivos para código nativo usando a nossa ferramenta **ocamlopt**:
+```terminal
+$ ocamlopt -o main sum.ml main.ml
+```
+
+E executarmos o arquivo:
+```terminal
+$ ./main
+```
+
+Vamos ter o nosso resultado **5**, mas isso não é tão simples quanto parece, primeiro por que a ordem de compilação dos arquivos importa, eles devem seguir a ordem de dependências se tentarmos `ocamlopt -o main main.ml sum.ml``` vamos ter um erro, se começarmos a ter subpastas e outras estruturas, nossa estrutura de módulos começa a aumentar rapidamente a complexidade e em projetos grandes é exatamente tudo o que não queremos. Para simplificar tudo isso é que usamos **Dune** que torna nossa vida muito mais fácil.
+
+Vamos ver então como ele funciona criando um projeto de exemplo, configurando e rodando o mesmo a seguir.
+
 ## Configurando o seu projeto
 
 Para instalar Dune vamos utilizar o nosso Gerenciador de Dependências que instalamos no Capítulo 1, OPAM.
@@ -141,6 +173,18 @@ let () = print_int (multiplyBy2 4);;
 )
 ```
 Aqui vamos aprender uma nova opção que é a opção **libraries** que usamos para carregar os módulos das nossas bibliotecas instaladas e que buildamos com dune.
+
+Nossa árvore de arquivos deverá estar assim:
+```
+Exemplo
+├── dune
+├── dune-project
+├── exemplo.ml
+├── exemplo.opam
+└── src
+    ├── dune
+    └── multiply.ml
+```
 
 Após ter todo o projeto definido podemos novamente fazer a build.
 ```terminal
