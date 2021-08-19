@@ -33,7 +33,7 @@ E executarmos o arquivo:
 $ ./main
 ```
 
-Vamos ter o nosso resultado **5**, mas isso não é tão simples quanto parece, primeiro por que a ordem de compilação dos arquivos importa, eles devem seguir a ordem de dependências se tentarmos `ocamlopt -o main main.ml sum.ml``` vamos ter um erro, se começarmos a ter subpastas e outras estruturas, nossa estrutura de módulos começa a aumentar rapidamente a complexidade e em projetos grandes é exatamente tudo o que não queremos. Para simplificar tudo isso é que usamos **Dune** que torna nossa vida muito mais fácil.
+Vamos ter o nosso resultado **5**, mas isso não é tão simples quanto parece, primeiro por que a ordem de compilação dos arquivos importa, eles devem seguir a ordem de dependências se tentarmos `ocamlopt -o main main.ml sum.ml` vamos ter um erro, se começarmos a ter subpastas e outras estruturas, nossa estrutura de módulos começa a aumentar rapidamente a complexidade e em projetos grandes é exatamente tudo o que não queremos. Para simplificar tudo isso é que usamos **Dune** que torna nossa vida muito mais fácil.
 
 Vamos ver então como ele funciona criando um projeto de exemplo, configurando e rodando o mesmo a seguir.
 
