@@ -156,9 +156,9 @@ E agora vamos fazer o build desse projeto.
 $ dune build
 ```
 
-Se não houver nenhum erro podemos prosseguir, caso haja, revise os passos anteriores. Agora vamos criar um aquivo **main.ml** na nossa raiz que será nosso arquivo principal e um outro arquivo **dune** na raiz com as diretivas de compilação do mesmo.
+Se não houver nenhum erro podemos prosseguir, caso haja, revise os passos anteriores. Agora vamos criar um aquivo **exemplo.ml** na nossa raiz que será nosso arquivo principal e um outro arquivo **dune** na raiz com as diretivas de compilação do mesmo.
 
-**main.ml**
+**exemplo.ml**
 ```OCaml
 open Math.Multiply
 
