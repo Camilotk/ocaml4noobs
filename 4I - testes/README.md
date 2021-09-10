@@ -148,7 +148,17 @@ let () =
     Printf.printf "--- Nota Fiscal --- \n Total da Compra: %s \n" (Float.to_string (total carrinho));;
 ```
 
-Aqui estamos sumilanddo um carrinho de compras com dois produtos e nosso programa está dando o total.
+Aqui estamos simulando um carrinho de compras com dois produtos e nosso programa está dando o total.
+
+Podemos testar se está tudo funcionando usando o comando build para compilarmos nosso projeto:
+```
+$ dune build
+```
+
+E o comando exec para executamos nosso arquivo principal e vermos a saida no terminal:
+```
+$ dune exec ./bin/main.exe
+```
 
 Aplicação de brincadeira criada, vamos agora então realmente aprender como fazer nossos testes de unidade na prática, para isso vamos escolher uma de nossas duas funções para testar, nesse caso vamos escolher a função **total**.
 
@@ -167,3 +177,109 @@ open Alcotest
 ```
 
 A primeira parte é **Arrange** aqui nós vamos organizar nosso código para que ele possa ser testado. É muito importante que todos os testes sejam feitos de forma isolada, por isso é normal que aqui façamos funções que simulem a entrada dos dados que estamos trabalho ou criarmos dados in memory como arrays ou records para simular os dados da nossa aplicação.
+
+Aqui vamos começar a definir os nossos casos de teste que vão ser carrinhos com diferentes cenários dos dados que estamos testando, nesse caso vamos testar o comportamento da função quando passamos um carrinho que tem produtos variados e outro carrinho com produtos gratuitos.
+
+```ocaml
+(* ARRANGE *)
+
+let e = epsilon_float
+
+let cart_positivos = [  
+    { id = 1; nome = "Samsung Galaxy s30 Plus"; valor = 36789.98} ;
+    { id = 2; nome = "Fone de Ouvido Bluettoth JBL"; valor = 236.99} 
+];;
+
+let cart_zeros = [
+    { id = 1; nome = "Samsung Galaxy s30 Plus"; valor = 0. } ;
+    { id = 2; nome = "Fone de Ouvido Bluettoth JBL"; valor = 0. } ;
+];;
+```
+
+Agora temos que ter um único cuidado por estarmos trabalhando com floats, a documentação da biblioteca Alcotest traz muitos exemplos e ela nos diz que quando trabalhamos com floats devemos chamar uma constante **e** que armazena o valor de **epsilon_float** presente no módulo de Alcotest. Depois disso então vamos para nossa etapa de **Act** ou Ação onde vamos criar algumas funções que vão executar nossas função total para cada um dos casos e tentar comparar com o valor esperado. 
+
+```ocaml
+(* ACT *)
+
+let test_positivos () =
+  (check  @@ float e) "valores positivos de produto"  37026.97 (total cart_positivos)
+
+let test_zeros () =
+  (check  @@ float e) "valor zero de produto"  0. (total cart_zeros)
+```
+
+Note que para isso criamos uma função com parâmetro Unit, ou seja sem parametros que chama a função check dentro do módulo Alcotest, passamos para essa função o valor float que é o tipo que estamos testando e a constante e utilizando a função apply através de seu operador @@. A função check está sendo aplicada na forma de currying aos parametros assim como uma string de descrição, valor esperado e valor recebido (gerado atráves da execução da função com nossos dados preparados).
+
+E agora precisamos rodar nossos testes para que possamos ver os nossos resultados é aqui temos a nossa parte **Assert** ou Infere, em que vamos ter o resultado de quais testes passaram ou falharam durante a execução dos testes. Para isso vamos:
+
+```ocaml
+(* ASSERT *)
+let () =
+  run "Total" [
+      "carrinhos de compras", [
+          test_case "valores positivos de produto" `Quick test_positivos;
+          test_case "valor zero de produto" `Quick test_zeros;
+        ];
+    ]
+```
+
+Essa é uma função que será executada quando executarmos nosso arquivo de testes e aqui nos utilizamos a função run seguida de um nome descritivo para qual função está sendo testada e uma lista que vai conter um nome para um conjunto de testes em string e outra lista em que cada linha é uma chamada a função test_case com o nome do caso de teste em string e a função `Quick que é nosso modo de teste seguido do indentificador da função de teste.
+
+> Na documentação é possível encontar exemplos com outras funções de teste, sobre como lidar com testes assíncronos e exemplos de como testar outros tipos de valor.
+
+Agora vamos compilar nosso projeto com nossos testes:
+```
+$ dune build
+```
+
+E vamos então executar nosso arquivo de teste:
+```
+$ dune exec ./test/ocaml_testes.exe
+```
+
+E devemos ter um output como esse:
+```
+Testing `Total'.     
+This run has ID `B266FFE0-AB61-4F30-B842-9A21564554B0'.
+
+  [OK]          carrinhos de compras          0   valores positivos de produto.
+  [OK]          carrinhos de compras          1   valor zero de produto.
+
+Full test results in `~/Programas/ocaml4noobs/4I - testes/ocaml_testes/_build/_tests/Total'.
+Test Successful in 0.000s. 2 tests run.
+```
+
+Veja que todos nossos testes passaram, isso sigifica que temos todas as saídas batendo com os resultados que definimos como esperados.
+
+Mas digamos que temos um erro na nossa aplicação, que por alguma razão tivemos que mexer na nossa função total e sem ver alteramos o contador inicial da nossa função fold_left de 0. para 0.1, quando tentarmos novamente executar nossa função de testes teremos:
+```
+Testing `Total'.     
+This run has ID `A30235E0-4025-46EC-A4EC-8A10E2BF7AFB'.
+
+> [FAIL]        carrinhos de compras          0   valores positivos de produto.
+  [FAIL]        carrinhos de compras          1   valor zero de produto.
+
+┌──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│ [FAIL]        carrinhos de compras          0   valores positivos de produto.                                                        │
+└──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+ASSERT valores positivos de produto
+FAIL valores positivos de produto
+
+   Expected: `37027'
+   Received: `37027.1'
+
+Logs saved to `~/Programas/ocaml4noobs/4I - testes/ocaml_testes/_build/_tests/Total/carrinhos de compras.000.output'.
+ ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+Full test results in `~/Programas/ocaml4noobs/4I - testes/ocaml_testes/_build/_tests/Total'.
+2 failures! in 0.000s. 2 tests run.
+```
+Ou seja nossos testes falharam!
+
+Mas além disso essas falhas nos trazem algumas informações:
+- No começo dos testes já é nos indicado que todos os testes falharam
+- Seguido da demonstração de que era esperado 37027 e foi recebido 37027.1, o que já nos ajuda a identificar que tem um erro no valor de exatamente 0.1 acontecendo.
+- Então temos os logs de execução caso desejamos depurar, salvo na pasta de build / compilação.
+- E a contagem de quantos testes foram executados e quantos falharam.
+
+Isso irá nos ajudar a identificar muito mais facilmente quais as funções do nosso sistema possuem erros, onde encontrá-los e como corrigi-los.
