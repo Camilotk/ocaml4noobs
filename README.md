@@ -101,6 +101,9 @@
 ## Intermezzo 3 -  Sistema de Build
 - [Dune](https://github.com/Camilotk/ocaml4noobs/tree/master/3I%20-%20build%20)
 
+## Intermezzo 4 - Testes
+- [Testes](#)
+
 <p align="center">Made with 🐫💜</p>
 
 ## Contribuidores ✨
