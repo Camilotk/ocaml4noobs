@@ -101,8 +101,14 @@
 ## Intermezzo 3 -  Sistema de Build
 - [Dune](https://github.com/Camilotk/ocaml4noobs/tree/master/3I%20-%20build%20)
 
+## Parte 4 - Organização do Código
+- *em breve*
+
 ## Intermezzo 4 - Testes
 - [Testes](https://github.com/Camilotk/ocaml4noobs/blob/master/4I%20-%20testes/README.md)
+
+## Parte 4 - Tipos
+- *em breve*
 
 <p align="center">Made with 🐫💜</p>
 
