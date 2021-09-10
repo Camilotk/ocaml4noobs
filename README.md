@@ -120,7 +120,7 @@
 ## Apêndice 1 - OOP
 - *em breve*
 
-## Apêndice 1 - FFI com C
+## Apêndice 2 - FFI com C
 - *em breve*
 
 <p align="center">Made with 🐫💜</p>
