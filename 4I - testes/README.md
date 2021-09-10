@@ -285,3 +285,152 @@ Mas além disso essas falhas nos trazem algumas informações:
 Isso irá nos ajudar a identificar muito mais facilmente quais as funções do nosso sistema possuem erros, onde encontrá-los e como corrigi-los.
 
 ## Testes Baseados em Propriedades
+
+O estilo de testes proposto por Kent Beck no xUnit se tornou muito popular, onde é definido alguns cenários e é garantido que os resultados são os esperados. Certamente essa é uma prática bastante útil, mas tê-la como única pode ser um risco... porque? Dijstra uma vez disse: 
+
+> "Testes de programas podem ser usados para demonstrar a presença de bugs, mas nunca para demonstrar a sua falta.". 
+
+Você pode escrever qualquer quantia de testes de unidade e ainda não provar nada com isso. Isso não é satisfatório. 
+
+Porperty Testing é uma forma alternativa de teste automatizado. Ao invés de focar em cenários específicos, usa-se um estilo mais declarativo. O testador é responsável por trazer as propriedades de seu programa que são invariantes e que sempre devem ser verdade.
+
+Uma ferramenta de teste de propriedade usa as propriedades declaradas para tentar mostrar que elas nem sempre são satisfeitas. Não é nenhum mistério que property test requer um pouco mais de preparo e pensamento que os testes tradicionais usando xUnit, mas seu resultado é uma demonstração segura do funcionamento correto do programa e para qualquer coisa que não seja trivial ou crítica o custo certamente é menor que a recompensa.
+
+Se estivermos testando a concatenação de listas, nós podemos ter uma propriedade como o tamanho que a lista concatenada sempre deve ser a soma do tamanho das listas que estão sendo concatenadas.
+
+```OCaml
+let appendedListLength l1 l2 = 
+    List.length (l1 @ l2) = List.length l1 + List.length l2
+```
+
+1. Definimos que a função appenListLenght recebe duas listas (l1 e l2).
+2. Dizemos que o tamanho da lista concatenada deve ser igual ao tamanho das duas listas somadas.
+3. Aqui a execução de código é diferente, a biblioteca de testes gera várias entradas aleatórias baseado no tipo dos parâmetros e tenta invalidar a propriedade.
+
+Bem é mais ou menos isso que precisamos saber para testar nossa função **adiciona_item**.
+
+Para fazer testes de propriedade em OCaml utilizamos é o **qcheck**, a boa notícia é que essa biblioteca de testes possui integração com o framework Alcotest que vimos primerio, para instalarmos vamos utilizar o OPAM:
+
+```
+$ opam install qcheck-alcotest
+$ eval $(opam env)
+```
+
+Agora vamos mudar nosso arquivo **tests/dune** para:
+
+```
+(tests
+ (names ocaml_testes qcheck_testes)
+ (libraries compras qcheck-core qcheck-alcotest alcotest))
+```
+
+Então agora vamos criar um novo arquivo em **test/qcheck_tests.ml**:
+```
+open Compras
+open Alcotest
+open QCheck
+
+let carrinho = [  
+    { id = 1; nome = "Computador Avell A62"; valor = 8764.50} ;
+    { id = 2; nome = "Mouse Blueetoth Microsoft"; valor = 185.99} 
+];;
+
+let test_adiciona_item =
+  Test.make ~count:1000
+    ~name: "adiciona um item"
+    (list small_nat)
+    (fun l -> (List.length l) + 1 = List.length (adiciona_item 1 l) )
+
+
+let () =
+  Printexc.record_backtrace true;
+  run "Adiciona Item" [
+    "suite",  List.map QCheck_alcotest.to_alcotest
+    [ test_adiciona_item ]
+  ]
+```
+
+> Originalmente nossa função **adiciona_item** tem tipo da lista e do item genéricos que nos permite fazer essa verificação com inteiros, mas não se atenha a isso. 
+
+Agora podemos fazer a build:
+```
+$ dune build
+```
+
+E vamos então executar nosso arquivo de teste:
+```
+$ dune exec ./test/qcheck_testes.exe
+```
+
+E teremos um output dizendo que nosso teste passou:
+```
+Testing `Adiciona Item'.
+This run has ID `3F7C7A2A-37D7-4B9B-91EC-F10731F044AA'.
+
+  [OK]          suite          0   adiciona um item.
+
+Full test results in `~/Programas/ocaml4noobs/4I - testes/ocaml_testes/_build/_tests/Adiciona Item'.
+Test Successful in 0.041s. 1 test run.
+```
+
+Mas agora imagine que por alguma razão façamos uma alteração que quebre nosso código como ao invés de adicionar uma vez adicione duas na lista:
+
+**lib/carrinho.ml**:
+```
+(* ... *)
+let adiciona_item item carrinho = carrinho @ [item; item];;
+```
+
+Quando rodar nosso teste novamente teremos:
+```
+qcheck random seed: 533577512
+Testing `Adiciona Item'.
+This run has ID `9F0525EC-3D92-4295-B050-E665748B0F54'.
+
+> [FAIL]        suite          0   adiciona um item.
+
+┌─────────────────────────────────────────────────────────────────────┐
+│ [FAIL]        suite          0   adiciona um item.                                                                                                                                             │
+└─────────────────────────────────────────────────────────────────────┘
+
+test `adiciona um item` failed on ≥ 1 cases: [] (after 2 shrink steps)
+                                               
+[exception] test `adiciona um item` failed on ≥ 1 cases: [] (after 2 shrink steps)
+                                               
+            Raised at QCheck.Test.check_result in file "src/core/QCheck.ml", line 1726, characters 6-38
+            Called from Alcotest_engine__Core.Make.protect_test.(fun) in file "src/alcotest-engine/core.ml", line 229, characters 17-23
+            Called from Alcotest_engine__Monad.Identity.catch in file "src/alcotest-engine/monad.ml", line 24, characters 31-35
+            
+
+Logs saved to `~/Programas/ocaml4noobs/4I - testes/ocaml_testes/_build/_tests/Adiciona Item/suite.000.output'.
+ ──────────────────────────────────────────────────────────────────────────
+
+Full test results in `~/Programas/ocaml4noobs/4I - testes/ocaml_testes/_build/_tests/Adiciona Item'.
+1 failure! in 0.000s. 1 test run.
+```
+
+Note que ainda temos a mesma saída do Alcotest com todas as duas informações, mas agora temos algumas a mais:
+
+- **failed on ≥ 1 cases** aqui o QCheck está nos informandos em quantos testes dos 1000 valores aleatórios o teste passou antes de encontrar a primeira falha.
+- **\[\]** aqui o QCheck está nos informando qual foi o primeiro valor que causou a falha, nesse caso Array vazio, o primeiro valor já que seu tamanho é 0, após a concatenação seu tamanho é 1 e recebeu 2. 
+
+Agora sabemos que quando temos um array vazio como input da nossa função **adiciona_item** ela falha por algum motivo. Concertando a nossa função de volta ao normal:
+
+```
+(* ... *)
+let adiciona_item item carrinho = carrinho @ [item];;
+```
+
+E executando novamente os testes:
+```
+$ dune build
+```
+
+E vamos então executar nosso arquivo de teste:
+```
+$ dune exec ./test/qcheck_testes.exe
+```
+
+Vamos voltar a ter sucesso!
+
+É isso pessoal, agora vocês sabem fazer testes com **Alcotest** e **QCheck**, nos vemos no próximo capítulo sobre tipos.

@@ -1,3 +1,3 @@
-(test
- (name ocaml_testes)
- (libraries compras alcotest))
+(tests
+ (names ocaml_testes qcheck_testes)
+ (libraries compras qcheck-core qcheck-alcotest alcotest))
