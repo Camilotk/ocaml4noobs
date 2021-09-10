@@ -1,0 +1,3 @@
+(test
+ (name ocaml_testes)
+ (libraries compras alcotest))
