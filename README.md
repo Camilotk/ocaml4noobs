@@ -107,7 +107,7 @@
 ## Intermezzo 4 - Testes
 - [Testes](https://github.com/Camilotk/ocaml4noobs/blob/master/4I%20-%20testes/README.md)
 
-## Parte 4 - Tipos
+## Parte 5 - Tipos
 - *em breve*
 
 <p align="center">Made with 🐫💜</p>
