@@ -102,7 +102,7 @@
 - [Dune](https://github.com/Camilotk/ocaml4noobs/tree/master/3I%20-%20build%20)
 
 ## Intermezzo 4 - Testes
-- [Testes](#)
+- [Testes](https://github.com/Camilotk/ocaml4noobs/blob/master/4I%20-%20testes/README.md)
 
 <p align="center">Made with 🐫💜</p>
 
