@@ -259,9 +259,9 @@ This run has ID `A30235E0-4025-46EC-A4EC-8A10E2BF7AFB'.
 > [FAIL]        carrinhos de compras          0   valores positivos de produto.
   [FAIL]        carrinhos de compras          1   valor zero de produto.
 
-┌──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
-│ [FAIL]        carrinhos de compras          0   valores positivos de produto.                                                        │
-└──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│ [FAIL]        carrinhos de compras          0   valores positivos de produto.                                                  │
+└────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 ASSERT valores positivos de produto
 FAIL valores positivos de produto
 
@@ -269,7 +269,7 @@ FAIL valores positivos de produto
    Received: `37027.1'
 
 Logs saved to `~/Programas/ocaml4noobs/4I - testes/ocaml_testes/_build/_tests/Total/carrinhos de compras.000.output'.
- ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
 Full test results in `~/Programas/ocaml4noobs/4I - testes/ocaml_testes/_build/_tests/Total'.
 2 failures! in 0.000s. 2 tests run.
@@ -283,3 +283,5 @@ Mas além disso essas falhas nos trazem algumas informações:
 - E a contagem de quantos testes foram executados e quantos falharam.
 
 Isso irá nos ajudar a identificar muito mais facilmente quais as funções do nosso sistema possuem erros, onde encontrá-los e como corrigi-los.
+
+## Testes Baseados em Propriedades
