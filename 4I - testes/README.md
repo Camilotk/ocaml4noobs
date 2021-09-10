@@ -390,7 +390,7 @@ This run has ID `9F0525EC-3D92-4295-B050-E665748B0F54'.
 > [FAIL]        suite          0   adiciona um item.
 
 ┌─────────────────────────────────────────────────────────────────────┐
-│ [FAIL]        suite          0   adiciona um item.                                                                                                                                             │
+│ [FAIL]        suite          0   adiciona um item.                  │
 └─────────────────────────────────────────────────────────────────────┘
 
 test `adiciona um item` failed on ≥ 1 cases: [] (after 2 shrink steps)
