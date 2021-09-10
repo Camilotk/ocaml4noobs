@@ -105,7 +105,8 @@
 - *em breve*
 
 ## Intermezzo 4 - Testes
-- [Testes](https://github.com/Camilotk/ocaml4noobs/blob/master/4I%20-%20testes/README.md)
+- [Testes Unitários](https://github.com/Camilotk/ocaml4noobs/blob/master/4I%20-%20testes/README.md#testes-unit%C3%A1rios)
+- [Testes Baseados em Propriedades](https://github.com/Camilotk/ocaml4noobs/blob/master/4I%20-%20testes/README.md#testes-baseados-em-propriedades)
 
 ## Parte 5 - Tipos
 - *em breve*
