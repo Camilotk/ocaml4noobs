@@ -111,6 +111,18 @@
 ## Parte 5 - Tipos
 - *em breve*
 
+## Intermezzo 5 - esy
+- *em breve*
+
+## Parte 6 - CRUD
+- *em breve*
+
+## Apêndice 1 - OOP
+- *em breve*
+
+## Apêndice 1 - FFI com C
+- *em breve*
+
 <p align="center">Made with 🐫💜</p>
 
 ## Contribuidores ✨
