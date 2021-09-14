@@ -3,7 +3,7 @@
 Até aqui utilizamos bastante o REPL para fazer experimentos e aprender a usar a linguagem, mas desse capítulo em diante vamos começar a focar um pouco mais em trabalhar com arquivos e projetos e começar a construir programas. Arquivos são mais do que apenas uma forma de armazenar nossas instruções para serem compiladas ou interpretadas, em OCaml os arquivos também correspondem a **módulos** que dividem nossos programas em unidades conceituais de código.
 
 #### **Indíce**
-- [Função Main](#)
+- [Função Main](https://github.com/Camilotk/ocaml4noobs/tree/master/4%20-%20organizacao#fun%C3%A7%C3%A3o-main)
 - [Módulos e Assinaturas](https://github.com/Camilotk/ocaml4noobs/tree/master/4%20-%20organizacao#m%C3%B3dulos-e-assinaturas)
     - [Assinaturas e Interfaces](https://github.com/Camilotk/ocaml4noobs/tree/master/4%20-%20organizacao#assinaturas-e-interfaces)
     - [Tipos Abstratos](https://github.com/Camilotk/ocaml4noobs/tree/master/4%20-%20organizacao#tipos-abstratos)
@@ -11,7 +11,7 @@ Até aqui utilizamos bastante o REPL para fazer experimentos e aprender a usar a
     - [Abrindo Módulos](https://github.com/Camilotk/ocaml4noobs/tree/master/4%20-%20organizacao#abrindo-m%C3%B3dulos)
     - [Extendendo Módulos e Assinaturas](https://github.com/Camilotk/ocaml4noobs/tree/master/4%20-%20organizacao#abrindo-m%C3%B3dulos)
 - [Erros Comuns com Módulos](https://github.com/Camilotk/ocaml4noobs/tree/master/4%20-%20organizacao#erros-comuns-com-m%C3%B3dulos)
-- [Projetando Módulos](#)
+- [Projetando Módulos](https://github.com/Camilotk/ocaml4noobs/tree/master/4%20-%20organizacao#projetando-m%C3%B3dulos)
     - [Raramente exponha tipos concretos](https://github.com/Camilotk/ocaml4noobs/tree/master/4%20-%20organizacao#raramente-exponha-tipos-concretos)
     - [Projete para quem está chamando](https://github.com/Camilotk/ocaml4noobs/tree/master/4%20-%20organizacao#projete-para-quem-est%C3%A1-chamando)
     - [Crie interfaces uniformes](https://github.com/Camilotk/ocaml4noobs/tree/master/4%20-%20organizacao#crie-interfaces-uniformes)
