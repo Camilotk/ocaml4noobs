@@ -70,6 +70,8 @@ Importante saber que quando usamos dune para compilar nossos arquivos não preci
 $ ocamlc moduloa.mli moduloa.ml
 ```
 
+<p align="right"><a href="https://github.com/Camilotk/ocaml4noobs/tree/master/4%20-%20organizacao#ind%C3%ADce">🔝 Subir para o topo</a></p>
+
 ### Tipos Abstratos
 
 Não incomum que nossos módulos em OCaml contenham a definição de novos tipos. E como funciona a exposição de novos tipos? Bem para isso vamos imaginar que estamos criando agora um arquivo **modulob.ml** que vai conter um novo tipo data:
@@ -102,6 +104,8 @@ val anos : data -> float
 ```
 
 Agora apenas as funções **nova** e **diferenca** podem criar valores do tipo data assim garantindo que não vamos ter records que quebrem a formação esperada desse tipo. Isso vai ajudar a garantir que nada que dependa de um valor desse tipo vai quebrar por conta disso. Isso faz muito sentido em uma biblioteca já que as versões subsequentes dessa biblioteca podem continuar expondo a mesma interface, enquanto internamente a implementação continue mudando inclusive as definições de tipo.
+
+<p align="right"><a href="https://github.com/Camilotk/ocaml4noobs/tree/master/4%20-%20organizacao#ind%C3%ADce">🔝 Subir para o topo</a></p>
 
 ### Submódulos
 
@@ -181,6 +185,8 @@ end
 
 A vantagem de usarmos blocos separados para declarar nossas interfaces é que elas podem ser reaproveitadas em mais de um módulo.
 
+<p align="right"><a href="https://github.com/Camilotk/ocaml4noobs/tree/master/4%20-%20organizacao#ind%C3%ADce">🔝 Subir para o topo</a></p>
+
 ### Abrindo Módulos
 
 A maior parte do tempo nos referimos aos valores, funções e tipos em um módulo usando o acesso qualificado colocando o nome do módulo na frente do valor que está sendo acessado. Por exemplo vamos escrever ```List.map``` para nos referimos a função. Porém quando quisermos nos referir a funções em um módulo sem seu identificador usamos a palavra reservada **open**.
@@ -233,6 +239,8 @@ let () =
     print_endline (string_of_int result);
 ```
 
+<p align="right"><a href="https://github.com/Camilotk/ocaml4noobs/tree/master/4%20-%20organizacao#ind%C3%ADce">🔝 Subir para o topo</a></p>
+
 ### Extendendo Módulos e Assinaturas
 
 Quando trabalhamos com módulos podemos criar novos módulos que estendem os preexistentes, ou seja, eles recebem todas as características declaradas no outro módulo mais as que o usuário define, isso é próximo do conceito de "herança" ou "mixin" em outras linguagens.
@@ -274,6 +282,8 @@ module type Pessoa_com_idade = sig
     val idade : int
 end
 ```
+
+<p align="right"><a href="https://github.com/Camilotk/ocaml4noobs/tree/master/4%20-%20organizacao#ind%C3%ADce">🔝 Subir para o topo</a></p>
 
 ## Erros Comuns com Módulos
 
@@ -329,6 +339,8 @@ OCaml é uma linguagem muito concisa e que possui muita flexibilidade com tipos 
 Um bom método para isso é escrever as definições de tipo antes da implementação da lógica, tanto escrevendo primeiro a assinatura quando estamos trabalhando com submódulos quanto escrevendo os nossos arquivos ```.mli``` antes dos ```.ml```.
 
 Claro que você não precisa ser estritamente rígido com essa regra, é normal por vezes que seja mais prático escrever primeiro a lógica, principalmente quando estamos prototipando coisas onde nossos parâmetros e valores não são bem definidos. Mas tipos e assinaturas são as ferramentas mais importantes que OCaml nos provê para construir a estrutura do nosso código de uma forma que seja clara o que estamos buscando atingir com nosso código.
+
+<p align="right"><a href="https://github.com/Camilotk/ocaml4noobs/tree/master/4%20-%20organizacao#ind%C3%ADce">🔝 Subir para o topo</a></p>
 
 ## Functors
 
@@ -414,6 +426,8 @@ Functors nos ajudam a parametrizar nossas aplicações e modelar melhores módul
 
 Essas são algumas dessas aplicações, existem muitas outras que são possibilitadas com a utilização de Functors e que você pode encontrar em codebases OCaml.
 
+<p align="right"><a href="https://github.com/Camilotk/ocaml4noobs/tree/master/4%20-%20organizacao#ind%C3%ADce">🔝 Subir para o topo</a></p>
+
 ## Módulos de primeira-classe
 
 Você pode pensar no OCaml como sendo dividido em duas partes: uma linguagem que se preocupa com valores e tipos e uma linguagem que se preocupa com módulos e assinaturas de módulo. Esses sublinguagens são separadas, em que os módulos podem conter tipos e valores, mas os valores comuns não podem conter módulos ou tipos de módulo. Isso significa que você não pode fazer coisas como definir uma variável cujo valor é um módulo ou uma função que recebe um módulo como argumento.
@@ -471,6 +485,8 @@ let numeros = [tres; (module struct let value = 5 end)] ;;
 ```
 > Observe que foi inferido que o módulo anônimo na lista trata-se de uma implementação de **IntValue** pelo compilador. Se tentássemos declarar como um módulo que não há assinatura, teríamos um erro.
 
+<p align="right"><a href="https://github.com/Camilotk/ocaml4noobs/tree/master/4%20-%20organizacao#ind%C3%ADce">🔝 Subir para o topo</a></p>
+
 ### Acessando módulos de primeira classe
 
 Podemos acessar o conteúdo de módulos de primeira classe quando os desempacotamos em módulos normais. Para fazer isso usamos a palavra reservada **val** com a seguinte estrutura:
@@ -514,6 +530,8 @@ E podemos perceber que quando desempacotarmos nosso módulo seu valor passa a se
 Módulos de primeira classe é um conceito avançado da linguagem e ele serve como atalho e uma forma de facilitar a solução de problemas específicos. Porém é importante que você saiba que tudo que pode ser feito usando módulos de primeira classe, pode ser feito sem usar módulos de primeira classe.
 
 Especialmente quando estamos trabalhando em projetos pequenos e/ou de baixa complexidade talvez eles nem mesmo sejam necessários de nenhuma forma. Por isso sempre leve em consideração quando estiver escrevendo seus módulos o trade off de ganho x aumento de complexidade que técnicas como essa oferecem.
+
+<p align="right"><a href="https://github.com/Camilotk/ocaml4noobs/tree/master/4%20-%20organizacao#ind%C3%ADce">🔝 Subir para o topo</a></p>
 
 ## Materiais Complementares e Referências
 - [Ponto de entrada](https://translate.google.com/translate?sl=en&tl=pt&u=https://en.wikipedia.org/wiki/Entry_point%23OCaml)
