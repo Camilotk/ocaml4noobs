@@ -514,3 +514,12 @@ E podemos perceber que quando desempacotarmos nosso módulo seu valor passa a se
 Módulos de primeira classe é um conceito avançado da linguagem e ele serve como atalho e uma forma de facilitar a solução de problemas específicos. Porém é importante que você saiba que tudo que pode ser feito usando módulos de primeira classe, pode ser feito sem usar módulos de primeira classe.
 
 Especialmente quando estamos trabalhando em projetos pequenos e/ou de baixa complexidade talvez eles nem mesmo sejam necessários de nenhuma forma. Por isso sempre leve em consideração quando estiver escrevendo seus módulos o trade off de ganho x aumento de complexidade que técnicas como essa oferecem.
+
+## Materiais Complementares e Referências
+- [Ponto de entrada](https://translate.google.com/translate?sl=en&tl=pt&u=https://en.wikipedia.org/wiki/Entry_point%23OCaml)
+- [Functor](https://pt.wikipedia.org/wiki/Functor)
+- [Cidadões de primeira classe](https://pt.wikipedia.org/wiki/Cidad%C3%A3o_de_primeira_classe)
+- [Função de primeira classe](https://pt.wikipedia.org/wiki/Fun%C3%A7%C3%A3o_de_primeira_classe)
+- [Diferença de functors em Haskell e OCaml](https://try2explore.com/questions/pt/10341180)
+
+#### E por enquanto, é só nos vemos no próximo Capítulo! 😉
