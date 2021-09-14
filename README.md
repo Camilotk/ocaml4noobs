@@ -101,6 +101,28 @@
 ## Intermezzo 3 -  Sistema de Build
 - [Dune](https://github.com/Camilotk/ocaml4noobs/tree/master/3I%20-%20build%20)
 
+## Parte 4 - Organização do Código
+- *em breve*
+
+## Intermezzo 4 - Testes
+- [Testes Unitários](https://github.com/Camilotk/ocaml4noobs/blob/master/4I%20-%20testes/README.md#testes-unit%C3%A1rios)
+- [Testes Baseados em Propriedades](https://github.com/Camilotk/ocaml4noobs/blob/master/4I%20-%20testes/README.md#testes-baseados-em-propriedades)
+
+## Parte 5 - Tipos
+- *em breve*
+
+## Intermezzo 5 - esy
+- *em breve*
+
+## Parte 6 - CRUD
+- *em breve*
+
+## Apêndice 1 - OOP
+- *em breve*
+
+## Apêndice 2 - FFI com C
+- *em breve*
+
 <p align="center">Made with 🐫💜</p>
 
 ## Contribuidores ✨
