@@ -294,10 +294,205 @@ Outra dica é que quanto menos usado um valor é, maior vantagem em utilizar nom
 
 ### Crie interfaces uniformes
 
+Quando estamos desenvolvendo uma interface não devemos pensá-la de forma isolada. Normalmante nossas interfaces representam valores que interagem com o código e com outras interfaces e isso deve funcionar de forma natural. Normalmente isso torna-se um trabalho mais fácil quando utilizamos convenções ou padrões de interface, o que torna mais fácil consumi-las e trabalhar com elas.
 
+Algumas convenções bastante usadas:
+
+- Um modulo para *praticamente* todo tipo na nossa aplicação. Normamelmente construimos um módulo para tipo que definimos na nossa aplicação e exportamos o tipo primário do módulo com o nome **t**.
+
+- *Sempre colocamos **t** primeiro*. Se o nosso módulo hipotético chamado ```M``` no qual o tipo primário é ```M.t``` possui funções que usam valor do tipo ```M.t``` colocamos sempre esses valor como o primeiro.
+
+Também existem padrões e convenções sobre funções comumente utilizadas e reescritas frequentemente em módulos, como a função map. A assinatura de map por convenção sempre utiliza tipos genéricos por convenção, isso ajuda a termos uma maior uniformidade, mas esse tipo de convenção específica você consegue aprender com experiência a medida em que acumular prática consumindo interfaces. No momento concentre-se em aprender as duas convenções acima.
 
 ### Interface antes da implementação
 
+OCaml é uma linguagem muito concisa e que possui muita flexibilidade com tipos e design de código. Uma das principais tarefas de um programa OCaml bem escrito é a implementação utilizar de forma correta e segura tipos, por isso é importante que a gente pense os tipos que nosso programa usa com cuidado.
+
+Um bom método para isso é escrever as definições de tipo antes da implementação da lógica, tanto escrevendo primeiro a assinatura quando estamos trabalhando com submódulos quanto escrevendo os nossos arquivos ```.mli``` antes dos ```.ml```.
+
+Claro que você não precisa ser estritamente rígido com essa regra, é normal por vezes que seja mais prático escrever primeiro a lógica, principalmente quando estamos prototipando coisas onde nossos parametros e valores não são bem definidos. Mas tipos e assinaturas são as ferramentas mais importantes que OCaml nos provê para construir a estrutura do nosso código de uma forma que seja clara o que estamos buscando atingir com nosso código.
+
 ## Functors
 
+Módulos pordem ser passados como funções. Isso é equivalente ao conceito de funções de primeira classe que vimos no capítulo sobre funções. Porém, modulos são intrissicamente diferentes de funções normais. Ao invés de passarmos eles como funções normais, nos utilizamos funções especiais chamadas **Functors**.
+
+> Na matemática, mais precisamente teoria das categorias, um functor ou funtor é um mapeamento entre categorias, preservando domínios, contradomínios, identidades e composições, analogamente a como, por exemplo, um homomorfismo de grupos preserva o elemento neutro e a operação do grupo.
+
+A principal difetença que temos nos functors é que essas funções recebem módulos como parâmetros e também retornam módulos, somente. Functors nos permitem criar módulos parametrizados e prover um módulo a outro que recebe a implementação. 
+
+Digamos que temos uma assinatura do módulo ```Stringable``` definida, sendo que essa assinatura define a exposição de um tipo abstrato **t** e uma função **toString** que recebe um valor **t** e retorna uma string:
+
+```ocaml
+module type Stringable  = sig 
+    type t 
+    val toString : t -> string 
+end
+
+```
+
+E queremos criar um functor que vai receber essa assinatura e utilizar os tipos definidos nessa interface para declarar duas funções parametrizadas que vão utilizar os tipos dessa interface:
+
+```ocaml
+module Printer (Item:Stringable) = struct
+    let print (t : Item.t) = print_endline (Item.toString t)
+    let printList (list : Item.t list) =
+      ((list |> (List.map Item.toString)) |>
+         (String.concat ((", ") )))
+        |> print_endline
+end
+```
+
+Agora podemos usar esse functor passando um módulo que implementa essa interface como parametro e passando as implementações concretas desse tipo:
+```ocaml
+module IntPrinter = Printer (struct 
+    type t = int
+    let toString = string_of_int end)
+```
+O functior irá nos retornar uma implementação concreta de um módulo que será atribuida para o módulo **IntPrinter** que além de conter os tipos do módulo passado como parâmetro para o functor também vai conter as funções que foram declaradas parametricamente em sua definição.
+```ocaml
+IntPrinter.printList [1; 2; 3];;
+(* 1, 2, 3 
+   - : unit = () *)
+
+IntPrinter.print 10;;
+(* 10
+   - : unit = () *)
+```
+
+E agora podemos usar esse functor para gerar a implementação de outros módulos que implementam a mesma assinatura:
+```ocaml
+module FloatPrinter = Printer (struct 
+    type t = float
+    let toString = string_of_float end)
+
+FloatPrinter.printList [1.3; 5.6; 9.7];;
+(* 1.3, 5.6, 9.7
+   - : unit = () *)
+```
+
+Obviamente, o functor assim como o restante em OCaml tem uma forte checagem para garantir que o módulo passado corresponde a implementação da interface usada como paramêtro e se tentarmos passar um módulo que não atenda essa definição: 
+```ocaml
+ module FalsePrinter = Printer (struct 
+      let toString = 1 end);;
+```
+
+Teremos um erro:
+```
+Error: Signature mismatch:
+       Modules do not match:
+        sig val toString : int end
+       is not included in
+        Stringable
+       The type `t' is required but not provided
+```
+
+Functors nos ajudam a parametrizar nossas aplicações e modelar melhores módulos, além de permitir um grande reaproveitamento de código usá-los da forma correta pode ser útil para resolver vários problemas de estrutura de código incluindo:
+
+- **Injeção de dependência** Pois fazem que a implementação de alguns componentes sejam cambiáveis. Isso é particularmente útil quando a intenção é prototipar partes do sistema para testes e simulações.
+
+- **Autoextensão de módulos** Functors nos provêem uma forma de extender nossos módulos com novas funcionalidades de uma forma padronizada. Functors nos permitem escrever a lógica apenas uma vez e reaplicá-la e como vimos anteriormente podemos usar **include** para fazer isso, mas certamente functors podem nos prover isso de forma mais organizada e eficiente.
+
+- **Instanciar módulos com estado** Módulos podem conter estados mutáveis, isso significa que algumas vezes pode ser útil ter múltiplas instâncias de um módulo em particular, cada um com seu estado individual. Functors nos permitem automatizar a construção desses módulos.
+
+Essas são algumas dessas aplicações, existem muitas outras que são possibilitadas com a utilização de Functors e que você pode encontrar em codebases OCaml.
+
 ## Módulos de primeira-classe
+
+Você pode pensar no OCaml como sendo dividido em duas partes: uma linguagem que se preocupa com valores e tipos e uma linguagem que se preocupa com módulos e assinaturas de módulo. Esses sublinguagens são separadas, em que os módulos podem conter tipos e valores, mas os valores comuns não podem conter módulos ou tipos de módulo. Isso significa que você não pode fazer coisas como definir uma variável cujo valor é um módulo ou uma função que recebe um módulo como argumento.
+
+OCaml fornece uma maneira de contornar essa separação na forma de módulos de primeira classe. Módulos de primeira classe são valores comuns que podem ser criados e convertidos de volta em módulos regulares.
+
+Módulos de primeira classe são uma técnica sofisticada e você precisará se familiarizar com alguns aspectos avançados da linguagem para usá-los de forma eficaz. Mas vale a pena aprender, porque deixar os módulos na linguagem central é bastante poderoso, aumentando o alcance do que você pode expressar e tornando mais fácil construir sistemas flexíveis e modulares.
+
+### Construindo módulos de Primeira Classe
+
+Para melhor entender esse conceito, digamos que temos uma assinatura de um módulo que apenas contem um tipo inteiro:
+```ocaml
+module type IntValue = sig
+    val value : int
+end
+```
+Nós podemos criar um módulo que implemente essa assinatura:
+```ocaml
+module Tres : IntValue = struct
+    let value = 3
+end
+```
+
+Para construir um módulo de primeira classe devemos empacotar o módulo e sua assinatura. Isso é feito utilizando a palavra reservada **module** nessa estrutura:
+```
+(module <Nome> :  <Tipo>)
+```
+
+Por exemplo para nosso exemplo que definimos acima isso seria feito da seguinte forma:
+```ocaml
+let tres = (module Tres : IntValue);;
+(* val tres : (module IntValue) = <module> *)
+```
+
+O tipo do módulo é opcional na construção de um módulo de primeira classe quando ele pode ser inferido pelo conteúdo:
+```ocaml
+module Quatro = struct let value = 4 end ;;
+(* module Quatro : sig val value : int end *)
+```
+
+Quando empacotamos módulos podemos utilizá-los como valores, por exemplo em listas:
+```ocaml
+let numeros = [tres; (module Quatro)];;
+(* val numeros : (module IntValue) list = [<module>; <module>] *)
+```
+
+Também podemos usar **módulos anonimos** para criar módulos de primeira classe, podemos definir um módulo anônimos em OCaml utilizamos a estrutura:
+```
+(module struct <let...> end)
+```
+Por exemplo:
+```ocaml
+let numeros = [tres; (module struct let value = 5 end)] ;;
+(* val numeros : (module IntValue) list = [<module>; <module>] *)
+```
+> Observe que foi inderido que o módulo anonimo na lista trata-se de uma implementação de **IntValue** pelo compilador. Se tentássemos declarar como um módulo que não há assinatura, teríamos um erro.
+
+### Acessando módulos de primeira classe
+
+Podemos acessar o conteúdo de módulos de primeira classe quando os desempacotamos em módulos normais. Para fazer isso usamos a palavra reservada **val** com a seguinte estrutura:
+```
+(val <Modulo> : <Tipo do modulo>)
+```
+Por exemplo:
+```ocaml
+module Outro_tres = (val tres : IntValue) ;;
+(* module Outro_tres : IntValue *)
+
+Outro_tres.value ;;
+(* - : int = 3 *)
+```
+
+Nós também podemos escrever funções que consomem e produzem módulos de primeira classe. 
+
+```ocaml
+let to_int input_module =
+  let module M = (val input_module : IntValue) in
+  M.value
+(* val to_int : (module IntValue) -> int = <fun> *)
+
+let soma first_module second_module = 
+    (module struct 
+        let value = to_int first_module + to_int second_module
+    end : IntValue)
+(* val soma : (module IntValue) -> (module IntValue) -> (module IntValue) = <fun> *)
+```
+
+Agora podemos usar essas funções para trabalhar definindo novos módulos:
+```ocaml
+let seis = soma tres tres;;
+(* val seis : (module IntValue) = <module> *)
+```
+
+E podemos perceber que quando desempacotarmos nosso módulo seu valor passa a ser o retornado pela nossa função.
+
+### Você pode viver sem módulos de primeira classe
+
+Modulos de primeira classe é um conceito avançado da linguagem e ele serve como atalho e uma forma de facilitar a solução de problemas específicos. Porém é importante que você saiba que tudo que pode ser feito usando módulos de primeira classe, pode ser feito sem usar módulos de primeira classe.
+
+Especialmente quando estamos trabalhando em projetos pequenos e/ou de baixa complexidade talvez eles nem mesmo sejam necessários de nenhuma forma. Por isso sempre leve em consideração quando estiver escrevendo seus módulos o trade off de ganho x aumento de complexidade que técnicas como essa oferecem.
