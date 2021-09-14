@@ -1,10 +1,28 @@
 # Controle e Organização
 
-## Introdução
-
 Até aqui utilizamos bastante o REPL para fazer experimentos e aprender a usar a linguagem, mas desse capítulo em diante vamos começar a focar um pouco mais em trabalhar com arquivos e projetos e começar a construir programas. Arquivos são mais do que apenas uma forma de armazenar nossas instruções para serem compiladas ou interpretadas, em OCaml os arquivos também correspondem a **módulos** que dividem nossos programas em unidades conceituais de código.
 
-## Main
+#### **Indíce**
+- [Função Main](#)
+- [Módulos e Assinaturas](https://github.com/Camilotk/ocaml4noobs/tree/master/4%20-%20organizacao#m%C3%B3dulos-e-assinaturas)
+    - [Assinaturas e Interfaces](https://github.com/Camilotk/ocaml4noobs/tree/master/4%20-%20organizacao#assinaturas-e-interfaces)
+    - [Tipos Abstratos](https://github.com/Camilotk/ocaml4noobs/tree/master/4%20-%20organizacao#tipos-abstratos)
+    - [Submódulos](https://github.com/Camilotk/ocaml4noobs/tree/master/4%20-%20organizacao#subm%C3%B3dulos)
+    - [Abrindo Módulos](https://github.com/Camilotk/ocaml4noobs/tree/master/4%20-%20organizacao#abrindo-m%C3%B3dulos)
+    - [Extendendo Módulos e Assinaturas](https://github.com/Camilotk/ocaml4noobs/tree/master/4%20-%20organizacao#abrindo-m%C3%B3dulos)
+- [Erros Comuns com Módulos](https://github.com/Camilotk/ocaml4noobs/tree/master/4%20-%20organizacao#erros-comuns-com-m%C3%B3dulos)
+- [Projetando Módulos](#)
+    - [Raramente exponha tipos concretos](https://github.com/Camilotk/ocaml4noobs/tree/master/4%20-%20organizacao#raramente-exponha-tipos-concretos)
+    - [Projete para quem está chamando](https://github.com/Camilotk/ocaml4noobs/tree/master/4%20-%20organizacao#projete-para-quem-est%C3%A1-chamando)
+    - [Crie interfaces uniformes](https://github.com/Camilotk/ocaml4noobs/tree/master/4%20-%20organizacao#crie-interfaces-uniformes)
+    - [Interface antes da implementação](https://github.com/Camilotk/ocaml4noobs/tree/master/4%20-%20organizacao#interface-antes-da-implementa%C3%A7%C3%A3o)
+- [Functors](https://github.com/Camilotk/ocaml4noobs/tree/master/4%20-%20organizacao#functors)
+- [Módulos de primeira-classe](https://github.com/Camilotk/ocaml4noobs/tree/master/4%20-%20organizacao#m%C3%B3dulos-de-primeira-classe)
+    - [Construindo módulos de Primeira Classe](https://github.com/Camilotk/ocaml4noobs/tree/master/4%20-%20organizacao#m%C3%B3dulos-de-primeira-classe)
+    - [Acessando módulos de primeira classe](https://github.com/Camilotk/ocaml4noobs/tree/master/4%20-%20organizacao#acessando-m%C3%B3dulos-de-primeira-classe)
+    - [Você pode viver sem módulos de primeira classe](https://github.com/Camilotk/ocaml4noobs/tree/master/4%20-%20organizacao#voc%C3%AA-pode-viver-sem-m%C3%B3dulos-de-primeira-classe)
+
+## Função Main
 
 Diferente de C ou Java não temos uma função chamada **main** por onde nossos programas começam a execução. Quando um programa OCaml é executado todas as suas instruções são avaliadas em execução. Na maioria dos scripts e programas que criamos a declaração **let () =** faz o papel da função main, mas ainda assim devemos ter a consciência que todo nosso arquivo é avaliado em execução e então de alguma forma todos os arquivos em OCaml são uma grande função main.
 
@@ -269,7 +287,7 @@ Quando OCaml compila um programa com uma extensão ```ml``` e um com a extensão
 
 - **Cyclic Dependencies**: OCaml não permite dependências ciclicas (quando duas definições dependem uma da outra mutuamente). Caso haja dependencia ciclica entre dois módulos isso irá causar um erro.
 
-## Projetando Programas com Módulos
+## Projetando Módulos
 
 O sistema de módulos é uma das principais partes da arquitetura de qualquer programa OCaml e por isso é necessário que sejam projetados da forma mais eficiente possível. Vamos ver alguns conceitos que vão ajudar a projetar programas utilizando o sistema de módulos.
 
