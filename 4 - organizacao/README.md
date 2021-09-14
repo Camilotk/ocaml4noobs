@@ -35,7 +35,7 @@ Módulos são como **mini arquivos**. Eles podem agregar diversas definições c
 
 Todo arquivo OCaml em si é compilado para um módulo com o mesmo nome do arquivo, mas capitalizado (com a sua inicial maiúscula). Se tivermos um arquivo ```ocaml.ml``` todo seu conteúdo forma um módulo chamado **Ocaml** que pode ser acessado por qualquer outro arquivo. Os conteudos de um módulo podem ser acessados por ponto **.** assim como as propriedades de um record. 
 
-> Por convenção geralmente utilizamos nomes de arquivos inteiramentte em letras minúsculas, nomes capitalizados não causam qualquer tipo de erro ou são inválidos, mas dificilmente encontra-se programadores que utilizam essa convenção. Idependente da convenção, o nome do módulo ainda é o nome capitalizado do arquivo.
+> Por convenção geralmente utilizamos nomes de arquivos inteiramente em letras minúsculas, nomes capitalizados não causam qualquer tipo de erro ou são inválidos, mas dificilmente encontra-se programadores que utilizam essa convenção. Independente da convenção, o nome do módulo ainda é o nome capitalizado do arquivo.
 
 Quando escrevemos um programa OCaml que roda inteiramente no mesmo arquivo todos seus valores, funções e estruturas estão interagindo dentro desse módulo que é representado pelo nome do arquivo.
 
@@ -45,7 +45,7 @@ Quando escrevemos nosso código OCaml definimos nossas expressões da linguagem 
 
 > Assim como todo arquivo .ml é implicitamente um módulo, todo arquivo .mli é implicitamente uma interface.
 
-Para isso, temos que definir uma interface de módulo, que atuará como uma máscara sobre a implementação do módulo. Para defirnirmos a interface de um módulo representado pelo arquivo ```module.ml``` devemos criar um arquivo ```module.mli```na mesma pasta, tanto o compilador padrão de OCaml, quanto dune sempre procuram por um arquivo .mli de mesmo nome que o arquivo que estão compilando e caso não o encontre vão inferir a interface para o módulo.
+Para isso, temos que definir uma interface de módulo, que atuará como uma máscara sobre a implementação do módulo. Para definirmos a interface de um módulo representado pelo arquivo ```module.ml``` devemos criar um arquivo ```module.mli``` na mesma pasta, tanto o compilador padrão de OCaml, quanto dune sempre procuram por um arquivo .mli de mesmo nome que o arquivo que estão compilando e caso não o encontre vão inferir a interface para o módulo.
 
 > Junto com o resultado de toda compilação temos um arquivo com a extensão ```.cmi``` que justamente se trata do resultado de compilação da interface do módulo. Note que mesmo quando não definimos explicitamente um arquivo ```.mli``` esse arquivo está presente, justamente por que o compilador vai inferir uma interface para tudo que está declarado no arquivo e expor todas as expressões e valores do mesmo.
 
@@ -72,7 +72,7 @@ $ ocamlc moduloa.mli moduloa.ml
 
 ### Tipos Abstratos
 
-Não incomum que nossos móduos em OCaml contenham a definição de novos tipos. E como funciona a exposição de novos tipos? Bem para isso vamos imaginar que estamos criando agora um arquivo **modulob.ml** que vai conter um novo tipo data:
+Não incomum que nossos módulos em OCaml contenham a definição de novos tipos. E como funciona a exposição de novos tipos? Bem para isso vamos imaginar que estamos criando agora um arquivo **modulob.ml** que vai conter um novo tipo data:
 
 ```ocaml
 type data = {dia: int; mes: int; ano: int}
@@ -101,11 +101,11 @@ val diferenca : data -> data -> data
 val anos : data -> float
 ```
 
-Agora aprenas as funções **nova** e **diferenca** podem criar valores do tipo data assim garantindo que não vamos ter records que quebrem a formação esperada desse tipo. Isso vai ajudar a garantir que nada que dependa de um valor desse tipo vai quebrar por conta disso. Isso faz muito sentido em uma biblioteca já que as versões subsequentes dessa biblioteca podem continuar expondo a mesma interface, enquanto internamente a implementação continue mudando inclusive as definições de tipo.
+Agora apenas as funções **nova** e **diferenca** podem criar valores do tipo data assim garantindo que não vamos ter records que quebrem a formação esperada desse tipo. Isso vai ajudar a garantir que nada que dependa de um valor desse tipo vai quebrar por conta disso. Isso faz muito sentido em uma biblioteca já que as versões subsequentes dessa biblioteca podem continuar expondo a mesma interface, enquanto internamente a implementação continue mudando inclusive as definições de tipo.
 
 ### Submódulos
 
-Módulos podem também conter módulos, quando temos um módulo dentro de outro chamamos essa estrutura de submódulos (submodules) ou módulos aninhados (nested modules). Quando declaramos um modulo em um arquivo, este por sua vez automaticamente torna-se um submódulo do mesmo.
+Módulos podem também conter módulos, quando temos um módulo dentro de outro chamamos essa estrutura de submódulos (submodules) ou módulos aninhados (nested modules). Quando declaramos um módulo em um arquivo, este por sua vez automaticamente torna-se um submódulo do mesmo.
 
 A sintaxe básica para declarar um módulo é:
 ```ocaml
@@ -128,7 +128,7 @@ let lista_links () =
     link_emelle ()
 ```
 
-Se tentarmos acessar essas declarações de outro modulo teremos dois niveis de modulos. Podemos escrever assim:
+Se tentarmos acessar essas declarações de outro módulo teremos dois níveis de módulos. Podemos escrever assim:
 ```OCaml
 let () =
     Twitch.Eduardo.imprime ();
@@ -167,7 +167,7 @@ let lista_links () =
   link_emelle ()
 ```
 
-A definição do nosso módulo ```Eduardo``` acima é equivalente a um part de arquivos ```eduardo.ml``` e ```eduardo.mli``` . Escrever isso em um único bloco de código nem sempre é elegante, é possível escrever a assinatura e as definições em blocos separados:
+A definição do nosso módulo ```Eduardo``` acima é equivalente a um par de arquivos ```eduardo.ml``` e ```eduardo.mli``` . Escrever isso em um único bloco de código nem sempre é elegante, é possível escrever a assinatura e as definições em blocos separados:
 
 ```ocaml
 module type Eduardo_type = sig
@@ -185,7 +185,7 @@ A vantagem de usarmos blocos separados para declarar nossas interfaces é que el
 
 A maior parte do tempo nos referimos aos valores, funções e tipos em um módulo usando o acesso qualificado colocando o nome do módulo na frente do valor que está sendo acessado. Por exemplo vamos escrever ```List.map``` para nos referimos a função. Porém quando quisermos nos referir a funções em um módulo sem seu identificador usamos a palavra reservada **open**.
 
-> A razaão para preferirmos o acesso qualificado especialmente no módulo List é que isso nos ajuda a evitar conflito com valores de outros módulos que tenham o mesmo identificador, como é o caso do módulo Array que também declara a função map.
+> A razão para preferirmos o acesso qualificado especialmente no módulo List é que isso nos ajuda a evitar conflito com valores de outros módulos que tenham o mesmo identificador, como é o caso do módulo Array que também declara a função map.
 
 Por exemplo, se tivermos dois arquivos um **sum.ml** que contem uma simples função de soma chamada ```add```: 
 
@@ -194,7 +194,7 @@ Por exemplo, se tivermos dois arquivos um **sum.ml** que contem uma simples fun�
 let add x y = x + y
 ```
 
-E quisermos chamá-la no nosso arquivo **main.ml** podemos tanto utlizar o acesso qualificado:
+E quisermos chamá-la no nosso arquivo **main.ml** podemos tanto utilizar o acesso qualificado:
 
 **main.ml**
 ```ocaml
@@ -214,7 +214,7 @@ let () =
     print_endline (string_of_int result);
 ```
 
-Isso parece trivial com o exemplo sendo tão simples, mas a medida que nossos programas crescem começa a tornar-se mais útil utilizar **open**. Abrir um módulo é um trade-off (uma troca) entre ter uma escrita tersa para utilizar as expressões de um módulo e ser explicíto em de onde essas expressões vem e como elas se relacionam. Quanto mais módulos você abre, mais limpo o código fica, porém pode ser mais dificíl de ler o código e saber de onde vem cada coisa.
+Isso parece trivial com o exemplo sendo tão simples, mas a medida que nossos programas crescem começa a tornar-se mais útil utilizar **open**. Abrir um módulo é um trade-off (uma troca) entre ter uma escrita tersa para utilizar as expressões de um módulo e ser explícito em de onde essas expressões vem e como elas se relacionam. Quanto mais módulos você abre, mais limpo o código fica, porém pode ser mais difícil de ler o código e saber de onde vem cada coisa.
 
 Uma outra forma de abrir módulos que fica no meio termo entre essa troca é a abertura local, a principal diferença desse tipo de **open** é que ele é restrito ao escopo e existem duas formas de fazer.
 
@@ -226,7 +226,7 @@ let () =
     print_endline (string_of_int result);
 ```
 
-A outra ainda mais restrita que utilizando **in** pois restringe o escopo dentro de parenteses e é muito útil quando temos pequenas expressões que precisamos.
+A outra ainda mais restrita que utilizando **in** pois restringe o escopo dentro de parênteses e é muito útil quando temos pequenas expressões que precisamos.
 ```OCaml
 let () = 
     let result = Sum.(add 2 3) in
@@ -235,9 +235,9 @@ let () =
 
 ### Extendendo Módulos e Assinaturas
 
-Quando trabalhamos com módulos podemos criar novos módulos que extendem os pré-existentes, ou seja, eles recebem todas as características declaradas no outro módulo mais as que o usuário define, isso é próximo do conceito de "herança" ou "mixin" em outras linguagens.
+Quando trabalhamos com módulos podemos criar novos módulos que estendem os preexistentes, ou seja, eles recebem todas as características declaradas no outro módulo mais as que o usuário define, isso é próximo do conceito de "herança" ou "mixin" em outras linguagens.
 
-> O uso de **include** é desaconsealhado pois gera duplicação de código como copy-paste em um nível de compilação.
+> O uso de **include** é desaconselhado pois gera duplicação de código como copy-paste em um nível de compilação.
 
 Digamos que estamos usando o módulo presente no ambiente padrão de OCaml **List**, mas o que realmente queremos é criar uma função que faça parte de List, para isso criamos um arquivo ```extension.ml``` onde vamos usar a palavra reservada **include** para incluir a definição do módulo List no nosso novo modulo List e declarar a nossa função junto a esse:
 ```ocaml
@@ -262,7 +262,7 @@ open Extensions
 List.optmap ...
 ```
 
-Assim como usamos a palavra **include** para extender módulos, também podemos usá-la para extender assinaturas:
+Assim como usamos a palavra **include** para estender módulos, também podemos usá-la para estender assinaturas:
 ```ocaml
 module type Pessoa = sig
     val nome : string
@@ -285,7 +285,7 @@ Quando OCaml compila um programa com uma extensão ```ml``` e um com a extensão
 
 - **Type Definition Mismatch**: Os tipos declarados no arquivo mli não estão batendo com os tipos da implementação no arquivo ml.
 
-- **Cyclic Dependencies**: OCaml não permite dependências ciclicas (quando duas definições dependem uma da outra mutuamente). Caso haja dependencia ciclica entre dois módulos isso irá causar um erro.
+- **Cyclic Dependencies**: OCaml não permite dependências ciclicas (quando duas definições dependem uma da outra mutuamente). Caso haja dependência cíclica entre dois módulos isso irá causar um erro.
 
 ## Projetando Módulos
 
@@ -293,12 +293,12 @@ O sistema de módulos é uma das principais partes da arquitetura de qualquer pr
 
 ### Raramente exponha tipos concretos
 
-Quando estiver estruturando um aquivo .mli, uma das escolhas que você precisa fazer é expor ou não a definição concreta dos tipos em seu módulo ou expor eles como tipos abstratos. Na maioria das vezes, tipos abstratos é a escolha correta por duas razões:
+Quando estiver estruturando um arquivo .mli, uma das escolhas que você precisa fazer é expor ou não a definição concreta dos tipos em seu módulo ou expor eles como tipos abstratos. Na maioria das vezes, tipos abstratos é a escolha correta por duas razões:
 
 1. Tipos abstratos aumentam a flexibilidade do seu código.
 2. Tipos abstratos permitem impor como o tipo deve usado.
 
-Abstração aumenta a flexibilidade do código restringindo como os usuários do seu módulo vão interagir com os tipos, reduzingo o número de formas que os usuários podem criar dependências com a implementação. Se você optar por expor de forma explícita os tipos, os usuários podem depender de qualquer e todo detalhe que está exposto Se você expo-los de forma abstrata então apenas as operações específicas expostas serão disponíveis. Isso significa que você pode tranquilamente mudar a implementação sem afetar o que o cliente está consumindo enquanto você preservar as definições.
+Abstração aumenta a flexibilidade do código restringindo como os usuários do seu módulo vão interagir com os tipos, reduzindo o número de formas que os usuários podem criar dependências com a implementação. Se você optar por expor de forma explícita os tipos, os usuários podem depender de qualquer e todo detalhe que está exposto Se você expô-los de forma abstrata então apenas as operações específicas expostas serão disponíveis. Isso significa que você pode tranquilamente mudar a implementação sem afetar o que o cliente está consumindo enquanto você preservar as definições.
 
 ### Projete para quem está chamando
 
@@ -312,11 +312,11 @@ Outra dica é que quanto menos usado um valor é, maior vantagem em utilizar nom
 
 ### Crie interfaces uniformes
 
-Quando estamos desenvolvendo uma interface não devemos pensá-la de forma isolada. Normalmante nossas interfaces representam valores que interagem com o código e com outras interfaces e isso deve funcionar de forma natural. Normalmente isso torna-se um trabalho mais fácil quando utilizamos convenções ou padrões de interface, o que torna mais fácil consumi-las e trabalhar com elas.
+Quando estamos desenvolvendo uma interface não devemos pensá-la de forma isolada. Normalmente nossas interfaces representam valores que interagem com o código e com outras interfaces e isso deve funcionar de forma natural. Normalmente isso torna-se um trabalho mais fácil quando utilizamos convenções ou padrões de interface, o que torna mais fácil consumi-las e trabalhar com elas.
 
 Algumas convenções bastante usadas:
 
-- Um modulo para *praticamente* todo tipo na nossa aplicação. Normamelmente construimos um módulo para tipo que definimos na nossa aplicação e exportamos o tipo primário do módulo com o nome **t**.
+- Um módulo para *praticamente* todo tipo na nossa aplicação. Normalmente construímos um módulo para tipo que definimos na nossa aplicação e exportamos o tipo primário do módulo com o nome **t**.
 
 - *Sempre colocamos **t** primeiro*. Se o nosso módulo hipotético chamado ```M``` no qual o tipo primário é ```M.t``` possui funções que usam valor do tipo ```M.t``` colocamos sempre esses valor como o primeiro.
 
@@ -328,15 +328,15 @@ OCaml é uma linguagem muito concisa e que possui muita flexibilidade com tipos 
 
 Um bom método para isso é escrever as definições de tipo antes da implementação da lógica, tanto escrevendo primeiro a assinatura quando estamos trabalhando com submódulos quanto escrevendo os nossos arquivos ```.mli``` antes dos ```.ml```.
 
-Claro que você não precisa ser estritamente rígido com essa regra, é normal por vezes que seja mais prático escrever primeiro a lógica, principalmente quando estamos prototipando coisas onde nossos parametros e valores não são bem definidos. Mas tipos e assinaturas são as ferramentas mais importantes que OCaml nos provê para construir a estrutura do nosso código de uma forma que seja clara o que estamos buscando atingir com nosso código.
+Claro que você não precisa ser estritamente rígido com essa regra, é normal por vezes que seja mais prático escrever primeiro a lógica, principalmente quando estamos prototipando coisas onde nossos parâmetros e valores não são bem definidos. Mas tipos e assinaturas são as ferramentas mais importantes que OCaml nos provê para construir a estrutura do nosso código de uma forma que seja clara o que estamos buscando atingir com nosso código.
 
 ## Functors
 
-Módulos pordem ser passados como funções. Isso é equivalente ao conceito de funções de primeira classe que vimos no capítulo sobre funções. Porém, modulos são intrissicamente diferentes de funções normais. Ao invés de passarmos eles como funções normais, nos utilizamos funções especiais chamadas **Functors**.
+Módulos podem ser passados como funções. Isso é equivalente ao conceito de funções de primeira classe que vimos no capítulo sobre funções. Porém, módulos são intrinsecamente diferentes de funções normais. Ao invés de passarmos eles como funções normais, nos utilizamos funções especiais chamadas **Functors**.
 
 > Na matemática, mais precisamente teoria das categorias, um functor ou funtor é um mapeamento entre categorias, preservando domínios, contradomínios, identidades e composições, analogamente a como, por exemplo, um homomorfismo de grupos preserva o elemento neutro e a operação do grupo.
 
-A principal difetença que temos nos functors é que essas funções recebem módulos como parâmetros e também retornam módulos, somente. Functors nos permitem criar módulos parametrizados e prover um módulo a outro que recebe a implementação. 
+A principal diferença que temos nos functors é que essas funções recebem módulos como parâmetros e também retornam módulos, somente. Functors nos permitem criar módulos parametrizados e prover um módulo a outro que recebe a implementação. 
 
 Digamos que temos uma assinatura do módulo ```Stringable``` definida, sendo que essa assinatura define a exposição de um tipo abstrato **t** e uma função **toString** que recebe um valor **t** e retorna uma string:
 
@@ -360,13 +360,13 @@ module Printer (Item:Stringable) = struct
 end
 ```
 
-Agora podemos usar esse functor passando um módulo que implementa essa interface como parametro e passando as implementações concretas desse tipo:
+Agora podemos usar esse functor passando um módulo que implementa essa interface como parâmetro e passando as implementações concretas desse tipo:
 ```ocaml
 module IntPrinter = Printer (struct 
     type t = int
     let toString = string_of_int end)
 ```
-O functior irá nos retornar uma implementação concreta de um módulo que será atribuida para o módulo **IntPrinter** que além de conter os tipos do módulo passado como parâmetro para o functor também vai conter as funções que foram declaradas parametricamente em sua definição.
+O functior irá nos retornar uma implementação concreta de um módulo que será atribuída para o módulo **IntPrinter** que além de conter os tipos do módulo passado como parâmetro para o functor também vai conter as funções que foram declaradas paramétricamente em sua definição.
 ```ocaml
 IntPrinter.printList [1; 2; 3];;
 (* 1, 2, 3 
@@ -388,7 +388,7 @@ FloatPrinter.printList [1.3; 5.6; 9.7];;
    - : unit = () *)
 ```
 
-Obviamente, o functor assim como o restante em OCaml tem uma forte checagem para garantir que o módulo passado corresponde a implementação da interface usada como paramêtro e se tentarmos passar um módulo que não atenda essa definição: 
+Obviamente, o functor assim como o restante em OCaml tem uma forte checagem para garantir que o módulo passado corresponde a implementação da interface usada como parâmetro e se tentarmos passar um módulo que não atenda essa definição: 
 ```ocaml
  module FalsePrinter = Printer (struct 
       let toString = 1 end);;
@@ -408,7 +408,7 @@ Functors nos ajudam a parametrizar nossas aplicações e modelar melhores módul
 
 - **Injeção de dependência** Pois fazem que a implementação de alguns componentes sejam cambiáveis. Isso é particularmente útil quando a intenção é prototipar partes do sistema para testes e simulações.
 
-- **Autoextensão de módulos** Functors nos provêem uma forma de extender nossos módulos com novas funcionalidades de uma forma padronizada. Functors nos permitem escrever a lógica apenas uma vez e reaplicá-la e como vimos anteriormente podemos usar **include** para fazer isso, mas certamente functors podem nos prover isso de forma mais organizada e eficiente.
+- **Autoextensão de módulos** Functors nos provêem uma forma de estender nossos módulos com novas funcionalidades de uma forma padronizada. Functors nos permitem escrever a lógica apenas uma vez e reaplicá-la e como vimos anteriormente podemos usar **include** para fazer isso, mas certamente functors podem nos prover isso de forma mais organizada e eficiente.
 
 - **Instanciar módulos com estado** Módulos podem conter estados mutáveis, isso significa que algumas vezes pode ser útil ter múltiplas instâncias de um módulo em particular, cada um com seu estado individual. Functors nos permitem automatizar a construção desses módulos.
 
@@ -460,7 +460,7 @@ let numeros = [tres; (module Quatro)];;
 (* val numeros : (module IntValue) list = [<module>; <module>] *)
 ```
 
-Também podemos usar **módulos anonimos** para criar módulos de primeira classe, podemos definir um módulo anônimos em OCaml utilizamos a estrutura:
+Também podemos usar **módulos anônimos** para criar módulos de primeira classe, podemos definir um módulo anônimos em OCaml utilizamos a estrutura:
 ```
 (module struct <let...> end)
 ```
@@ -469,7 +469,7 @@ Por exemplo:
 let numeros = [tres; (module struct let value = 5 end)] ;;
 (* val numeros : (module IntValue) list = [<module>; <module>] *)
 ```
-> Observe que foi inderido que o módulo anonimo na lista trata-se de uma implementação de **IntValue** pelo compilador. Se tentássemos declarar como um módulo que não há assinatura, teríamos um erro.
+> Observe que foi inferido que o módulo anônimo na lista trata-se de uma implementação de **IntValue** pelo compilador. Se tentássemos declarar como um módulo que não há assinatura, teríamos um erro.
 
 ### Acessando módulos de primeira classe
 
@@ -511,6 +511,6 @@ E podemos perceber que quando desempacotarmos nosso módulo seu valor passa a se
 
 ### Você pode viver sem módulos de primeira classe
 
-Modulos de primeira classe é um conceito avançado da linguagem e ele serve como atalho e uma forma de facilitar a solução de problemas específicos. Porém é importante que você saiba que tudo que pode ser feito usando módulos de primeira classe, pode ser feito sem usar módulos de primeira classe.
+Módulos de primeira classe é um conceito avançado da linguagem e ele serve como atalho e uma forma de facilitar a solução de problemas específicos. Porém é importante que você saiba que tudo que pode ser feito usando módulos de primeira classe, pode ser feito sem usar módulos de primeira classe.
 
 Especialmente quando estamos trabalhando em projetos pequenos e/ou de baixa complexidade talvez eles nem mesmo sejam necessários de nenhuma forma. Por isso sempre leve em consideração quando estiver escrevendo seus módulos o trade off de ganho x aumento de complexidade que técnicas como essa oferecem.
