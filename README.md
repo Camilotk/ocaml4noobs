@@ -102,7 +102,24 @@
 - [Dune](https://github.com/Camilotk/ocaml4noobs/tree/master/3I%20-%20build%20)
 
 ## Parte 4 - Organização do Código
-- *em breve*
+- [Função Main](https://github.com/Camilotk/ocaml4noobs/tree/master/4%20-%20organizacao#fun%C3%A7%C3%A3o-main)
+- [Módulos e Assinaturas](https://github.com/Camilotk/ocaml4noobs/tree/master/4%20-%20organizacao#m%C3%B3dulos-e-assinaturas)
+    - [Assinaturas e Interfaces](https://github.com/Camilotk/ocaml4noobs/tree/master/4%20-%20organizacao#assinaturas-e-interfaces)
+    - [Tipos Abstratos](https://github.com/Camilotk/ocaml4noobs/tree/master/4%20-%20organizacao#tipos-abstratos)
+    - [Submódulos](https://github.com/Camilotk/ocaml4noobs/tree/master/4%20-%20organizacao#subm%C3%B3dulos)
+    - [Abrindo Módulos](https://github.com/Camilotk/ocaml4noobs/tree/master/4%20-%20organizacao#abrindo-m%C3%B3dulos)
+    - [Extendendo Módulos e Assinaturas](https://github.com/Camilotk/ocaml4noobs/tree/master/4%20-%20organizacao#abrindo-m%C3%B3dulos)
+- [Erros Comuns com Módulos](https://github.com/Camilotk/ocaml4noobs/tree/master/4%20-%20organizacao#erros-comuns-com-m%C3%B3dulos)
+- [Projetando Módulos](https://github.com/Camilotk/ocaml4noobs/tree/master/4%20-%20organizacao#projetando-m%C3%B3dulos)
+    - [Raramente exponha tipos concretos](https://github.com/Camilotk/ocaml4noobs/tree/master/4%20-%20organizacao#raramente-exponha-tipos-concretos)
+    - [Projete para quem está chamando](https://github.com/Camilotk/ocaml4noobs/tree/master/4%20-%20organizacao#projete-para-quem-est%C3%A1-chamando)
+    - [Crie interfaces uniformes](https://github.com/Camilotk/ocaml4noobs/tree/master/4%20-%20organizacao#crie-interfaces-uniformes)
+    - [Interface antes da implementação](https://github.com/Camilotk/ocaml4noobs/tree/master/4%20-%20organizacao#interface-antes-da-implementa%C3%A7%C3%A3o)
+- [Functors](https://github.com/Camilotk/ocaml4noobs/tree/master/4%20-%20organizacao#functors)
+- [Módulos de primeira-classe](https://github.com/Camilotk/ocaml4noobs/tree/master/4%20-%20organizacao#m%C3%B3dulos-de-primeira-classe)
+    - [Construindo módulos de Primeira Classe](https://github.com/Camilotk/ocaml4noobs/tree/master/4%20-%20organizacao#m%C3%B3dulos-de-primeira-classe)
+    - [Acessando módulos de primeira classe](https://github.com/Camilotk/ocaml4noobs/tree/master/4%20-%20organizacao#acessando-m%C3%B3dulos-de-primeira-classe)
+    - [Você pode viver sem módulos de primeira classe](https://github.com/Camilotk/ocaml4noobs/tree/master/4%20-%20organizacao#voc%C3%AA-pode-viver-sem-m%C3%B3dulos-de-primeira-classe)
 
 ## Intermezzo 4 - Testes
 - [Testes Unitários](https://github.com/Camilotk/ocaml4noobs/blob/master/4I%20-%20testes/README.md#testes-unit%C3%A1rios)
