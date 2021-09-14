@@ -536,5 +536,5 @@ Note que Generics é diferente de `any` para quem vem de TypeScript ou PHP, `'a`
 - [Unicode](https://pt.wikipedia.org/wiki/Unicode)
 - [Produto Cartesiano](https://mundoeducacao.uol.com.br/matematica/produto-cartesiano.htm)
 
-#### E por enquanto, é só nos vemos no próximo Capítulo! 😉
+#### E por enquanto, é só nos vemos no [próximo Capítulo](https://github.com/Camilotk/ocaml4noobs/tree/master/4%20-%20organizacao)! 😉
 
