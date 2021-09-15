@@ -4,8 +4,6 @@
   </a>
 </p>
 
-<h2 align="center">OCaml4Noobs</h2>
-
 <h1 align="center">
   <img src="./images/logo_ocaml_noobs.png" alt="ocaml">
 </h1>
