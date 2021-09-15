@@ -7,7 +7,7 @@
 <h2 align="center">OCaml4Noobs</h2>
 
 <h1 align="center">
-  <img src="./images/colour-logo.png" alt="ocaml" width="240">
+  <img src="./images/logo_ocaml_noobs.png" alt="ocaml">
 </h1>
 
 <p align="center">Tutorial de OCaml para iniciantes na Linguagem.</p>
