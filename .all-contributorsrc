@@ -85,6 +85,15 @@
       "contributions": [
         "review"
       ]
+    },
+    {
+      "login": "tujmon",
+      "name": "Arthur Monici",
+      "avatar_url": "https://avatars.githubusercontent.com/u/61995846?v=4",
+      "profile": "https://github.com/tujmon",
+      "contributions": [
+        "review"
+      ]
     }
   ],
   "contributorsPerLine": 7
