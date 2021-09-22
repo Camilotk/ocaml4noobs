@@ -178,7 +178,7 @@ As funções responsáveis por operações booleanas como AND, OR e NOT seguem u
 
 ## Unit
 
-Toda expressão em OCaml deve ser avaliada para um valor, nos casos em que a expressão não tenha nenhum resultado lógico possível precisa de um tipo que satisfaça essa situação onde temos a falta de um valor e para esse caso é utilizado o tipo `unit`. Utilizamos a expressão vazia `()` para escrever o tipo de forma literal, que pode ser usada para declarar uma função sem retorno, ou uma função sem parâmetros por ex.
+Toda expressão em OCaml deve ser avaliada para um valor, nos casos em que a expressão não tenha nenhum resultado lógico possível precisa de um tipo que satisfaça essa situação onde temos a falta de um valor e para esse caso é utilizado o tipo `unit`. Utilizamos a expressão vazia `()` para escrever o tipo de forma literal, que pode ser usada para declarar uma função sem retorno ou sem parâmetros por ex.
 
 ```ocaml
 let hello () =  Printf.printf "Hello World\n";;
@@ -460,7 +460,7 @@ Coringa;;
 
 ## Pattern Matching
 
-Pattern Matching é utilizado para identrificar e extrair informações de praticamente qualquer tipo complexo em OCaml, entre eles listas, records, tuples. Porém, quando falamos em Discriminated Unions ambos tem uma ligação especial, pois o fato de que o compilador já sabe de antemão todas as possibilidades permite que ele faça uma checagem exaustiva se não existe nenhum caso que foi esquecido.
+Pattern Matching é utilizado para identificar e extrair informações de praticamente qualquer tipo complexo em OCaml, entre eles listas, records, tuples. Porém, quando falamos em Discriminated Unions ambos tem uma ligação especial, pois o fato de que o compilador já sabe de antemão todas as possibilidades permite que ele faça uma checagem exaustiva se não existe nenhum caso que foi esquecido.
 
 ```ocaml
 let cor_do_naipe = function
