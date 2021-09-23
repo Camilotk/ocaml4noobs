@@ -118,7 +118,7 @@ module Nome = struct
 end
 ```
 
-Para melhor exemplificar imagine que temos um arquivo chamado ```twitch.ml``` e mele vamos declarar um submodulo:
+Para melhor exemplificar imagine que temos um arquivo chamado ```twitch.ml``` e nele vamos declarar um submodulo:
 ```ocaml
 module Eduardo = struct
     let link = "https://www.twitch.tv/eduardorfs"
