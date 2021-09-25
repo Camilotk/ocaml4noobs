@@ -191,9 +191,9 @@ Some "a";;
 
 ## Result
 
-OCaml tem no módulo padrão um tipo chamado Result, esse tipo é construído para representar uma computação que resulta em um sucesso ou erro. Result é um variant / sum type / union que contêm dois construtoes sendo eles **Ok** que representa um sucesso e **Error** que representa um erro e utilizamos esse tipo para o retorno de valores que podem resultar em um erro.
+OCaml tem no módulo padrão um tipo chamado Result, esse tipo é construído para representar uma computação que resulta em um sucesso ou erro. Result é um variant / sum type / union que contêm dois construtores sendo eles **Ok** que representa um sucesso e **Error** que representa um erro e utilizamos esse tipo para o retorno de valores que podem resultar em um erro.
 
-Caso fóssemos escrever o nosso próprio result teríamos algo assim:
+Caso fôssemos escrever o nosso próprio result teríamos algo assim:
 ```OCaml
 type ('a, 'b) result =
   | Ok of 'a
