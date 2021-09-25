@@ -171,7 +171,7 @@ Imagine que você criou uma função que busca um usuário no Banco de Dados, ex
 
 Se o resultado da nossa função precisa ser inteiramente incluído no tipo retornado da nossa função então precisamos de uma função que represente esse valor opcional. (Imagine que nossa função tenha como retorno o tipo `User` não podemos retornar `unit` caso nenhum valor seja encontrado porque isso violaria o contrato). Esse é um exemplo clássico uma vez em que a principal função de um Option é justamente representar a existência ou não de um valor.
 
-Em OCaml esse tipo é chamado de **Option**. 
+Para criar um valor **Option** usamos seus construtores: 
 - Para criar uma instância de Option com um valor usamos o construtor **Some**
 - Para criar uma instância de Option sem um valor usamos o construtor **None**.
 
