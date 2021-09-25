@@ -81,6 +81,8 @@ Esse exemplo é uma solução do problema "fizzbuzz" que imprime uma sequência 
 
 Os valores estão sendo comparados / inferidos com underline **_** (chamado de wildcard pattern ou "coringa" em uma tradução não literal) que significa que nós não precisamos de um padrão aqui já que não pretendemos utilizar o valor que está sendo comparado para nada. Cada um dos testes faz teste se o valor i é divisível por 3, 5 ou ambos e caso seja é retornado a mensagem esperado, caso não é utilizado um match descartando o valor e sem predicado que retorna i convertido em string, isso é necessário porque o compilador exige que todas as ramificações desse pattern retornem o mesmo tipo.
 
+<p align="right"><a href="https://github.com/Camilotk/ocaml4noobs/tree/master/5%20-%20tipos#ind%C3%ADce">🔝 Subir para o topo</a></p>
+
 ## Exception
 
 Exceptions não são incomuns na maioria das linguagens, se você já estudou outra linguagem anteriormente é muito provável que você já conheça o que são e como funcionam. Em OCaml também temmos exceptions e a biblioteca padrão utiliza-os bastante para tratar erros.
@@ -117,6 +119,8 @@ try
 with
     | Failure msg -> Printf.sprintf "Failed with %s" msg
 ```
+
+<p align="right"><a href="https://github.com/Camilotk/ocaml4noobs/tree/master/5%20-%20tipos#ind%C3%ADce">🔝 Subir para o topo</a></p>
 
 ## Tratando erros sem exceções
 
@@ -155,6 +159,8 @@ Todavia, para que isso funcione as funções devem ser sem efeitos colaterais, e
 Para que isso seja possível é necessário que nós embutirmos esses efeitos colaterais na saída da função. Por exemplo, se não queremos disparar uma exceção quando um erro é encontrado então a nossa função precisa retornar um tipo que é capaz de representar um erro ou um sucesso.
 
 Em OCaml utilizamos o tipo `Option` e o tipo `Result`.
+
+<p align="right"><a href="https://github.com/Camilotk/ocaml4noobs/tree/master/5%20-%20tipos#ind%C3%ADce">🔝 Subir para o topo</a></p>
 
 ## Option
 
@@ -196,6 +202,8 @@ type 'a option' =
 Some "a";;
 (* - : string option' = Some "a" *)
 ```
+
+<p align="right"><a href="https://github.com/Camilotk/ocaml4noobs/tree/master/5%20-%20tipos#ind%C3%ADce">🔝 Subir para o topo</a></p>
 
 ## Result
 
@@ -279,6 +287,8 @@ match second_response with
 
 Como podemos perceber é muito fácil de encadear funções quando utilizamos Result como retorno. Isso nos permite trabalhar com pequenas funções que são combináveis em funções maiores mais complexas. Isso também nos ajuda a melhorar a verificação de erros dos nossos programas com o uso de Pattern Match que é verificável pelo compilador.
 
+<p align="right"><a href="https://github.com/Camilotk/ocaml4noobs/tree/master/5%20-%20tipos#ind%C3%ADce">🔝 Subir para o topo</a></p>
+
 ## Sequence
 
 Já vimos algumas das coleções de OCaml como `List` e `Array`, agora vamos ver um terceiro tipo de coleção mais abstrata que as anteriores chamada `Sequence`. Uma Sequence é muito próxima de uma List, mas com a diferença de que a Sequence opera com Lazy Evaluation o que garante que a mesma possa conter mais de um milhão de elementos, mas computando apenas os que são necessários o que nos garante um uso eficiente e econômico de memória e recursos computacionais.
@@ -314,3 +324,4 @@ seq_combinadas |> List.of_seq;;
 (* - : int list = [1; 2; 3] *)
 ```
 
+<p align="right"><a href="https://github.com/Camilotk/ocaml4noobs/tree/master/5%20-%20tipos#ind%C3%ADce">🔝 Subir para o topo</a></p>
