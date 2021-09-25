@@ -71,7 +71,7 @@ let fizzbuzzer i =
 ```
 Esse exemplo é uma solução do problema "fizzbuzz" que imprime uma sequência de inteiros substituindo qualquer número divisível por 3 por "fizz" e qualquer número divisível por 5 por "buzz" e todo número divisível por ambos por "fizzbuzz".
 
-Os valores estão sendo comparados / inferidos com underline **_** (chamado de wildcard pattern ou "coringa" em uma tradução não literal) que significa que nós não precisamos de um padrão aqui já que não pretendemos utilizar o valor que está sendo comparado para nada. Cada um dos testes faz teste se o valor i é divisivel por 3, 5 ou ambos e caso seja é retornado a mensagem esperado, caso não é utilizado um match descartando o valor e sem predicado que retorna i convertido em string, isso é necessário porque o compilador exige que todas as ramificações desse pattern retornem o mesmo tipo.
+Os valores estão sendo comparados / inferidos com underline **_** (chamado de wildcard pattern ou "coringa" em uma tradução não literal) que significa que nós não precisamos de um padrão aqui já que não pretendemos utilizar o valor que está sendo comparado para nada. Cada um dos testes faz teste se o valor i é divisível por 3, 5 ou ambos e caso seja é retornado a mensagem esperado, caso não é utilizado um match descartando o valor e sem predicado que retorna i convertido em string, isso é necessário porque o compilador exige que todas as ramificações desse pattern retornem o mesmo tipo.
 
 ## Exception
 
