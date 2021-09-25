@@ -2,6 +2,14 @@
 
 Anteriormente trabalhamos com diversos tipos de dados em OCaml, desde os mais básicos, coleções e também tipos que nós mesmos construímos. Agora vamos explorar um pouco mais os tipos que estão presentes na linguagem e complementar o conhecimento sobre tipos falando também sobre Pattern Matching, tratamento de erros e falar um pouco sobre os tipos que ainda não vimos, fechando o conteúdo teórico sobre o básico da linguagem.
 
+#### **Indíce**
+- [Pattern Matching](https://github.com/Camilotk/ocaml4noobs/blob/master/5%20-%20tipos/README.md#pattern-matching)
+- [Exception](https://github.com/Camilotk/ocaml4noobs/blob/master/5%20-%20tipos/README.md#exception)
+- [Tratando erros sem exceções](https://github.com/Camilotk/ocaml4noobs/blob/master/5%20-%20tipos/README.md#exception)
+- [Option](https://github.com/Camilotk/ocaml4noobs/blob/master/5%20-%20tipos/README.md#option)
+- [Result](https://github.com/Camilotk/ocaml4noobs/blob/master/5%20-%20tipos/README.md#result)
+- [Sequence](https://github.com/Camilotk/ocaml4noobs/blob/master/5%20-%20tipos/README.md#sequence)
+
 ## Pattern Matching
 
 Já utilizamos Pattern Matching várias partes desse tutorial, vamos ver agora um pouco mais em detalhe sobre como utilizar pattern match em nosso código OCaml. Essa é uma ferramenta poderosa, OCaml nos permite utilizar pattern match para capturar valores através do padrão que pode ser inferido pela equalidade estrutural (que vimos anteriormente) do dado. Podemos utilizar pattern match em praticamente qualquer estrutura da linguagem:
