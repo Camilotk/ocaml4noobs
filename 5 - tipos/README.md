@@ -155,13 +155,13 @@ Imagine que você criou uma função que busca um usuário no Banco de Dados, ex
 1. O usuário foi encontrado.
 2. Ele não foi encontrado.
 
-Se o resultado da nossa função precisa ser inteiramente incluido no tipo retornado da nossa função então precisamos de uma função que represente esse valor opcional. (Imagine que nossa função tenha como retorno o tipo `User` não podemos retornar `unit` caso nenhum valor seja encontrado porque isso violaria o contrato). Esse é um exemplo clássico uma vez em que a principal função de um Option é justamente representar a existência ou não de um valor.
+Se o resultado da nossa função precisa ser inteiramente incluído no tipo retornado da nossa função então precisamos de uma função que represente esse valor opcional. (Imagine que nossa função tenha como retorno o tipo `User` não podemos retornar `unit` caso nenhum valor seja encontrado porque isso violaria o contrato). Esse é um exemplo clássico uma vez em que a principal função de um Option é justamente representar a existência ou não de um valor.
 
 Em OCaml esse tipo é chamado de **Option**. 
 - Para criar uma instância de Option com um valor usamos o construtor **Some**
 - Para criar uma instância de Option sem um valor usamos o construtor **None**.
 
-A função **find_opt** recebe uma lista (nesse caso a lista xs passada como parâmetro) e uma função e retorna o primeiro resultado que for filtradpo (tiver um retorno **true**) como Some, caso nenhum retorne então retorna None. Nesse caso passamos uma função que testa se o número é impar e caso seja retorna esse valor como Some.
+A função **find_opt** recebe uma lista (nesse caso a lista xs passada como parâmetro) e uma função e retorna o primeiro resultado que for filtrado (tiver um retorno **true**) como Some, caso nenhum retorne então retorna None. Nesse caso passamos uma função que testa se o número é impar e caso seja retorna esse valor como Some.
 
 ```OCaml
 let primeiro_impar xs =
