@@ -199,7 +199,7 @@ type ('a, 'b) result =
   | Ok of 'a
   | Error of 'b
 ```
-Um valor `Ok x` significa que a função executou sem erros e teve retorno x e um valor `Error e` significa que aconteceu um erro e que esse erro tem a mensagem e. Utilizamos Pattern Match como utilizariamos com qualquer outra variant / sum type para fazer o tratamento e extrair a informação em ambos casos.  A vantagem de utilizarmos esse tipo de abordagem é que encapsulamos os erros no tipo do retorno sem quebrarmos o contrato de tipos.
+Um valor `Ok x` significa que a função executou sem erros e teve retorno x e um valor `Error e` significa que aconteceu um erro e que esse erro tem a mensagem e. Utilizamos Pattern Match como utilizaríamos com qualquer outra variant / sum type para fazer o tratamento e extrair a informação em ambos casos.  A vantagem de utilizarmos esse tipo de abordagem é que encapsulamos os erros no tipo do retorno sem quebrarmos o contrato de tipos.
 
 Para um exemplo de como utilizar Result, digamos que temos uma requisição que queremos tratar e que ela possua nome e email. Vamos começar a compor uma função de que valida o nome utilizando Result type:
 ```OCaml
