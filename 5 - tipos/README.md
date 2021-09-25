@@ -325,3 +325,16 @@ seq_combinadas |> List.of_seq;;
 ```
 
 <p align="right"><a href="https://github.com/Camilotk/ocaml4noobs/tree/master/5%20-%20tipos#tipos">🔝 Subir para o topo</a></p>
+
+## Materiais Complementares e Referências
+- [Relação entre funções](http://www.univasf.edu.br/~jorge.cavalcanti/Mat_Disc_Parte11.pdf)
+- [Conjuntos Numéricos](https://www.todamateria.com.br/conjuntos-numericos/)
+- [Função composta](https://www.educamaisbrasil.com.br/enem/matematica/funcao-composta)
+- [Avaliação preguiçosa (lazy evaluation)](https://pt.wikipedia.org/wiki/Avalia%C3%A7%C3%A3o_pregui%C3%A7osa)
+- [Como o Maybe Monad se relaciona com o tipo de Option?](https://www.ti-enxame.com/pt/functional-programming/como-o-maybe-monad-se-relaciona-com-o-tipo-de-opcao/l967381462/)
+- [Mónade](https://pt.wikipedia.org/wiki/M%C3%B3nade_(teoria_das_categorias))
+- [Option type (Inglês)](https://en.wikipedia.org/wiki/Option_type)
+- [Result type (Inglês)](https://en.wikipedia.org/wiki/Result_type)
+- [Railway Oriented Programming (Inglês)](https://fsharpforfunandprofit.com/rop/)
+
+#### E por enquanto, é só nos vemos no último Capítulo! 😱 
