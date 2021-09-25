@@ -4,7 +4,7 @@ Anteriormente trabalhamos com diversos tipos de dados em OCaml, desde os mais b�
 
 ## Pattern Matching
 
-Já utilizamos Pattern Matching várias partes desse tutorial, vamos ver agora um pouco mais em detalhe sobre como utilizar pattern match em nosso código OCaml. Essa é uma ferramenta poderosa, OCaml nos permite utilizar pattern match para capturar valores atráves do padrão que pode ser inferido pela equalidade estrutural (que vimos anteriormente) do dado. Podemos utilizar pattern match em praticamente qualquer estrutura da linguagem:
+Já utilizamos Pattern Matching várias partes desse tutorial, vamos ver agora um pouco mais em detalhe sobre como utilizar pattern match em nosso código OCaml. Essa é uma ferramenta poderosa, OCaml nos permite utilizar pattern match para capturar valores através do padrão que pode ser inferido pela equalidade estrutural (que vimos anteriormente) do dado. Podemos utilizar pattern match em praticamente qualquer estrutura da linguagem:
 
 - Constantes 
 > E podemos pensar qualquer valor **let** (Ex. let a = 1) como um pattern match de uma constante a um identificador. 
