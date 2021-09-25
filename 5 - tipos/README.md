@@ -43,7 +43,7 @@ let addPair p =
 
 (* val addPair : int * int -> int = <fun> *)
 ```
-Mas agora estamos usando a palavra reservada **match** para fazermos o pattern match dos nossos valores e isso nos permite especificar múltiplos valores que esse paramêtro pode conter e atribuir um retorno de acordo com o parâmetro recebido, nesse caso o primeiro padrão encontrado que for possível inferir a entrada vai ser o retorno que a expressão irá tomar. 
+Mas agora estamos usando a palavra reservada **match** para fazermos o pattern match dos nossos valores e isso nos permite especificar múltiplos valores que esse parâmetro pode conter e atribuir um retorno de acordo com o parâmetro recebido, nesse caso o primeiro padrão encontrado que for possível inferir a entrada vai ser o retorno que a expressão irá tomar. 
 
 Nesse nosso exemplo, temos os seguintes matchs:
 > Obs: Sendo uma função que retorna a adição dos elementos no par, qualquer soma de dois números que contenha 0 sempre resulta no valor do outro número.
