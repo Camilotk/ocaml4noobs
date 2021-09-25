@@ -176,7 +176,7 @@ primeiro_impar [2;4;5;6;7];;
 
 Option é uma Discriminated Union e tudo o que se aplica a Unions também se aplica a Option, inclusive a forma de usar Pattern Match que é usado para determinar se existe um valor e para desestruturar (retirar) esse valor.  
 
-Caso fossemos definir nós mesmos uma Discriminated Union para representar um option escreveriámos:
+Caso fossemos definir nós mesmos uma Discriminated Union para representar um option escreveríamos:
 
 ```OCaml
 (* declarar como option' com ' pois option já existe *)
