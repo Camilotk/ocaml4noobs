@@ -1,6 +1,6 @@
 # Tipos
 
-Anteriormente trabalhamos com diversos tipos de dados em OCaml, desde os mais básicos, coleções e também tipos que nós mesmos contruimos. Agora vamos explorar um pouco mais os tipos que estão presentes na linguagem e complementar o conhecimento sobre tipos falando também sobre Pattern Matching, tratamento de erros e falar um pouco sobre os tipos que ainda não vimos, fechando o conteúdo teórico sobre o básico da linguagem.
+Anteriormente trabalhamos com diversos tipos de dados em OCaml, desde os mais básicos, coleções e também tipos que nós mesmos construímos. Agora vamos explorar um pouco mais os tipos que estão presentes na linguagem e complementar o conhecimento sobre tipos falando também sobre Pattern Matching, tratamento de erros e falar um pouco sobre os tipos que ainda não vimos, fechando o conteúdo teórico sobre o básico da linguagem.
 
 ## Pattern Matching
 
