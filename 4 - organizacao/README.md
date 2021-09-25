@@ -540,4 +540,4 @@ Especialmente quando estamos trabalhando em projetos pequenos e/ou de baixa comp
 - [Função de primeira classe](https://pt.wikipedia.org/wiki/Fun%C3%A7%C3%A3o_de_primeira_classe)
 - [Diferença de functors em Haskell e OCaml](https://try2explore.com/questions/pt/10341180)
 
-#### E por enquanto, é só nos vemos no próximo Capítulo! 😉
+#### E por enquanto, é só nos vemos no próximo [Capítulo](https://github.com/Camilotk/ocaml4noobs/tree/master/5%20-%20tipos)! 😉
