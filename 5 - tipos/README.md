@@ -140,9 +140,9 @@ divide 15 0;;
 
 Sabemos pela definição de função que vimos anteriormente que funções são definidas por suas entradas e suas saídas. Isso é bastante importante porque quando trabalhamos de forma funcional utilizamos a composição de funções simples para criar programas que resolvem problemas complexos, ou seja, não é incomum que façamos a combinação de duas funções utilizando o retorno de uma como parâmetro de outra.
 
-Digamos que `f` e `g` são funções, então se a saída de `f` for compatível com a entrada de  `g` podemos compô-las em uma função... `f.g`. Isso nos permite construir funcionalidades complexas pela combinação de peças simples e nos permite um grande grau de reuso desse nosso código. 
+Digamos que `f` e `g` são funções, então se a saída de `f` for compatível com a entrada de  `g` podemos compô-las em uma função... `f.g`. Isso nos permite construir funcionalidades complexas pela combinação de peças simples e nos permite um grande grau de reúso desse nosso código. 
 
-Todavia, para que isso funcione as funções devem ser sem efeitos colaterais, elas não podem disparar exceções ou produzir quelaquer outro efeito que não seja seu valor de saída. 
+Todavia, para que isso funcione as funções devem ser sem efeitos colaterais, elas não podem disparar exceções ou produzir qualquer outro efeito que não seja seu valor de saída. 
 
 Para que isso seja possível é necessário que nós embutirmos esses efeitos colaterais na saída da função. Por exemplo, se não queremos disparar uma exceção quando um erro é encontrado então a nossa função precisa retornar um tipo que é capaz de representar um erro ou um sucesso.
 
