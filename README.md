@@ -165,6 +165,7 @@ Nosso agradecimento a todas essas pessoas ([emoji key](https://allcontributors.o
   <tr>
     <td align="center"><a href="https://github.com/caiomartins1"><img src="https://avatars.githubusercontent.com/u/45666995?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Caio Martins</b></sub></a><br /><a href="https://github.com/Camilotk/OCaml4Noobs/pulls?q=is%3Apr+reviewed-by%3Acaiomartins1" title="Reviewed Pull Requests">👀</a></td>
     <td align="center"><a href="https://github.com/tujmon"><img src="https://avatars.githubusercontent.com/u/61995846?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Arthur Monici</b></sub></a><br /><a href="https://github.com/Camilotk/OCaml4Noobs/pulls?q=is%3Apr+reviewed-by%3Atujmon" title="Reviewed Pull Requests">👀</a></td>
+    <td align="center"><a href="https://github.com/gsbcamargo"><img src="https://avatars.githubusercontent.com/u/47952041?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Gabriel Schreiner</b></sub></a><br /><a href="https://github.com/Camilotk/OCaml4Noobs/pulls?q=is%3Apr+reviewed-by%3Agsbcamargo" title="Reviewed Pull Requests">👀</a></td>
   </tr>
 </table>
 
