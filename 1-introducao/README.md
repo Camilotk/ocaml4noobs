@@ -405,9 +405,9 @@ numbers.add(4);
 ```
 A versão idiomática em linguagens imperativas como Java é diferente: o valor de numbers pode ser modificado a qualquer hora. 
 
-Isso é uma mudança fundamental ao significado do operador de igualdade, em OCaml o operador de igualdade tem um significado próximo do operador matemático de igualdade que é que o identificador numbers contêm um conjunto de números 3,2,1 e já em Java o operador de igualdade significa que um número arbitrário de números é dado, com os valores temporários 1,2,3. 
+Isso é uma mudança fundamental ao significado do operador de igualdade, em OCaml o operador de igualdade tem um significado próximo do operador matemático de igualdade que é que o identificador numbers contém um conjunto de números 3,2,1 e já em Java o operador de igualdade significa que um número arbitrário de números é dado, com os valores temporários 1,2,3. 
 
-Em Java numbers não é a lista 1,2,3 é apenas um identificador que aponta para esses valores momentaneamente e é esse acoplamento temporal de um indentificador ao seu(s) valor(es) que faz com que esse tipo de código seja perigoso, já que em Java não basta saber que esse identificador numbers é atrelado a esses valores, é necessário também saber todas as alterações feitas nesse valor para conseguir saber seu valor no atual momento. No modelo de OCaml o identificador numbers não pode ser alterado, então é seguro assumir a qualquer momento que o valor de numbers é 3,2,1.
+Em Java numbers não é a lista 1,2,3 é apenas um identificador que aponta para esses valores momentaneamente e é esse acoplamento temporal de um identificador ao seu(s) valor(es) que faz com que esse tipo de código seja perigoso, já que em Java não basta saber que esse identificador numbers é atrelado a esses valores, é necessário também saber todas as alterações feitas nesse valor para conseguir saber seu valor no atual momento. No modelo de OCaml o identificador numbers não pode ser alterado, então é seguro assumir a qualquer momento que o valor de numbers é 3,2,1.
 
 ### Dados e Operações
 
@@ -429,7 +429,7 @@ public class TwoNumbers
 	}
 }
 ```
-Já OCaml organiza dados e operações de uma forma muito diferente. Geralmente os dados são empacotados como valores e as operações são funções simples que operam em tipos particulares de dados. O tipo two_numbers é definido como um novo tipo de dado que contêm dois valores inteiros e agora ele pode ser usado em qualquer lugar que seja necessário exatamente dois valores inteiros, sem implicar em nada sobre quais números eles representam e não possuem nenhum tipo específico de operações. A função add opera em um único argumento do tipo two_numbers. 
+Já OCaml organiza dados e operações de uma forma muito diferente. Geralmente os dados são empacotados como valores e as operações são funções simples que operam em tipos particulares de dados. O tipo two_numbers é definido como um novo tipo de dado que contém dois valores inteiros e agora ele pode ser usado em qualquer lugar que seja necessário exatamente dois valores inteiros, sem implicar em nada sobre quais números eles representam e não possuem nenhum tipo específico de operações. A função add opera em um único argumento do tipo two_numbers. 
 
 ```OCaml
 type two_numbers = int * int
@@ -441,7 +441,7 @@ Enquanto normalmente em linguagens com Orientação a Objetos os valores e as su
 
 Brevemente:
 - **Acoplamento** se refere ao grau de interdependência entre componentes.
-- **Coesão** se refere a consistência interna desses componentes.
+- **Coesão** se refere à consistência interna desses componentes.
 
 Separando dados e funções dessa forma nós garantimos que nossas dependências são exatamente aquelas das quais precisamos.
 
