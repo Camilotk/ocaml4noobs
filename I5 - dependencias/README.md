@@ -2,8 +2,7 @@
   <img src="./imagens/esy-logo.png" width="250">
 </h1>
 
-Uma das partes mais importantes de qualquer linguagem de programação é o **gerenciamento de dependências**, isso é o gerenciamento da instalação das extensões, bilbliotecas e libs em nossos projetos para que não tenhamos que fazer isso manualmente. Até agora temos utilizado o gerenciador de dependências OPAM que é o gerenciador de dependências mais antigo de OCaml e isso é importante porque o esy não é uma substituição ao OPAM, mas uma ferramenta contruída em cima do OPAM para nos oferecer uma melhor interface e manutenção de nossos projetos.
-
+Uma das partes mais importantes de qualquer linguagem de programação é o **gerenciamento de dependências**, isso é o gerenciamento da instalação das extensões, bibliotecas e libs em nossos projetos para que não tenhamos que fazer isso manualmente. Até agora temos utilizado o gerenciador de dependências OPAM que é o gerenciador de dependências mais antigo de OCaml e isso é importante porque o esy não é uma substituição ao OPAM, mas uma ferramenta construída em cima do OPAM para nos oferecer uma melhor interface e manutenção de nossos projetos.
 
 ## Principais diferenças entre esy e OPAM
 
@@ -17,7 +16,7 @@ OPAM que é o gerenciador de dependências mais antigo e usado entre os dois faz
   <img src="./imagens/opam.png">
 </p>
 
-Enqaunto o esy faz o *sandboxing*, ou seja separa as dependências de cada projeto separadamente.
+Enquanto o esy faz o *sandboxing*, ou seja separa as dependências de cada projeto separadamente.
 
 <p align="center">
   <img src="./imagens/esy.png">
@@ -29,7 +28,7 @@ Outra característica clara que podemos notar em um projeto esy é a intencional
 - A criação de uma pasta **node_modules** quando o processo de instalação de pacotes é iniciado
 - O isolamento de pacotes dentro de uma pasta de projetos, a pasta **node_modules** no caso do npm e a pasta **_esy** no caso do esy.
 
-O arquivo **package.json** é o arquivo de listagem de dependências e de configuração do projeto, enquando no OPAM como vimos até agora usávamos o comando *install* para instalar os nossos pacotes com esy vamos criar um arquivo package que vai conter a definição de nossas dependências que serão instaladas.
+O arquivo **package.json** é o arquivo de listagem de dependências e de configuração do projeto, enquanto no OPAM como vimos até agora usávamos o comando *install* para instalar os nossos pacotes com esy vamos criar um arquivo package que vai conter a definição de nossas dependências que serão instaladas.
 
 ## Devo usar esy ou OPAM?
 
