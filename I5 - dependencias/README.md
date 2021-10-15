@@ -1,4 +1,4 @@
-<img src="./imagens/esy-logo.png"> 
+<img src="./imagens/esy-logo.png" width="250"> 
 
 Uma das partes mais importantes de qualquer linguagem de programação é o **gerenciamento de dependências**, isso é o gerenciamento da instalação das extensões, bilbliotecas e libs em nossos projetos para que não tenhamos que fazer isso manualmente. Até agora temos utilizado o gerenciador de dependências OPAM que é o gerenciador de dependências mais antigo de OCaml e isso é importante porque o esy não é uma substituição ao OPAM, mas uma ferramenta contruída em cima do OPAM para nos oferecer uma melhor interface e manutenção de nossos projetos.
 
