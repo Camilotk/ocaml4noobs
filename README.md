@@ -132,7 +132,7 @@
 - [Sequence](https://github.com/Camilotk/ocaml4noobs/blob/master/5%20-%20tipos/README.md#sequence)
 
 ## Intermezzo 5 - esy
-- *em breve*
+- [esy](https://github.com/Camilotk/ocaml4noobs/tree/master/I5%20-%20dependencias)
 
 ## Parte 6 - CRUD
 - *em breve*
