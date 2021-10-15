@@ -1,0 +1,3 @@
+(executable
+  (name hello) 
+    (public_name hello.exe)) 
