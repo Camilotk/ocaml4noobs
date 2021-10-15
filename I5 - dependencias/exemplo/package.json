@@ -1,6 +1,12 @@
 {
+    "scripts": {
+        "ola": "echo hello"
+    },
     "dependencies": {
-        "ocaml": "4.12.x",
-        "@opam/dune": "*"
+      "ocaml": "4.12.x",
+      "@opam/dune": "*"
+    },
+    "devDependencies": {
+      "@opam/ocaml-lsp-server": "*"
     }
-}
+  }

@@ -1,4 +1,6 @@
-<img src="./imagens/esy-logo.png" width="250"> 
+<h1 align="center">
+  <img src="./imagens/esy-logo.png" width="250">
+</h1>
 
 Uma das partes mais importantes de qualquer linguagem de programação é o **gerenciamento de dependências**, isso é o gerenciamento da instalação das extensões, bilbliotecas e libs em nossos projetos para que não tenhamos que fazer isso manualmente. Até agora temos utilizado o gerenciador de dependências OPAM que é o gerenciador de dependências mais antigo de OCaml e isso é importante porque o esy não é uma substituição ao OPAM, mas uma ferramenta contruída em cima do OPAM para nos oferecer uma melhor interface e manutenção de nossos projetos.
 
@@ -11,11 +13,15 @@ Para entender a principal diferença de funcionamento entre esy e OPAM é necess
 
 OPAM que é o gerenciador de dependências mais antigo e usado entre os dois faz a instalação de pacotes de forma global.
 
-![](./imagens/opam.png)
+<p align="center">
+  <img src="./imagens/opam.png">
+</p>
 
 Enqaunto o esy faz o *sandboxing*, ou seja separa as dependências de cada projeto separadamente.
 
-![](./imagens/esy.png)
+<p align="center">
+  <img src="./imagens/esy.png">
+</p>
 
 Outra característica clara que podemos notar em um projeto esy é a intencional semelhança com os gerenciadores tradicionais de pacote do JavaScript como o npm, essas semelhanças incluem:
 
@@ -200,6 +206,33 @@ Algumas dependencias não precisam ir para produção, como é o caso por exempl
 ```
 
 Agora basta refazermos a build e vamos ter o **ocaml-lsp-server** instalado. 
+
+### Scripts
+
+Outra coisa que podemos fazer em nosso package.json é adicionar a seção de scripts que vai conter "atalhos" (ou *alias*) para comandos que serão executados no nosso terminal isso é muito útil quando estamos trabalhando em ambientes com testes e para facilitar comandos de deploy.
+
+Como exemplo vamos apenas dar um comando **echo** que vai imprimir a palavra **hello**, vamos criar um atalho com o nome de **ola** para esse comando. Para isso vamos em nosso arquivo **package.json** e adicionamos a seção **script** definimos como chave do primeiro valor json o nome do "apelido" ou "atalho" do comando e como valor uma string com o comando que vai ser executado quando chamarmos **esy \<atalho\>**:
+
+```json
+{
+    "scripts": {
+        "ola": "echo hello"
+    },
+    "dependencies": {
+      "ocaml": "4.12.x",
+      "@opam/dune": "*"
+    },
+    "devDependencies": {
+      "@opam/ocaml-lsp-server": "*"
+    }
+}
+```
+
+E agora para executarmos o script **hello** que acabamos de criar basta digitarmos **esy ola** que irá invocar esse script:
+
+```
+$ esy ola
+```
 
 ### Cheat sheet
 
