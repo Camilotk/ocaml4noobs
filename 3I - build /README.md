@@ -1,7 +1,5 @@
 # Dune
-
-<img src="https://dune.build/assets/imgs/dune_logo.png"/>
-
+![logo da ferramenta dune que são duas dunas de areia](./imagens/dune.png)
 
 Quando trabalhamos em projetos simples em OCaml como trabalhamos até agora é muito simples de trabalhar com um ou dois arquivos, mas a medida que nossos projetos crescem cada vez torna-se mais e mais díficil manter um projeto, por muitos motivos, desde a complexidade da dependencia dos nossos arquivos até o gerenciamento do nosso processo de compilação. Para tornar essas coisas mais simples, temos uma ferramenta que utiliza uma série de regras de automação para tornar esses processos mais simples de manter para nós, em OCaml temos múltiplas opções de sistemas de build para escolher, mas sem dúvida o mais popular é o [Dune](https://dune.build/).
 
