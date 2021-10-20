@@ -286,7 +286,7 @@ Isso irá nos ajudar a identificar muito mais facilmente quais as funções do n
 
 ## Testes Baseados em Propriedades
 
-O estilo de testes proposto por Kent Beck no xUnit se tornou muito popular, onde é definido alguns cenários e é garantido que os resultados são os esperados. Certamente essa é uma prática bastante útil, mas tê-la como única pode ser um risco... porque? Dijstra uma vez disse: 
+O estilo de testes proposto por Kent Beck no xUnit se tornou muito popular, onde é definido alguns cenários e é garantido que os resultados são os esperados. Certamente essa é uma prática bastante útil, mas tê-la como única pode ser um risco... porque? Dijkstra uma vez disse: 
 
 > "Testes de programas podem ser usados para demonstrar a presença de bugs, mas nunca para demonstrar a sua falta.". 
 
