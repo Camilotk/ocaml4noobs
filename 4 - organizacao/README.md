@@ -420,7 +420,7 @@ Functors nos ajudam a parametrizar nossas aplicações e modelar melhores módul
 
 - **Injeção de dependência** Pois fazem que a implementação de alguns componentes sejam cambiáveis. Isso é particularmente útil quando a intenção é prototipar partes do sistema para testes e simulações.
 
-- **Autoextensão de módulos** Functors nos provêem uma forma de estender nossos módulos com novas funcionalidades de uma forma padronizada. Functors nos permitem escrever a lógica apenas uma vez e reaplicá-la e como vimos anteriormente podemos usar **include** para fazer isso, mas certamente functors podem nos prover isso de forma mais organizada e eficiente.
+- **Autoextensão de módulos** Functors nos proveem uma forma de estender nossos módulos com novas funcionalidades de uma forma padronizada. Functors nos permitem escrever a lógica apenas uma vez e reaplicá-la e como vimos anteriormente podemos usar **include** para fazer isso, mas certamente functors podem nos prover isso de forma mais organizada e eficiente.
 
 - **Instanciar módulos com estado** Módulos podem conter estados mutáveis, isso significa que algumas vezes pode ser útil ter múltiplas instâncias de um módulo em particular, cada um com seu estado individual. Functors nos permitem automatizar a construção desses módulos.
 
@@ -430,7 +430,7 @@ Essas são algumas dessas aplicações, existem muitas outras que são possibili
 
 ## Módulos de primeira-classe
 
-Você pode pensar no OCaml como sendo dividido em duas partes: uma linguagem que se preocupa com valores e tipos e uma linguagem que se preocupa com módulos e assinaturas de módulo. Esses sublinguagens são separadas, em que os módulos podem conter tipos e valores, mas os valores comuns não podem conter módulos ou tipos de módulo. Isso significa que você não pode fazer coisas como definir uma variável cujo valor é um módulo ou uma função que recebe um módulo como argumento.
+Você pode pensar no OCaml como sendo dividido em duas partes: uma linguagem que se preocupa com valores e tipos e uma linguagem que se preocupa com módulos e assinaturas de módulo. Essas sublinguagens são separadas, em que os módulos podem conter tipos e valores, mas os valores comuns não podem conter módulos ou tipos de módulo. Isso significa que você não pode fazer coisas como definir uma variável cujo valor é um módulo ou uma função que recebe um módulo como argumento.
 
 OCaml fornece uma maneira de contornar essa separação na forma de módulos de primeira classe. Módulos de primeira classe são valores comuns que podem ser criados e convertidos de volta em módulos regulares.
 
