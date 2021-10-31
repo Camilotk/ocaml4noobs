@@ -326,7 +326,7 @@ Quando estamos desenvolvendo uma interface não devemos pensá-la de forma isola
 
 Algumas convenções bastante usadas:
 
-- Um módulo para *praticamente* todo tipo na nossa aplicação. Normalmente construímos um módulo para tipo que definimos na nossa aplicação e exportamos o tipo primário do módulo com o nome **t**.
+- Um módulo para *praticamente* todo tipo na nossa aplicação. Normalmente construímos um módulo para cada tipo que definimos na nossa aplicação e exportamos o tipo primário do módulo com o nome **t**.
 
 - *Sempre colocamos **t** primeiro*. Se o nosso módulo hipotético chamado ```M``` no qual o tipo primário é ```M.t``` possui funções que usam valor do tipo ```M.t``` colocamos sempre esses valor como o primeiro.
 
