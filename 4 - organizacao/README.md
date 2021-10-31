@@ -344,7 +344,7 @@ Claro que você não precisa ser estritamente rígido com essa regra, é normal 
 
 ## Functors
 
-Módulos podem ser passados como funções. Isso é equivalente ao conceito de funções de primeira classe que vimos no capítulo sobre funções. Porém, módulos são intrinsecamente diferentes de funções normais. Ao invés de passarmos eles como funções normais, nos utilizamos funções especiais chamadas **Functors**.
+Módulos podem ser passados como funções. Isso é equivalente ao conceito de funções de primeira classe que vimos no capítulo sobre funções. Porém, módulos são intrinsecamente diferentes de funções normais. Ao invés de passarmos eles como funções normais, nós utilizamos funções especiais chamadas **Functors**.
 
 > Na matemática, mais precisamente teoria das categorias, um functor ou funtor é um mapeamento entre categorias, preservando domínios, contradomínios, identidades e composições, analogamente a como, por exemplo, um homomorfismo de grupos preserva o elemento neutro e a operação do grupo.
 
