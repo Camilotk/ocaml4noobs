@@ -378,7 +378,7 @@ module IntPrinter = Printer (struct
     type t = int
     let toString = string_of_int end)
 ```
-O functior irá nos retornar uma implementação concreta de um módulo que será atribuída para o módulo **IntPrinter** que além de conter os tipos do módulo passado como parâmetro para o functor também vai conter as funções que foram declaradas paramétricamente em sua definição.
+O functor irá nos retornar uma implementação concreta de um módulo que será atribuída para o módulo **IntPrinter** que além de conter os tipos do módulo passado como parâmetro para o functor também vai conter as funções que foram declaradas paramétricamente em sua definição.
 ```ocaml
 IntPrinter.printList [1; 2; 3];;
 (* 1, 2, 3 
