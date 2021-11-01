@@ -326,7 +326,7 @@ Quando estamos desenvolvendo uma interface não devemos pensá-la de forma isola
 
 Algumas convenções bastante usadas:
 
-- Um módulo para *praticamente* todo tipo na nossa aplicação. Normalmente construímos um módulo para tipo que definimos na nossa aplicação e exportamos o tipo primário do módulo com o nome **t**.
+- Um módulo para *praticamente* todo tipo na nossa aplicação. Normalmente construímos um módulo para cada tipo que definimos na nossa aplicação e exportamos o tipo primário do módulo com o nome **t**.
 
 - *Sempre colocamos **t** primeiro*. Se o nosso módulo hipotético chamado ```M``` no qual o tipo primário é ```M.t``` possui funções que usam valor do tipo ```M.t``` colocamos sempre esses valor como o primeiro.
 
@@ -344,7 +344,7 @@ Claro que você não precisa ser estritamente rígido com essa regra, é normal 
 
 ## Functors
 
-Módulos podem ser passados como funções. Isso é equivalente ao conceito de funções de primeira classe que vimos no capítulo sobre funções. Porém, módulos são intrinsecamente diferentes de funções normais. Ao invés de passarmos eles como funções normais, nos utilizamos funções especiais chamadas **Functors**.
+Módulos podem ser passados como funções. Isso é equivalente ao conceito de funções de primeira classe que vimos no capítulo sobre funções. Porém, módulos são intrinsecamente diferentes de funções normais. Ao invés de passarmos eles como funções normais, nós utilizamos funções especiais chamadas **Functors**.
 
 > Na matemática, mais precisamente teoria das categorias, um functor ou funtor é um mapeamento entre categorias, preservando domínios, contradomínios, identidades e composições, analogamente a como, por exemplo, um homomorfismo de grupos preserva o elemento neutro e a operação do grupo.
 
@@ -378,7 +378,7 @@ module IntPrinter = Printer (struct
     type t = int
     let toString = string_of_int end)
 ```
-O functior irá nos retornar uma implementação concreta de um módulo que será atribuída para o módulo **IntPrinter** que além de conter os tipos do módulo passado como parâmetro para o functor também vai conter as funções que foram declaradas paramétricamente em sua definição.
+O functor irá nos retornar uma implementação concreta de um módulo que será atribuída para o módulo **IntPrinter** que além de conter os tipos do módulo passado como parâmetro para o functor também vai conter as funções que foram declaradas paramétricamente em sua definição.
 ```ocaml
 IntPrinter.printList [1; 2; 3];;
 (* 1, 2, 3 
@@ -420,7 +420,7 @@ Functors nos ajudam a parametrizar nossas aplicações e modelar melhores módul
 
 - **Injeção de dependência** Pois fazem que a implementação de alguns componentes sejam cambiáveis. Isso é particularmente útil quando a intenção é prototipar partes do sistema para testes e simulações.
 
-- **Autoextensão de módulos** Functors nos provêem uma forma de estender nossos módulos com novas funcionalidades de uma forma padronizada. Functors nos permitem escrever a lógica apenas uma vez e reaplicá-la e como vimos anteriormente podemos usar **include** para fazer isso, mas certamente functors podem nos prover isso de forma mais organizada e eficiente.
+- **Autoextensão de módulos** Functors nos proveem uma forma de estender nossos módulos com novas funcionalidades de uma forma padronizada. Functors nos permitem escrever a lógica apenas uma vez e reaplicá-la e como vimos anteriormente podemos usar **include** para fazer isso, mas certamente functors podem nos prover isso de forma mais organizada e eficiente.
 
 - **Instanciar módulos com estado** Módulos podem conter estados mutáveis, isso significa que algumas vezes pode ser útil ter múltiplas instâncias de um módulo em particular, cada um com seu estado individual. Functors nos permitem automatizar a construção desses módulos.
 
@@ -430,7 +430,7 @@ Essas são algumas dessas aplicações, existem muitas outras que são possibili
 
 ## Módulos de primeira-classe
 
-Você pode pensar no OCaml como sendo dividido em duas partes: uma linguagem que se preocupa com valores e tipos e uma linguagem que se preocupa com módulos e assinaturas de módulo. Esses sublinguagens são separadas, em que os módulos podem conter tipos e valores, mas os valores comuns não podem conter módulos ou tipos de módulo. Isso significa que você não pode fazer coisas como definir uma variável cujo valor é um módulo ou uma função que recebe um módulo como argumento.
+Você pode pensar no OCaml como sendo dividido em duas partes: uma linguagem que se preocupa com valores e tipos e uma linguagem que se preocupa com módulos e assinaturas de módulo. Essas sublinguagens são separadas, em que os módulos podem conter tipos e valores, mas os valores comuns não podem conter módulos ou tipos de módulo. Isso significa que você não pode fazer coisas como definir uma variável cujo valor é um módulo ou uma função que recebe um módulo como argumento.
 
 OCaml fornece uma maneira de contornar essa separação na forma de módulos de primeira classe. Módulos de primeira classe são valores comuns que podem ser criados e convertidos de volta em módulos regulares.
 
