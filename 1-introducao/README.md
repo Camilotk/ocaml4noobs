@@ -160,7 +160,7 @@ $ dune exec ./helloworld.exe
 ```
 > Mesmo em ambientes UNIX os arquivos executáveis gerados pelo OCaml tem a extensão .exe
 
-> Caso você receba um erro *"I cannot find the root of the current workspace/project."* isso acontece porque nas versões mais rececentes depois da v3.0 o dune não gera mais automaticamente o arquivo **dune-project** (isso terá [correção futuramente](https://github.com/ocaml/dune/pull/4239#issuecomment-780981029)) para corrigir isso basta usar o comando `$ "(lang dune 2.9) >> dune-project"` no seu terminal e continuar o processo de build normalmente.
+> Caso você receba um erro *"I cannot find the root of the current workspace/project."* isso acontece porque nas versões mais rececentes depois da v3.0 o dune não gera mais automaticamente o arquivo **dune-project** (isso terá [correção futuramente](https://github.com/ocaml/dune/pull/4239#issuecomment-780981029)) para corrigir isso basta usar o comando `$ echo "(lang dune 2.9)" >> dune-project` no seu terminal e continuar o processo de build normalmente.
 
 E devemos ter uma mensagem `Hello World!` na tela.
 
