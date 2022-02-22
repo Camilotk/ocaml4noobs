@@ -160,6 +160,8 @@ $ dune exec ./helloworld.exe
 ```
 > Mesmo em ambientes UNIX os arquivos executáveis gerados pelo OCaml tem a extensão .exe
 
+> Caso você receba um erro *"I cannot find the root of the current workspace/project."* isso acontece porque por alguma razão, o dune não está gerando automaticamente o arquivo de configuração **dune-project** (isso acontece depois da v3.0 e terá [correção futuramente](https://github.com/ocaml/dune/pull/4239#issuecomment-780981029)) para corrigir isso basta usar o comando `$ "(lang dune 2.9) >> dune-project"` no seu terminal. 
+
 E devemos ter uma mensagem `Hello World!` na tela.
 
 Agora vamos alterar nosso script para imprimir texto formatado.
