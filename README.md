@@ -44,9 +44,9 @@
 
 ## Intermezzo 1 -  Ferramentas
 #### Escolha a sua:
-- [VS Code](https://github.com/Camilotk/ocaml4noobs/blob/master/1I%20-%20ferramentas/vscode.md)
-- [Emacs](https://github.com/Camilotk/ocaml4noobs/blob/master/1I%20-%20ferramentas/emacs.md)
-- [VIM](https://github.com/Camilotk/ocaml4noobs/blob/master/1I%20-%20ferramentas/vim.md)
+- [VS Code](./1I_ferramentas/vscode.md)
+- [Emacs](./1I_ferramentas/emacs.md)
+- [VIM](./1I_ferramentas/vim.md)
 
 ## Parte 2 - Funções
 - [O que é uma função](https://github.com/Camilotk/ocaml4noobs/tree/master/2-funcoes#o-que-%C3%A9-uma-fun%C3%A7%C3%A3o)
