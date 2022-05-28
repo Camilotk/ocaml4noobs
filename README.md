@@ -69,7 +69,7 @@
 - [Composição de funções](./2_funcoes#composição-de-funções)
 
 ## Intermezzo 2 -  Scripts e REPL
-- [Scripts e REPL](https://github.com/Camilotk/ocaml4noobs/tree/master/2I%20-%20repl#scripts-e-repl)
+- [Scripts e REPL](./2I_repl)
 
 ## Parte 3 - Dados
 - [Tipos Pré-definidos](https://github.com/Camilotk/ocaml4noobs/tree/master/3-dados#tipos-pr%C3%A9-definidos)
