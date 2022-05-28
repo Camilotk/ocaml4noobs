@@ -120,19 +120,19 @@
     - [Você pode viver sem módulos de primeira classe](./4_organizacao#você-pode-viver-sem-módulos-de-primeira-classe)
 
 ## Intermezzo 4 - Testes
-- [Testes Unitários](https://github.com/Camilotk/ocaml4noobs/blob/master/4I%20-%20testes/README.md#testes-unit%C3%A1rios)
-- [Testes Baseados em Propriedades](https://github.com/Camilotk/ocaml4noobs/blob/master/4I%20-%20testes/README.md#testes-baseados-em-propriedades)
+- [Testes Unitários](./4I_testes#testes-unitários)
+- [Testes Baseados em Propriedades](./4I_testes#testes-baseados-em-propriedades)
 
 ## Parte 5 - Mais Tipos
-- [Pattern Matching](https://github.com/Camilotk/ocaml4noobs/blob/master/5%20-%20tipos/README.md#pattern-matching)
-- [Exception](https://github.com/Camilotk/ocaml4noobs/blob/master/5%20-%20tipos/README.md#exception)
-- [Tratando erros sem exceções](https://github.com/Camilotk/ocaml4noobs/blob/master/5%20-%20tipos/README.md#exception)
-- [Option](https://github.com/Camilotk/ocaml4noobs/blob/master/5%20-%20tipos/README.md#option)
-- [Result](https://github.com/Camilotk/ocaml4noobs/blob/master/5%20-%20tipos/README.md#result)
-- [Sequence](https://github.com/Camilotk/ocaml4noobs/blob/master/5%20-%20tipos/README.md#sequence)
+- [Pattern Matching](./5_tipos#pattern-matching)
+- [Exception](./5_tipos#exception)
+- [Tratando erros sem exceções](./5_tipos#tratando-erros-sem-exceções)
+- [Option](./5_tipos#option)
+- [Result](./5_tipos#result)
+- [Sequence](./5_tipos#sequence)
 
 ## Intermezzo 5 - esy
-- [esy](https://github.com/Camilotk/ocaml4noobs/tree/master/I5%20-%20dependencias)
+- [esy](./5I_dependencias)
 
 ## Parte 6 - CRUD
 - *em breve*
