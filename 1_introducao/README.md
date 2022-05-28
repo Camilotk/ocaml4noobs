@@ -48,7 +48,7 @@ Outro ponto importante para OCaml aconteceu em 2016, quando Jodan Walke, criador
 - **2016**: É criada a sintaxe e extensão [ReasonML](https://github.com/reasonml/reason) por [Jordan Walke](https://twitter.com/jordwalke) para OCaml que oferece uma sintaxe próxima de JavaScript e permite transpilar sua sintaxe ReasonML para OCaml no qual é possível gerar binários nativos e JavaScript através do compilador BuckleScript.
 - **2020**: Surge a linguagem de programação [ReScript](https://rescript-lang.org/blog/bucklescript-is-rebranding) a partir dos criadores do compilador BuckleScript decidirem criar uma sintaxe própria e unificada para Reason, cortando a compatibilidade com OCaml e retirando funcionalidades como o sistema de objetos. O projeto BuckleScript passa por um fork feito e mantido por [Antonio Monteiro](https://github.com/anmonteiro) tornando-se [Melange](https://github.com/melange-re).
 
-<p align="right"><a href="https://github.com/Camilotk/ocaml4noobs/tree/master/1-introducao#cap%C3%ADtulo-1---introdu%C3%A7%C3%A3o">🔝 Subir para o topo</a></p>
+<p align="right"><a href="#capítulo-1---introdução">🔝 Subir para o topo</a></p>
 
 ## Instalação
 
@@ -108,7 +108,7 @@ $ opam install dune
 
 E agora vamos para nosso primeiro exemplo.
 
-<p align="right"><a href="https://github.com/Camilotk/ocaml4noobs/tree/master/1-introducao#cap%C3%ADtulo-1---introdu%C3%A7%C3%A3o">🔝 Subir para o topo</a></p>
+<p align="right"><a href="#capítulo-1---introdução">🔝 Subir para o topo</a></p>
 
 ## Hello World
 
@@ -196,7 +196,7 @@ Error: This expression has type int but an expression was expected of type
 
 Interessante, não?
 
-<p align="right"><a href="https://github.com/Camilotk/ocaml4noobs/tree/master/1-introducao#cap%C3%ADtulo-1---introdu%C3%A7%C3%A3o">🔝 Subir para o topo</a></p>
+<p align="right"><a href="#capítulo-1---introdução">🔝 Subir para o topo</a></p>
 
 ## Porque OCaml?
 
@@ -372,7 +372,7 @@ void quickSort(int * array, int low, int high) {
  ```
 Com isso podemos ver que em C++ (ou qualquer outra linguagem imperativa como Java ou C#) o que é descrito é o procedimento passo-a-passo e não a definição do algoritmo. Pode ser que por você estar mais acostumado a ler código imperativo que a solução em C++ pareça ser mais clara, mas pense o quão mais complexo é entender todo o número maior de instruções e passos que estão no código em C++ e a recompensa que é poder escrever códigos mais concisos e claros usando OCaml.
 
-<p align="right"><a href="https://github.com/Camilotk/ocaml4noobs/tree/master/1-introducao#cap%C3%ADtulo-1---introdu%C3%A7%C3%A3o">🔝 Subir para o topo</a></p>
+<p align="right"><a href="#capítulo-1---introdução">🔝 Subir para o topo</a></p>
 
 ## Particularidades de OCaml
 
@@ -463,4 +463,4 @@ Separando dados e funções dessa forma nós garantimos que nossas dependências
 - [Caml Language History](https://caml.inria.fr/about/history.en.html)
 - [OCaml - Wikipédia](https://pt.wikipedia.org/wiki/OCaml)
 
-<p align="right"><a href="https://github.com/Camilotk/ocaml4noobs/tree/master/1-introducao#cap%C3%ADtulo-1---introdu%C3%A7%C3%A3o">🔝 Subir para o topo</a></p>
+<p align="right"><a href="#capítulo-1---introdução">🔝 Subir para o topo</a></p>
