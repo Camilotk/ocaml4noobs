@@ -52,7 +52,7 @@ A definição da Wikipédia em Inglês sobre funções matemáticas serve como b
 A última parte dessa definição é a mais importante, porque não é necessariamente óbvio que cada saída está necessariamente relacionada com a entrada, uma outra forma que já usamos para descrever a mesma coisa é: *Uma vez dado uma entrada, sempre será retornado a mesma saída*. 
 
 
-<p align="right"><a href="https://github.com/Camilotk/ocaml4noobs/blob/master/2-funcoes/README.md#fun%C3%A7%C3%B5es">🔝 Subir para o topo</a></p>
+<p align="right"><a href="#funções">🔝 Subir para o topo</a></p>
 
 
 ### Funções Constantes
@@ -111,7 +111,7 @@ As definições de função em OCaml começam com a palavra reservada **let**, s
 
 Se observarmos o gráfico gerado pela nossa função vamos lembrar da definição de que uma entrada sempre produz uma mesma saída. De forma visual isso significa que desenhamos uma linha no gráfico, onde cada valor recebe um ponto específico de saída. OCaml não requer que sejamos rigorosos com a definição matemática (como em outras linguagens por ex. Haskell), mas espera que façamos isso sempre que possível porque isso irá nos ajudar a criar programas simples, corretos e funcionais.
 
-<p align="right"><a href="https://github.com/Camilotk/ocaml4noobs/blob/master/2-funcoes/README.md#fun%C3%A7%C3%B5es">🔝 Subir para o topo</a></p>
+<p align="right"><a href="#funções">🔝 Subir para o topo</a></p>
 
 ### Funções Quadráticas
 
@@ -133,7 +133,7 @@ E que produz o gráfico:
 
 A função que declaramos aqui usa a exponenciação (\*\*) isso significa que estamos fazendo x ser elevado a 2. Essa função também atende o requisito de sempre produzir a mesma saída dada o mesma entrada.
 
-<p align="right"><a href="https://github.com/Camilotk/ocaml4noobs/blob/master/2-funcoes/README.md#fun%C3%A7%C3%B5es">🔝 Subir para o topo</a></p>
+<p align="right"><a href="#funções">🔝 Subir para o topo</a></p>
 
 ### Funções Trigonométricas
 
@@ -156,7 +156,7 @@ E que produz o gráfico:
 
 Como podemos observar é um gráfico um tanto quanto bonito.
 
-<p align="right"><a href="https://github.com/Camilotk/ocaml4noobs/blob/master/2-funcoes/README.md#fun%C3%A7%C3%B5es">🔝 Subir para o topo</a></p>
+<p align="right"><a href="#funções">🔝 Subir para o topo</a></p>
 
 ## Aplicação de funções
 
@@ -202,7 +202,7 @@ Isso porque square é uma função com assinatura x:int -> int ou seja recebe ap
 
 A maioria das linguagens populares requerem parênteses e nesses casos isso pode não parecer importante, mas para linguagens que tem parênteses implícitos é necessário entendermos sua associatividade.  
 
-<p align="right"><a href="https://github.com/Camilotk/ocaml4noobs/blob/master/2-funcoes/README.md#fun%C3%A7%C3%B5es">🔝 Subir para o topo</a></p>
+<p align="right"><a href="#funções">🔝 Subir para o topo</a></p>
 
 ### Funções com múltiplos argumentos
 
@@ -230,7 +230,7 @@ Assim como em um caso de função que recebe apenas um argumento a avaliação a
 > **Obs**: Para entender melhor a aplicação de funções caso queira é interessante dar uma olhada no [Aligator Eggs](http://worrydream.com/#!/AlligatorEggs) que explica
 > um pouco mais sobre aplicação de funções e associação.
 
-<p align="right"><a href="https://github.com/Camilotk/ocaml4noobs/blob/master/2-funcoes/README.md#fun%C3%A7%C3%B5es">🔝 Subir para o topo</a></p>
+<p align="right"><a href="#funções">🔝 Subir para o topo</a></p>
 
 ## Tipos de função
 
@@ -264,7 +264,7 @@ E retorna um valor:
 
 Assim é possível que já saibamos que provavelmente a função map receba uma lista de valores do tipo 'a, aplique a função em que transforma o tipo 'a em 'b e então retorne uma lista do tipo 'b. Isso tudo apenas lendo a assinatura da função.
 
-<p align="right"><a href="https://github.com/Camilotk/ocaml4noobs/blob/master/2-funcoes/README.md#fun%C3%A7%C3%B5es">🔝 Subir para o topo</a></p>
+<p align="right"><a href="#funções">🔝 Subir para o topo</a></p>
 
 ## Currying 
 
@@ -307,7 +307,7 @@ Nesse caso o primeiro parênteses retorna uma função com o primeiro parâmetro
 (* - : bool = true *)
 ```
 
-<p align="right"><a href="https://github.com/Camilotk/ocaml4noobs/blob/master/2-funcoes/README.md#fun%C3%A7%C3%B5es">🔝 Subir para o topo</a></p>
+<p align="right"><a href="#funções">🔝 Subir para o topo</a></p>
 
 ## Função em prefixo e em infixo
 
@@ -367,7 +367,7 @@ Caso quisessemos realizar a mesma expressão de soma acima apenas utilizando a f
 ```
 Isso pode parecer familiar para quem vem de um contexto como LISP, mas em geral torna mais dificil de ler a expressão que estamos escrevendo, porém é possível escrever OCaml dessa forma sem qualquer prejuízo além da legibilidade.
 
-<p align="right"><a href="https://github.com/Camilotk/ocaml4noobs/blob/master/2-funcoes/README.md#fun%C3%A7%C3%B5es">🔝 Subir para o topo</a></p>
+<p align="right"><a href="#funções">🔝 Subir para o topo</a></p>
 
 ### Definindo funções em infixo
 
@@ -407,7 +407,7 @@ Caso seja necessário especificar os tipos dos parâmetros na função lambda é
 (* - : int = 15 *)
 ```
 
-<p align="right"><a href="https://github.com/Camilotk/ocaml4noobs/blob/master/2-funcoes/README.md#fun%C3%A7%C3%B5es">🔝 Subir para o topo</a></p>
+<p align="right"><a href="#funções">🔝 Subir para o topo</a></p>
 
 ## Recursão
 
@@ -467,7 +467,7 @@ let rec fatorial n =
 (* val fatorial : int -> int = <fun> *)
 ```
 
-<p align="right"><a href="https://github.com/Camilotk/ocaml4noobs/blob/master/2-funcoes/README.md#fun%C3%A7%C3%B5es">🔝 Subir para o topo</a></p>
+<p align="right"><a href="#funções">🔝 Subir para o topo</a></p>
 
 ## Piping / Canalização
 
@@ -514,7 +514,7 @@ Para que seja possível canalizar uma saída de função ou valor é necessário
           This is not a function; it cannot be applied. *)
 ```
 
-<p align="right"><a href="https://github.com/Camilotk/ocaml4noobs/blob/master/2-funcoes/README.md#fun%C3%A7%C3%B5es">🔝 Subir para o topo</a></p>
+<p align="right"><a href="#funções">🔝 Subir para o topo</a></p>
 
 ## Composição de Funções
 
