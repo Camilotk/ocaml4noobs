@@ -81,7 +81,7 @@ Esse exemplo é uma solução do problema "fizzbuzz" que imprime uma sequência 
 
 Os valores estão sendo comparados / inferidos com underline **_** (chamado de wildcard pattern ou "coringa" em uma tradução não literal) que significa que nós não precisamos de um padrão aqui já que não pretendemos utilizar o valor que está sendo comparado para nada. Cada um dos testes faz teste se o valor i é divisível por 3, 5 ou ambos e caso seja é retornado a mensagem esperado, caso não é utilizado um match descartando o valor e sem predicado que retorna i convertido em string, isso é necessário porque o compilador exige que todas as ramificações desse pattern retornem o mesmo tipo.
 
-<p align="right"><a href="https://github.com/Camilotk/ocaml4noobs/tree/master/5%20-%20tipos#tipos">🔝 Subir para o topo</a></p>
+<p align="right"><a href="#mais-tipos">🔝 Subir para o topo</a></p>
 
 ## Exception
 
@@ -120,7 +120,7 @@ with
     | Failure msg -> Printf.sprintf "Failed with %s" msg
 ```
 
-<p align="right"><a href="https://github.com/Camilotk/ocaml4noobs/tree/master/5%20-%20tipos#tipos">🔝 Subir para o topo</a></p>
+<p align="right"><a href="#mais-tipos">🔝 Subir para o topo</a></p>
 
 ## Tratando erros sem exceções
 
@@ -160,7 +160,7 @@ Para que isso seja possível é necessário que nós embutirmos esses efeitos co
 
 Em OCaml utilizamos o tipo `Option` e o tipo `Result`.
 
-<p align="right"><a href="https://github.com/Camilotk/ocaml4noobs/tree/master/5%20-%20tipos#tipos">🔝 Subir para o topo</a></p>
+<p align="right"><a href="#mais-tipos">🔝 Subir para o topo</a></p>
 
 ## Option
 
@@ -203,7 +203,7 @@ Some "a";;
 (* - : string option' = Some "a" *)
 ```
 
-<p align="right"><a href="https://github.com/Camilotk/ocaml4noobs/tree/master/5%20-%20tipos#tipos">🔝 Subir para o topo</a></p>
+<p align="right"><a href="#mais-tipos">🔝 Subir para o topo</a></p>
 
 ## Result
 
@@ -287,7 +287,7 @@ match second_response with
 
 Como podemos perceber é muito fácil de encadear funções quando utilizamos Result como retorno. Isso nos permite trabalhar com pequenas funções que são combináveis em funções maiores mais complexas. Isso também nos ajuda a melhorar a verificação de erros dos nossos programas com o uso de Pattern Match que é verificável pelo compilador.
 
-<p align="right"><a href="https://github.com/Camilotk/ocaml4noobs/tree/master/5%20-%20tipos#tipos">🔝 Subir para o topo</a></p>
+<p align="right"><a href="#mais-tipos">🔝 Subir para o topo</a></p>
 
 ## Sequence
 
@@ -324,7 +324,7 @@ seq_combinadas |> List.of_seq;;
 (* - : int list = [1; 2; 3] *)
 ```
 
-<p align="right"><a href="https://github.com/Camilotk/ocaml4noobs/tree/master/5%20-%20tipos#tipos">🔝 Subir para o topo</a></p>
+<p align="right"><a href="#mais-tipos">🔝 Subir para o topo</a></p>
 
 ## Materiais Complementares e Referências
 - [Relação entre funções](http://www.univasf.edu.br/~jorge.cavalcanti/Mat_Disc_Parte11.pdf)
