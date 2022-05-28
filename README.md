@@ -24,23 +24,23 @@
 </p>
 
 ## ROADMAP
-https://github.com/Camilotk/ocaml4noobs/tree/master/1_introducao
+
 ## Parte 1 - Introdução
 - [O que é OCaml?](./1_introducao#o-que-é-ocaml)
-- [História do OCaml](https://github.com/Camilotk/ocaml4noobs/tree/master/1-introducao#hist%C3%B3ria-do-ocaml)
-  - [Resumo e Linha do Tempo](https://github.com/Camilotk/ocaml4noobs/tree/master/1-introducao#resumo-e-linha-do-tempo)
-- [Instalação](https://github.com/Camilotk/ocaml4noobs/tree/master/1-introducao#instala%C3%A7%C3%A3o)
-- [Instalando o Dune](https://github.com/Camilotk/ocaml4noobs/tree/master/1-introducao#instalando-o-dune)
-- [Hello World](https://github.com/Camilotk/ocaml4noobs/tree/master/1-introducao#hello-world)
-- [Porque OCaml?](https://github.com/Camilotk/ocaml4noobs/tree/master/1-introducao#porque-ocaml)
+- [História do OCaml](./1_introducao#hist%C3%B3ria-do-ocaml)
+  - [Resumo e Linha do Tempo](./1_introducao#resumo-e-linha-do-tempo)
+- [Instalação](./1_introducao#instala%C3%A7%C3%A3o)
+- [Instalando o Dune](./1_introducao#instalando-o-dune)
+- [Hello World](./1_introducao#hello-world)
+- [Porque OCaml?](./1_introducao#porque-ocaml)
 	- [Concisa e Declarativa](https://github.com/Camilotk/ocaml4noobs/tree/master/1-introducao#concisa-e-declarativa)
   	- [Lingugens Concisas vs Verbosas](https://github.com/Camilotk/ocaml4noobs/tree/master/1-introducao#lingugens-concisas-vs-verbosas)
 	- [Menos Erros Acidentais](https://github.com/Camilotk/ocaml4noobs/tree/master/1-introducao#menos-erros-acidentais)
-- [Particularidades de OCaml](https://github.com/Camilotk/ocaml4noobs/tree/master/1-introducao#particularidades-de-ocaml)
+- [Particularidades de OCaml](./1_introducao#particularidades-de-ocaml)
 	- [Inferência de Tipos](https://github.com/Camilotk/ocaml4noobs/tree/master/1-introducao#infer%C3%AAncia-de-tipos)
 	- [Imutabilidade](https://github.com/Camilotk/ocaml4noobs/tree/master/1-introducao#imutabilidade)
 	- [Dados e Operações](https://github.com/Camilotk/ocaml4noobs/tree/master/1-introducao#dados-e-opera%C3%A7%C3%B5es)
-- [Materiais em Inglês para aprender OCaml](https://github.com/Camilotk/ocaml4noobs/tree/master/1-introducao#materiais-em-ingl%C3%AAs-para-aprender-ocaml)
+- [Materiais em Inglês para aprender OCaml](./1_introducao#materiais-em-ingl%C3%AAs-para-aprender-ocaml)
 
 ## Intermezzo 1 -  Ferramentas
 #### Escolha a sua:
