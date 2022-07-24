@@ -491,7 +491,7 @@ Mas qual a utilidade disso? Existem algumas opções em que pode ser relevante u
 Além de conseguirmos canalizar a saída das nossas funções para a próxima, também podemos usar o backwards pipe operator (operador de canalização invertida) que basicamente passa o valor para a função declarada antes:
 ```ocaml
 (* em OCaml 4.01 ou anterior esse operador era <|, mas nas posteriores foi mudado para @@ *)
-sin @@ 2. + 1.;;
+sin @@ 2. +. 1.;;
 (* - : float = 0.141120008059867214 *)
 ```
 Além disso modemos usar os pipe operators ao mesmo tempo, o que deixa a sintaxe de uma função com dois valores similar a uma função em infixo:
