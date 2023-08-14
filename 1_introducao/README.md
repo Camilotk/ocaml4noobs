@@ -255,30 +255,36 @@ Quando você rodar esse comando, você vai ver a mensagem “Hello, World!” na
 
 Parabéns, você acabou de criar e rodar o seu primeiro programa em OCaml!
 
-#### Indo um pouco além!
+#### Indo um pouco mais além!
 
-Agora vamos alterar nosso script para imprimir texto formatado.
+Escrevemos nosso primeiro código em OCaml, que imprime "Hello, World!" na tela. Agora, vamos modificar nosso código para usar uma função mais avançada de impressão, que nos permite formatar o texto com marcadores.
+
+Abra o arquivo `bin/main.ml` no seu editor de texto favorito e substitua o conteúdo por este:
 ```OCaml
 let () = Printf.printf "Hello, %s!" "World"
 ```
+Salve o arquivo e volte para o terminal. Vamos recompilar nosso projeto usando o comando:
 
-Vamos recompilar o nosso projeto usando dune:
-
-```terminal
+```sh
 $ dune build
 ```
 
- Note que provavelmente dessa vez a compilação aconteceu mais repidamente que da primeira vez mesmo sendo um projeto pequeno, isso acontece porque o compilador de OCaml é inteligente o suficiente para compilar apenas o que é necessário.
+Você deve notar que a compilação foi mais rápida do que da primeira vez, mesmo sendo um projeto pequeno. Isso acontece porque o compilador de OCaml é inteligente o suficiente para compilar apenas o que é necessário.
 
-E vamos rodar novamente nosso projeto:
-
-```terminal
+Agora, vamos executar nosso projeto usando o comando:
+```sh
 $ dune exec ./helloworld.exe
 ```
 
-E vamos ter nosso "Hello World!" impresso na tela. Porém, aqui podemos começar a perceber uma das coisas mais legais de OCaml, até mesmo a interpolação de dados na string usando marcadores é estaticamente checada.
+Você deve ver na tela a mensagem "Hello, World!". Mas o que mudou no nosso código? Bem, nós usamos a função `Printf.printf` em vez da função `print_endline`. A função `Printf.printf` é uma função que permite imprimir texto formatado usando marcadores. Os marcadores são símbolos que indicam o tipo e a posição dos dados que serão inseridos na string. Por exemplo, o marcador `%s` indica que uma string será inserida na posição correspondente. No nosso caso, nós usamos o marcador `%s` e passamos a string `"World"` como argumento. Assim, a função `Printf.printf` substitui o marcador pela string e imprime "Hello, World!".
 
-O marcador `%s` espera uma string, se tentarmos passar um valor como `42` ou `true` vamos ter um erro sendo disparado que pode ser visualizado em tempo de compilação:
+Mas o que acontece se nós tentarmos passar um valor de outro tipo, como um número ou um booleano? Vamos tentar alterar nosso código para isso:
+
+```OCaml
+let () = Printf.printf "Hello, %s!" 42
+```
+
+Salve o arquivo e tente recompilar o projeto. Você deve ver um erro parecido com este:
 
 ```
 1 | let () = Printf.printf "Hello, %s!" 42
@@ -287,7 +293,17 @@ Error: This expression has type int but an expression was expected of type
          string
 ```
 
-Interessante, não?
+O erro diz que a expressão `42` tem o tipo `int`, mas uma expressão do tipo `string` era esperada. Isso significa que o compilador de OCaml verifica os tipos dos dados que são passados para a função `Printf.printf` e garante que eles sejam compatíveis com os marcadores usados na string. Isso é uma das características mais legais de OCaml: a **tipagem estática**. A tipagem estática significa que os tipos dos dados são verificados em tempo de compilação, antes do programa ser executado. Isso ajuda a evitar erros de tipo em tempo de execução, que podem causar falhas ou comportamentos inesperados no programa.
+
+OCaml usa um sistema de tipagem chamado **Hindley-Milner**, que é um sistema de tipagem muito poderoso e expressivo. Ele permite que o compilador infira os tipos dos dados sem precisar de anotações explícitas na maioria dos casos. Ele também permite definir tipos abstratos, tipos algébricos, tipos paramétricos, tipos recursivos e tipos polimórficos. Nós vamos aprender mais sobre esses tipos nos próximos tutoriais.
+
+Por enquanto, vamos voltar ao nosso código original e usar um marcador adequado para o valor `42`. O marcador para números inteiros é `%d`. Então, vamos mudar nosso código para:
+
+```OCaml
+let () = Printf.printf "Hello, %d!" 42
+```
+
+Salve o arquivo e recompile o projeto. Agora você deve ver na tela a mensagem "Hello, 42!". 
 
 ## Porque OCaml?
 
