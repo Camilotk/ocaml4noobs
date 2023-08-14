@@ -243,16 +243,17 @@ Para compilar o nosso código, vamos usar o comando `dune build`. Esse comando v
 $ dune build
 ```
 
-Para executar o nosso programa, vamos usar o comando `dune exec` seguido do nome do nosso executável. O nome do nosso executável é `helloworld.exe`, e ele está na pasta `bin` dentro da pasta `_build`. Então, o comando completo fica assim:
+Para rodar o nosso programa, vamos usar o comando `dune exec` com o nome do nosso projeto. Como o nosso projeto se chama `helloworld`, o comando fica assim:
+
 ```terminal
-$ dune exec ./helloworld.exe
+$ dune exec helloworld
 ```
 
-> Mesmo em ambientes UNIX os arquivos executáveis gerados pelo OCaml tem a extensão .exe
+Esse comando vai procurar pelo executável do nosso projeto na pasta `_build` e executá-lo. Você não precisa se preocupar com o caminho completo do executável, pois o dune sabe onde encontrá-lo.
 
-Se tudo der certo, você vai ver a mensagem "Hello, World!" na tela.
+Quando você rodar esse comando, você vai ver a mensagem “Hello, World!” na tela. Isso significa que o seu programa funcionou corretamente. 
 
-Parabéns, você acabou de criar e executar o seu primeiro programa em OCaml!
+Parabéns, você acabou de criar e rodar o seu primeiro programa em OCaml!
 
 #### Indo um pouco além!
 
