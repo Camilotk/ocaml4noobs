@@ -49,9 +49,9 @@ Outro ponto importante para OCaml aconteceu em 2016, quando [Jordan Walke](https
 
 OCaml é uma linguagem de programação que tem uma longa história e uma grande relevância no cenário das linguagens funcionais. Ela é uma linguagem que combina vários paradigmas e funcionalidades, oferecendo aos programadores uma forma elegante, eficiente e confiável de expressar seus algoritmos e resolver seus problemas. OCaml é uma linguagem que tem uma longa história de produção e vale a pena conhecer e aprender.
 
-<center>
+<h3 align="center">
 <img src="./linha_do_tempo.png" />
-</center>
+</h3>
 
 <p align="right"><a href="#capítulo-1---introdução">🔝 Subir para o topo</a></p>
 
