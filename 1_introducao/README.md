@@ -167,9 +167,9 @@ Depois de salvar e fechar o arquivo, execute `source ~/.bashrc` para aplicar as 
 
 ## Instalando o Dune
 
-Agora também vamos instalar a ferramenta Dune que é um `build system` para projetos OCaml/Reason. Ele tem como foco em cuidar dos detalhes low-level da compilação de OCaml para nós, desde que façamos a configuração do projeto adequadamente ele irá cuidar do resto para nós. 
+A seguir, vamos instalar a ferramenta **Dune**, um sistema de `build system` para projetos em OCaml/Reason. Ela se encarrega dos detalhes de baixo nível da compilação de OCaml, bastando que configuremos o projeto corretamente. Assim, ela cuidará do resto para nós.
 
-- Para fazer isso vamos instalar o Dune globalmente em `user level` usando OPAM que instalamos previamente.
+- Para fazer isso vamos instalar o Dune usando OPAM que instalamos previamente.
 ```terminal
 $ opam install dune
 ```
