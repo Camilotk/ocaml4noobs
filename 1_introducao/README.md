@@ -41,7 +41,7 @@ Caml passou por várias revisões e melhorias ao longo dos anos, até que em 199
 
 OCaml foi desenvolvida por [Didier Rémy](http://pauillac.inria.fr/~remy/) e [Jérôme Vouillon](https://www.irif.fr/~vouillon/), do INRIA, com a colaboração de outros pesquisadores, como [Gérard Huet](http://pauillac.inria.fr/~huet/) e [Jacques Garrigue](https://scholar.google.com/citations?user=erlIoewAAAAJ). O nome OCaml vem de Objective Caml, que significa Caml com Objetos. A introdução de objetos em OCaml possibilitou muitos avanços na pesquisa de sistemas de objetos em linguagens funcionais estaticamente tipadas e com inferência de tipos. Também permitiu melhor interoperabilidade com linguagens OOP como C++ e Java e trouxe novas funcionalidades e mudanças de sintaxe em relação a Caml.
 
-No ano 2000, OCaml recebeu muitas atualizações com novas funcionalidades vindas dos estudos do cientista da computação Jacques Garrigue. Entre elas estão os argumentos opcionais, as variantes polimórficas, as anotações de variância e os métodos polimórficos. Essas funcionalidades aumentaram o poder expressivo e a flexibilidade da linguagem, permitindo que os programadores usassem tipos mais complexos e abstratos.
+No ano 2000, OCaml recebeu muitas atualizações com novas funcionalidades vindas dos estudos do cientista da computação Jacques Garrigue em seu dialeto de OCaml, Objective Label. Entre elas estão os argumentos opcionais, as variantes polimórficas, as anotações de variância e os métodos polimórficos. Essas funcionalidades aumentaram o poder expressivo e a flexibilidade da linguagem, permitindo que os programadores usassem tipos mais complexos e abstratos.
 
 Desde o início dos anos 2000, OCaml tem atraído popularidade e crescido no número de universidades que adotam a linguagem para lecionar em diversas matérias, entre elas Harvard, Princeton, Brown, Columbia, Cornell, Universidade da Califórnia, Universidade de Illinois, UPenn, Universidade da Beira Interior (Portugal), Universidade de Rennes (França) e Universidade Paris-Diderot (França).
 
@@ -59,48 +59,112 @@ OCaml é uma linguagem de programação que tem uma longa história e uma grande
 
 Certo, agora você sabe o que é OCaml, então agora vamos para a instalação da linguagem e suas ferramentas básicas para que possamos compilar e executar nossos programas.
 
-> Importante notar que apesar existir suporte de OCaml para Windows é aconselhável que utilize o [Windows Subsistem for Linux (WSL)](https://github.com/SaLandini/wsl4noobs) para programar em OCaml.
-
-
-1. Abra seu terminal da sua distro preferida, nesse caso vamos utilizar o package manager dnf como exemplo já que os testes foram feitos através dele, mas caso esteja no Ubuntu / Debian use o apt, caso OpenSUSE zypper, Arch / Manjaro pacman... para instalar o OCaml Package Manager (OPAM).
-
-```terminal
-$ sudo dnf install opam
+<strong>Linux Ubuntu:</strong>
+<details>
+	
+1. **Instale o OPAM**: OPAM é o gerenciador de pacotes oficial do OCaml, que permite alternar facilmente entre as versões do OCaml e muito mais. Por exemplo, o OPAM torna prático lidar com diferentes projetos que requerem diferentes versões do OCaml. Para instalar o OPAM no Ubuntu, abra um terminal e execute os seguintes comandos:
+```sh
+$ sudo apt-get update
+$ sudo apt-get install -y opam
 ```
 
-2. Vamos então dar o comando init que vai fazer a pré-configuração das variaveis de ambiente no seu shell padrão.
-
-```terminal
+2. **Instale o OCaml**: Depois de instalar o OPAM, você pode usar o opam para instalar a versão mais recente do OCaml. Para fazer isso, execute os seguintes comandos:
+```sh
 $ opam init
-```
-> Esse comando irá abrir um prompt perguntando se realmente queremos que as variáveis sejam adicionadas ao nosso ~/.bashrc responda `y` para confirmar
-
-3. Vamos utilizar o comando eval para carregar as novas variáveis de ambiente.
-
-```terminal
+$ eval $(opam env)
+$ opam switch create 4.14.0
 $ eval $(opam env)
 ```
+Isso criará um novo switch chamado `4.14.0` e instalará a versão 4.14.0 do OCaml nesse switch.
 
-4. Vamos testar a instalação e ver qual versão está instalada na máquina.
-
-```terminal
-$ ocaml -version
+3. **Instale o rlwrap**: O rlwrap é uma ferramenta útil que permite usar as teclas de seta para percorrer o histórico de comandos no REPL do OCaml (Read-Eval-Print Loop). Para instalar o rlwrap no Ubuntu, execute os seguintes comandos:
+```sh
+$ sudo apt-get install -y rlwrap
 ```
 
-- Caso desejamos instalar outra versão de OCaml como a 4.11.1 usando o OPAM basta: `opam switch create 4.11.1` e logo após carregar o novo ambiente com `eval $(opam env)`
-- Para voltarmos a versão anterior basta digitarmos o comando `opam switch default` e logo após carregar o novo ambiente com `eval $(opam env)`
-
-5. Instale o utilitário `rlwrap` que irá nos ajudar a repetir comandos e movimentar o cursor no ambiente de Read-Print-Evaluate-Loop (REPL).
-
+4. **Adicione um alias para usar o rlwrap com o comando 'ocaml'**: Para usar o rlwrap com o comando `ocaml`, você pode adicionar um alias ao seu arquivo `.bashrc`. Abra o arquivo `.bashrc` em seu editor de texto favorito e adicione a seguinte linha ao final do arquivo:
+```sh
+alias ocaml='rlwrap ocaml'
 ```
-$ sudo dnf install rlwrap
+Depois de salvar e fechar o arquivo, execute `source ~/.bashrc` para aplicar as alterações.
+
+</details>
+
+<strong>MacOS:</strong>
+<details>
+
+1. **Instale o Homebrew**: Homebrew é um gerenciador de pacotes para macOS que facilita a instalação de software. Se você ainda não tem o Homebrew instalado, pode instalá-lo abrindo um terminal e executando o seguinte comando:
+```sh
+$ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-6. Crie um alias para o rlwrap no seu ~/.bashrc ou ~/.zshrc
-
-```terminal
-$ echo "alias ocaml=\"rlwrap ocaml\"" >> ~/.bashrc
+2. **Instale o OPAM**: OPAM é o gerenciador de pacotes oficial do OCaml, que permite alternar facilmente entre as versões do OCaml e muito mais. Por exemplo, o OPAM torna prático lidar com diferentes projetos que requerem diferentes versões do OCaml. Para instalar o OPAM no macOS, execute os seguintes comandos:
+```sh
+$ brew update
+$ brew install opam
 ```
+
+3. **Instale o OCaml**: Depois de instalar o OPAM, você pode usar o opam para instalar a versão mais recente do OCaml. Para fazer isso, execute os seguintes comandos:
+```sh
+$ opam init
+$ eval $(opam env)
+$ opam switch create 4.14.0
+$ eval $(opam env)
+```
+Isso criará um novo switch chamado `4.14.0` e instalará a versão 4.14.0 do OCaml nesse switch.
+
+4. **Instale o rlwrap**: O rlwrap é uma ferramenta útil que permite usar as teclas de seta para percorrer o histórico de comandos no REPL do OCaml (Read-Eval-Print Loop). Para instalar o rlwrap no macOS, execute os seguintes comandos:
+```sh
+$ brew install rlwrap
+```
+
+5. **Adicione um alias para usar o rlwrap com o comando 'ocaml'**: Para usar o rlwrap com o comando `ocaml`, você pode adicionar um alias ao seu arquivo `.bashrc` ou `.zshrc`, dependendo do shell que estiver usando. Abra o arquivo apropriado em seu editor de texto favorito e adicione a seguinte linha ao final do arquivo:
+```sh
+alias ocaml='rlwrap ocaml'
+```
+Depois de salvar e fechar o arquivo, execute `source ~/.bashrc` ou `source ~/.zshrc` para aplicar as alterações.
+
+</details>
+
+
+<strong>Windows:</strong>
+<details>
+
+1. **Instale o WSL2**: O WSL2 (Windows Subsystem for Linux 2) permite executar uma distribuição Linux diretamente no Windows. Se você ainda não tem o WSL2 instalado, pode seguir as [instruções de instalação](https://learn.microsoft.com/pt-br/windows/wsl/install) fornecidas pela Microsoft. Aqui estão os passos básicos para instalar o WSL2:
+    * Abra o PowerShell ou o Prompt de Comando do Windows no modo de administrador clicando com o botão direito do mouse e selecionando "Executar como administrador".
+    * Insira o comando `wsl --install` e reinicie o computador.
+    * Esse comando habilitará os recursos necessários para executar o WSL e instalará a distribuição Ubuntu do Linux.
+
+2. **Instale o Ubuntu no WSL2**: Depois de instalar o WSL2, você pode instalar a distribuição Linux Ubuntu no WSL2. Para fazer isso, abra a Microsoft Store, pesquise por "Ubuntu" e clique em "Obter" para instalar a versão mais recente do Ubuntu.
+
+3. **Instale o OPAM**: OPAM é o gerenciador de pacotes oficial do OCaml, que permite alternar facilmente entre as versões do OCaml e muito mais. Por exemplo, o opam torna prático lidar com diferentes projetos que requerem diferentes versões do OCaml. Para instalar o OPAM no Ubuntu do WSL2, abra um terminal com Ubuntu e execute os seguintes comandos:
+```sh
+$ sudo apt-get update
+$ sudo apt-get install -y opam
+```
+
+4. **Instale o OCaml**: Depois de instalar o OPAM, você pode usar o opam para instalar a versão mais recente do OCaml. Para fazer isso, execute os seguintes comandos no Ubuntu do WSL2:
+```sh
+$ opam init
+$ eval $(opam env)
+$ opam switch create 4.14.0
+$ eval $(opam env)
+```
+Isso criará um novo switch chamado `4.14.0` e instalará a versão 4.14.0 do OCaml nesse switch.
+
+5. **Instale o rlwrap**: O rlwrap é uma ferramenta útil que permite usar as teclas de seta para percorrer o histórico de comandos no REPL do OCaml (Read-Eval-Print Loop). Para instalar o rlwrap no Ubuntu, execute os seguintes comandos:
+```sh
+$ sudo apt-get install -y rlwrap
+```
+
+6. **Adicione um alias para usar o rlwrap com o comando 'ocaml'**: Para usar o rlwrap com o comando `ocaml`, você pode adicionar um alias ao seu arquivo `.bashrc`. Abra o arquivo `.bashrc` em seu editor de texto favorito e adicione a seguinte linha ao final do arquivo:
+```sh
+alias ocaml='rlwrap ocaml'
+```
+Depois de salvar e fechar o arquivo, execute `source ~/.bashrc` para aplicar as alterações.
+
+</details>
+
 
 ## Instalando o Dune
 
