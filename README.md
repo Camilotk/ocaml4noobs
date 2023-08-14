@@ -28,7 +28,6 @@
 ## Parte 1 - Introdução
 - [O que é OCaml?](./1_introducao#o-que-é-ocaml)
 - [História do OCaml](./1_introducao#hist%C3%B3ria-do-ocaml)
-  - [Resumo e Linha do Tempo](./1_introducao#resumo-e-linha-do-tempo)
 - [Instalação](./1_introducao#instala%C3%A7%C3%A3o)
 - [Instalando o Dune](./1_introducao#instalando-o-dune)
 - [Hello World](./1_introducao#hello-world)
