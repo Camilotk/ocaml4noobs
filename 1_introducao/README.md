@@ -164,7 +164,7 @@ Depois de salvar e fechar o arquivo, execute `source ~/.bashrc` para aplicar as 
 
 </details>
 
-> Em 16 de dezembro de 2022 foi lançado a versão 5.0.0 de OCaml que trouxe muitas mudanças na linguagem e runtime. Porém, para simplicidade e focar no core da linguagem esse tutorial 4Noobs vai no momento usar a versão 4.14.4. Há planos de trazer uma atualização para as novidades da versão 5.0.0 mais à frente.
+> Em 16 de dezembro de 2022 foi lançado a versão 5.0.0 de OCaml que trouxe muitas mudanças na linguagem e runtime. Porém, para simplicidade e focar no core da linguagem esse tutorial 4Noobs vai no momento usar a versão 4.14.1. Há planos de trazer uma atualização para as novidades da versão 5.0.0 mais à frente.
 
 ## Instalando o Dune
 
