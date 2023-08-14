@@ -104,6 +104,7 @@ $ brew install opam
 
 3. **Instale o OCaml**: Depois de instalar o OPAM, você pode usar o opam para instalar a versão mais recente do OCaml. Para fazer isso, execute os seguintes comandos:
 ```sh
+# entre a instalação após opam init aparecerá as opções [y/n] digite y e dê enter
 $ opam init
 $ eval $(opam env)
 $ opam switch create 4.14.1
@@ -143,6 +144,7 @@ $ sudo apt-get install -y opam
 
 4. **Instale o OCaml**: Depois de instalar o OPAM, você pode usar o opam para instalar a versão mais recente do OCaml. Para fazer isso, execute os seguintes comandos no Ubuntu do WSL2:
 ```sh
+# entre a instalação após opam init aparecerá as opções [y/n] digite y e dê enter
 $ opam init
 $ eval $(opam env)
 $ opam switch create 4.14.1
