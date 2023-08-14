@@ -170,12 +170,12 @@ Depois de salvar e fechar o arquivo, execute `source ~/.bashrc` para aplicar as 
 
 A seguir, vamos instalar a ferramenta **Dune**, um sistema de `build system` para projetos em OCaml/Reason. Ela se encarrega dos detalhes de baixo nível da compilação de OCaml, bastando que configuremos o projeto corretamente. Assim, ela cuidará do resto para nós.
 
-- Para fazer isso vamos instalar o Dune usando OPAM que instalamos previamente.
+- Em seguida, instalaremos o Dune com o OPAM, que já instalamos anteriormente.
 ```terminal
 $ opam install dune
 ```
 
-E agora vamos para nosso primeiro exemplo.
+E agora, vamos para nosso primeiro exemplo.
 
 <p align="right"><a href="#capítulo-1---introdução">🔝 Subir para o topo</a></p>
 
