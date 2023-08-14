@@ -71,10 +71,10 @@ $ sudo apt-get install -y opam
 ```sh
 $ opam init
 $ eval $(opam env)
-$ opam switch create 4.14.0
+$ opam switch create 4.14.1
 $ eval $(opam env)
 ```
-Isso criará um novo switch chamado `4.14.0` e instalará a versão 4.14.0 do OCaml nesse switch.
+Isso criará um novo switch chamado `4.14.1` e instalará a versão 4.14.1 do OCaml nesse switch.
 
 3. **Instale o rlwrap**: O rlwrap é uma ferramenta útil que permite usar as teclas de seta para percorrer o histórico de comandos no REPL do OCaml (Read-Eval-Print Loop). Para instalar o rlwrap no Ubuntu, execute os seguintes comandos:
 ```sh
@@ -107,10 +107,10 @@ $ brew install opam
 ```sh
 $ opam init
 $ eval $(opam env)
-$ opam switch create 4.14.0
+$ opam switch create 4.14.1
 $ eval $(opam env)
 ```
-Isso criará um novo switch chamado `4.14.0` e instalará a versão 4.14.0 do OCaml nesse switch.
+Isso criará um novo switch chamado `4.14.1` e instalará a versão 4.14.1 do OCaml nesse switch.
 
 4. **Instale o rlwrap**: O rlwrap é uma ferramenta útil que permite usar as teclas de seta para percorrer o histórico de comandos no REPL do OCaml (Read-Eval-Print Loop). Para instalar o rlwrap no macOS, execute os seguintes comandos:
 ```sh
@@ -146,10 +146,10 @@ $ sudo apt-get install -y opam
 ```sh
 $ opam init
 $ eval $(opam env)
-$ opam switch create 4.14.0
+$ opam switch create 4.14.1
 $ eval $(opam env)
 ```
-Isso criará um novo switch chamado `4.14.0` e instalará a versão 4.14.0 do OCaml nesse switch.
+Isso criará um novo switch chamado `4.14.1` e instalará a versão 4.14.1 do OCaml nesse switch.
 
 5. **Instale o rlwrap**: O rlwrap é uma ferramenta útil que permite usar as teclas de seta para percorrer o histórico de comandos no REPL do OCaml (Read-Eval-Print Loop). Para instalar o rlwrap no Ubuntu, execute os seguintes comandos:
 ```sh
@@ -164,6 +164,7 @@ Depois de salvar e fechar o arquivo, execute `source ~/.bashrc` para aplicar as 
 
 </details>
 
+> Em 16 de dezembro de 2022 foi lançado a versão 5.0.0 de OCaml que trouxe muitas mudanças na linguagem e runtime. Porém, para simplicidade e focar no core da linguagem esse tutorial 4Noobs vai no momento usar a versão 4.14.4. Há planos de trazer uma atualização para as novidades da versão 5.0.0 mais à frente.
 
 ## Instalando o Dune
 
