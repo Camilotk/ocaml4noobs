@@ -3,7 +3,6 @@
 ## Índice
 - [O que é OCaml?](#o-que-%C3%A9-ocaml)
 - [História do OCaml](#hist%C3%B3ria-do-ocaml)
-  - [Resumo e Linha do Tempo](#resumo-e-linha-do-tempo)
 - [Instalação](#instala%C3%A7%C3%A3o)
 - [Instalando o Dune](#instalando-o-dune)
 - [Hello World](#hello-world)
