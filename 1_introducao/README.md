@@ -231,25 +231,26 @@ E que respectivamente são:
   - **dune**: Este é um arquivo que especifica as configurações e dependências dos seus testes. Ele segue o mesmo formato do arquivo dune da pasta bin.
   - **helloworld.ml**: Este é um arquivo que contém os testes do seu projeto. Você pode usar uma biblioteca de testes como o Alcotest ou OUnit para escrever e executar os seus testes.
 
-Se abrirmos nosso arquivo `helloworld.ml` temos o seguinte código que já foi criado para nós no init:
+O arquivo `bin/main.ml` contém o código que define o nosso executável. Se você abrir esse arquivo, vai ver que ele já tem uma linha de código escrita para nós pelo comando `dune init`:
 ```OCaml
 let () = print_endline "Hello, World!"
 ```
 
-Agora vamos fazer a `build` que irá compilar esse arquivo usando o comando:
+Essa linha de código é uma função anônima que imprime na tela a mensagem "Hello, World!". Essa é a forma mais simples de escrever um programa em OCaml.
+
+Para compilar o nosso código, vamos usar o comando `dune build`. Esse comando vai gerar os arquivos necessários para executar o nosso programa na pasta `_build`:
 ```terminal
 $ dune build
 ```
 
-E executar rodando:
+Para executar o nosso programa, vamos usar o comando `dune exec` seguido do nome do nosso executável. O nome do nosso executável é `helloworld.exe`, e ele está na pasta `bin` dentro da pasta `_build`. Então, o comando completo fica assim:
 ```terminal
 $ dune exec ./helloworld.exe
 ```
+
 > Mesmo em ambientes UNIX os arquivos executáveis gerados pelo OCaml tem a extensão .exe
 
-> Caso você receba um erro *"I cannot find the root of the current workspace/project."* isso acontece porque nas versões mais rececentes depois da v3.0 o dune não gera mais automaticamente o arquivo **dune-project** (isso terá [correção futuramente](https://github.com/ocaml/dune/pull/4239#issuecomment-780981029)) para corrigir isso basta usar o comando `$ echo "(lang dune 2.9)" >> dune-project` no seu terminal e continuar o processo de build normalmente.
-
-E devemos ter uma mensagem `Hello World!` na tela.
+Se tudo der certo, você vai ver a mensagem "Hello, World!" na tela. Parabéns, você acabou de criar e executar o seu primeiro programa em OCaml! 🎉
 
 #### Indo um pouco além!
 
