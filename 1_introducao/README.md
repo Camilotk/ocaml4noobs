@@ -250,7 +250,9 @@ $ dune exec ./helloworld.exe
 
 > Mesmo em ambientes UNIX os arquivos executáveis gerados pelo OCaml tem a extensão .exe
 
-Se tudo der certo, você vai ver a mensagem "Hello, World!" na tela. Parabéns, você acabou de criar e executar o seu primeiro programa em OCaml! 🎉
+Se tudo der certo, você vai ver a mensagem "Hello, World!" na tela.
+
+Parabéns, você acabou de criar e executar o seu primeiro programa em OCaml!
 
 #### Indo um pouco além!
 
