@@ -180,11 +180,15 @@ E agora, vamos para nosso primeiro exemplo.
 
 ## Hello World
 
-Assim como diz a [lenda da maldição do programador](https://www.urbandictionary.com/define.php?term=The%20Programmer%27s%20Curse) o primeiro programa escrito em uma nova linguagem de programação deve ser o que imprime a mensagem "Hello World" na tela, ou um grande azar vai te perseguir enquanto você usar a linguagem te fazendo sofrer com muitos erros. Como estamos falando de maldições ancestrais, vamos começar pela implementação desse programa.
+#### Maldição do Programador
+
+Existe uma maldição que afeta os programadores que se aventuram em aprender novas linguagens de programação. Segundo a [lenda da maldição do programador](https://www.urbandictionary.com/define.php?term=The%20Programmer%27s%20Curse), o primeiro programa que você escreve em uma nova linguagem deve ser o que exibe a mensagem "Hello World" na tela, ou você terá um grande azar e sofrerá com muitos erros e bugs. Essa maldição é tão antiga quanto a própria programação, e tem origem no primeiro programa de demonstração criado por Brian Kernighan em 1972. Desde então, muitos programadores seguem essa tradição como uma forma de se familiarizar com a sintaxe e a estrutura de uma nova linguagem, e também de se proteger da maldição. Por isso, vamos começar pelo básico e aprender como implementar esse programa simples e poderoso.
 
 Para isso vamos precisar:
-- De um editor de texto minimamente decente (nada de Notepad no Windows)
-- Um terminal
+- De um editor de texto minimamente decente (nada de Notepad no Windows);
+- Um terminal com OCaml instalado.
+
+#### Primeiro programa OCaml
 
 Vamos começar criando nosso projeto, para isso vamos criar uma nova pasta com o nome do projeto e entrar nela:
 ```terminal
@@ -231,6 +235,8 @@ $ dune exec ./helloworld.exe
 > Caso você receba um erro *"I cannot find the root of the current workspace/project."* isso acontece porque nas versões mais rececentes depois da v3.0 o dune não gera mais automaticamente o arquivo **dune-project** (isso terá [correção futuramente](https://github.com/ocaml/dune/pull/4239#issuecomment-780981029)) para corrigir isso basta usar o comando `$ echo "(lang dune 2.9)" >> dune-project` no seu terminal e continuar o processo de build normalmente.
 
 E devemos ter uma mensagem `Hello World!` na tela.
+
+#### Indo um pouco além!
 
 Agora vamos alterar nosso script para imprimir texto formatado.
 ```OCaml
