@@ -15,7 +15,7 @@
 	- [Inferência de Tipos](#infer%C3%AAncia-de-tipos)
 	- [Imutabilidade](#imutabilidade)
 	- [Dados e Operações](#dados-e-opera%C3%A7%C3%B5es)
-- [Materiais em Inglês para aprender OCaml](https://github.com/Camilotk/ocaml4noobs/tree/master/1-introducao#materiais-em-ingl%C3%AAs-para-aprender-ocaml)
+- [Materiais em Inglês para aprender OCaml](#materiais-em-ingl%C3%AAs-para-aprender-ocaml)
 
 ## O que é OCaml?
 
