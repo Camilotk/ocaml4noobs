@@ -286,7 +286,7 @@ Diferente de arrays e listas, não possuímos nenhum índice em tuplas e por tan
 
 1. A primeira é quando temos tuplas com dois elementos, nesse caso podemos utilizar a função **fst** para acessar a primeira posição e a função **snd** para acessar a segunda posição. Observe que se tivermos uma tupla com mais que dois elementos como argumento dessa função isso irá nos retornar um erro.
 
-2. Em todos os casos restatnes, utilizamos **Pattern Matching** para acessar os elemntos da tupla.
+2. Em todos os casos restantes, utilizamos **Pattern Matching** para acessar os elementos da tupla.
 
 ```ocaml
 fst ("ocaml4noobs", 3);;
@@ -330,7 +330,7 @@ Uma vez que declaramos o record de alguma determinada estrutura de valores e cam
 ```
 Observe que não precisamos dizer de qual record esse valor que digitamos no REPL pertence, pois o compilador consegue inferir a partir do número de campos e seus tipos a qual record esse valor pertence.
 
-> Caso os valores de record tenham os mesmos campos e os mesmos tipos é recomendável que estejam separados em **módulos** diferentes, que será o assunto do nosso próximo capítulo. Porém, caso queira apenas testar rapidamente tambpem é possível dar uma dica ao compilador quando temos records iguais em um mesmo espaço de qual utilizando acesso `{pessoa.nome = "Camilo"; idade = 26 }`, mas sempre dê preferência pela separação em módulos em projetos reais, isso vai evitar que alguém tente cortar seus dedos como punição.
+> Caso os valores de record tenham os mesmos campos e os mesmos tipos é recomendável que estejam separados em **módulos** diferentes, que será o assunto do nosso próximo capítulo. Porém, caso queira apenas testar rapidamente também é possível dar uma dica ao compilador quando temos records iguais em um mesmo espaço de qual utilizando acesso `{pessoa.nome = "Camilo"; idade = 26 }`, mas sempre dê preferência pela separação em módulos em projetos reais, isso vai evitar que alguém tente cortar seus dedos como punição.
 
 Quando queremos acessar um valor de um record podemos usar ponto seguido do nome do campo para retornar o valor do mesmo
 ```ocaml
