@@ -52,8 +52,6 @@ OCaml é uma linguagem de programação que tem uma longa história e uma grande
 <img src="./linha_do_tempo.png" />
 </h3>
 
-<p align="right"><a href="#capítulo-1---introdução">🔝 Subir para o topo</a></p>
-
 ## Instalação
 
 Certo, agora você sabe o que é OCaml, então agora vamos para a instalação da linguagem e suas ferramentas básicas para que possamos compilar e executar nossos programas.
@@ -177,8 +175,6 @@ $ opam install dune
 
 E agora, vamos para nosso primeiro exemplo.
 
-<p align="right"><a href="#capítulo-1---introdução">🔝 Subir para o topo</a></p>
-
 ## Hello World
 
 Assim como diz a [lenda da maldição do programador](https://www.urbandictionary.com/define.php?term=The%20Programmer%27s%20Curse) o primeiro programa escrito em uma nova linguagem de programação deve ser o que imprime a mensagem "Hello World" na tela, ou um grande azar vai te perseguir enquanto você usar a linguagem te fazendo sofrer com muitos erros. Como estamos falando de maldições ancestrais, vamos começar pela implementação desse programa.
@@ -264,8 +260,6 @@ Error: This expression has type int but an expression was expected of type
 ```
 
 Interessante, não?
-
-<p align="right"><a href="#capítulo-1---introdução">🔝 Subir para o topo</a></p>
 
 ## Porque OCaml?
 
@@ -441,8 +435,6 @@ void quickSort(int * array, int low, int high) {
  ```
 Com isso podemos ver que em C++ (ou qualquer outra linguagem imperativa como Java ou C#) o que é descrito é o procedimento passo-a-passo e não a definição do algoritmo. Pode ser que por você estar mais acostumado a ler código imperativo que a solução em C++ pareça ser mais clara, mas pense o quão mais complexo é entender todo o número maior de instruções e passos que estão no código em C++ e a recompensa que é poder escrever códigos mais concisos e claros usando OCaml.
 
-<p align="right"><a href="#capítulo-1---introdução">🔝 Subir para o topo</a></p>
-
 ## Particularidades de OCaml
 
 ### Inferência de Tipos
@@ -531,5 +523,3 @@ Separando dados e funções dessa forma nós garantimos que nossas dependências
 - [Dune Quickstart](https://dune.readthedocs.io/en/stable/quick-start.html)
 - [Caml Language History](https://caml.inria.fr/about/history.en.html)
 - [OCaml - Wikipédia](https://pt.wikipedia.org/wiki/OCaml)
-
-<p align="right"><a href="#capítulo-1---introdução">🔝 Subir para o topo</a></p>
