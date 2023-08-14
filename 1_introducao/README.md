@@ -45,23 +45,9 @@ No ano 2000, OCaml recebeu muitas atualizações com novas funcionalidades vinda
 
 Desde o início dos anos 2000, OCaml tem atraído popularidade e crescido no número de universidades que adotam a linguagem para lecionar em diversas matérias, entre elas Harvard, Princeton, Brown, Columbia, Cornell, Universidade da Califórnia, Universidade de Illinois, UPenn, Universidade da Beira Interior (Portugal), Universidade de Rennes (França) e Universidade Paris-Diderot (França).
 
-OCaml também influenciou muitas outras linguagens, como Rust e Scala, mas em especial F#, que surgiu como "OCaml para .NET" criado em 2005 pelo grupo de pesquisadores liderado por Don Syme da Microsoft Research. Eles tinham interesse em construir uma linguagem funcional para .NET e com compatibilidade com C#, e decidiram investir em OCaml por sua compatibilidade com código orientado a objetos e imperativo. Inicialmente ambos compiladores eram 100% intercambiáveis, mas a partir de F# 2.0 e em todas as versões posteriores a compatibilidade com OCaml foi sendo reduzida para a introdução de novas funcionalidades à linguagem, sendo que hoje (2021) ainda é possível compilar programas simples de uma linguagem no compilador da outra sem prejuízos ou problemas.
-
 Outro ponto importante para OCaml aconteceu em 2016, quando [Jordan Walke](https://github.com/jordwalke), criador da biblioteca React e na época engenheiro na Meta criou a extensão de sintaxe [ReasonML](https://reasonml.github.io/) para OCaml. ReasonML permite escrever OCaml com uma sintaxe muito próxima do que normalmente os programadores JavaScript (e de supersets como TypeScript) encontram e transpilar essa sintaxe para OCaml onde pode ser usada para gerar binários nativos ou transpilar para JavaScript utilizando o transpilador BuckleScript e, sendo assim, pode ser usada para construir aplicações front-end, além de interagir com o ecossistema JS. Em 2020 o time de desenvolvimento do BuckleScript decidiu criar a linguagem [ReScript](https://rescript-lang.org/) e o projeto BuckleScript recebeu um fork chamado [Melange](https://melange.re/), feito por [Antonio Monteiro](https://github.com/anmonteiro), que é a forma atual de realizar a transpilação.
 
 OCaml é uma linguagem de programação que tem uma longa história e uma grande relevância no cenário das linguagens funcionais. Ela é uma linguagem que combina vários paradigmas e funcionalidades, oferecendo aos programadores uma forma elegante, eficiente e confiável de expressar seus algoritmos e resolver seus problemas. OCaml é uma linguagem que tem uma longa história de produção e vale a pena conhecer e aprender.
-
-##### Resumo e Linha do Tempo:
-
-- **1973**: [Robin Milner](https://en.wikipedia.org/wiki/Robin_Milner) criou a linguagem de programação [ML](https://en.wikipedia.org/wiki/ML_(programming_language)) que trouxe programação funcional com tipagem estática e inferência de tipos.
-- **1980**: Surge Smalltalk, criada por Alan Kay, e tornam-se públicos os conceitos de Orientação a Objetos.
-- **1987**: É criada a linguagem Caml.
-- **1996**: OCaml extende Caml adicionando OOP a Caml.
-- **2000**: OCaml recebe sua maior atualização até hoje.
-- **2005**: Outra linguagem - F# - nasce projetada a partir de OCaml, mas com todos os ajustes e mudanças necessárias para que ela adapte-se bem a plataforma .NET
-- **2014**: A empresa de negociação de ativos e derivativos [Jane Street](https://www.janestreet.com/) adota OCaml como linguagem principal, se tornando o maior use case de OCaml e passando a contribuir com a linguagem e com [bibliotecas open source](https://github.com/janestreet) para OCaml.
-- **2016**: É criada a sintaxe e extensão [ReasonML](https://github.com/reasonml/reason) por [Jordan Walke](https://twitter.com/jordwalke) para OCaml que oferece uma sintaxe próxima de JavaScript e permite transpilar sua sintaxe ReasonML para OCaml no qual é possível gerar binários nativos e JavaScript através do compilador BuckleScript.
-- **2020**: Surge a linguagem de programação [ReScript](https://rescript-lang.org/blog/bucklescript-is-rebranding) a partir dos criadores do compilador BuckleScript decidirem criar uma sintaxe própria e unificada para Reason, cortando a compatibilidade com OCaml e retirando funcionalidades como o sistema de objetos. O projeto BuckleScript passa por um fork feito e mantido por [Antonio Monteiro](https://github.com/anmonteiro) tornando-se [Melange](https://github.com/melange-re).
 
 <p align="right"><a href="#capítulo-1---introdução">🔝 Subir para o topo</a></p>
 
