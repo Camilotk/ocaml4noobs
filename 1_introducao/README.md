@@ -59,7 +59,7 @@ OCaml é uma linguagem de programação que tem uma longa história e uma grande
 
 Certo, agora você sabe o que é OCaml, então agora vamos para a instalação da linguagem e suas ferramentas básicas para que possamos compilar e executar nossos programas.
 
-<strong>Linux Ubuntu:</strong>
+<strong>🐧 Linux Ubuntu:</strong>
 <details>
 	
 1. **Instale o OPAM**: OPAM é o gerenciador de pacotes oficial do OCaml, que permite alternar facilmente entre as versões do OCaml e muito mais. Por exemplo, o OPAM torna prático lidar com diferentes projetos que requerem diferentes versões do OCaml. Para instalar o OPAM no Ubuntu, abra um terminal e execute os seguintes comandos:
@@ -90,7 +90,7 @@ Depois de salvar e fechar o arquivo, execute `source ~/.bashrc` para aplicar as 
 
 </details>
 
-<strong>MacOS:</strong>
+<strong>🍎 MacOS:</strong>
 <details>
 
 1. **Instale o Homebrew**: Homebrew é um gerenciador de pacotes para macOS que facilita a instalação de software. Se você ainda não tem o Homebrew instalado, pode instalá-lo abrindo um terminal e executando o seguinte comando:
@@ -127,7 +127,7 @@ Depois de salvar e fechar o arquivo, execute `source ~/.bashrc` ou `source ~/.zs
 </details>
 
 
-<strong>Windows:</strong>
+<strong>🪟 Windows:</strong>
 <details>
 
 1. **Instale o WSL2**: O WSL2 (Windows Subsystem for Linux 2) permite executar uma distribuição Linux diretamente no Windows. Se você ainda não tem o WSL2 instalado, pode seguir as [instruções de instalação](https://learn.microsoft.com/pt-br/windows/wsl/install) fornecidas pela Microsoft. Aqui estão os passos básicos para instalar o WSL2:
