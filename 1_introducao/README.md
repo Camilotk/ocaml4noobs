@@ -84,7 +84,7 @@ $ sudo apt-get install -y rlwrap
 ```sh
 alias ocaml='rlwrap ocaml'
 ```
-Depois de salvar e fechar o arquivo, execute `source ~/.bashrc` para aplicar as alterações.
+Depois de salvar e fechar o arquivo, execute `$ source ~/.bashrc` para aplicar as alterações.
 
 </details>
 
@@ -121,7 +121,7 @@ $ brew install rlwrap
 ```sh
 alias ocaml='rlwrap ocaml'
 ```
-Depois de salvar e fechar o arquivo, execute `source ~/.bashrc` ou `source ~/.zshrc` para aplicar as alterações.
+Depois de salvar e fechar o arquivo, execute `$ source ~/.bashrc` ou `$ source ~/.zshrc` para aplicar as alterações.
 
 </details>
 
@@ -161,7 +161,7 @@ $ sudo apt-get install -y rlwrap
 ```sh
 alias ocaml='rlwrap ocaml'
 ```
-Depois de salvar e fechar o arquivo, execute `source ~/.bashrc` para aplicar as alterações.
+Depois de salvar e fechar o arquivo, execute `$ source ~/.bashrc` para aplicar as alterações.
 
 </details>
 
