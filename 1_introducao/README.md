@@ -172,7 +172,7 @@ Depois de salvar e fechar o arquivo, execute `$ source ~/.bashrc` para aplicar a
 A seguir, vamos instalar a ferramenta **Dune**, um sistema de `build system` para projetos em OCaml/Reason. Ela se encarrega dos detalhes de baixo nível da compilação de OCaml, bastando que configuremos o projeto corretamente. Assim, ela cuidará do resto para nós.
 
 - Em seguida, instalaremos o Dune com o OPAM, que já instalamos anteriormente.
-```terminal
+```sh
 $ opam install dune
 ```
 
@@ -190,31 +190,46 @@ Para isso vamos precisar:
 
 #### Primeiro programa OCaml
 
-Vamos começar criando nosso projeto, para isso vamos criar uma nova pasta com o nome do projeto e entrar nela:
-```terminal
-$ mkdir helloworld && cd $_
-```
-> $_ no UNIX significa chamar o parâmetro do último comando. Nesse caso `helloworld`.
-
-Vamos inicializar o projeto, passando como argumento `exe` indicando que queremos criar um executável de nome `helloworld` para comando `dune init`:
-
-```terminal
-$ dune init exe helloworld
+Para começar o nosso projeto, vamos usar o comando `dune init` com o argumento `proj`, que indica o nome do projeto que queremos criar. Neste caso, vamos chamar o nosso projeto de `helloworld`:
+> Antes de executar o comando, certifique-se de estar na pasta onde deseja salvar o seu projeto.
+```sh
+$ dune init proj helloworld
 ``` 
 
-Isso vai nos gerar alguns arquivos que estão representados na árvore abaixo:
+Depois de inicializar o projeto, vamos entrar na pasta `helloworld` que foi criada pelo comando anterior:
+```sh
+$ cd helloworld
+```
+
+Dentro dessa pasta, vamos encontrar os seguintes arquivos e subpastas (a estrutura de arquivos está mostrada abaixo):
 ```
 .
 ├── _build
-│   └── log
-├── dune
-└── helloworld.ml
+│   └── log
+├── bin
+│   ├── dune
+│   └── main.ml
+├── dune-project
+├── helloworld.opam
+├── lib
+│   └── dune
+└── test
+    ├── dune
+    └── helloworld.ml
 ```
 E que respectivamente são:
-- **_build**: A pasta que contêm os arquivos de compilação de OCaml.
-  - **log**: Que contêm o histórico de ações executadas na build.
-- **dune**: Que é o nosso arquivo de build, onde vamos definir as nossas configurações de compilação e execução.
-- **helloworld.ml**: O arquivo onde vamos escrever nosso código OCaml.
+- **_build**: Esta é a pasta onde o OCaml guarda os arquivos gerados pela compilação do seu projeto. Você não precisa se preocupar com o que tem dentro dela, pois o OCaml cuida de tudo para você.
+  - **log**: Este é um arquivo que registra as ações realizadas pelo OCaml durante a compilação. Ele pode ser útil para depurar possíveis erros ou avisos que ocorram no processo.
+- **bin**: Esta é a pasta onde você vai colocar os arquivos que definem os executáveis do seu projeto. Um executável é um programa que pode ser rodado diretamente pelo sistema operacional, sem precisar de um interpretador ou compilador.
+  - **dune**: Este é um arquivo que especifica as configurações e dependências do seu executável. O dune é um sistema de construção (build system) para OCaml, que facilita a compilação e execução dos seus projetos.
+  - **main.ml**: Este é o arquivo principal do seu executável, onde você vai escrever o código OCaml que define o comportamento do seu programa. Você pode usar outros arquivos e módulos para organizar melhor o seu código, mas este é o ponto de entrada do seu executável.
+- **dune-project**: Este é um arquivo que identifica o seu projeto como um projeto dune. Ele contém informações gerais sobre o seu projeto, como o nome, a versão, os autores, as licenças, etc.
+- **helloworld.opam**: Este é um arquivo que descreve o seu projeto como um pacote opam. O opam é um gerenciador de pacotes para OCaml, que permite instalar e usar bibliotecas de terceiros no seu projeto. Este arquivo contém informações sobre as dependências, os arquivos e os comandos do seu pacote.
+- **lib**: Esta é a pasta onde você vai colocar os arquivos que definem as bibliotecas do seu projeto. Uma biblioteca é um conjunto de módulos e funções que podem ser reutilizados em outros projetos ou executáveis.
+  - **dune**: Este é um arquivo que especifica as configurações e dependências da sua biblioteca. Ele segue o mesmo formato do arquivo dune da pasta bin.
+- **test**: Esta é a pasta onde você vai colocar os arquivos que definem os testes do seu projeto. Os testes são programas que verificam se o seu código funciona corretamente, comparando os resultados esperados com os resultados obtidos.
+  - **dune**: Este é um arquivo que especifica as configurações e dependências dos seus testes. Ele segue o mesmo formato do arquivo dune da pasta bin.
+  - **helloworld.ml**: Este é um arquivo que contém os testes do seu projeto. Você pode usar uma biblioteca de testes como o Alcotest ou OUnit para escrever e executar os seus testes.
 
 Se abrirmos nosso arquivo `helloworld.ml` temos o seguinte código que já foi criado para nós no init:
 ```OCaml
