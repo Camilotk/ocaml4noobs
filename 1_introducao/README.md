@@ -8,7 +8,7 @@
 - [Hello World](#hello-world)
 - [Porque OCaml?](#porque-ocaml)
 	- [Concisa e Declarativa](#concisa-e-declarativa)
-  	- [Linguagens Concisas vs Verbosas](#lingugens-concisas-vs-verbosas)
+  	- [Linguagens Concisas vs Verbosas](#concisa-e-declarativa)
 	- [Menos Erros Acidentais](#menos-erros-acidentais)
 - [Particularidades de OCaml](#particularidades-de-ocaml)
 	- [Inferência de Tipos](#infer%C3%AAncia-de-tipos)
