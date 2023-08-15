@@ -309,49 +309,26 @@ Salve o arquivo e recompile o projeto. Agora você deve ver na tela a mensagem "
 
 ### Concisa e Declarativa
 
-Uma das características mais marcantes de OCaml é sua sintaxe concisa e declarativa. Concisão é importante porque reduz a dificuldade para um programador entender um programa ou uma code base. 
+OCaml é uma linguagem de programação que se destaca por sua sintaxe declarativa e concisa. Essas duas características trazem vantagens para os programadores que usam OCaml, pois permitem escrever códigos mais claros, expressivos e eficientes.
 
-Um programa conciso é um programa que é expressivo onde a intenção de cada passo de execução pensado pelo programador é claro e sem sintaxe acidental (`incidental syntax`). Ser declarativo é importante porque reduz a distância entre a implementação e a solução. 
+A sintaxe declarativa significa que o programador pode focar na solução do problema, sem ter que especificar todos os passos para alcançá-la. Em vez de dizer ao computador como fazer algo, o programador diz o que quer fazer. Por exemplo, para somar os elementos de uma lista, o programador pode usar a função `List.fold_left (+) 0`, que recebe uma função de soma, um valor inicial e uma lista, e retorna a soma dos elementos da lista. Essa função é declarativa porque abstrai os detalhes de como a soma é realizada, deixando apenas a intenção do que se quer fazer.
 
-Um ambiente de programação produtivo permite diretamente a expressividade da solução do problema que o código resolve sem ter que perder tempo na especificação de um passo a passo, focando mais no resultado.
+A sintaxe concisa significa que o programador pode escrever códigos mais curtos, sem perder a legibilidade ou a funcionalidade. Em OCaml, o programador pode usar recursos como inferência de tipos, funções de alta ordem, operadores de canalização e composição, e padrões de correspondência para reduzir a quantidade de código necessário para expressar uma ideia. Por exemplo, para dobrar os elementos de uma lista e somá-los, o programador pode escrever:
 
-Vamos agora criar um arquivo chamado `main.ml` na nossa pasta `helloworld` e definir o seguinte código:
 ```OCaml
-let double_num x = x * 2      // 1
-let double_sum = [6;7;8]      // 2
-  |> List.map double_num      // 3
-  |> List.fold_left (+) 0;;   // 4
+let double_sum = [6;7;8]       (* 1 *)
+  |> List.map (fun x -> x * 2) (* 2 *)
+  |> List.fold_left (+) 0;;    (* 3 *)
+ ```
 
-Printf.printf "%d" double_sum // 5
-```
+Esse código é conciso porque:
 
-Ele expressa a intenção do que deve ser feito precisamente, sem nenhum código desnecessário ou instruções imperativas verbosas.
+1. Não é preciso declarar o tipo da lista ou da variável `double_sum`, pois OCaml infere automaticamente que são inteiros.
+2. Não é preciso definir uma função separada para dobrar um número, pois OCaml permite usar funções anônimas (ou lambdas) como argumentos de outras funções.
+3. Não é preciso usar parênteses ou vírgulas para separar os argumentos das funções, pois OCaml usa espaços em branco para isso.
+4. Não é preciso usar pontos e vírgulas para terminar cada linha de código, pois OCaml usa ponto e vírgula duplo para indicar o fim de uma expressão.
 
-1. Temos uma simples função `double_num`, que multiplica um número x por 2. Observe que não é especificado nenhum tipo.
-2. Então associamos um array com `double_sum` e aplicamos duas transformações nele.
-3. A primeira transformação é feita quando aplicamos a função double em cada item na lista usando `map`, retornando uma nova lista
-4. A segunda acontece quando somamos todos os items da lista aplicando a função `+` com `fold_left` e o acumulador iniciando em 0, que nos retorna o valor inteiro da soma.
-5. Imprimimos o valor na tela usando a formatação de dados que aprendemos anteriormente.
-
-Agora vamos alterar nosso arquivo de build  `dune` para:
-```dune
-(executable
- (name main))
-```
-
-> Aqui trocamos a diretiva `name` de **helloworld** para **main**
-
-Agora vamos compilar nosso projeto:
-```terminal
-$ dune build
-```
-
-E rodar:
-```terminal
-$ dune exec ./main.exe
-```
-
-E vamos ter `42` impresso na tela.
+A sintaxe declarativa e concisa de OCaml facilita a compreensão e a manutenção dos códigos escritos nessa linguagem, além de torná-los mais elegantes e legíveis.
 
 ### Linguagens Concisas vs Verbosas
 
