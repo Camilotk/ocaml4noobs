@@ -33,7 +33,7 @@
 - [Hello World](./1_introducao#hello-world)
 - [Porque OCaml?](./1_introducao#porque-ocaml)
 	- [Concisa e Declarativa](./1_introducao#concisa-e-declarativa)
-  	- [Lingugens Concisas vs Verbosas](./1_introducao#linguagens-concisas-vs-verbosas)
+  	- [Linguagens Concisas vs Verbosas](./1_introducao#linguagens-concisas-vs-verbosas)
 	- [Menos Erros Acidentais](./1_introducao#menos-erros-acidentais)
 - [Particularidades de OCaml](./1_introducao#particularidades-de-ocaml)
 	- [Inferência de Tipos](./1_introducao#infer%C3%AAncia-de-tipos)
