@@ -319,7 +319,9 @@ A sintaxe concisa significa que o programador pode escrever códigos mais curtos
 let double_sum = [6;7;8]       (* 1 *)
   |> List.map (fun x -> x * 2) (* 2 *)
   |> List.fold_left (+) 0;;    (* 3 *)
+//=> val double_sum : int = 42
  ```
+> Você pode testar escrevendo essa função no REPL (Read-Evaluate-Print-Loop) de OCaml, basta digitar o comando `$ ocaml` em seu terminal.
 
 Esse código é conciso porque:
 
