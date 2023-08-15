@@ -315,13 +315,13 @@ A sintaxe declarativa significa que o programador pode focar na solução do pro
 
 A sintaxe concisa significa que o programador pode escrever códigos mais curtos, sem perder a legibilidade ou a funcionalidade. Em OCaml, o programador pode usar recursos como inferência de tipos, funções de alta ordem, operadores de canalização e composição, e padrões de correspondência para reduzir a quantidade de código necessário para expressar uma ideia. Por exemplo, para dobrar os elementos de uma lista e somá-los, o programador pode escrever:
 
-```OCaml
+```FSharp
 let double_sum = [6;7;8]       (* 1 *)
   |> List.map (fun x -> x * 2) (* 2 *)
   |> List.fold_left (+) 0;;    (* 3 *)
-(* => val double_sum : int = 42 *)
+//=> val double_sum : int = 42
  ```
-> Você pode testar escrevendo essa função no REPL (Read-Evaluate-Print-Loop) de OCaml, basta digitar o comando `$ ocaml` em seu terminal.
+> Você pode testar escrevendo essa função no REPL (Read-Evaluate-Print-Loop) de OCaml, basta digitar o comando `$ ocaml` em seu terminal. Nesse exemplo o comentário `//=> ...` demonstra o que foi retornado pelo REPL.
 
 Esse código é conciso porque:
 
