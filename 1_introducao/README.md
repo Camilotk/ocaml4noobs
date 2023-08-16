@@ -442,17 +442,41 @@ Podemos observar que em C++ (ou qualquer outra linguagem imperativa como Java ou
 
 ### Inferência de Tipos
 
-Sendo OCaml derivado de ML, a linguagem usa o Sistema de Tipos [Hindley-Milner](https://en.wikipedia.org/wiki/Hindley%E2%80%93Milner_type_system) que permite uma inferência de tipos excelente em que 99% do tempo você não precisa dizer ao compilador o tipo das variáveis ou dos dados e que acrescenta outras particularidades que vamos ver mais a frente. 
+OCaml é uma linguagem que pertence à família ML, que se caracteriza por ter um sistema de tipos muito poderoso e sofisticado. Um dos aspectos mais interessantes desse sistema de tipos é a capacidade de inferir os tipos das expressões sem que o programador tenha que declará-los explicitamente. Isso significa que o compilador pode deduzir, a partir do contexto e das operações usadas, qual é o tipo mais adequado para cada variável, função ou dado. Isso facilita a escrita de programas, pois evita a repetição e a verbosidade de especificar os tipos manualmente.
 
-> Inferência de tipos é a propriedade de um Sistema de Tipos que permite ao compilador deduzir - inferir - o tipo de uma variável a partir de seu valor ou expressão. Isso significa que o programador fica livre da obrigação de estar sempre especificando o tipo da variável.
+> Inferência de tipos é a propriedade de um sistema de tipos que permite ao compilador determinar o tipo de uma expressão em uma linguagem formal, sem que o programador tenha que fornecer anotações de tipo explícitas.
 
-Como vimos no nosso exemplo anterior:
-```ocaml
-let double_num x = x * 2 
+O sistema de tipos usado por OCaml é baseado no sistema Hindley-Milner, que é um sistema clássico para linguagens funcionais com polimorfismo paramétrico. O polimorfismo paramétrico é a capacidade de definir funções ou tipos que podem ser aplicados a diferentes tipos de argumentos, sem perder a segurança de tipos. Por exemplo, podemos definir uma função que retorna o primeiro elemento de uma lista, sem saber qual é o tipo dos elementos da lista. Essa função pode ser usada com listas de inteiros, listas de strings, listas de listas, etc.
+
+Para entender como a inferência de tipos funciona em OCaml, vamos ver alguns exemplos simples. Considere a seguinte função que calcula o fatorial de um número inteiro:
+```FSharp
+let rec fatorial n =
+  if n = 0 then 1
+  else n * fatorial (n - 1);;
+//=> val fatorial : int -> int = <fun>
 ```
-Não precisamos informar que x é um parâmetro do tipo inteiro e nem que a função double_num retorna um inteiro, porém se executarmos essa função no repl vamos ter a assinatura desse método inferida como `val double_num : int -> int = <fun>` nos mostrando que o compilador sabe exatamente disso tudo e é capaz de fazer o trabalho de especificar o tipo das nossas variáveis e do retorno da nossa função para nós.
+Em OCaml, não precisamos declarar o tipo dos argumentos e do resultado da função fatorial. A implementação faz a inferência de tipos e nos diz que o tipo da função é `int -> int`, ou seja, uma função que recebe um inteiro e retorna um inteiro. 
 
-Mas como isso é possível? Que tipo de bruxaria é essa? Bem, na verdade o operador `*` é uma função que aceita dois parâmetros inteiros e retorna um inteiro, logo o compilador sabe que x sendo um dos parâmetros de  `*` é um valor de tipo inteiro e que double_num retorna o resultado de `*` que é um inteiro e por tanto tem o mesmo tipo de retorno. Interessante, não?
+Como a implementação chegou a esse tipo? Ela usou o algoritmo W, que é uma versão eficiente do algoritmo de Hindley-Milner. O algoritmo W consiste em dois passos principais: geração de restrições e unificação. No primeiro passo, o algoritmo atribui variáveis de tipo às expressões que não têm um tipo conhecido e gera restrições entre essas variáveis e os tipos conhecidos. No segundo passo, o algoritmo tenta unificar as restrições, ou seja, encontrar uma solução que satisfaça todas elas. Se a unificação for bem-sucedida, o algoritmo retorna o tipo mais geral da expressão. Se a unificação falhar, o algoritmo reporta um erro de tipo.
+
+No exemplo da função `fatorial`, o algoritmo W faz o seguinte:
+
+- Atribui uma variável de tipo `a` à expressão `n`, que é o argumento da função.
+- Atribui uma variável de tipo `b` à expressão `fatorial n`, que é a chamada recursiva da função.
+- Atribui uma variável de tipo `c` à expressão `n * fatorial (n - 1)`, que é o corpo da função.
+- Gera as seguintes restrições:
+  - `a = int`, pois `n` é comparado com `0`, que é um inteiro.
+  - `b = int`, pois `n` é multiplicado por `fatorial (n - 1)`, que deve ser um inteiro.
+  - `c = int`, pois o resultado da multiplicação é um inteiro.
+  - `a -> c = a -> b`, pois a função `fatorial` tem o mesmo tipo do seu corpo.
+- Unifica as restrições, obtendo a solução:
+  - `a = int`
+  - `b = int`
+  - `c = int`
+  - `a -> c = int -> int`
+- Retorna o tipo mais geral da expressão, que é `int -> int`.
+
+A inferência de tipos Hindley-Milner é poderosa porque permite escrever programas sem anotações de tipo, mas mantendo a segurança de tipos. Além disso, ela suporta o polimorfismo paramétrico, que permite escrever funções genéricas que podem ser aplicadas a diferentes tipos de dados. Essas características tornam a linguagem OCaml expressiva e flexível, sem perder a robustez e a eficiência.
 
 ### Imutabilidade
 
