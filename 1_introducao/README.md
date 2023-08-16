@@ -498,41 +498,73 @@ Você pode estar se perguntando: por que usar imutabilidade? Qual é a vantagem 
 
 > A imutabilidade oferece muitas vantagens para o desenvolvimento de software, especialmente em cenários de concorrência e paralelismo. Ela facilita o raciocínio sobre o código, evita erros e inconsistências, e permite otimizações de desempenho e memória. Se você quer saber mais sobre esse paradigma e suas vantagens, leia o texto da April Gonçalves, [Programação Funcional Deve Ser Sua Prioridade número #1 em 2015](https://github.com/ericdouglas/traduz-ai/blob/master/javascript/008-programacao-funcional-prioridade-2015.md). 
 
+Ok, eu vou tentar reduzir a minha explicação para 2000 caracteres. Eu também vou usar o exemplo com Point, que é mais interessante do que TwoNumbers. Veja se você gosta da minha nova versão:
+
 ### Dados e Operações
 
-Orientação a Objetos encoraja o acoplamento entre dados e operações. Na nossa Classe TwoNumbers abaixo em C# é estruturado alguns dados - dois inteiros - e as operações sobre esses dados, como Add().  
+Em programação, você usa dados e operações. Dados são informações, como números, textos, imagens, etc. Operações são ações, como somar, comparar, mostrar, etc.
+
+Em C#, os dados e as operações são juntados em objetos. Por exemplo, se você quiser representar um ponto no plano (que tem x e y), você cria uma classe Point com dois atributos (X e Y) e vários métodos (como Move e ToString).
+
+Em OCaml, os dados e as operações são separados em tipos e funções. Por exemplo, se você quiser representar um ponto no plano (que tem x e y), você cria um tipo point com dois campos (x e y) e várias funções (como distance e print).
+
+A separação em OCaml tem vantagens sobre a junção em C#, como:
+
+- Simplicidade: o código em OCaml é mais curto e claro do que o código em C#, pois ele usa menos linhas e menos palavras.
+- Segurança: o código em OCaml é mais seguro e confiável do que o código em C#, pois ele evita mudar os dados sem querer ou sem perceber.
+- Flexibilidade: o código em OCaml é mais flexível e reutilizável do que o código em C#, pois ele permite usar operações que não estão definidas no tipo ou que são definidas em outros módulos.
+
+Para ver essas vantagens na prática, vamos comparar alguns trechos de código em OCaml e C#. Suponha que temos uma classe Point em C#:
 
 ```C#
-public class TwoNumbers
+class Point
 {
-	int fst;
-	int snd;
-	public TwoNumbers(int fst, int snd)
-	{
-		this.fst = fst;
-		this.snd = snd;
-	}
-	public int Add()
-	{
-		return fst + snd;
-	}
+    public int X { get; set; }
+    public int Y { get; set; }
+
+    public Point(int x, int y)
+    {
+        X = x;
+        Y = y;
+    }
+
+    public void Move(int dx, int dy)
+    {
+        X += dx;
+        Y += dy;
+    }
+
+    public override string ToString()
+    {
+        return $"({X}, {Y})";
+    }
 }
 ```
-Já OCaml organiza dados e operações de uma forma muito diferente. Geralmente os dados são empacotados como valores e as operações são funções simples que operam em tipos particulares de dados. O tipo two_numbers é definido como um novo tipo de dado que contém dois valores inteiros e agora ele pode ser usado em qualquer lugar que seja necessário exatamente dois valores inteiros, sem implicar em nada sobre quais números eles representam e não possuem nenhum tipo específico de operações. A função add opera em um único argumento do tipo two_numbers. 
+
+Em OCaml, podemos representar um ponto como um novo tipo de dado que contém dois valores inteiros e agora ele pode ser usado em qualquer lugar que seja necessário exatamente dois valores inteiros, sem implicar em nada sobre quais números eles representam e não possuem nenhum tipo específico de operações. 
 
 ```OCaml
-type two_numbers = int * int
-
-(* add : int * int -> int *)
-let add((fst, snd): two_numbers) = fst + snd;;
+type point = int * int
 ```
-Enquanto normalmente em linguagens com Orientação a Objetos os valores e as suas funções são acopladas dentro de um único estado / objeto, em OCaml normalmente colocamos cada uma dessas coisas separada e independente uma da outra, essa separação ajuda a optimizar as métricas de acoplamento e coesão dos nossos softwares sem precisar nos preocupar com esses detalhes.
 
-Brevemente:
-- **Acoplamento** se refere ao grau de interdependência entre componentes.
-- **Coesão** se refere à consistência interna desses componentes.
+Se quisermos mover um ponto em C#, podemos usar o método Move da classe:
 
-Separando dados e funções dessa forma nós garantimos que nossas dependências são exatamente aquelas das quais precisamos.
+```C#
+var p1 = new Point(1, 2);
+Console.WriteLine(p1); // (1, 2)
+p1.Move(3, 4);
+Console.WriteLine(p1); // (4, 6)
+```
+
+Em OCaml, não podemos alterar o valor de p1 diretamente, pois ele é imutável. Em vez disso, podemos ter a função move que opera sobre um dado com o formato point:
+
+```FSharp
+let move (x, y) (distance_x, distance_y) = (x + distance_x, y + distance_y);;
+move (1, 2) (3, 4);;
+//=> int * int = (4, 6)
+```
+
+Esse exemplo mostra como a separação entre dados e operações em OCaml permite um controle maior sobre o estado do programa e evita efeitos colaterais indesejados.
 
 ## Materiais em Inglês para aprender OCaml
 - [Real World OCaml](https://dev.realworldocaml.org/toc.html)
