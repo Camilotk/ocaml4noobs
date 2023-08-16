@@ -480,24 +480,21 @@ A inferência de tipos Hindley-Milner é poderosa porque permite escrever progra
 
 ### Imutabilidade
 
-OCaml favorece que os dados sejam imutáveis. Imutabilidade significa que valores uma vez criados não podem ser alterados e que identificadores uma vez atribuídos não podem ser mudados. Por isso, quando precisamos mudar um valor, é necessário criar um novo valor baseado no valor anterior. 
+Quando programamos, usamos variáveis para armazenar e manipular dados. Por exemplo, podemos ter uma variável que guarda uma lista de números, como [1; 2; 3]. Mas o que acontece se quisermos mudar essa lista, por exemplo, adicionando um número a mais? Em algumas linguagens de programação, como C#, isso é possível e fácil de fazer. Podemos simplesmente usar um comando que altera a lista original, como `numbers.Add(4)`, e a variável passa a guardar a lista [1; 2; 3; 4]. Esse tipo de linguagem é chamada de imperativa, pois permite que os dados sejam modificados ou mutados ao longo do programa.
 
-Como no nosso código abaixo, a lista numbers com os valores [3..1] é diferente de moreNumbers que tem os valores de [4..1] atualizados. Note que a lista original não é alterada, pois valores imutáveis nunca são mudados. Imutabilidade tem um grande número de efeitos colaterais positivos, incluindo execução assíncrona segura e maior facilidade de entender a lógica de funções.
+```CSharp
+var numbers = new List<int>() {1, 2, 3};
+numbers.Add(4);
+```
+
+Em outras linguagens de programação, como OCaml, isso não é possível nem fácil de fazer. Não podemos simplesmente mudar a lista original, pois ela é imutável. Imutável significa que os dados não podem ser alterados depois de criados e que as variáveis não podem mudar de valor depois de atribuídas. Por isso, se quisermos ter uma nova lista com um número a mais, temos que criar uma nova lista baseada na anterior, como `let moreNumbers = 4 :: numbers`, e a variável passa a guardar a lista [4; 1; 2; 3]. Mas a lista original continua sendo [1; 2; 3] e não é afetada pela operação. Esse tipo de linguagem é chamada de funcional, pois baseia-se em funções que retornam novos dados sem modificar os antigos.
 
 ```OCaml
 let numbers = [3;2;1]
 let moreNumbers = 4 :: numbers 
 ```
 
-```Java
-var numbers = new ArrayList<int> {1,2,3};
-numbers.add(4);
-```
-A versão idiomática em linguagens imperativas como Java é diferente: o valor de numbers pode ser modificado a qualquer hora. 
-
-Isso é uma mudança fundamental ao significado do operador de igualdade, em OCaml o operador de igualdade tem um significado próximo do operador matemático de igualdade que é que o identificador numbers contém um conjunto de números 3,2,1 e já em Java o operador de igualdade significa que um número arbitrário de números é dado, com os valores temporários 1,2,3. 
-
-Em Java numbers não é a lista 1,2,3 é apenas um identificador que aponta para esses valores momentaneamente e é esse acoplamento temporal de um identificador ao seu(s) valor(es) que faz com que esse tipo de código seja perigoso, já que em Java não basta saber que esse identificador numbers é atrelado a esses valores, é necessário também saber todas as alterações feitas nesse valor para conseguir saber seu valor no atual momento. No modelo de OCaml o identificador numbers não pode ser alterado, então é seguro assumir a qualquer momento que o valor de numbers é 3,2,1.
+Você pode estar se perguntando: por que usar imutabilidade? Qual é a vantagem de não poder mudar os dados? A resposta é que a imutabilidade traz vários benefícios para o desenvolvimento de software, especialmente em situações onde vários processos ou threads podem acessar ou modificar os mesmos dados ao mesmo tempo. Com a imutabilidade, não há risco de conflitos, inconsistências ou efeitos colaterais indesejados, pois os dados são sempre consistentes e previsíveis. Além disso, a imutabilidade facilita o entendimento do código, pois não há dependência de estado ou ordem de execução. A imutabilidade também permite algumas otimizações de desempenho e memória, como o compartilhamento de estruturas de dados imutáveis entre diferentes partes do código, ou a aplicação de técnicas de memoização ou avaliação preguiçosa.
 
 ### Dados e Operações
 
