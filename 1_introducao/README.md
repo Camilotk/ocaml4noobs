@@ -559,8 +559,14 @@ Console.WriteLine(p1); // (4, 6)
 Em OCaml, não podemos alterar o valor de p1 diretamente, pois ele é imutável. Em vez disso, podemos ter a função move que opera sobre um dado com o formato point:
 
 ```FSharp
-let move (x, y) (distance_x, distance_y) = (x + distance_x, y + distance_y);;
-move (1, 2) (3, 4);;
+let move ((x, y):point) distance_x distance_y = (x + distance_x, y + distance_y);;
+//=> val move : point -> int -> int -> int * int = <fun>
+```
+
+E então podemos usá-la para operar um de nossos valores e retornar um novo resultado:
+
+```FSharp
+move (1, 2) 3 4;;
 //=> int * int = (4, 6)
 ```
 
