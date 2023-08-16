@@ -398,7 +398,7 @@ let rec quicksort = function
 Observe como o algoritmo em OCaml se aproxima da definição original do algoritmo Quicksort. Claro, há uma sintaxe que pode não ser familiar para um usuário que não está acostumado com linguagens funcionais. Vamos analisar:
 
 1. Aqui podemos ver que o Quicksort se divide em duas possibilidades, dois casos:
-	- A possibilidade de receber uma lista vazia, verificada pelo padrão de correspondência (pattern match). Se for uma lista vazia, o retorno também é uma lista vazia.
+	- A possibilidade de receber uma lista vazia, verificada pelo [casamento de padrões (pattern match)](https://pt.wikipedia.org/wiki/Casamento_de_padr%C3%B5es). Se for uma lista vazia, o retorno também é uma lista vazia.
 	- Todos os outros casos.
 2. Quando a função recebe um valor, ela divide o restante dos valores em dois grupos:
 	- Itens menores que x
