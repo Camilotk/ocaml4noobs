@@ -344,40 +344,27 @@ using System.Collections.Generic;
 
 class Program {
   static void Main(string[] args) {
-   
-   // Criando uma lista de números
    List<int> input = new List<int>();
    input.Add(6);
    input.Add(7);
    input.Add(8);
    
-   // Criando uma nova lista com os quadrados dos números
    List<int> squared = new List<int>();
    
-   // Usando um laço for para percorrer a lista de entrada
    for (int i = 0; i < input.Count; i++) {
-    // Pegando o número na posição i da lista
     int number = input[i];
-    // Calculando o quadrado do número
     int square = number * number;
-    // Adicionando o quadrado na lista de saída
     squared.Add(square);
    }
    
-   // Criando uma variável para armazenar a soma
    int sum_of_squares = 0;
    
-   // Usando outro laço for para percorrer a lista de saída
    for (int i = 0; i < squared.Count; i++) {
-    // Pegando o número na posição i da lista
     int number = squared[i];
-    // Somando o número à variável de soma
     sum_of_squares += number;
    }
    
-   // Imprimindo o resultado
    Console.WriteLine(sum_of_squares);
-      
   }
 }
 ```
@@ -388,58 +375,39 @@ A razão para essa diferença de verbosidade é que C# usa um paradigma de progr
 
 É claro que também é possível escrever código declarativo em C# ou código imperativo em OCaml, mas esse exemplo mostra como cada linguagem foi projetada para favorecer um estilo de programação diferente. OCaml nos permite escrever código mais conciso e funcional, que pode ser mais fácil de entender e manter.
 
-### Menos Erros Acidentais
+### Redução de Erros Acidentais
 
-No ensaio ["No Silver Bullet" (Não existe bala de prata), Fred Brooks](http://worrydream.com/refs/Brooks-NoSilverBullet.pdf) faz uma distinção entre complexidade acidental e complexidade essencial. 
+No artigo ["No Silver Bullet" (Não existe bala de prata)], Fred Brooks faz uma distinção entre a complexidade acidental e a complexidade essencial.
 
-- **Complexidade Acidental** é a complexidade que é infligida em nós mesmos pelas ferramentas que decidimos usar.
-- **Complexidade Essencial** é a complexidade relacionada ao problema que estamos tentando resolver. 
+- A **Complexidade Acidental** é a complexidade que nos é imposta pelas ferramentas que escolhemos usar.
+- A **Complexidade Essencial** é a complexidade inerente ao problema que estamos tentando resolver.
 
-Complexidade Acidental é o problema que pode e deve ser cortado pela raíz, por exemplo, quanto menos ponteiros de memória, manejamento de recursos de memória ou qualquer outra coisa que não seja relacionada com o problema que estamos resolvendo pudermos evitar, melhor. OCaml ajuda a minimizar esse tipo de problema da complexidade acidental para que possamos focar na Complexidade Essencial que é o desafio que precisamos verdadeiramente resolver.
+A Complexidade Acidental é um problema que pode e deve ser eliminado. Por exemplo, quanto menos tivermos que lidar com ponteiros de memória, gerenciamento de recursos de memória ou qualquer outra coisa que não esteja diretamente relacionada ao problema que estamos tentando resolver, melhor. OCaml ajuda a minimizar esse tipo de problema da Complexidade Acidental, permitindo-nos focar na Complexidade Essencial, que é o verdadeiro desafio a ser resolvido.
 
-Aqui temos um exemplo do algoritmo Quicksort em OCaml:
-<!--
-```OCaml 
-let rec quicksort list =
-  match list with
-    | [] -> []
-    | x :: xs ->
-              let smaller, bigger = List.partition ((>) x) xs in
-                  (quicksort smaller) @ (x :: (quicksort bigger));;
-```
-
-```OCaml 
+Aqui está um exemplo do algoritmo Quicksort em OCaml:
+```Fsharp
 let rec quicksort = function
-    | [] -> []
+    | [] -> []                                               (* 1 *)
     | x :: xs ->
-              let smaller = List.filter ((>) x) xs in
-              let bigger = List.filter ((<) x) xs in
-                quicksort smaller @ [x] @ quicksort bigger;;
-```
--->
-
-```OCaml 
-let rec quicksort = function
-    | [] -> []                                               // 1
-    | x :: xs ->
-              let smaller = List.filter ((>) x) xs in        // 2
-              let bigger = List.filter ((<) x) xs in         // 2
-                quicksort smaller @ [x] @ quicksort bigger;; // 3
+              let smaller = List.filter ((>) x) xs in        (* 2 *)
+              let bigger = List.filter ((<) x) xs in         (* 2 *)
+                quicksort smaller @ [x] @ quicksort bigger;; (* 3 *)
+//=> val quicksort : 'a list -> 'a list = <fun>
 ```
 
-Observe o quanto o algoritmo em OCaml é próximo da definição original do algoritmo de quicksort caso tentássemos explicá-lo. Obviamente existe sintaxe que não é familiar para um usuário que não é familiar a linguagens funcionais. Vejamos:
+Observe como o algoritmo em OCaml se aproxima da definição original do algoritmo Quicksort. Claro, há uma sintaxe que pode não ser familiar para um usuário que não está acostumado com linguagens funcionais. Vamos analisar:
 
-1. Aqui podemos notar que o Quicksort se divide em duas possibilidades, dois casos:
- - A possibilidade de receber uma lista vazia, que no caso é verificado pelo pattern match, caso seja uma lista vazia o retorno é uma lista vazia.
- -  Todos os outros casos.
-2. Quando a função recebe um valor ela divide o restante dos valores em dois grupos:
- - Dos items menores que x
- - Dos items maiores que x
-3. Então o grupo menor é ordenado recursivamente, o maior também é ordenado recursivamente e ambos são concatenados com o item x (o primeiro item da lista ou head, retirado através de pattern match em x :: xs, que seria o mesmo que head :: tail) no meio -> [menores. x. maiores]
+1. Aqui podemos ver que o Quicksort se divide em duas possibilidades, dois casos:
+ - A possibilidade de receber uma lista vazia, verificada pelo padrão de correspondência (pattern match). Se for uma lista vazia, o retorno também é uma lista vazia.
+ - Todos os outros casos.
+2. Quando a função recebe um valor, ela divide o restante dos valores em dois grupos:
+ - Itens menores que x
+ - Itens maiores que x
+3. Então, o grupo menor é ordenado recursivamente, o maior também é ordenado recursivamente e ambos são concatenados com o item x (o primeiro item da lista ou cabeça, retirado através do padrão de correspondência em x :: xs, que seria o mesmo que cabeça :: cauda) no meio -> [menores. x. maiores]
 
-Na primeira linha temos a palavra <u>rec</u> que é uma abreviação para 'recursive' (recursivo) que informa o compilador que essa função pode ter que chamar a si mesma, isso é um exemplo de complexidade acidental que ainda se mantêm em OCaml uma vez que não tem motivo lógico ou matemático para que esse comando esteja ali uma vez em que logicamente e matematicamente todas as funções devem ser capazes de chamarem a si mesmas, porém por razões externas ao problema que estamos resolvendo precisamos informar ao compilador de OCaml que essa função pode ter que chamar a si mesma.
+Na primeira linha temos a palavra <u>rec</u>, uma abreviação para 'recursive' (recursivo), que informa ao compilador que essa função pode ter que chamar a si mesma. Isso é um exemplo de Complexidade Acidental que ainda se mantém em OCaml, pois não há motivo lógico ou matemático para esse comando estar ali. Logicamente e matematicamente, todas as funções devem ser capazes de chamar a si mesmas. No entanto, por razões externas ao problema que estamos resolvendo, precisamos informar ao compilador de OCaml que essa função pode ter que chamar a si mesma.
 
-Um contraste com o mesmo algortimo, mas agora em C++:
+Agora vamos contrastar isso com o mesmo algoritmo em C++:
 ```C++
 #include <iostream>
 
@@ -468,7 +436,7 @@ void quickSort(int * array, int low, int high) {
     quickSort(array, i, high);
 }
  ```
-Com isso podemos ver que em C++ (ou qualquer outra linguagem imperativa como Java ou C#) o que é descrito é o procedimento passo-a-passo e não a definição do algoritmo. Pode ser que por você estar mais acostumado a ler código imperativo que a solução em C++ pareça ser mais clara, mas pense o quão mais complexo é entender todo o número maior de instruções e passos que estão no código em C++ e a recompensa que é poder escrever códigos mais concisos e claros usando OCaml.
+Podemos observar que em C++ (ou qualquer outra linguagem imperativa como Java ou C#), o código descreve o procedimento passo-a-passo e não a definição do algoritmo. Pode parecer mais claro para você se estiver mais acostumado a ler código imperativo. No entanto, pense na complexidade adicional envolvida em entender todas as instruções e passos presentes no código C++. A recompensa é poder escrever códigos mais concisos e claros usando OCaml.
 
 ## Particularidades de OCaml
 
