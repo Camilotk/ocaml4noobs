@@ -9,7 +9,7 @@
 - [Porque OCaml?](#porque-ocaml)
 	- [Concisa e Declarativa](#concisa-e-declarativa)
   	- [Linguagens Concisas vs Verbosas](#linguagens-concisas-vs-verbosas)
-	- [Menos Erros Acidentais](#menos-erros-acidentais)
+	- [Redução de Erros Acidentais](#redução-de-erros-acidentais)
 - [Particularidades de OCaml](#particularidades-de-ocaml)
 	- [Inferência de Tipos](#infer%C3%AAncia-de-tipos)
 	- [Imutabilidade](#imutabilidade)
@@ -398,11 +398,11 @@ let rec quicksort = function
 Observe como o algoritmo em OCaml se aproxima da definição original do algoritmo Quicksort. Claro, há uma sintaxe que pode não ser familiar para um usuário que não está acostumado com linguagens funcionais. Vamos analisar:
 
 1. Aqui podemos ver que o Quicksort se divide em duas possibilidades, dois casos:
- - A possibilidade de receber uma lista vazia, verificada pelo padrão de correspondência (pattern match). Se for uma lista vazia, o retorno também é uma lista vazia.
- - Todos os outros casos.
+	- A possibilidade de receber uma lista vazia, verificada pelo padrão de correspondência (pattern match). Se for uma lista vazia, o retorno também é uma lista vazia.
+	- Todos os outros casos.
 2. Quando a função recebe um valor, ela divide o restante dos valores em dois grupos:
- - Itens menores que x
- - Itens maiores que x
+	- Itens menores que x
+	- Itens maiores que x
 3. Então, o grupo menor é ordenado recursivamente, o maior também é ordenado recursivamente e ambos são concatenados com o item x (o primeiro item da lista ou cabeça, retirado através do padrão de correspondência em x :: xs, que seria o mesmo que cabeça :: cauda) no meio -> [menores. x. maiores]
 
 Na primeira linha temos a palavra <u>rec</u>, uma abreviação para 'recursive' (recursivo), que informa ao compilador que essa função pode ter que chamar a si mesma. Isso é um exemplo de Complexidade Acidental que ainda se mantém em OCaml, pois não há motivo lógico ou matemático para esse comando estar ali. Logicamente e matematicamente, todas as funções devem ser capazes de chamar a si mesmas. No entanto, por razões externas ao problema que estamos resolvendo, precisamos informar ao compilador de OCaml que essa função pode ter que chamar a si mesma.
