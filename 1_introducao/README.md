@@ -377,7 +377,7 @@ A razão para essa diferença de verbosidade é que C# usa um paradigma de progr
 
 ### Redução de Erros Acidentais
 
-No artigo ["No Silver Bullet" (Não existe bala de prata)], Fred Brooks faz uma distinção entre a complexidade acidental e a complexidade essencial.
+No artigo ["No Silver Bullet" (Não existe bala de prata)](https://en.wikipedia.org/wiki/No_Silver_Bullet), Fred Brooks faz uma distinção entre a complexidade acidental e a complexidade essencial.
 
 - A **Complexidade Acidental** é a complexidade que nos é imposta pelas ferramentas que escolhemos usar.
 - A **Complexidade Essencial** é a complexidade inerente ao problema que estamos tentando resolver.
