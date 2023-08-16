@@ -457,9 +457,9 @@ let rec fatorial n =
 ```
 Em OCaml, não precisamos declarar o tipo dos argumentos e do resultado da função fatorial. A implementação faz a inferência de tipos e nos diz que o tipo da função é `int -> int`, ou seja, uma função que recebe um inteiro e retorna um inteiro. 
 
-Como a implementação chegou a esse tipo? Ela usou o algoritmo W, que é uma versão eficiente do algoritmo de Hindley-Milner. O algoritmo W consiste em dois passos principais: geração de restrições e unificação. No primeiro passo, o algoritmo atribui variáveis de tipo às expressões que não têm um tipo conhecido e gera restrições entre essas variáveis e os tipos conhecidos. No segundo passo, o algoritmo tenta unificar as restrições, ou seja, encontrar uma solução que satisfaça todas elas. Se a unificação for bem-sucedida, o algoritmo retorna o tipo mais geral da expressão. Se a unificação falhar, o algoritmo reporta um erro de tipo.
+Como a implementação chegou a esse tipo? Ela usou o Algoritmo W, que é uma versão eficiente do algoritmo de Hindley-Milner. O Algoritmo W consiste em dois passos principais: geração de restrições e unificação. No primeiro passo, o algoritmo atribui variáveis de tipo às expressões que não têm um tipo conhecido e gera restrições entre essas variáveis e os tipos conhecidos. No segundo passo, o algoritmo tenta unificar as restrições, ou seja, encontrar uma solução que satisfaça todas elas. Se a unificação for bem-sucedida, o algoritmo retorna o tipo mais geral da expressão. Se a unificação falhar, o algoritmo reporta um erro de tipo.
 
-No exemplo da função `fatorial`, o algoritmo W faz o seguinte:
+No exemplo da função `fatorial`, o Algoritmo W faz o seguinte:
 
 - Atribui uma variável de tipo `a` à expressão `n`, que é o argumento da função.
 - Atribui uma variável de tipo `b` à expressão `fatorial n`, que é a chamada recursiva da função.
