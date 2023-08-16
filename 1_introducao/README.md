@@ -334,47 +334,59 @@ A sintaxe declarativa e concisa de OCaml facilita a compreensão e a manutençã
 
 ### Linguagens Concisas vs Verbosas
 
-Sem dúvidas quando estamos falando de código a métrica mais importante que devemos levar em conta é: "Ele funciona?". E a boa notícia é que poderíamos fazer exatamente o mesmo em Java e isso funcionaria, basta que fizessemos isso:
+Para ilustrar a diferença de verbosidade entre as linguagens, vamos usar nosso exemplo anterior: calcular a soma dos quadrados dos números 6, 7 e 8.  Para isso usamos duas funções de alta ordem: `List.fold_left` e `List.map` nas linhas `(* 1 *)` e `(* 2 *)`, que aplicam uma função a cada elemento de uma lista e retornam um resultado acumulado ou uma nova lista, respectivamente. A função que multiplica um número por si mesmo é definida usando uma expressão lambda: `(fun x -> x * 2)`. 
 
-```Java
-import java.util.List;
-import java.util.ArrayList;
+Em C#, para fazer a mesma coisa, precisaríamos escrever muito mais código usando o paradigma imperativo. Por exemplo, teríamos algo assim:
 
-public class Program {
-  static int DoubleNum(int x) {
-   return x * 2;
-  }
+```C#
+using System;
+using System.Collections.Generic;
 
-  public static void main(String[] args) {
+class Program {
+  static void Main(string[] args) {
    
-   var input = new ArrayList<Integer>();
+   // Criando uma lista de números
+   List<int> input = new List<int>();
+   input.Add(6);
+   input.Add(7);
+   input.Add(8);
    
-   input.add(6);
-   input.add(7);
-   input.add(8);
+   // Criando uma nova lista com os quadrados dos números
+   List<int> squared = new List<int>();
    
-   var squared = new ArrayList<Integer>();
-   
-   for (var number : input) {
-    squared.add(DoubleNum(number));
+   // Usando um laço for para percorrer a lista de entrada
+   for (int i = 0; i < input.Count; i++) {
+    // Pegando o número na posição i da lista
+    int number = input[i];
+    // Calculando o quadrado do número
+    int square = number * number;
+    // Adicionando o quadrado na lista de saída
+    squared.Add(square);
    }
    
-   var sum = 0;
+   // Criando uma variável para armazenar a soma
+   int sum_of_squares = 0;
    
-   for (var number : squared) {
-       sum += number;
+   // Usando outro laço for para percorrer a lista de saída
+   for (int i = 0; i < squared.Count; i++) {
+    // Pegando o número na posição i da lista
+    int number = squared[i];
+    // Somando o número à variável de soma
+    sum_of_squares += number;
    }
    
-   System.out.println(sum);
+   // Imprimindo o resultado
+   Console.WriteLine(sum_of_squares);
       
   }
 }
 ```
-A grande diferença entre esse código em Java para nosso programa em OCaml é que Java usa a programação imperativa, enquanto em OCaml usamos a programação declarativa. 
 
-Isso significa que o foco quando programamos em Java é "o que queremos fazer?" e descrevemos cada comando do passo a passo que nos leva ao resultado esperado. Enquanto em OCaml colocamos todo nosso foco no que esperamos que seja o resultado ao invés do exato passo a passo de como isso deve ser feito. 
+Esse código usa muitas variáveis, atribuições, laços e índices para manipular as listas e obter o resultado desejado. O código é muito mais longo e menos expressivo do que o código em OCaml.
 
-É possível obter um estilo de escrita muito mais concisa e funcional em Java e também é possível escrever OCaml de forma completamente imperativa e mais verbosa (a linguagem tem suporte a programação imperativa e OOP), mas esse exemplo demonstra de forma exagerada a forma canônica que cada linguagem foi projetada para ser pensado a solução dos problemas que resolvem apenas como exemplo.
+A razão para essa diferença de verbosidade é que C# usa um paradigma de programação chamado imperativo, enquanto OCaml usa um paradigma chamado declarativo. Isso significa que, em C#, nós temos que especificar cada passo que queremos executar para obter o resultado desejado, enquanto em OCaml nós apenas descrevemos o resultado que queremos obter, sem se preocupar com os detalhes de como isso é feito.
+
+É claro que também é possível escrever código declarativo em C# ou código imperativo em OCaml, mas esse exemplo mostra como cada linguagem foi projetada para favorecer um estilo de programação diferente. OCaml nos permite escrever código mais conciso e funcional, que pode ser mais fácil de entender e manter.
 
 ### Menos Erros Acidentais
 
