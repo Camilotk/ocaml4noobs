@@ -496,6 +496,8 @@ let moreNumbers = 4 :: numbers
 
 Você pode estar se perguntando: por que usar imutabilidade? Qual é a vantagem de não poder mudar os dados? A resposta é que a imutabilidade traz vários benefícios para o desenvolvimento de software, especialmente em situações onde vários processos ou threads podem acessar ou modificar os mesmos dados ao mesmo tempo. Com a imutabilidade, não há risco de conflitos, inconsistências ou efeitos colaterais indesejados, pois os dados são sempre consistentes e previsíveis. Além disso, a imutabilidade facilita o entendimento do código, pois não há dependência de estado ou ordem de execução. A imutabilidade também permite algumas otimizações de desempenho e memória, como o compartilhamento de estruturas de dados imutáveis entre diferentes partes do código, ou a aplicação de técnicas de memoização ou avaliação preguiçosa.
 
+> A imutabilidade oferece muitas vantagens para o desenvolvimento de software, especialmente em cenários de concorrência e paralelismo. Ela facilita o raciocínio sobre o código, evita erros e inconsistências, e permite otimizações de desempenho e memória. Se você quer saber mais sobre esse paradigma e suas vantagens, leia o texto da April Gonçalves, [Programação Funcional Deve Ser Sua Prioridade número #1 em 2015](https://github.com/ericdouglas/traduz-ai/blob/master/javascript/008-programacao-funcional-prioridade-2015.md). 
+
 ### Dados e Operações
 
 Orientação a Objetos encoraja o acoplamento entre dados e operações. Na nossa Classe TwoNumbers abaixo em C# é estruturado alguns dados - dois inteiros - e as operações sobre esses dados, como Add().  
