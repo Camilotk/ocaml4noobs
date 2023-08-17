@@ -584,6 +584,7 @@ Esse exemplo mostra como a separação entre dados e operações em OCaml permit
 
 ## Materiais em Inglês para aprender OCaml
 
+OCaml não é uma linguagem muito popular no Brasil, e por isso há poucos materiais em português para aprender OCaml. Essa é uma grande motivação para eu estar escrevendo este conteúdo, uma vez que o Brasil é um país muito grande e possui uma Comunidade maravilhosa de TI que precisa ser apresentada para OCaml. Tenho esperança que algum dia vamos ter uma Comunidade de OCaml em nosso idioma produzindo muitos materiais. A maior parte dos conteúdos de OCaml são em Inglês e atualmente já existem excelentes materiais gratuitos nessa língua para quem deseja aprender a linguagem que vou recomendar abaixo.
 
 <h3 align="center">
 	<a href="https://dev.realworldocaml.org/" target="_blank">
