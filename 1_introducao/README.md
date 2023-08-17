@@ -1,3 +1,9 @@
+<p align="center">
+  <a href="https://github.com/he4rt/4noobs" target="_blank">
+    <img src="../images/header-ocaml4noobs.svg">
+  </a>
+</p>
+
 # Capítulo 1 - Introdução
 
 ## Índice
