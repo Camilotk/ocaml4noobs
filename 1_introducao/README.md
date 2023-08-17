@@ -602,3 +602,7 @@ Na História de OCaml, mencionamos bastante a linguagem ML. Embora OCaml e ML se
 		<img src="./ml_for_working.png" />
 	</a>
 </h3>
+
+## Vamos em frente!
+
+Espero que você tenha gostado deste capítulo e que esteja animado para continuar aprendendo sobre OCaml. No próximo capítulo, você vai aprender sobre um dos conceitos mais importantes da programação funcional: as funções. Você vai ver como definir, aplicar, compor e manipular funções em OCaml, e como elas podem tornar seu código mais elegante, expressivo e poderoso.
