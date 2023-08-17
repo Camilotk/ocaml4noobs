@@ -6,6 +6,10 @@
 
 # Capítulo 1 - Introdução
 
+A primeira parte do OCaml4Noobs é uma introdução ao mundo de OCaml, uma linguagem funcional poderosa, expressiva e eficiente. Aqui você vai conhecer o que é OCaml, uma linguagem de programação funcional, concisa, declarativa e com inferência de tipos. Você vai aprender sobre a história do OCaml, como ele surgiu a partir do ML e do Caml, e quais são as suas principais características e vantagens. 
+
+Vamos aprender como instalar o OCaml e o Dune, um sistema de build moderno e poderoso para projetos em OCaml. Você vai escrever o seu primeiro programa em OCaml, o famoso Hello World, e ver como ele funciona no terminal. Além disso, você vai entender por que OCaml é uma linguagem interessante e útil para diversos tipos de problemas e domínios. Você vai ver como OCaml é concisa e declarativa, além de outras características e particularidades de porque é tão divertido usar essa linguagem.
+
 ## Índice
 - [O que é OCaml?](#o-que-%C3%A9-ocaml)
 - [História do OCaml](#hist%C3%B3ria-do-ocaml)
