@@ -26,7 +26,7 @@
 ## ROADMAP
 
 ## Parte 1 - Introdução
-- [O que é OCaml?](./1_introducao#o-que-é-ocaml)
+- [O que é OCaml?](./1_introducao#o-que-%C3%A9-ocaml)
 - [História do OCaml](./1_introducao#hist%C3%B3ria-do-ocaml)
 - [Instalação](./1_introducao#instala%C3%A7%C3%A3o)
 - [Instalando o Dune](./1_introducao#instalando-o-dune)
@@ -34,7 +34,7 @@
 - [Porque OCaml?](./1_introducao#porque-ocaml)
 	- [Concisa e Declarativa](./1_introducao#concisa-e-declarativa)
   	- [Linguagens Concisas vs Verbosas](./1_introducao#linguagens-concisas-vs-verbosas)
-	- [Menos Erros Acidentais](./1_introducao#menos-erros-acidentais)
+	- [Redução de Erros Acidentais](./1_introducao#redução-de-erros-acidentais)
 - [Particularidades de OCaml](./1_introducao#particularidades-de-ocaml)
 	- [Inferência de Tipos](./1_introducao#infer%C3%AAncia-de-tipos)
 	- [Imutabilidade](./1_introducao#imutabilidade)
