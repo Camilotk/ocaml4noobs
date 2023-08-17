@@ -583,17 +583,6 @@ move (1, 2) 3 4;;
 Esse exemplo mostra como a separação entre dados e operações em OCaml permite um controle maior sobre o estado do programa e evita efeitos colaterais indesejados.
 
 ## Materiais em Inglês para aprender OCaml
-- [Real World OCaml](https://dev.realworldocaml.org/toc.html)
-- [Functional Programming in OCaml](https://www.cs.cornell.edu/courses/cs3110/2019sp/textbook/)
-- [99 Problems](https://ocaml.org/learn/tutorials/99problems.html)
-- [OCaml Manual](https://ocaml.org/manual/)
-- [janestreet/learn-ocaml-workshop](https://github.com/janestreet/learn-ocaml-workshop)
-
-#### E por enquanto, é só nos vemos no [próximo Capítulo](https://github.com/Camilotk/ocaml4noobs/blob/master/2-funcoes/README.md)! 😉
-
-## Referências
-- [Install OCaml](https://OCaml.org/docs/install.html)
-- [How to install opam](https://opam.OCaml.org/doc/Install.html)
-- [Dune Quickstart](https://dune.readthedocs.io/en/stable/quick-start.html)
-- [Caml Language History](https://caml.inria.fr/about/history.en.html)
-- [OCaml - Wikipédia](https://pt.wikipedia.org/wiki/OCaml)
+<h3 align="center">
+<img src="./real-world-ocaml.png" />
+</h3>
