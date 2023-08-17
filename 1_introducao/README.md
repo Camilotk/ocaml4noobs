@@ -596,3 +596,9 @@ OCaml não é uma linguagem muito popular no Brasil, e por isso há poucos mater
 		<img src="./ocaml_correct_efficient_beautiful.png" />
 	</a>
 </h3>
+Na História de OCaml, mencionamos bastante a linguagem ML. Embora OCaml e ML sejam linguagens distintas, ML também é uma linguagem elegante, bonita e eficiente, que pode despertar o interesse de alguns aprendizes. Quem quiser conhecer ML por curiosidade, pode consultar um livro da Editora de Cambridge, disponível gratuitamente na internet, que é muito bom e apresenta vários projetos práticos usando Standard ML incluindo um interpretador de cálculo lambda e um provador de teoremas.
+<h3 align="center">
+	<a href="https://www.cl.cam.ac.uk/~lp15/MLbook/pub-details.html" target="_blank">
+		<img src="./ml_for_working.png" />
+	</a>
+</h3>
