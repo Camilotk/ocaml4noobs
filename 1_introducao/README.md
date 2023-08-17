@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://github.com/he4rt/4noobs" target="_blank">
+  <a href=".." target="_blank">
     <img src="../images/header-ocaml4noobs.svg">
   </a>
 </p>
