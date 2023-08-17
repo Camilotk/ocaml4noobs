@@ -609,6 +609,6 @@ Espero que você tenha gostado deste capítulo e que esteja animado para continu
 
 <p align="center">
   <a href="https://github.com/Camilotk/ocaml4noobs/tree/master/2_funcoes" target="_blank">
-    <img src="../images/proximo_capitulo.svg">
+    <img src="../images/ir_proximo_capitulo.svg">
   </a>
 </p>
