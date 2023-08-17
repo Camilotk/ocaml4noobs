@@ -584,5 +584,12 @@ Esse exemplo mostra como a separação entre dados e operações em OCaml permit
 
 ## Materiais em Inglês para aprender OCaml
 <h3 align="center">
-<img src="./real-world-ocaml.png" />
+	<a href="https://dev.realworldocaml.org/" target="_blank">
+		<img src="./real-world-ocaml.png" />
+	</a>
+</h3>
+<h3 align="center">
+	<a href="https://cs3110.github.io/textbook/cover.html" target="_blank">
+		<img src="./ocaml_correct_efficient_beautiful.png" />
+	</a>
 </h3>
