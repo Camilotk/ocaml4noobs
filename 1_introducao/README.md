@@ -583,6 +583,8 @@ move (1, 2) 3 4;;
 Esse exemplo mostra como a separação entre dados e operações em OCaml permite um controle maior sobre o estado do programa e evita efeitos colaterais indesejados.
 
 ## Materiais em Inglês para aprender OCaml
+
+
 <h3 align="center">
 	<a href="https://dev.realworldocaml.org/" target="_blank">
 		<img src="./real-world-ocaml.png" />
