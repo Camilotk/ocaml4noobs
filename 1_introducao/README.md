@@ -508,8 +508,6 @@ Você pode estar se perguntando: por que usar imutabilidade? Qual é a vantagem 
 
 > A imutabilidade oferece muitas vantagens para o desenvolvimento de software, especialmente em cenários de concorrência e paralelismo. Ela facilita o raciocínio sobre o código, evita erros e inconsistências, e permite otimizações de desempenho e memória. Se você quer saber mais sobre esse paradigma e suas vantagens, leia o texto da April Gonçalves, [Programação Funcional Deve Ser Sua Prioridade número #1 em 2015](https://github.com/ericdouglas/traduz-ai/blob/master/javascript/008-programacao-funcional-prioridade-2015.md). 
 
-Ok, eu vou tentar reduzir a minha explicação para 2000 caracteres. Eu também vou usar o exemplo com Point, que é mais interessante do que TwoNumbers. Veja se você gosta da minha nova versão:
-
 ### Dados e Operações
 
 Em programação, você usa dados e operações. Dados são informações, como números, textos, imagens, etc. Operações são ações, como somar, comparar, mostrar, etc.
